@@ -1,7 +1,7 @@
 .DS_Store
-/emacs/.emacs.desktop
-/emacs/recentf
-/emacs/org/config.el
-/emacs/network-security.data
-/emacs/elpa
-/emacs/projectile-bookmarks.eld
+/.emacs.d/.emacs.desktop
+/.emacs.d/recentf
+/.emacs.d/org/config.el
+/.emacs.d/network-security.data
+/.emacs.d/elpa
+/.emacs.d/projectile-bookmarks.eld

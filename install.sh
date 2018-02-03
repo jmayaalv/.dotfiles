@@ -20,7 +20,7 @@ ln -sfv "$DOTFILES_DIR/zsh/themes/fridaynight.zsh-theme" ~/.oh-my-zsh/themes/
 ln -sfv "$DOTFILES_DIR/zsh/custom.zsh" ~/.oh-my-zsh/custom/
 ln -sfv "$DOTFILES_DIR/extras/batcharge.py" ~/bin
 ln -sfv "$DOTFILES_DIR/iterm/com.googlecode.iterm2.plist" ~/Library/Preferences/com.googlecode.iterm2.plist
-ln -sfv "$DOTFILES_DIR/emacs" ~/.emacs.d
+ln -sfv "$DOTFILES_DIR/.emacs.d" ~
 
 chmod +rwx ~/bin/batcharge.py
 chmod +rwx "$DOTFILES_DIR/extras/batcharge.py"
