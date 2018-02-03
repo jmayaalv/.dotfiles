@@ -12,7 +12,9 @@ PATH="$DOTFILES_DIR/bin:$PATH"
 # Update dotfiles itself first
 
 #git --work-tree="$DOTFILES_DIR" --git-dir="$DOTFILES_DIR/.git" pull origin master
+git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 
+brew install jq
 
 mkdir ~/bin
 ln -sfv "$DOTFILES_DIR/zsh/.zshrc" ~
