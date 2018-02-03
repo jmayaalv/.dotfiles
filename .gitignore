@@ -1,5 +1,6 @@
 .DS_Store
 /.emacs.d/.emacs.desktop
+/.emacs.d/.cache
 /.emacs.d/recentf
 /.emacs.d/org/config.el
 /.emacs.d/network-security.data
