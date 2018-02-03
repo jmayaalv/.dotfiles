@@ -397,6 +397,10 @@
           (lambda ()
             (setq auto-composition-mode nil)))
 
+      (add-hook 'org-mode-hook
+          (lambda ()
+            (setq auto-composition-mode nil)))
+
       (add-hook 'helm-major-mode-hook
           (lambda ()
             (setq auto-composition-mode nil)))
@@ -1238,16 +1242,6 @@ er
                  (lambda () (local-set-key (kbd "s-h") 'helm-clojure-headlines)))
      #+END_SRC
 
-**** Clojure Cheat Sheet
-
-     #+BEGIN_SRC emacs-lisp
-
-       (use-package clojure-cheatsheet
-         :ensure t
-         :after cider
-         :config (add-hook 'clojure-mode-hook
-                 (lambda () (local-set-key [s-f1] 'clojure-cheatsheet))))
-     #+END_SRC
 
 **** sw1nn-cider-perspective or Engineering
 
