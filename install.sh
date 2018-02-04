@@ -15,9 +15,7 @@ PATH="$DOTFILES_DIR/bin:$PATH"
 git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 
 ln -sfv "$DOTFILES_DIR/zsh/.zshrc" ~
-ln -sfv "$DOTFILES_DIR/zsh/themes/fridaynight.zsh-theme" ~/.oh-my-zsh/themes/
 ln -sfv "$DOTFILES_DIR/zsh/custom.zsh" ~/.oh-my-zsh/custom/
-ln -sfv "$DOTFILES_DIR/extras/batcharge.py" ~/bin
 ln -sfv "$DOTFILES_DIR/iterm/com.googlecode.iterm2.plist" ~/Library/Preferences/com.googlecode.iterm2.plist
 ln -sfv "$DOTFILES_DIR/.emacs.d" ~
 
