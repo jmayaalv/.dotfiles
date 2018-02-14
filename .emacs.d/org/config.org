@@ -517,9 +517,7 @@
       (beacon-mode 1)
       (setq beacon-blink-duration 0.5)
       (setq beacon-blink-delay 0.5)
-      (add-to-list 'beacon-dont-blink-major-modes 'term-mode)
-      (add-to-list 'beacon-dont-blink-major-modes 'ediff-mode)
-      (add-to-list 'beacon-dont-blink-major-modes 'ediff))
+      (add-to-list 'beacon-dont-blink-major-modes '('term-mode 'treemacs-mode 'ediff-mode 'ediff)))
   #+END_SRC
 
 * directories, navigation, searching, movement
@@ -1066,19 +1064,19 @@
 
 *** clojure
 **** cider
-***** instal
+***** install
 
       You can get most of the clojure support by just elpa installing
       cider.
 
       #+BEGIN_SRC emacs-lisp
        ;; load CIDER from its source code
-       (add-to-list 'load-path "~/Documents/workspace/cider")
-       (require 'cider)
+;;       (add-to-list 'load-path "~/Documents/workspace/cider")
+;;       (require 'cider)
 
-;        (use-package cider
- ;         :ensure t
-  ;        :pin melpa-stable)
+       (use-package cider
+          :ensure t
+          :pin melpa-stable)
 
       #+END_SRC
 
@@ -1224,12 +1222,12 @@
          ;; This choice of keybinding leaves cider-macroexpand-1 unbound
          (cljr-add-keybindings-with-prefix "C-c r"))
 
-       ;; (use-package clj-refactor
-       ;;   :ensure t
-       ;;   :config
-       ;;   (setq cljr-warn-on-eval nil)
-       ;;   (add-hook 'clojure-mode-hook #'my-clojure-mode-hook)
-       ;;   (diminish 'clj-refactor-mode))
+        (use-package clj-refactor
+          :ensure t
+          :config
+          (setq cljr-warn-on-eval nil)
+          (add-hook 'clojure-mode-hook #'my-clojure-mode-hook)
+          (diminish 'clj-refactor-mode))
      #+END_SRC
 **** align let forms
 
