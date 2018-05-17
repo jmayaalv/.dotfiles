@@ -1,0 +1,23 @@
+;; -*- emacs-lisp -*- <18/05/17 12:28:03 /Users/jmaya/.emacs.d/tramp>
+;; Tramp connection history.  Don't change this file.
+;; You can delete it, forcing Tramp to reapply the checks.
+
+((["ssh" "devel.jmayaalv" "oicdb" nil nil]
+  ("uname" "Linux 3.10.0-693.21.1.el7.x86_64")
+  ("locale" "LC_ALL=en_US.utf8")
+  ("test" "test")
+  ("remote-path"
+   ("/usr/bin" "/bin" "/sbin" "/usr/sbin" "/usr/local/bin" "/usr/local/sbin"))
+  ("remote-shell" "/bin/sh")
+  ("~" "/home/ad.kane-group.com/devel.jmayaalv")
+  ("stat" nil)
+  ("perl-file-spec" t)
+  ("perl-cwd-realpath" t)
+  ("perl" "\\perl")
+  ("id" "/usr/bin/id")
+  ("gid-string" "domain users")
+  ("gid-integer" 515200513)
+  ("readlink" "\\readlink")
+  ("file-exists" "test -e"))
+ (["ssh" "devel.jmayaalv" "veritastest" nil nil]
+  nil))

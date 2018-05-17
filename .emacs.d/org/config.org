@@ -349,6 +349,8 @@
       ;;  :ensure t
       ;;  :config (load-theme 'material-light t))
     #+END_SRC
+
+
 ** fonts
 
    Ah, the joys of playing with different monospaced fonts on
@@ -1080,6 +1082,13 @@
 
       #+END_SRC
 
+***** Clojure CLI
+
+      Set "dev" as default alias
+      #+BEGIN_SRC emacs-lisp
+       (setq cider-clojure-cli-global-options "-C:dev")
+      #+END_SRC
+
 ***** pretty print it!
       #+BEGIN_SRC emacs-lisp
         (setq cider-repl-use-pretty-printing t)
@@ -1346,42 +1355,41 @@
 *** db list
     This is the list of db connections
     #+BEGIN_SRC emacs-lisp
-      (setq sql-connection-alist
+    (setq sql-connection-alist
             '((localhost.mbp
                (sql-name "localhost.imsproddb")
                (sql-product 'postgres)
                (sql-port 5432)
                (sql-server "localhost")
                (sql-user "imsproddb")
-               (sql-password "")
                (sql-database "imsproddb"))
 
               (oic.prod
                (sql-name "oic.prod")
+               (sql-default-directory "/oicdb:")
                (sql-product 'postgres)
-               (sql-port 5435)
+               (sql-port 5432)
                (sql-server "localhost")
                (sql-user "imsoicprod")
-               (sql-password "")
                (sql-database "imsoicproddb"))
 
-               (glacier.test
-                (sql-name "glacier.test")
+               (veritas.test
+                (sql-name "veritas.test")
+                (sql-default-directory "/veritastest:")
                 (sql-product 'postgres)
-                (sql-port 5435)
+                (sql-port 5432)
                 (sql-server "localhost")
-                (sql-user "imsglacierstage")
-                (sql-password "")
-                (sql-database "imsglacierstagedb"))
+                (sql-user "imsveritastest1")
+                (sql-database "imsveritastest1db"))
 
-               (sanlam.prod
-                (sql-name "sanlam.prod")
+               (glacier.test
+                (sql-name "glacier.test1")
+                (sql-default-directory "/glaciertest:")
                 (sql-product 'postgres)
-                (sql-port 5435)
+                (sql-port 5432)
                 (sql-server "localhost")
-                (sql-user "imssanlamprod")
-                (sql-password "")
-                (sql-database "imssanlamproddb"))))
+                (sql-user "imsglaciertest1")
+                (sql-database "imsglaciertest1"))))
     #+END_SRC
 
     And this  makes all it all happen via M-x sql-xxx where xxx is the name of the pool in the prev list ex: sql-localhost.mbp
@@ -1389,23 +1397,31 @@
     #+BEGIN_SRC emacs-lisp
       (defun sql-localhost.mbp ()
         (interactive)
-        (sql-connect-preset  'localhost.mbp))
+        (my-sql-connect  'postgres 'localhost.mbp))
 
       (defun sql-oic.prod ()
         (interactive)
-        (sql-connect-preset 'oic.prod))
+        (my-sql-connect 'postgres 'oic.prod))
 
-      (defun sql-sanlam.prod ()
+      (defun sql-glacier.prod ()
         (interactive)
-        (sql-connect-preset 'sanlam.prod))
+        (my-sql-connect 'postgres 'glacier.prod))
 
       (defun sql-glacier.test ()
         (interactive)
-        (sql-connect-preset 'glacier.test))
+        (my-sql-connect 'postgres 'glacier.test))
 
+      (defun sql-veritas.test ()
+        (interactive)
+        (my-sql-connect 'postgres 'veritas.test))
 
-      (defun sql-connect-preset (name)
+      (defun my-sql-connect (product connection)
+        (setq sql-product product)
+        (sql-connect connection))
+
+      (defun sql-connect-preset (product name)
         "Connect to a predefined SQL connection listed in `sql-connection-alist'"
+        (setq sql-product product)
         (eval `(let ,(cdr (assoc name sql-connection-alist))
                  (flet ((sql-get-login (&rest what)))
                    (sql-product-interactive sql-product)))))
@@ -1721,3 +1737,15 @@
        :ensure t)
    #+END_SRC
 * Integrations
+** Tramp
+   Tramp defaults
+  #+BEGIN_SRC emacs-lisp
+  (setq auth-source-debug t)
+    (setq tramp-default-method "ssh")
+    (add-to-list 'tramp-default-user-alist
+                 '(nil "oicdb" "devel.jmayaalv"))
+    (add-to-list 'tramp-default-user-alist
+                 '(nil "veritastest" "devel.jmayaalv"))
+    (add-to-list 'tramp-default-user-alist
+                 '(nil nil "jmayaalv") t)
+  #+END_SRC

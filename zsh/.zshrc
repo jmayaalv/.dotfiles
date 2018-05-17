@@ -1,6 +1,11 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+ export PATH=$HOME/bin:/usr/local/bin:/Applications/Tools/apache-maven-3.3.3/bin:$PATH
+ 
+# Datomic
+
+export DATOMIC_PATH=~/Documents/workspace/datomic
+ 
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
 
