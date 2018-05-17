@@ -1,2 +1,0 @@
-lein migratus create preferred_fund
-lein migratus create fee_preferred_fund
