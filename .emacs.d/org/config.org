@@ -1355,41 +1355,69 @@
 *** db list
     This is the list of db connections
     #+BEGIN_SRC emacs-lisp
-    (setq sql-connection-alist
-            '((localhost.mbp
-               (sql-name "localhost.imsproddb")
-               (sql-product 'postgres)
-               (sql-port 5432)
-               (sql-server "localhost")
-               (sql-user "imsproddb")
-               (sql-database "imsproddb"))
+      (setq sql-connection-alist
+              '((localhost.mbp
+                 (sql-name "localhost.imsproddb")
+                 (sql-default-directory nil)
+                 (sql-product 'postgres)
+                 (sql-port 5432)
+                 (sql-server "localhost")
+                 (sql-user "imsproddb")
+                 (sql-database "imsproddb"))
 
-              (oic.prod
-               (sql-name "oic.prod")
-               (sql-default-directory "/oicdb:")
-               (sql-product 'postgres)
-               (sql-port 5432)
-               (sql-server "localhost")
-               (sql-user "imsoicprod")
-               (sql-database "imsoicproddb"))
+                (localhost.mbp
+                 (sql-name "localhost.edgetest")
+                 (sql-default-directory nil)
+                 (sql-product 'postgres)
+                 (sql-port 5432)
+                 (sql-server "localhost")
+                 (sql-user "edgetest")
+                 (sql-database "edgetest"))
 
-               (veritas.test
-                (sql-name "veritas.test")
-                (sql-default-directory "/veritastest:")
-                (sql-product 'postgres)
-                (sql-port 5432)
-                (sql-server "localhost")
-                (sql-user "imsveritastest1")
-                (sql-database "imsveritastest1db"))
+                (oic.prod
+                 (sql-name "oic.prod")
+                 (sql-default-directory "/oicdb:")
+                 (sql-product 'postgres)
+                 (sql-port 5432)
+                 (sql-server "localhost")
+                 (sql-user "imsoicprod")
+                 (sql-database "imsoicproddb"))
 
-               (glacier.test
-                (sql-name "glacier.test1")
-                (sql-default-directory "/glaciertest:")
-                (sql-product 'postgres)
-                (sql-port 5432)
-                (sql-server "localhost")
-                (sql-user "imsglaciertest1")
-                (sql-database "imsglaciertest1"))))
+                 (veritas.test
+                  (sql-name "veritas.test")
+                  (sql-default-directory "/veritastest:")
+                  (sql-product 'postgres)
+                  (sql-port 5432)
+                  (sql-server "localhost")
+                  (sql-user "imsveritastest1")
+                  (sql-database "imsveritastest1db"))
+
+                 (glacier.test
+                  (sql-name "glacier.test1")
+                  (sql-default-directory "/glaciertest:")
+                  (sql-product 'postgres)
+                  (sql-port 5432)
+                  (sql-server "localhost")
+                  (sql-user "imsglaciertest1")
+                  (sql-database "imsglaciertest1"))
+
+                 (glacier.prod
+                  (sql-name "glacier.prod")
+                  (sql-default-directory "/glacierdb:")
+                  (sql-product 'postgres)
+                  (sql-port 5432)
+                  (sql-server "localhost")
+                  (sql-user "imsuser")
+                  (sql-database "nebglacierproddb"))
+
+                  (glacier.prod.tunnel
+                   (sql-name "glacier.prod.tunnel")
+                   (sql-default-directory nil)
+                   (sql-product 'postgres)
+                   (sql-port 5436)
+                   (sql-server "localhost")
+                   (sql-user "imsuser")
+                   (sql-database "nebglacierproddb"))))
     #+END_SRC
 
     And this  makes all it all happen via M-x sql-xxx where xxx is the name of the pool in the prev list ex: sql-localhost.mbp
@@ -1406,6 +1434,10 @@
       (defun sql-glacier.prod ()
         (interactive)
         (my-sql-connect 'postgres 'glacier.prod))
+
+      (defun sql-glacier.prod.tunnel ()
+        (interactive)
+        (my-sql-connect 'postgres 'glacier.prod.tunnel))
 
       (defun sql-glacier.test ()
         (interactive)
@@ -1466,9 +1498,10 @@
         (when (eq sql-product 'postgres)
           ;; Allow symbol chars in database names in prompt.
           ;; Default postgres pattern was: "^\\w*=[#>] " (see `sql-product-alist').
-          (setq sql-prompt-regexp "^\\(?:\\sw\\|\\s_\\)*=[#>] ")
+          ;(setq sql-prompt-regexp "^\\(?:\\sw\\|\\s_\\)*=[#>] ")
+          (setq sql-prompt-regexp "^\w*[^=()]=>+ ")
           ;; Ditto for continuation prompt: "^\\w*[-(][#>] "
-          (setq sql-prompt-cont-regexp "^\\(?:\\sw\\|\\s_\\)*[-(][#>] "))
+          (setq sql-prompt-cont-regexp "^\w*[^=()]=>+ "))
 
         ;; Deal with inline prompts in query output.
         ;; Runs after `sql-interactive-remove-continuation-prompt'.
@@ -1513,6 +1546,19 @@
       (ad-activate 'sql-send-string)
     #+END_SRC
 
+*** Add echo queries to fix problem with postgres headers
+    #+BEGIN_SRC emacs-lisp
+    (add-hook 'sql-login-hook 'my-sql-login-hook)
+    (defun my-sql-login-hook ()
+     "Custom SQL log-in behaviours. See `sql-login-hook'."
+      ;; n.b. If you are looking for a response and need to parse the
+      ;; response, use `sql-redirect-value' instead of `comint-send-string'.
+      (when (eq sql-product 'postgres)
+       (let ((proc (get-buffer-process (current-buffer))))
+       ;; Output each query before executing it. (n.b. this also avoids
+       ;; the psql prompt breaking the alignment of query results.)
+        (comint-send-string proc "\\set ECHO queries\n"))))
+    #+END_SRC
 * Text Modes
 ** Check spelling
    #+BEGIN_SRC emacs-lisp
@@ -1738,14 +1784,19 @@
    #+END_SRC
 * Integrations
 ** Tramp
+
    Tramp defaults
-  #+BEGIN_SRC emacs-lisp
-  (setq auth-source-debug t)
-    (setq tramp-default-method "ssh")
-    (add-to-list 'tramp-default-user-alist
-                 '(nil "oicdb" "devel.jmayaalv"))
-    (add-to-list 'tramp-default-user-alist
-                 '(nil "veritastest" "devel.jmayaalv"))
-    (add-to-list 'tramp-default-user-alist
-                 '(nil nil "jmayaalv") t)
+
+   #+BEGIN_SRC emacs-lisp
+     (setq auth-source-debug t)
+     (setq tramp-default-method "ssh")
+     (add-to-list 'tramp-default-user-alist
+                  '(nil "oicdb" "devel.jmayaalv"))
+     (add-to-list 'tramp-default-user-alist
+                    '(nil "veritastest" "devel.jmayaalv"))
+     (add-to-list 'tramp-default-user-alist
+                  '(nil nil "jmayaalv") t)
+     (setq tramp-chunksize 500)
+     (eval-after-load 'tramp '(setenv "SHELL" "/bin/bash"))
+
   #+END_SRC

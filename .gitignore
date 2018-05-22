@@ -8,6 +8,8 @@
 /.emacs.d/elpa
 /.emacs.d/projectile-bookmarks.eld
 /.emacs.d/.cask/
+.emacs.d/eshell
+.emacs.d/sql
 .emacs.d/tramp
 .emacs.d/eshell/history
 .emacs.d/.emacs.desktop.lock

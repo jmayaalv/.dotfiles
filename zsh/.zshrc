@@ -1,6 +1,13 @@
+# this is a solution to emacs tramp timeout problem
+[ $TERM = "dumb" ] && unsetopt zle && PS1='$ '
+
 # If you come from bash you might have to change your $PATH.
 
- export PATH=$HOME/bin:/usr/local/bin:/Applications/Tools/apache-maven-3.3.3/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/Applications/Tools/apache-maven-3.3.3/bin:$PATH
+
+# Emacs Anywhere
+export EA_EDITOR='emacsclient -a "" -c --display ns'
+
  
 # Datomic
 
