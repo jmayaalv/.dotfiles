@@ -59,6 +59,7 @@
 
 ** Hippie Expand
 
+
    HippieExpand looks at the word before point and tries to expand it
    in various ways including expanding from a fixed list, expanding
    from matching text found in a buffer or expanding in ways defind by
@@ -967,31 +968,17 @@
     #+END_SRC
 
 *** yasnippet
-
     Template system for Emacs. It allows you to type an abbreviation
     and automatically expand it into function templates.
 
     #+BEGIN_SRC emacs-lisp
-      (maybe-install-and-require 'yasnippet)
+    (use-package yasnippet
+        :ensure t
+        :config
+        (setq yas-snippet-dirs      '("~/.emacs.d/snippets"))
+;        (yas-global-model 1)
+)
     #+END_SRC
-
-**** Snippet Directory
-
-     We need a place to add our snippets for each mode as well. We'll
-     put that in snippets.
-
-     #+BEGIN_SRC emacs-lisp
-       (setq yas/root-directory (concat user-emacs-directory "snippets"))
-     #+END_SRC
-
-**** Turn it on globally
-
-     And we want to add yasnippets to all modes where we have snippets.
-
-     #+BEGIN_SRC emacs-lisp
-       (yas-global-mode 1)
-     #+END_SRC
-
 **** Diminish it
 
      I don't need to see it everywhere though.
@@ -1232,8 +1219,8 @@
          (cljr-add-keybindings-with-prefix "C-c r"))
 
         (use-package clj-refactor
-          :ensure t
-          :config
+         :ensure t
+           :config
           (setq cljr-warn-on-eval nil)
           (add-hook 'clojure-mode-hook #'my-clojure-mode-hook)
           (diminish 'clj-refactor-mode))
@@ -1351,7 +1338,7 @@
       (maybe-install-and-require 'gist)
     #+END_SRC
 
-** sql
+** [#B] sql
 *** db list
     This is the list of db connections
     #+BEGIN_SRC emacs-lisp
@@ -1379,6 +1366,15 @@
                  (sql-default-directory "/oicdb:")
                  (sql-product 'postgres)
                  (sql-port 5432)
+                 (sql-server "localhost")
+                 (sql-user "imsoicprod")
+                 (sql-database "imsoicproddb"))
+
+                (oic.prod.tunnel
+                 (sql-name "oic.prod.tunnel")
+                 (sql-default-directory nil)
+                 (sql-product 'postgres)
+                 (sql-port 5437)
                  (sql-server "localhost")
                  (sql-user "imsoicprod")
                  (sql-database "imsoicproddb"))
@@ -1430,6 +1426,10 @@
       (defun sql-oic.prod ()
         (interactive)
         (my-sql-connect 'postgres 'oic.prod))
+
+      (defun sql-oic.prod.tunnel ()
+        (interactive)
+        (my-sql-connect 'postgres 'oic.prod.tunnel))
 
       (defun sql-glacier.prod ()
         (interactive)
