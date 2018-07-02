@@ -906,15 +906,28 @@
 
    #+END_SRC
 
+** Perspectives
+   Management workspaces
+   #+BEGIN_SRC emacs-lisp
+     (use-package perspective
+       :ensure t
+       :config (persp-mode))
+
+     (use-package persp-projectile
+       :ensure t
+       :requires perspective)
+   #+END_SRC
+
 ** workspaces
-   Easy workspaces creation and switching
+   Easy window management per perspective
    #+BEGIN_SRC emacs-lisp
      (use-package eyebrowse
        :ensure t
        :config(eyebrowse-mode t))
    #+END_SRC
+
 * Programming Modes
-** prog-mode
+** [#B] prog-mode
 *** company
     #+BEGIN_SRC emacs-lisp
       (use-package company-flx
