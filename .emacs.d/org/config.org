@@ -909,13 +909,13 @@
 ** Perspectives
    Management workspaces
    #+BEGIN_SRC emacs-lisp
-     (use-package perspective
-       :ensure t
-       :config (persp-mode))
+   ;  (use-package perspective
+    ;   :ensure t
+     ;  :config (persp-mode))
 
-     (use-package persp-projectile
-       :ensure t
-       :requires perspective)
+     ;(use-package persp-projectile
+      ; :ensure t
+      ; :requires perspective)
    #+END_SRC
 
 ** workspaces
@@ -926,6 +926,11 @@
        :config(eyebrowse-mode t))
    #+END_SRC
 
+** Ag
+   Text search
+   #+BEGIN_SRC emacs-lisp
+     (use-package ag :ensure t)
+   #+END_SRC
 * Programming Modes
 ** [#B] prog-mode
 *** company
