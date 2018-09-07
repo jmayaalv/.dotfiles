@@ -69,7 +69,8 @@
  '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
  '(safe-local-variable-values
    (quote
-    ((cider-refresh-after-fn . "integrant.repl/resume")
+    ((cider-preferred-build-tool . "clojure-cli")
+     (cider-refresh-after-fn . "integrant.repl/resume")
      (cider-refresh-before-fn . "integrant.repl/suspend")
      (projectile-grep-default-files quote
                                     ("*.clj" "*.cljs" "*.cljc"))

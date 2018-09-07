@@ -933,7 +933,7 @@
      (use-package ag :ensure t)
    #+END_SRC
 * Programming Modes
-** [#B] prog-mode
+** prog-mode
 *** company
     #+BEGIN_SRC emacs-lisp
       (use-package company-flx
@@ -1357,7 +1357,7 @@
       (maybe-install-and-require 'gist)
     #+END_SRC
 
-** [#B] sql
+** sql
 *** db list
     This is the list of db connections
     #+BEGIN_SRC emacs-lisp
@@ -1422,8 +1422,8 @@
                   (sql-product 'postgres)
                   (sql-port 5432)
                   (sql-server "localhost")
-                  (sql-user "imsuser")
-                  (sql-database "nebglacierproddb"))
+                  (sql-user "imsglacierprod")
+                  (sql-database "imsglacierproddb"))
 
                   (glacier.prod.tunnel
                    (sql-name "glacier.prod.tunnel")
@@ -1431,8 +1431,8 @@
                    (sql-product 'postgres)
                    (sql-port 5436)
                    (sql-server "localhost")
-                   (sql-user "imsuser")
-                   (sql-database "nebglacierproddb"))))
+                   (sql-user "imsglacierprod")
+                   (sql-database "imsglacierproddb"))))
     #+END_SRC
 
     And this  makes all it all happen via M-x sql-xxx where xxx is the name of the pool in the prev list ex: sql-localhost.mbp
