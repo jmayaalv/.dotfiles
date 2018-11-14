@@ -1,0 +1,527 @@
+#!/usr/bin/env bash
+usage() {
+        echo "Usage: imspush {prod|takstage|test|demo|omb|slftest}"
+}
+
+if [ "$#" -ne 1 ]; then
+        usage;
+        exit 1
+fi
+
+DIST=$1
+DESTSERVER=imsweb1
+DESTUSER=imsbuild
+IMSDIR=/home/shared/staging
+
+case "$DIST" in
+
+  api:test)
+       SRCFILE=/Users/jmaya/Documents/workspace/release/api/test/ims-api/target/uberjar/ims-api.jar
+       DESTFILE=/f01/veritas/test/staging/api/ims-api.jar
+       DESTSERVER=veritastest
+       rsync -avz --progress $SRCFILE $DESTUSER@$DESTSERVER:$DESTFILE
+       exit 0
+   ;;
+  omb)
+    SRCDIR=/Users/jmaya/Documents/workspace/release/omb/prod/beluca
+    DESTDIR=stage-ombprod
+    DESTSERVER=ombweb1
+    IMSDIR=/ombshared/omb/staging
+  ;;
+  nav:prod)
+    SRCDIR=/Users/jmaya/Documents/workspace/release/nav/prod/beluca
+    DESTDIR=stage-imsprod
+    DESTSERVER=navweb
+    IMSDIR=/usr/local/staging
+  ;;
+  slftest)
+    SRCDIR=/Users/jmaya/Documents/workspace/release/sunlife/test/beluca
+    DESTDIR=stage-imsprod
+    DESTSERVER=navweb
+    IMSDIR=/usr/local/staging
+  ;;
+  slftest1)
+    SRCDIR=/Users/jmaya/Documents/workspace/release/sunlife/test/beluca
+    DESTDIR=stage-imsprod
+    DESTSERVER=slftest1
+    IMSDIR=/usr/local/staging
+ ;;
+ slftest2)
+    SRCDIR=/Users/jmaya/Documents/workspace/release/sunlife/test/beluca
+    DESTDIR=stage-imsprod
+    DESTSERVER=slftest2
+    IMSDIR=/usr/local/staging
+ ;;
+ bbil)
+	SRCDIR=/Users/jmaya/Documents/workspace/release/bbil/test/beluca
+	DESTDIR=stage-bbilprod
+	DESTSERVER=bbweb1
+	IMSDIR=/u01/bcg/staging/
+ ;;
+ 
+ testbbil)
+     SRCDIR=/Users/jmaya/Documents/workspace/release/bbil/test/beluca
+     DESTDIR=stage-bbiltest
+     DESTSERVER=bbtest1
+     IMSDIR=/usr/local/staging/
+   ;;
+
+pbtest2)
+     SRCDIR=/Users/jmaya/Documents/workspace/release/bbil/test/beluca
+     DESTDIR=stage-bbiltest
+     DESTSERVER=pbtest2
+     IMSDIR=/usr/local/staging
+   ;;
+ 
+ bbil-edge:test)
+       SRCDIR=/Users/jmaya/Documents/workspace/release/ms-edge
+       DESTFILE=/Users/jmaya/Documents/workspace/release/ms-edge/edge-core/target/ms-edge-core-ms-edge*.jar
+       DESTSERVER=bbiltest2
+       EDGEDIR=/usr/local/staging/ims/stage-edge
+       rsync -avz --delete --progress $DESTFILE $DESTUSER@$DESTSERVER:$EDGEDIR
+       exit 0
+   ;;
+
+sunprod)
+    SRCDIR=/Users/jmaya/Documents/workspace/release/sunlife/test/beluca
+    DESTDIR=stage-imsprod
+    DESTSERVER=sunweb1
+    IMSDIR=/u01/slf/staging
+;;
+
+darta:test)
+    SRCDIR=/Users/jmaya/Documents/workspace/release/darta/test/beluca
+    DESTDIR=stage-imsprod
+    DESTSERVER=dartatest1
+    IMSDIR=/usr/local/staging
+;;
+
+omi:test)
+    SRCDIR=/Users/jmaya/Documents/workspace/release/omi/test/beluca
+    DESTDIR=stage-imsprod
+    DESTSERVER=omitest
+    IMSDIR=/f01/omi/test/staging
+;;
+
+omi:test2)
+    SRCDIR=/Users/jmaya/Documents/workspace/release/omi/test/beluca
+    DESTDIR=stage-imsprod
+    DESTSERVER=omitest2
+    IMSDIR=/f01/omi/test/staging
+;;
+
+oic:test2)
+    SRCDIR=/Users/jmaya/Documents/workspace/release/oic/test/beluca
+    DESTDIR=stage-imsprod
+    DESTSERVER=oictest2
+    IMSDIR=/f01/oic/test/staging/
+;;
+
+oic:test3)
+    SRCDIR=/Users/jmaya/Documents/workspace/release/oic/test/beluca
+    DESTDIR=stage-imsprod
+    DESTSERVER=oictest3
+    IMSDIR=/usr/local/staging
+;;
+
+oic:prod)
+    SRCDIR=/Users/jmaya/Documents/workspace/release/oic/prod/beluca
+    DESTDIR=stage-imsprod
+    DESTSERVER=oicweb1
+    IMSDIR=/u01/oic/staging
+;;
+
+oic:ps)
+    SRCDIR=/Users/jmaya/Documents/workspace/release/oic/test/beluca
+    DESTDIR=stage-ims
+    DESTSERVER=oicps
+    IMSDIR=/usr/local/staging
+;;
+
+oic:ps2)
+    SRCDIR=/Users/jmaya/Documents/workspace/release/oic/prod/beluca
+    DESTDIR=stage-ims
+    DESTSERVER=oicps2
+    IMSDIR=/usr/local/staging
+;;
+edge:ps2)
+       SRCFILE=/Users/jmaya/Documents/workspace/release/edge/test/ms-edge/edge/target/uberjar/edge.jar
+       DESTFILE=/usr/local/staging/edge/edge.jar
+       DESTSERVER=oicps2
+       EDGEDIR=/usr/local/staging/edge
+       rsync -avz --progress $SRCFILE $DESTUSER@$DESTSERVER:$DESTFILE
+       exit 0
+   ;;
+pricing:ps2)
+       SRCFILE=/Users/jmaya/Documents/workspace/release/test/ms-pricing/pricing-core/target/uberjar/pricing-core.jar
+       DESTFILE=/usr/local/staging/pricing/pricing-core.jar
+       DESTSERVER=oicps2
+       EDGEDIR=/usr/local/staging/pricing
+       rsync -avz --progress $SRCFILE $DESTUSER@$DESTSERVER:$DESTFILE
+       exit 0
+   ;;
+
+glacier:test)
+    SRCDIR=/Users/jmaya/Documents/workspace/release/glacier/test/beluca
+    DESTDIR=stage-imsprod
+    DESTSERVER=glaciertest
+    IMSDIR=/f01/glacier/test/staging/
+;;
+
+glacier:prod)
+    SRCDIR=/Users/jmaya/Documents/workspace/release/glacier/test/beluca
+    DESTDIR=stage-imsprod
+    DESTSERVER=glacierweb1
+    IMSDIR=/f01/glacier/prod/staging
+;;
+
+glacier:test2)
+    SRCDIR=/Users/jmaya/Documents/workspace/release/glacier/test/beluca
+    DESTDIR=stage-imsprod
+    DESTSERVER=glaciertest2
+    IMSDIR=/f01/glacier/test/staging
+;;
+
+pricing:sanlam)
+       SRCFILE=/Users/jmaya/Documents/workspace/release/pricing/test/ms-pricing/pricing-core/target/uberjar/pricing-core.jar
+       DESTFILE=/u01/sanlam/staging/pricing/pricing-core.jar
+       DESTSERVER=sanlamweb1
+       EDGEDIR=/u01/sanlam/staging/pricing
+       rsync -avz --progress $SRCFILE $DESTUSER@$DESTSERVER:$DESTFILE
+       exit 0
+   ;;
+
+pricing:argus)
+       SRCFILE=/Users/jmaya/Documents/workspace/release/pricing/test/ms-pricing/pricing-core/target/uberjar/pricing-core.jar
+       DESTFILE=/f01/argus/prod/staging/pricing/pricing-core.jar
+       DESTSERVER=argusprod
+       rsync -avz --progress $SRCFILE $DESTUSER@$DESTSERVER:$DESTFILE
+       exit 0
+   ;;
+
+pricing:sanlamtest)
+       SRCFILE=/Users/jmaya/Documents/workspace/release/pricing/test/ms-pricing/pricing-core/target/uberjar/pricing-core.jar
+       DESTFILE=/f01/sanlam/test/staging//pricing/pricing-core.jar
+       DESTSERVER=sanlamtest1
+       EDGEDIR=/usr/local/staging/pricing
+       rsync -avz --progress $SRCFILE $DESTUSER@$DESTSERVER:$DESTFILE
+       exit 0
+   ;;
+
+pricing:argustest1)
+       SRCFILE=/Users/jmaya/Documents/workspace/release/pricing/test/ms-pricing/pricing-core/target/uberjar/pricing-core.jar
+       DESTFILE=/f01/argus/test/staging/pricing/pricing-core.jar
+       DESTSERVER=argustest1
+       rsync -avz --progress $SRCFILE $DESTUSER@$DESTSERVER:$DESTFILE
+       exit 0
+   ;;
+
+pricing:argustest2)
+       SRCFILE=/Users/jmaya/Documents/workspace/release/pricing/test/ms-pricing/pricing-core/target/uberjar/pricing-core.jar
+       DESTFILE=/f01/argus/test/staging/pricing/pricing-core.jar
+       DESTSERVER=argustest2
+       rsync -avz --progress $SRCFILE $DESTUSER@$DESTSERVER:$DESTFILE
+       exit 0
+   ;;
+
+pricing:glacier)
+       SRCFILE=/Users/jmaya/Documents/workspace/release/pricing/test/ms-pricing/pricing-core/target/uberjar/pricing-core.jar
+       DESTFILE=/f01/glacier/prod/staging/pricing/pricing-core.jar
+       DESTSERVER=glacierweb1
+       EDGEDIR=/u01/sanlam/staging/pricing
+       rsync -avz --progress $SRCFILE $DESTUSER@$DESTSERVER:$DESTFILE
+       exit 0
+   ;;
+
+pricing:glaciertest)
+       SRCFILE=/Users/jmaya/Documents/workspace/release/pricing/test/ms-pricing/pricing-core/target/uberjar/pricing-core.jar
+       DESTFILE=/usr/local/staging/pricing/pricing-core.jar
+       DESTSERVER=glaciertest
+       rsync -avz --progress $SRCFILE $DESTUSER@$DESTSERVER:$DESTFILE
+       exit 0
+   ;;
+
+pricing:glaciertest2)
+       SRCFILE=/Users/jmaya/Documents/workspace/release/pricing/test/ms-pricing/pricing-core/target/uberjar/pricing-core.jar
+       DESTFILE=/usr/local/staging/pricing/pricing-core.jar
+       DESTSERVER=glaciertest2
+       rsync -avz --progress $SRCFILE $DESTUSER@$DESTSERVER:$DESTFILE
+       exit 0
+   ;;
+
+pricing:omitest)
+       SRCFILE=/Users/jmaya/Documents/workspace/release/pricing/test/ms-pricing/pricing-core/target/uberjar/pricing-core.jar
+       DESTFILE=/usr/local/staging/pricing/pricing-core.jar
+       DESTSERVER=omitest
+       rsync -avz --progress $SRCFILE $DESTUSER@$DESTSERVER:$DESTFILE
+       exit 0
+   ;;
+
+pricing:omitest2)
+       SRCFILE=/Users/jmaya/Documents/workspace/release/pricing/test/ms-pricing/pricing-core/target/uberjar/pricing-core.jar
+       DESTFILE=/usr/local/staging/pricing/pricing-core.jar
+       DESTSERVER=omitest2
+       rsync -avz --progress $SRCFILE $DESTUSER@$DESTSERVER:$DESTFILE
+       exit 0
+   ;;
+
+pricing:veritastest)
+       SRCFILE=/Users/jmaya/Documents/workspace/release/pricing/test/ms-pricing/pricing-core/target/uberjar/pricing-core.jar
+       DESTFILE=/f01/veritas/test/staging/pricing/pricing-core.jar
+       DESTSERVER=veritastest
+       rsync -avz --progress $SRCFILE $DESTUSER@$DESTSERVER:$DESTFILE
+       exit 0
+   ;;
+
+pricing:dartatest1)
+       SRCFILE=/Users/jmaya/Documents/workspace/release/pricing/test/ms-pricing/pricing-core/target/uberjar/pricing-core.jar
+       DESTFILE=/f01/darta/test/staging/pricing/pricing-core.jar
+       DESTSERVER=dartatest1
+       rsync -avz --progress $SRCFILE $DESTUSER@$DESTSERVER:$DESTFILE
+       exit 0
+   ;;
+
+veritas:test)
+    SRCDIR=/Users/jmaya/Documents/workspace/release/veritas/test/beluca
+    DESTDIR=stage-imsprod
+    DESTSERVER=veritastest
+    IMSDIR=/f01/veritas/test/staging
+;;
+
+sanlam:prod)
+    SRCDIR=/Users/jmaya/Documents/workspace/release/sanlam/prod/beluca
+    DESTDIR=stage-imsprod
+    DESTSERVER=sanlamweb1
+    IMSDIR=/f01/sanlam/prod/staging/
+;;
+
+sanlam:test)
+    SRCDIR=/Users/jmaya/Documents/workspace/release/sanlam/test/beluca
+    DESTDIR=stage-imsprod
+    DESTSERVER=sanlamtest1
+    IMSDIR=/f01/sanlam/test/staging/
+;;
+
+argus:test)
+    SRCDIR=/Users/jmaya/Documents/workspace/release/argus/test/beluca
+    DESTDIR=stage-imsprod
+    DESTSERVER=argustest1
+    IMSDIR=/f01/argus/test/staging
+;;
+
+argus:test2)
+    SRCDIR=/Users/jmaya/Documents/workspace/release/argus/test/beluca
+    DESTDIR=stage-imsprod
+    DESTSERVER=argustest2
+    IMSDIR=/f01/argus/test/staging
+;;
+
+edge:sanlam)
+       SRCFILE=/Users/jmaya/Documents/workspace/release/edge/test/ms-edge/edge/target/uberjar/edge.jar
+       DESTFILE=/f01/sanlam/prod/staging/edge/edge.jar
+       DESTSERVER=sanlamweb1
+       rsync -avz --progress $SRCFILE $DESTUSER@$DESTSERVER:$DESTFILE
+       exit 0
+   ;;
+
+edge:argus)
+       SRCFILE=/Users/jmaya/Documents/workspace/release/edge/test/ms-edge/edge/target/uberjar/edge.jar
+       DESTFILE=/f01/argus/prod/staging/edge/edge.jar
+       DESTSERVER=argusprod
+       rsync -avz --progress $SRCFILE $DESTUSER@$DESTSERVER:$DESTFILE
+       exit 0
+   ;;
+
+edge:sanlamtest)
+       SRCFILE=/Users/jmaya/Documents/workspace/release/edge/test/ms-edge/edge/target/uberjar/edge.jar
+       DESTFILE=/f01/sanlam/test/staging/edge/edge.jar
+       DESTSERVER=sanlamtest1
+       rsync -avz --progress $SRCFILE $DESTUSER@$DESTSERVER:$DESTFILE
+       exit 0
+   ;;
+
+edge:argustest1)
+       SRCFILE=/Users/jmaya/Documents/workspace/release/edge/test/ms-edge/edge/target/uberjar/edge.jar
+       DESTFILE=/f01/argus/test/staging/edge/edge.jar
+       DESTSERVER=argustest1
+       rsync -avz --progress $SRCFILE $DESTUSER@$DESTSERVER:$DESTFILE
+       exit 0
+   ;;
+
+edge:argustest2)
+       SRCFILE=/Users/jmaya/Documents/workspace/release/edge/test/ms-edge/edge/target/uberjar/edge.jar
+       DESTFILE=/f01/argus/test/staging/edge/edge.jar
+       DESTSERVER=argustest2
+       rsync -avz --progress $SRCFILE $DESTUSER@$DESTSERVER:$DESTFILE
+       exit 0
+   ;;
+
+edge:glacier)
+       SRCFILE=/Users/jmaya/Documents/workspace/release/edge/test/ms-edge/edge/target/uberjar/edge.jar
+       DESTFILE=/f01/glacier/prod/staging/edge/edge.jar
+       DESTSERVER=glacierweb1
+       rsync -avz --progress $SRCFILE $DESTUSER@$DESTSERVER:$DESTFILE
+       exit 0
+   ;;
+
+edge:glaciertest)
+       SRCFILE=/Users/jmaya/Documents/workspace/release/edge/test/ms-edge/edge/target/uberjar/edge.jar
+       DESTFILE=/f01/glacier/test/staging/edge/edge.jar
+       DESTSERVER=glaciertest
+       rsync -avz --progress $SRCFILE $DESTUSER@$DESTSERVER:$DESTFILE
+       exit 0
+   ;;
+
+edge:veritastest)
+       SRCFILE=/Users/jmaya/Documents/workspace/release/edge/test/ms-edge/edge/target/uberjar/edge.jar
+       DESTFILE=/f01/veritas/test/staging/edge/edge.jar
+       DESTSERVER=veritastest
+       rsync  --progress $SRCFILE $DESTUSER@$DESTSERVER:$DESTFILE
+       exit 0
+   ;;
+
+edge:glaciertest2)
+       SRCFILE=/Users/jmaya/Documents/workspace/release/edge/test/ms-edge/edge/target/uberjar/edge.jar
+       DESTFILE=/f01/glacier/test/staging/edge/edge.jar
+       DESTSERVER=glaciertest2
+       rsync -avz --progress $SRCFILE $DESTUSER@$DESTSERVER:$DESTFILE
+       exit 0
+   ;;
+
+
+edge:omitest)
+       SRCFILE=/Users/jmaya/Documents/workspace/release/edge/test/ms-edge/edge/target/uberjar/edge.jar
+       DESTFILE=/f01/omi/test/staging/edge/edge.jar
+       DESTSERVER=omitest
+       rsync -avz --progress $SRCFILE $DESTUSER@$DESTSERVER:$DESTFILE
+       exit 0
+   ;;
+
+edge:omitest2)
+       SRCFILE=/Users/jmaya/Documents/workspace/release/edge/test/ms-edge/edge/target/uberjar/edge.jar
+       DESTFILE=/f01/omi/test/staging/edge/edge.jar
+       DESTSERVER=omitest2
+       rsync -avz --progress $SRCFILE $DESTUSER@$DESTSERVER:$DESTFILE
+       exit 0
+   ;;
+
+edge:dartatest1)
+       SRCFILE=/Users/jmaya/Documents/workspace/release/edge/test/ms-edge/edge/target/uberjar/edge.jar
+       DESTFILE=/f01/darta/test/staging/edge/edge.jar
+       DESTSERVER=dartatest1
+       rsync -avz --progress $SRCFILE $DESTUSER@$DESTSERVER:$DESTFILE
+       exit 0
+   ;;
+
+edge-ui:sanlam)
+       SRCFILE=/Users/jmaya/Documents/workspace/release/edge/test/ms-edge/edge-ui-old/target/uberjar/edge-ui.jar
+       DESTFILE=/usr/local/staging/
+       DESTSERVER=sanlamweb1
+       rsync -avz --progress $SRCFILE $DESTUSER@$DESTSERVER:$DESTFILE
+       exit 0
+   ;;
+
+edge-ui:argus)
+       SRCFILE=/Users/jmaya/Documents/workspace/release/edge/test/ms-edge/edge-ui-old/target/uberjar/edge-ui.jar
+       DESTFILE=/f01/argus/prod/staging/edge/edge-ui.jar
+       DESTSERVER=argusprod
+       rsync -avz --progress $SRCFILE $DESTUSER@$DESTSERVER:$DESTFILE
+       exit 0
+   ;;
+
+edge-ui:sanlamtest)
+       SRCFILE=/Users/jmaya/Documents/workspace/release/edge/test/ms-edge/edge-ui-old/target/uberjar/edge-ui.jar
+       DESTFILE=/f01/sanlam/test/staging/edge/edge-ui.jar
+       DESTSERVER=sanlamtest1
+       EDGEDIR=/u01/sanlam/staging/edge
+       rsync -avz --progress $SRCFILE $DESTUSER@$DESTSERVER:$DESTFILE
+       exit 0
+   ;;
+
+edge-ui:argustest1)
+       SRCFILE=/Users/jmaya/Documents/workspace/release/edge/test/ms-edge/edge-ui-old/target/uberjar/edge-ui.jar
+       DESTFILE=/f01/argus/test/staging/edge/edge-ui.jar
+       DESTSERVER=argustest1
+       rsync -avz --progress $SRCFILE $DESTUSER@$DESTSERVER:$DESTFILE
+       exit 0
+   ;;
+
+edge-ui:argustest2)
+       SRCFILE=/Users/jmaya/Documents/workspace/release/edge/test/ms-edge/edge-ui-old/target/uberjar/edge-ui.jar
+       DESTFILE=/f01/argus/test/staging/edge/edge-ui.jar
+       DESTSERVER=argustest2
+       rsync -avz --progress $SRCFILE $DESTUSER@$DESTSERVER:$DESTFILE
+       exit 0
+   ;;
+
+edge-ui:glacier)
+       SRCFILE=/Users/jmaya/Documents/workspace/release/edge/test/ms-edge/edge-ui-old/target/uberjar/edge-ui.jar
+       DESTFILE=/f01/glacier/prod/staging/edge/edge-ui.jar
+       DESTSERVER=glacierweb1
+       rsync -avz --progress $SRCFILE $DESTUSER@$DESTSERVER:$DESTFILE
+       exit 0
+   ;;
+
+edge-ui:dartatest1)
+       SRCFILE=/Users/jmaya/Documents/workspace/release/edge/test/ms-edge/edge-ui-old/target/uberjar/edge-ui.jar
+       DESTFILE=/usr/local/staging/edge/edge-ui.jar
+       DESTSERVER=dartatest1
+       rsync -avz --progress $SRCFILE $DESTUSER@$DESTSERVER:$DESTFILE
+       exit 0
+   ;;
+
+
+edge-ui:glaciertest)
+       SRCFILE=/Users/jmaya/Documents/workspace/release/edge/test/ms-edge/edge-ui-old/target/uberjar/edge-ui.jar
+       DESTFILE=/f01/glacier/test/staging/edge/edge-ui.jar
+       DESTSERVER=glaciertest
+       rsync -avz --progress $SRCFILE $DESTUSER@$DESTSERVER:$DESTFILE
+       exit 0
+   ;;
+
+edge-ui:veritastest)
+       SRCFILE=/Users/jmaya/Documents/workspace/release/edge/test/ms-edge/edge-ui-old/target/uberjar/edge-ui.jar
+       DESTFILE=/f01/veritas/test/staging/edge/edge-ui.jar
+       DESTSERVER=veritastest
+       rsync -avz --progress $SRCFILE $DESTUSER@$DESTSERVER:$DESTFILE
+       exit 0
+   ;;
+
+edge-ui:glaciertest2)
+       SRCFILE=/Users/jmaya/Documents/workspace/release/edge/test/ms-edge/edge-ui-old/target/uberjar/edge-ui.jar
+       DESTFILE=/usr/local/staging/edge/edge-ui.jar
+       DESTSERVER=glaciertest2
+       rsync -avz --progress $SRCFILE $DESTUSER@$DESTSERVER:$DESTFILE
+       exit 0
+   ;;
+
+edge-ui:omitest)
+       SRCFILE=/Users/jmaya/Documents/workspace/release/edge/test/ms-edge/edge-ui-old/target/uberjar/edge-ui.jar
+       DESTFILE=/usr/local/staging/edge/edge-ui.jar
+       DESTSERVER=omitest
+       rsync -avz --progress $SRCFILE $DESTUSER@$DESTSERVER:$DESTFILE
+       exit 0
+   ;;
+
+edge-ui:omitest2)
+       SRCFILE=/Users/jmaya/Documents/workspace/release/edge/test/ms-edge/edge-ui-old/target/uberjar/edge-ui.jar
+       DESTFILE=/usr/local/staging/edge/edge-ui.jar
+       DESTSERVER=omitest2
+       rsync -avz --progress $SRCFILE $DESTUSER@$DESTSERVER:$DESTFILE
+       exit 0
+   ;;
+
+*)
+  echo "Error: Invalid parameter"
+  usage;
+  exit 1
+
+;;
+esac
+
+rsync -avz --delete -e  --exclude=WEB-INF/classes/clamav.properties --exclude=WEB-INF/classes/jdbc.properties --exclude=WEB-INF/classes/log4j.properties --exclude=WEB-INF/classes/commonConfig.xml $SRCDIR/ims-web/target/ims-web/ $DESTDIR
+
+
+rsync -avz --progress --delete $DESTDIR $DESTUSER@$DESTSERVER:$IMSDIR/ims/
+
+
