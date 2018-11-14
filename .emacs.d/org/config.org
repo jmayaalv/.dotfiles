@@ -24,6 +24,10 @@
    (maybe-install-and-require 'use-package)
    #+END_SRC
 * Globals
+** Disable toolbar
+  #+BEGIN_SRC emacs-lisp
+  (tool-bar-mode -1)
+  #+END_SRC
 ** Messing with elisp GC
  #+BEGIN_SRC emacs-lisp
    (defun my-minibuffer-setup-hook ()
