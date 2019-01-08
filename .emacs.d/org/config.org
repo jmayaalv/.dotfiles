@@ -214,6 +214,7 @@
       #+BEGIN_SRC emacs-lisp
       (blink-cursor-mode 0)
       (setq default-cursor-type 'bar)
+      (setq scroll-preserve-screen-position 'always)
       #+END_SRC
 ** Try packages without installing them
 
@@ -355,7 +356,6 @@
       ;;  :config (load-theme 'material-light t))
     #+END_SRC
 
-
 ** fonts
 
    Ah, the joys of playing with different monospaced fonts on
@@ -471,6 +471,7 @@
    #+BEGIN_SRC emacs-lisp
      (use-package spaceline
        :ensure t
+       :pin melpa-stable
        :config
        (setq-default mode-line-format '("%e" (:eval (spaceline-ml-main)))
                      spaceline-highlight-face-func 'spaceline-highlight-face-modified
@@ -482,6 +483,7 @@
 
       (use-package spaceline-config
              :ensure spaceline
+             :pin melpa-stable
              :config
              (diminish 'auto-revert-mode)
              (spaceline-emacs-theme)
@@ -641,8 +643,9 @@
     having line numbers and thus I've dumped linum-mode.
 
     #+BEGIN_SRC emacs-lisp
-      (maybe-install-and-require 'git-gutter-fringe+)
-      (global-git-gutter+-mode t)
+      (use-package git-gutter-fringe+
+       :ensure t
+       :config (global-git-gutter+-mode t))
     #+END_SRC
 
     It is also quite nice to be able to navigate a file by he git
@@ -1218,7 +1221,7 @@
 
 ***** hide the *nrepl-connection* and *nrepl-server* buffers from appearing
      #+BEGIN_SRC emacs-lisp
-     (setq nrepl-hide-special-buffers t)
+     ;(setq nrepl-hide-special-buffers t)
      #+END_SRC
 
 ***** Complete with tab
@@ -1823,3 +1826,6 @@
      (eval-after-load 'tramp '(setenv "SHELL" "/bin/bash"))
 
   #+END_SRC
+
+
+(setq scroll-preserve-screen-position t)
