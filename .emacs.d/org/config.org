@@ -567,7 +567,7 @@
       :ensure t
       :bind
       (("C-x C-r" . ido-recentf-open))
-      :config
+      :init
       (recentf-mode t)
       (setq recentf-max-saved-items 200))
 
@@ -1509,9 +1509,6 @@
        ;; the psql prompt breaking the alignment of query results.)
         (comint-send-string proc "\\set ECHO queries\n"))))
     #+END_SRC
-*** Automatically find the sql-buffer
-  #+begin_src emacs-lisp
-    (sql-set-sqli-buffer-generally)
   #+end_src
 * Text Modes
 ** Check spelling
