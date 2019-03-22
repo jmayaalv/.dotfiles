@@ -15,3 +15,5 @@
 /.emacs.d/eshell/history
 /.emacs.d/.emacs.desktop.lock
 /.emacs.d/.mc-lists.el
+/.emacs.d/transient/
+/.emacs.d/auto-save-list/
