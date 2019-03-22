@@ -408,15 +408,31 @@
    #+BEGIN_SRC emacs-lisp
      (tool-bar-mode -1)
      (scroll-bar-mode -1)
-     (setq-default display-line-numbers 'visual
-                   display-line-numbers-current-absolute t
-                   display-line-numbers-width 4
-                   display-line-numbers-widen t)
-     (set-face-attribute 'line-number-current-line nil
-                         :background "gray" :foreground "black")
      (column-number-mode 1)
-     (global-display-line-numbers-mode 1)
+     ;; (add-hook 'prog-mode-hook
+     ;;    (lambda ()
+     ;;        (display-line-numbers-mode 1)))
+     ;;  (add-hook 'prog-mode-hook
+     ;;    (lambda ()
+     ;;        (clojure-mode-hook 1)))
    #+END_SRC
+
+** Line numbers
+
+   Display the linenumbers in programming modes and other modes
+
+   #+begin_src emacs-lisp
+     (defun custom-display-line-numbers ()
+          (setq  display-line-numbers 'absolute
+          display-line-numbers-current-absolute t
+          display-line-numbers-width 4
+          display-line-numbers-widen t)
+          (set-face-attribute 'line-number-current-line nil
+                              :background "gray" :foreground "black"))
+
+     (add-hook 'prog-mode-hook (lambda ()
+                   (custom-display-line-numbers)))
+   #+end_src
 
 ** Startup Screen
 
@@ -589,10 +605,6 @@
 
         (when (executable-find "curl")
           (setq helm-google-suggest-use-curl-p t))
-
-        (add-hook 'helm-major-mode-hook
-                (lambda () (display-line-numbers-mode -1)))
-
 
         (setq helm-split-window-in-side-p     t ; open helm buffer inside current window, not occupy whole other window
               helm-move-to-line-cycle-in-source     t ; move to end or beginning of source when reaching top or bottom of source.
@@ -891,7 +903,6 @@
 ** discover my major
    Discover key bindings and descriptions for commands defined by a buffer's major and minor modes.
    #+begin_src emacs-lisp
-
      (use-package discover-my-major
        :ensure t
        :bind
@@ -1047,10 +1058,6 @@
 
 *** clojure
 **** cider
-***** install
-
-      You can get most of the clojure support by just elpa installing
-      cider.
 
       #+BEGIN_SRC emacs-lisp
                ;; load CIDER from its source code
@@ -1425,7 +1432,6 @@
                   (setq sql-alternate-buffer-name (sql-make-smart-buffer-name))
                   (sql-rename-buffer)))
     #+END_SRC
-
 *** Add a newline before the output
     #+BEGIN_SRC emacs-lisp
       ;; Silence compiler warnings
@@ -1713,7 +1719,9 @@
 ** rest
    #+begin_src emacs-lisp
      (use-package restclient
-       :ensure t)
+       :ensure t
+       :config
+       (add-to-list 'auto-mode-alist '("\\.rest\\'" . restclient-mode)))
    #+end_src
 ** Tramp
 
