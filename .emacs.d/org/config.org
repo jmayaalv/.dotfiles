@@ -233,7 +233,6 @@
    #+END_SRC
 
 * OSX Specific Setup
-
 ** # is broken on UK Macs
 
    On UK keyboards shift-3 is bound to £. This is a real pain. The #
@@ -597,7 +596,6 @@
    (setq dired-listing-switches "-alh")
    #+END_SRC
 
-
 ** helm-mode
    #+BEGIN_SRC emacs-lisp
       (use-package helm
@@ -642,13 +640,9 @@
 
     #+BEGIN_SRC emacs-lisp
       (use-package magit
-        :ensure t)
-    #+END_SRC
-
-    I use magit-status a lot. So let's bind it to C-x g.
-
-    #+BEGIN_SRC emacs-lisp
-      (global-set-key (kbd "C-x g") 'magit-status)
+      :ensure t
+       :bind
+       ("C-x g" . magit-status))
     #+END_SRC
 
 *** git-gutter-mode+
@@ -656,14 +650,14 @@
     It is really nice having +/= in the gutter.
 
     #+BEGIN_SRC emacs-lisp
-       (use-package git-gutter-fringe+
-        :ensure t
-        :bind
-        (("s-n" . git-gutter+-next-hunk)
-         ("s-p") . git-gutter+-previous-hunk)
-        :config
-        (global-git-gutter+-mode t)
-        (diminish 'git-gutter+-mode))
+      (use-package git-gutter-fringe+
+       :ensure t
+       :bind
+       (("s-n" . git-gutter+-next-hunk)
+        ("s-p" . git-gutter+-previous-hunk))
+       :config
+       (global-git-gutter+-mode t)
+       (diminish 'git-gutter+-mode))
     #+END_SRC
 ** swiper
    #+BEGIN_SRC emacs-lisp
