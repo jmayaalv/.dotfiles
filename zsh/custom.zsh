@@ -3,6 +3,8 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Git
 alias git='LANG=en_US git'
+alias em='/Applications/Emacs.app/Contents/MacOS/bin-x86_64-10_9/emacsclient --alternate-editor ~/.emacs.d/daemon.sh '
+export TERM="xterm-256color"
 
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Power Level 9k custom
 
