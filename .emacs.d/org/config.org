@@ -409,12 +409,6 @@
      (tool-bar-mode -1)
      (scroll-bar-mode -1)
      (column-number-mode 1)
-     ;; (add-hook 'prog-mode-hook
-     ;;    (lambda ()
-     ;;        (display-line-numbers-mode 1)))
-     ;;  (add-hook 'prog-mode-hook
-     ;;    (lambda ()
-     ;;        (clojure-mode-hook 1)))
    #+END_SRC
 
 ** Line numbers
@@ -428,7 +422,7 @@
           display-line-numbers-width 4
           display-line-numbers-widen t)
           (set-face-attribute 'line-number-current-line nil
-                              :background "gray" :foreground "black"))
+                              :background "#696969" :foreground "black"))
 
      (add-hook 'prog-mode-hook (lambda ()
                    (custom-display-line-numbers)))
