@@ -513,7 +513,7 @@
   (use-package dimmer
     :ensure t
     :config
-    (setq dimmer-percent 0.3)
+    (setq dimmer-percent 0.4)
     (dimmer-activate))
  #+END_SRC
 ** Beacon
