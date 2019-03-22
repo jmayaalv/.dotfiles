@@ -622,14 +622,8 @@
               helm-scroll-amount                    8 ; scroll 8 lines other window using M-<next>/M-<prior>
               helm-ff-file-name-history-use-recentf t)
 
-        (helm-mode 1))
-   #+END_SRC
-
-   We can diminish how much room helm-mode takes up on the command
-   line.
-
-   #+BEGIN_SRC emacs-lisp
-     (diminish 'helm-mode)
+        (helm-mode 1)
+        (diminish 'helm-mode))
    #+END_SRC
 
 ** git
@@ -655,7 +649,7 @@
        :bind
        (("s-n" . git-gutter+-next-hunk)
         ("s-p" . git-gutter+-previous-hunk))
-       :config
+       :init
        (global-git-gutter+-mode t)
        (diminish 'git-gutter+-mode))
     #+END_SRC
@@ -916,6 +910,16 @@
    #+BEGIN_SRC emacs-lisp
    (use-package midnight :ensure t)
    #+END_SRC
+** discover my major
+   Discover key bindings and descriptions for commands defined by a buffer's major and minor modes.
+   #+begin_src emacs-lisp
+
+     (use-package discover-my-major
+       :ensure t
+       :bind
+       (("C-h M-m" . discover-my-major)
+        ("C-h M-M" . discover-my-mode)))
+   #+end_src
 * Programming Modes
 ** prog-mode
 *** company
