@@ -67,6 +67,7 @@
 
 ** Hippie Expand
 
+
    HippieExpand looks at the word before point and tries to expand it
    in various ways including expanding from a fixed list, expanding
    from matching text found in a buffer or expanding in ways defind by
@@ -322,16 +323,6 @@
       (setq custom-theme-directory (concat user-emacs-directory "themes"))
     #+END_SRC
 
-*** grandshell
-
-    I've been finding lots of interesting things from [[https://twitter.com/steckerhalter][steckerhalter]]
-    and this [[https://github.com/steckerhalter/grandshell-theme][grandshell]] theme looks pretty good. I'm going to try it
-    for a while.
-
-    #+BEGIN_SRC emacs-lisp
-      ; (maybe-install-and-require 'grandshell-theme)
-    #+END_SRC
-
 *** all the icons
 
     #+BEGIN_SRC emacs-lisp
@@ -340,24 +331,10 @@
     #+END_SRC
 
 *** theme
-
-
-
     #+BEGIN_SRC emacs-lisp
     (use-package zenburn-theme
       :ensure t
       :config (load-theme 'zenburn t))
-
-      ;(use-package solarized-theme
-      ;  :ensure t
-      ;  :config (load-theme 'solarized-dark t))
-;      (use-package zenburn-theme
- ;      :ensure t
-  ;     :config
-   ;    (load-theme 'zenburn t))
-      ;; (use-package material-theme
-      ;;  :ensure t
-      ;;  :config (load-theme 'material-light t))
     #+END_SRC
 
 ** fonts
@@ -443,7 +420,7 @@
 
 ** Startup Screen
 
-   I'd also like to ski the startup screen and go straight to
+   I'd also like to skip the startup screen and go straight to
    the *scratch* buffer.
 
    #+BEGIN_SRC emacs-lisp
@@ -559,10 +536,11 @@
    #+END_SRC
 ** undo tree
    #+BEGIN_SRC emacs-lisp
-     (use-package undo-tree
+   (use-package undo-tree
        :ensure t
-       :config (progn (global-undo-tree-mode)
-                      (diminish 'undo-tree-mode)))
+       :config
+       (global-undo-tree-mode)
+       (diminish 'undo-tree-mode))
    #+END_SRC
 ** recentf
   #+BEGIN_SRC emacs-lisp
