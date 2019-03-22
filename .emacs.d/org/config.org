@@ -1281,27 +1281,32 @@
     #+END_SRC
 
 ** sql
+*** Add sql-mode to .sql files
+
+    #+begin_src emacs-lisp
+    (add-to-list 'auto-mode-alist '("\\.sql\\'" . sql-mode))
+    #+end_src
 *** db list
     This is the list of db connections
     #+BEGIN_SRC emacs-lisp
       (setq sql-connection-alist
-              '((localhost.mbp
-                 (sql-name "localhost.imsproddb")
+              '((localhost.dev
+                 (sql-name "localhost.dev")
                  (sql-default-directory nil)
                  (sql-product 'postgres)
                  (sql-port 5432)
                  (sql-server "localhost")
-                 (sql-user "imsproddb")
-                 (sql-database "imsproddb"))
+                 (sql-user "imsdev")
+                 (sql-database "imsdb_dev"))
 
-                (localhost.mbp
-                 (sql-name "localhost.edgetest")
+                (localhost.test
+                 (sql-name "localhost.test")
                  (sql-default-directory nil)
                  (sql-product 'postgres)
                  (sql-port 5432)
                  (sql-server "localhost")
-                 (sql-user "edgetest")
-                 (sql-database "edgetest"))
+                 (sql-user "imstest")
+                 (sql-database "imsdb_test"))
 
                 (oic.prod
                  (sql-name "oic.prod")
@@ -1361,9 +1366,13 @@
     And this  makes all it all happen via M-x sql-xxx where xxx is the name of the pool in the prev list ex: sql-localhost.mbp
 
     #+BEGIN_SRC emacs-lisp
-      (defun sql-localhost.mbp ()
+      (defun sql-localhost.dev ()
         (interactive)
-        (my-sql-connect  'postgres 'localhost.mbp))
+        (my-sql-connect  'postgres 'localhost.dev))
+
+      (defun sql-localhost.test ()
+        (interactive)
+        (my-sql-connect  'postgres 'localhost.test))
 
       (defun sql-oic.prod ()
         (interactive)
@@ -1500,6 +1509,10 @@
        ;; the psql prompt breaking the alignment of query results.)
         (comint-send-string proc "\\set ECHO queries\n"))))
     #+END_SRC
+*** Automatically find the sql-buffer
+  #+begin_src emacs-lisp
+    (sql-set-sqli-buffer-generally)
+  #+end_src
 * Text Modes
 ** Check spelling
    #+BEGIN_SRC emacs-lisp
