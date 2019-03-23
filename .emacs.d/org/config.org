@@ -1413,7 +1413,8 @@
 
                 (oic.prod
                  (sql-name "oic.prod")
-                 (sql-default-directory "/oicdb:")
+                 (sql-default-directory "/ssh:devel.jmayaalv@oicdb:")
+                 (sql-postgres-program"/usr/local/pgsql/bin/psql")
                  (sql-product 'postgres)
                  (sql-port 5432)
                  (sql-server "localhost")
@@ -1449,7 +1450,8 @@
 
                  (glacier.prod
                   (sql-name "glacier.prod")
-                  (sql-default-directory "/glacierdb:")
+                  (sql-postgres-program"/usr/local/pgsql/bin/psql")
+                  (sql-default-directory "/ssh:devel.jmayaalv@glacierdb:")
                   (sql-product 'postgres)
                   (sql-port 5432)
                   (sql-server "localhost")
@@ -1552,7 +1554,9 @@
       (add-hook 'sql-interactive-mode-hook 'sqli-add-hooks)
     #+END_SRC
 
-**  #+end_src
+
+    #+END_SRC
+  #+end_src
 * Text Modes
 ** Check spelling
    #+BEGIN_SRC emacs-lisp
@@ -1789,3 +1793,17 @@
 
 (report-errors "File mode specification error: %s"
   (set-auto-mode))
+** gpg
+
+   Secrets are safe here
+
+   #+begin_src emacs-lisp
+   (setq auth-sources
+    '((:source "~/.emacs.d/secrets/.authinfo.gpg")))
+   #+end_src
+
+   Handle querying the passphrase through minibuffer.
+
+   #+begin_src emacs-lisp
+   (setq epa-pinentry-mode 'loopback)
+   #+end_src
