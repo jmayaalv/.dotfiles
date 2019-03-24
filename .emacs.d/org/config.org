@@ -628,8 +628,10 @@
 
      (setq-default mode-line-format
                    (list
-
                     mode-line-modified
+
+                    ;; flycheck
+                    flycheck-mode-line
 
                     mode-line-front-space
 
@@ -652,14 +654,13 @@
 
                     ;;minor-mode-alist
                     mode-line-modes
+
                     ;; spaces to align right
                     '(:eval (propertize
                      " " 'display
                      `((space :align-to (- (+ right right-fringe right-margin)
                                            ,(+ 3 (string-width mode-name)))))))
 
-
-                    flycheck-mode-line
                     ;; the current major mode
                     (propertize " %m " 'face 'font-lock-string-face)
 
