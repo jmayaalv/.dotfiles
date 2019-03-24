@@ -327,7 +327,25 @@
 
     #+BEGIN_SRC emacs-lisp
       (use-package all-the-icons
-        :ensure t)
+        :ensure t
+        :init
+        (progn (defun -custom-modeline-github-vc ()
+                 (let ((branch (mapconcat 'concat (cdr (split-string vc-mode "[:-]")) "-")))
+                   (concat
+                    (propertize (format " %s" (all-the-icons-octicon "git-branch"))
+                                'face `(:height 1 :family ,(all-the-icons-octicon-family))
+                                'display '(raise 0))
+                    (propertize (format " %s" branch))
+                    (propertize "  "))))
+
+               (defvar mode-line-my-vc
+                 '(:propertize
+                   (:eval (when vc-mode
+                            (cond
+                             ((string-match "Git[:-]" vc-mode) (-custom-modeline-github-vc))
+                             (t (format "%s" vc-mode)))))
+                   face mode-line-directory)
+                 "Formats the current directory.")))
     #+END_SRC
 
 *** theme
@@ -603,6 +621,11 @@
      ;;                 mode-line-modes
      ;;                 mode-line-misc-info
      ;;                 mode-line-end-spaces))
+
+     (setq flycheck-mode-line '(:eval (replace-regexp-in-string
+                                           "FlyC" "𝓕"
+                                           (flycheck-mode-line-status-text))))
+
      (setq-default mode-line-format
                    (list
 
@@ -610,8 +633,11 @@
 
                     mode-line-front-space
 
-                    '(:eval (propertize (substring vc-mode 5)
-                                        'face 'font-lock-comment-face))
+                    mode-line-my-vc
+                    ;mode-line-my-vc
+                    ;; '(:eval (concat (propertize (format: " %s" (all-the-icons-octicon "Git-branch")))
+                    ;;          (propertize (substring vc-mode 5)
+                    ;;                      'face 'font-lock-comment-face)))
 
                     ;; the buffer name; the file name as a tool tip
                     '(:eval (propertize " %b "
@@ -624,15 +650,19 @@
 
                     mode-line-position
 
+                    ;;minor-mode-alist
+                    mode-line-modes
                     ;; spaces to align right
                     '(:eval (propertize
                      " " 'display
                      `((space :align-to (- (+ right right-fringe right-margin)
                                            ,(+ 3 (string-width mode-name)))))))
 
+
+                    flycheck-mode-line
                     ;; the current major mode
                     (propertize " %m " 'face 'font-lock-string-face)
-                    ;;minor-mode-alist
+
                     ))
 
      (set-face-attribute 'mode-line nil
@@ -1402,6 +1432,11 @@
        (use-package flycheck-joker
          :ensure t
          :requires flycheck)
+
+       (use-package flycheck-color-mode-line
+         :ensure t
+         :requires flycheck
+         :config (add-hook 'flycheck-mode-hook 'flycheck-color-mode-line-mode))
      #+END_SRC
 ** javascript
 
