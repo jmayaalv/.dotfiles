@@ -1047,13 +1047,13 @@
 ** Perspectives
    Management workspaces
    #+begin_src emacs-lisp
-     (use-package perspective
-       :ensure t
-       :init (persp-mode))
+ ;;    (use-package perspective
+ ;;      :ensure t
+  ;;     :init (persp-mode))
 
-     (use-package persp-projectile
-       :ensure t
-       :requires perspective)
+  ;;   (use-package persp-projectile
+  ;;     :ensure t
+  ;;     :requires perspective)
    #+end_src
 
 ** workspaces
@@ -1720,9 +1720,9 @@
                     ("DONE" ("WAITING") ("CANCELLED") ("HOLD")))))
 
     #+end_src
-*** capture
+*** Capture
     #+begin_src emacs-lisp
-
+      (setq org-directory "~/org")
 
       ;; Capture templates for: TODO tasks, Notes, appointments, phone calls, meetings, and org-protocol
       (setq org-capture-templates
@@ -1738,6 +1738,43 @@
                      "* MEETING with %? :MEETING:\n%U" :clock-in t :clock-resume t)
                     ("h" "Habit" entry (file "~/org/refile.org")
                      "* NEXT %?\n%U\n%a\nSCHEDULED: %(format-time-string \"%<<%Y-%m-%d %a .+1d/3d>>\")\n:PROPERTIES:\n:STYLE: habit\n:REPEAT_TO_STATE: NEXT\n:END:\n"))))
+
+      ;; Remove empty LOGBOOK drawers on clock out
+      (defun jm/remove-empty-drawer-on-clock-out ()
+        (interactive)
+        (save-excursion
+          (beginning-of-line 0)
+          (org-remove-empty-drawer-at "LOGBOOK" (point))))
+
+      (add-hook 'org-clock-out-hook 'jm/remove-empty-drawer-on-clock-out 'append)
+    #+end_src
+*** Refile
+
+    #+begin_src emacs-lisp
+      ;;Targets include this file and any file contributing to the agenda - up to 9 levels deep
+      (setq org-refile-targets (quote ((nil :maxlevel . 9)
+                                       (org-agenda-files :maxlevel . 9))))
+
+      ; Use full outline paths for refile targets
+      (setq org-refile-use-outline-path t)
+
+      ; Targets complete directly
+      (setq org-outline-path-complete-in-steps nil)
+
+      ; Allow refile to create parent tasks with confirmation
+      (setq org-refile-allow-creating-parent-nodes (quote confirm))
+
+      ; Use the current window for indirect buffer display
+      (setq org-indirect-buffer-display 'current-window)
+
+      ; Exclude DONE state tasks from refile targets
+      (defun bh/verify-refile-target ()
+        "Exclude todo keywords with a done state from refile targets"
+        (not (member (nth 2 (org-heading-components)) org-done-keywords)))
+
+      (setq org-refile-target-verify-function 'bh/verify-refile-target)
+
+
     #+end_src
 *** fontify
 
