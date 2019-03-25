@@ -344,7 +344,7 @@
                             (cond
                              ((string-match "Git[:-]" vc-mode) (-custom-modeline-github-vc))
                              (t (format "%s" vc-mode)))))
-                   face mode-line-directory)
+                    )
                  "Formats the current directory.")))
     #+END_SRC
 
@@ -418,10 +418,7 @@
 ** bars, menus and numbers
 
 
-   I like no scroll bars, no toolbars and line and column numbers in
-   the mode-line. I like having the menus, unless I"m in a terminal as
-   I sometimes discover keybindings or functions I wasn't aware of
-   before.
+   I like no scroll bars, no toolbars.
 
    #+BEGIN_SRC emacs-lisp
      (tool-bar-mode -1)
@@ -636,7 +633,7 @@
                    (list
                     mode-line-modified
 
-                    ;;mode-line-front-space
+                    mode-line-front-space
 
                     mode-line-my-vc
 
@@ -1049,7 +1046,7 @@
 
 ** Perspectives
    Management workspaces
-   #+BEGIN_SRC emacs-lisp
+   #+begin_src emacs-lisp
      (use-package perspective
        :ensure t
        :config (persp-mode))
@@ -1057,7 +1054,7 @@
      (use-package persp-projectile
        :ensure t
        :requires perspective)
-   #+END_SRC
+   #+end_src
 
 ** workspaces
    Easy window management per perspective
