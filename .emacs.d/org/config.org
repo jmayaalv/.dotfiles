@@ -1681,6 +1681,49 @@
       (global-set-key (kbd "C-c d") 'org-todo)
       (global-set-key (kbd "C-c c") 'org-capture)
     #+END_SRC
+*** Agenda
+    #+begin_src emacs-lisp
+      (setq org-agenda-files (quote ("~/org"
+                                     "~/org/edge"
+                                     "~/org/api"
+                                     "~/org/architecture")))
+    #+end_src
+*** Todo
+    #+begin_src emacs-lisp
+      (setq org-todo-keywords
+            (quote ((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d)")
+                    (sequence "WAITING(w@/!)" "HOLD(h@/!)" "|" "CANCELLED(c@/!)" "PHONE" "MEETING"))))
+
+      (setq org-todo-keyword-faces
+            (quote (("TODO" :foreground "red" :weight bold)
+                    ("NEXT" :foreground "blue" :weight bold)
+                    ("DONE" :foreground "forest green" :weight bold)
+                    ("WAITING" :foreground "orange" :weight bold)
+                    ("HOLD" :foreground "magenta" :weight bold)
+                    ("CANCELLED" :foreground "forest green" :weight bold)
+                    ("MEETING" :foreground "forest green" :weight bold)
+                    ("PHONE" :foreground "forest green" :weight bold))))
+
+    #+end_src
+*** capture
+    #+begin_src emacs-lisp
+
+
+      ;; Capture templates for: TODO tasks, Notes, appointments, phone calls, meetings, and org-protocol
+      (setq org-capture-templates
+            (quote (("t" "todo" entry (file "~/org/refile.org")
+                     "* TODO %?\n%U\n%a\n" :clock-in t :clock-resume t)
+                    ("r" "respond" entry (file "~/org/refile.org")
+                     "* NEXT Respond to %:from on %:subject\nSCHEDULED: %t\n%U\n%a\n" :clock-in t :clock-resume t :immediate-finish t)
+                    ("n" "note" entry (file "~/org/refile.org")
+                     "* %? :NOTE:\n%U\n%a\n" :clock-in t :clock-resume t)
+                    ("w" "org-protocol" entry (file "~/org/refile.org")
+                     "* TODO Review %c\n%U\n" :immediate-finish t)
+                    ("m" "Meeting" entry (file "~/org/refile.org")
+                     "* MEETING with %? :MEETING:\n%U" :clock-in t :clock-resume t)
+                    ("h" "Habit" entry (file "~/org/refile.org")
+                     "* NEXT %?\n%U\n%a\nSCHEDULED: %(format-time-string \"%<<%Y-%m-%d %a .+1d/3d>>\")\n:PROPERTIES:\n:STYLE: habit\n:REPEAT_TO_STATE: NEXT\n:END:\n"))))
+    #+end_src
 *** fontify
 
     This is all written in org-mode. It would be good if the source
@@ -1690,10 +1733,6 @@
       (setq org-src-fontify-natively t)
     #+END_SRC
 
-*** capture
-    #+begin_src emacs-lisp
-
-    #+end_src
 *** spelling
 
     On a Mac we need to tell org-mode to use aspell, which we
