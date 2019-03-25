@@ -1050,13 +1050,13 @@
 ** Perspectives
    Management workspaces
    #+BEGIN_SRC emacs-lisp
-   ;  (use-package perspective
-    ;   :ensure t
-     ;  :config (persp-mode))
+     (use-package perspective
+       :ensure t
+       :config (persp-mode))
 
-     ;(use-package persp-projectile
-      ; :ensure t
-      ; :requires perspective)
+     (use-package persp-projectile
+       :ensure t
+       :requires perspective)
    #+END_SRC
 
 ** workspaces
