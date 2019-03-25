@@ -1049,7 +1049,7 @@
    #+begin_src emacs-lisp
      (use-package perspective
        :ensure t
-       :config (persp-mode))
+       :init (persp-mode))
 
      (use-package persp-projectile
        :ensure t
@@ -1527,6 +1527,16 @@
                   (sql-user "imsveritastest1")
                   (sql-database "imsveritastest1db"))
 
+                 (veritas.prod
+                  (sql-name "veritas.prod")
+                  (sql-postgres-program"/usr/local/pgsql/bin/psql")
+                  (sql-default-directory "/ssh:devel.jmayaalv@veritasprod:")
+                  (sql-product 'postgres)
+                  (sql-port 5432)
+                  (sql-server "localhost")
+                  (sql-user "imsveritasprod")
+                  (sql-database "imsveritasproddb"))
+
                  (glacier.test
                   (sql-name "glacier.test1")
                   (sql-default-directory "/glaciertest:")
@@ -1590,6 +1600,10 @@
       (defun sql-veritas.test ()
         (interactive)
         (my-sql-connect 'postgres 'veritas.test))
+
+      (defun sql-veritas.prod ()
+        (interactive)
+        (my-sql-connect 'postgres 'veritas.prod))
 
       (defun my-sql-connect (product connection)
         (setq sql-product product)
@@ -1660,7 +1674,12 @@
    making me want to try though.
 
     #+BEGIN_SRC emacs-lisp
-    (setq org-replace-disputed-keys t)
+      (setq org-replace-disputed-keys t)
+
+      (global-set-key (kbd "C-c l") 'org-store-link)
+      (global-set-key (kbd "C-c a") 'org-agenda)
+      (global-set-key (kbd "C-c d") 'org-todo)
+      (global-set-key (kbd "C-c c") 'org-capture)
     #+END_SRC
 *** fontify
 
@@ -1671,6 +1690,10 @@
       (setq org-src-fontify-natively t)
     #+END_SRC
 
+*** capture
+    #+begin_src emacs-lisp
+
+    #+end_src
 *** spelling
 
     On a Mac we need to tell org-mode to use aspell, which we
@@ -1747,6 +1770,15 @@
         (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
     #+END_SRC
 
+*** Org-Reveal
+   Write[[http://lab.hakim.se/reveal-js/#/fragments][ Reveal.js]]
+   #+BEGIN_SRC emacs-lisp
+     ;; (use-package ox-reveal
+     ;;   :ensure t
+     ;;   :init (progn
+     ;;           (setq org-reveal-root "https://cdn.jsdelivr.net/reveal.js/3.0.0/")
+     ;;           (setq org-reveal-mathjax t)))
+   #+END_SRC
 ** html, sgml, xml
 
 *** tagedit
@@ -1840,15 +1872,6 @@
        (setq markdown-open-command "open")
      #+END_SRC
 
-** Org-Reveal
-   Write[[http://lab.hakim.se/reveal-js/#/fragments][ Reveal.js]]
-   #+BEGIN_SRC emacs-lisp
-     ;; (use-package ox-reveal
-     ;;   :ensure t
-     ;;   :init (progn
-     ;;           (setq org-reveal-root "https://cdn.jsdelivr.net/reveal.js/3.0.0/")
-     ;;           (setq org-reveal-mathjax t)))
-   #+END_SRC
 ** Json
    #+BEGIN_SRC emacs-lisp
      (use-package json-mode
