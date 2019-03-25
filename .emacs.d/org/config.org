@@ -1675,17 +1675,22 @@
 
     #+BEGIN_SRC emacs-lisp
       (setq org-replace-disputed-keys t)
+      (setq org-use-fast-todo-selection t)
+      (setq org-treat-S-cursor-todo-selection-as-state-change nil)
 
       (global-set-key (kbd "C-c l") 'org-store-link)
       (global-set-key (kbd "C-c a") 'org-agenda)
-      (global-set-key (kbd "C-c d") 'org-todo)
+      (global-set-key (kbd "C-c b") 'org-switchb)
       (global-set-key (kbd "C-c c") 'org-capture)
+      (global-set-key (kbd "C-c w") 'widen)
+      (global-set-key (kbd "C-c n") 'calendar)
+
     #+END_SRC
 *** Agenda
     #+begin_src emacs-lisp
       (setq org-agenda-files (quote ("~/org"
-                                     "~/org/edge"
-                                     "~/org/api"
+                                     "~/Workspace/ms-edge/edge/docs/org"
+                                     "~/Workspace/ims-api/docs/org"
                                      "~/org/architecture")))
     #+end_src
 *** Todo
@@ -1703,6 +1708,16 @@
                     ("CANCELLED" :foreground "forest green" :weight bold)
                     ("MEETING" :foreground "forest green" :weight bold)
                     ("PHONE" :foreground "forest green" :weight bold))))
+
+
+      (setq org-todo-state-tags-triggers
+            (quote (("CANCELLED" ("CANCELLED" . t))
+                    ("WAITING" ("WAITING" . t))
+                    ("HOLD" ("WAITING") ("HOLD" . t))
+                    (done ("WAITING") ("HOLD"))
+                    ("TODO" ("WAITING") ("CANCELLED") ("HOLD"))
+                    ("NEXT" ("WAITING") ("CANCELLED") ("HOLD"))
+                    ("DONE" ("WAITING") ("CANCELLED") ("HOLD")))))
 
     #+end_src
 *** capture
