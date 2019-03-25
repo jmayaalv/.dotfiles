@@ -622,26 +622,24 @@
      ;;                 mode-line-misc-info
      ;;                 mode-line-end-spaces))
 
-     (setq flycheck-mode-line '(:eval (replace-regexp-in-string
-                                           "FlyC" "𝓕"
-                                           (flycheck-mode-line-status-text))))
+       (defun d/flycheck-lighter (state)
+         "Return flycheck information for the given error type STATE.
+
+     Source: https://git.io/vQKzv"
+         (let* ((counts (flycheck-count-errors flycheck-current-errors))
+                (errorp (flycheck-has-current-errors-p state))
+                (err (or (cdr (assq state counts)) "?"))
+                (running (eq 'running flycheck-last-status-change)))
+           (if (or errorp running) (format "•%s" err))))
 
      (setq-default mode-line-format
                    (list
                     mode-line-modified
 
-                    ;; flycheck
-                    flycheck-mode-line
-
-                    mode-line-front-space
+                    ;;mode-line-front-space
 
                     mode-line-my-vc
-                    ;mode-line-my-vc
-                    ;; '(:eval (concat (propertize (format: " %s" (all-the-icons-octicon "Git-branch")))
-                    ;;          (propertize (substring vc-mode 5)
-                    ;;                      'face 'font-lock-comment-face)))
 
-                    ;; the buffer name; the file name as a tool tip
                     '(:eval (propertize " %b "
                                         'face
                                         (let ((face (buffer-modified-p)))
@@ -654,6 +652,23 @@
 
                     ;;minor-mode-alist
                     mode-line-modes
+
+                    mode-line-front-space
+                    ;; flycheck
+                    '(:eval
+                     (when (and (bound-and-true-p flycheck-mode)
+                                (or flycheck-current-errors
+                                    (eq 'running flycheck-last-status-change)))
+                       (concat
+                        (cl-loop for state in '((error . "#FB4933")
+                                                (warning . "#FABD2F")
+                                                (info . "#83A598"))
+                                 as lighter = (d/flycheck-lighter (car state))
+                                 when lighter
+                                 concat (propertize
+                                         lighter
+                                         'face `(:foreground ,(cdr state))))
+                        " ")))
 
                     ;; spaces to align right
                     '(:eval (propertize
@@ -679,6 +694,7 @@
                          :box '(:line-width 8 :color "#565063")
                          :overline nil
                          :underline nil)
+
    #+end_src
 ** Dimmer
   subtle visual indication which window is currently active by dimming the faces on the others.
@@ -1433,11 +1449,6 @@
        (use-package flycheck-joker
          :ensure t
          :requires flycheck)
-
-       (use-package flycheck-color-mode-line
-         :ensure t
-         :requires flycheck
-         :config (add-hook 'flycheck-mode-hook 'flycheck-color-mode-line-mode))
      #+END_SRC
 ** javascript
 
