@@ -9,7 +9,7 @@
  (position . 326))
 ("org-capture-last-stored"
  (filename . "~/org/refile.org")
- (front-context-string . "* TODO add a log")
- (rear-context-string . "*Notes][Notes]]\n")
- (position . 606))
+ (front-context-string . "* TODO sso ticke")
+ (rear-context-string . "ILETAGS: REFILE\n")
+ (position . 20))
 )

@@ -18,3 +18,4 @@
 /.emacs.d/transient/
 /.emacs.d/auto-save-list/
 *.swp
+*.plist

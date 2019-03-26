@@ -647,9 +647,6 @@
 
                     mode-line-position
 
-                    ;;minor-mode-alist
-                    mode-line-modes
-
                     mode-line-front-space
                     ;; flycheck
                     '(:eval
@@ -674,9 +671,7 @@
                                            ,(+ 3 (string-width mode-name)))))))
 
                     ;; the current major mode
-                    (propertize " %m " 'face 'font-lock-string-face)
-
-                    ))
+                    (propertize " %m " 'face 'font-lock-string-face)))
 
      (set-face-attribute 'mode-line nil
                          :background "#353644"
@@ -1547,6 +1542,16 @@
                   (sql-user "imsomitest1")
                   (sql-database "imsomitest1db"))
 
+                 (sanlam.prod
+                  (sql-name "sanlam.prod")
+                  (sql-postgres-program"/usr/local/pgsql/bin/psql")
+                  (sql-default-directory "/ssh:devel.jmayaalv@sanlamdb:")
+                  (sql-product 'postgres)
+                  (sql-port 5432)
+                  (sql-server "localhost")
+                  (sql-user "imssanlamprod")
+                  (sql-database "imssanlamproddb"))
+
                  (glacier.test
                   (sql-name "glacier.test1")
                   (sql-default-directory "/glaciertest:")
@@ -1615,7 +1620,11 @@
         (interactive)
         (my-sql-connect 'postgres 'veritas.prod))
 
-      (defun sql-omi.test1 ()
+      (defun sql-sanlam.prod ()
+        (interactive)
+        (my-sql-connect 'postgres 'sanlam.prod))
+
+      (Defun sql-omi.test1 ()
         (interactive)
         (my-sql-connect 'postgres 'omi.test1))
 
