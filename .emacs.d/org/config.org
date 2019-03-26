@@ -1624,7 +1624,7 @@
         (interactive)
         (my-sql-connect 'postgres 'sanlam.prod))
 
-      (Defun sql-omi.test1 ()
+      (defun sql-omi.test1 ()
         (interactive)
         (my-sql-connect 'postgres 'omi.test1))
 
