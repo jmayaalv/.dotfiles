@@ -1047,13 +1047,13 @@
 ** Perspectives
    Management workspaces
    #+begin_src emacs-lisp
- ;;    (use-package perspective
- ;;      :ensure t
-  ;;     :init (persp-mode))
+     (use-package perspective
+       :ensure t
+       :commands persp-mode)
 
-  ;;   (use-package persp-projectile
-  ;;     :ensure t
-  ;;     :requires perspective)
+     (use-package persp-projectile
+       :ensure t
+       :requires perspective)
    #+end_src
 
 ** workspaces
@@ -1529,13 +1529,23 @@
 
                  (veritas.prod
                   (sql-name "veritas.prod")
-                  (sql-postgres-program"/usr/local/pgsql/bin/psql")
+                  (sql-postgres-program "/usr/local/pgsql/bin/psql")
                   (sql-default-directory "/ssh:devel.jmayaalv@veritasprod:")
                   (sql-product 'postgres)
                   (sql-port 5432)
                   (sql-server "localhost")
                   (sql-user "imsveritasprod")
                   (sql-database "imsveritasproddb"))
+
+                 (omi.test1
+                  (sql-name "omi.test1")
+                  (sql-postgres-program "/usr/local/pgsql/bin/psql")
+                  (sql-default-directory "/ssh:devel.jmayaalv@omitest:")
+                  (sql-product 'postgres)
+                  (sql-port 5432)
+                  (sql-server "localhost")
+                  (sql-user "imsomitest1")
+                  (sql-database "imsomitest1db"))
 
                  (glacier.test
                   (sql-name "glacier.test1")
@@ -1604,6 +1614,10 @@
       (defun sql-veritas.prod ()
         (interactive)
         (my-sql-connect 'postgres 'veritas.prod))
+
+      (defun sql-omi.test1 ()
+        (interactive)
+        (my-sql-connect 'postgres 'omi.test1))
 
       (defun my-sql-connect (product connection)
         (setq sql-product product)
@@ -1689,9 +1703,85 @@
 *** Agenda
     #+begin_src emacs-lisp
       (setq org-agenda-files (quote ("~/org"
-                                     "~/Workspace/ms-edge/edge/docs/org"
+                                     "~/Workspace/ms-edge/edge/doc"
                                      "~/Workspace/ims-api/docs/org"
                                      "~/org/architecture")))
+
+      ;; Do not dim blocked tasks
+      (setq org-agenda-dim-blocked-tasks nil)
+
+      ;; Compact the block agenda view
+      (setq org-agenda-compact-blocks t)
+
+      ;; Custom agenda command definitions
+      (setq org-agenda-custom-commands
+            (quote (("N" "Notes" tags "NOTE"
+                     ((org-agenda-overriding-header "Notes")
+                      (org-tags-match-list-sublevels t)))
+                    (" " "Agenda"
+                     ((agenda "" nil)
+                      (tags "REFILE"
+                            ((org-agenda-overriding-header "Tasks to Refile")
+                             (org-tags-match-list-sublevels nil)))
+                      (tags-todo "-CANCELLED/!"
+                                 ((org-agenda-overriding-header "Stuck Projects")
+                                  (org-agenda-skip-function 'bh/skip-non-stuck-projects)
+                                  (org-agenda-sorting-strategy
+                                   '(category-keep))))
+                      (tags-todo "-HOLD-CANCELLED/!"
+                                 ((org-agenda-overriding-header "Projects")
+                                  (org-agenda-skip-function 'bh/skip-non-projects)
+                                  (org-tags-match-list-sublevels 'indented)
+                                  (org-agenda-sorting-strategy
+                                   '(category-keep))))
+                      (tags-todo "-CANCELLED/!NEXT"
+                                 ((org-agenda-overriding-header (concat "Project Next Tasks"
+                                                                        (if bh/hide-scheduled-and-waiting-next-tasks
+                                                                            ""
+                                                                          " (including WAITING and SCHEDULED tasks)")))
+                                  (org-agenda-skip-function 'bh/skip-projects-and-habits-and-single-tasks)
+                                  (org-tags-match-list-sublevels t)
+                                  (org-agenda-todo-ignore-scheduled bh/hide-scheduled-and-waiting-next-tasks)
+                                  (org-agenda-todo-ignore-deadlines bh/hide-scheduled-and-waiting-next-tasks)
+                                  (org-agenda-todo-ignore-with-date bh/hide-scheduled-and-waiting-next-tasks)
+                                  (org-agenda-sorting-strategy
+                                   '(todo-state-down effort-up category-keep))))
+                      (tags-todo "-REFILE-CANCELLED-WAITING-HOLD/!"
+                                 ((org-agenda-overriding-header (concat "Project Subtasks"
+                                                                        (if bh/hide-scheduled-and-waiting-next-tasks
+                                                                            ""
+                                                                          " (including WAITING and SCHEDULED tasks)")))
+                                  (org-agenda-skip-function 'bh/skip-non-project-tasks)
+                                  (org-agenda-todo-ignore-scheduled bh/hide-scheduled-and-waiting-next-tasks)
+                                  (org-agenda-todo-ignore-deadlines bh/hide-scheduled-and-waiting-next-tasks)
+                                  (org-agenda-todo-ignore-with-date bh/hide-scheduled-and-waiting-next-tasks)
+                                  (org-agenda-sorting-strategy
+                                   '(category-keep))))
+                      (tags-todo "-REFILE-CANCELLED-WAITING-HOLD/!"
+                                 ((org-agenda-overriding-header (concat "Standalone Tasks"
+                                                                        (if bh/hide-scheduled-and-waiting-next-tasks
+                                                                            ""
+                                                                          " (including WAITING and SCHEDULED tasks)")))
+                                  (org-agenda-skip-function 'bh/skip-project-tasks)
+                                  (org-agenda-todo-ignore-scheduled bh/hide-scheduled-and-waiting-next-tasks)
+                                  (org-agenda-todo-ignore-deadlines bh/hide-scheduled-and-waiting-next-tasks)
+                                  (org-agenda-todo-ignore-with-date bh/hide-scheduled-and-waiting-next-tasks)
+                                  (org-agenda-sorting-strategy
+                                   '(category-keep))))
+                      (tags-todo "-CANCELLED+WAITING|HOLD/!"
+                                 ((org-agenda-overriding-header (concat "Waiting and Postponed Tasks"
+                                                                        (if bh/hide-scheduled-and-waiting-next-tasks
+                                                                            ""
+                                                                          " (including WAITING and SCHEDULED tasks)")))
+                                  (org-agenda-skip-function 'bh/skip-non-tasks)
+                                  (org-tags-match-list-sublevels nil)
+                                  (org-agenda-todo-ignore-scheduled bh/hide-scheduled-and-waiting-next-tasks)
+                                  (org-agenda-todo-ignore-deadlines bh/hide-scheduled-and-waiting-next-tasks)))
+                      (tags "-REFILE/"
+                            ((org-agenda-overriding-header "Tasks to Archive")
+                             (org-agenda-skip-function 'bh/skip-non-archivable-tasks)
+                             (org-tags-match-list-sublevels nil))))
+                     nil))))
     #+end_src
 *** Todo
     #+begin_src emacs-lisp
@@ -1748,6 +1838,7 @@
 
       (add-hook 'org-clock-out-hook 'jm/remove-empty-drawer-on-clock-out 'append)
     #+end_src
+
 *** Refile
 
     #+begin_src emacs-lisp
@@ -1764,15 +1855,19 @@
       ; Allow refile to create parent tasks with confirmation
       (setq org-refile-allow-creating-parent-nodes (quote confirm))
 
+      ; Use IDO for both buffer and file completion and ido-everywhere to t
+
+
       ; Use the current window for indirect buffer display
       (setq org-indirect-buffer-display 'current-window)
 
+
       ; Exclude DONE state tasks from refile targets
-      (defun bh/verify-refile-target ()
+      (defun jm/verify-refile-target ()
         "Exclude todo keywords with a done state from refile targets"
         (not (member (nth 2 (org-heading-components)) org-done-keywords)))
 
-      (setq org-refile-target-verify-function 'bh/verify-refile-target)
+      (setq org-refile-target-verify-function 'jm/verify-refile-target)
 
 
     #+end_src
