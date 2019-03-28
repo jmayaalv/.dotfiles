@@ -1475,111 +1475,96 @@
 *** db list
     This is the list of db connections
     #+BEGIN_SRC emacs-lisp
-    (setq sql-connection-alist
-              '((localhost.dev
-                 (sql-name "localhost.dev")
-                 (sql-default-directory nil)
-                 (sql-product 'postgres)
-                 (sql-port 5432)
-                 (sql-server "localhost")
-                 (sql-user "imsdev")
-                 (sql-database "imsdb_dev"))
+      (setq sql-connection-alist
+            '((localhost.dev
+               (sql-name "localhost.dev")
+               (sql-default-directory nil)
+               (sql-postgres-program "psql")
+               (sql-product 'postgres)
+               (sql-port 5432)
+               (sql-server "localhost")
+               (sql-user "imsdev")
+               (sql-database "imsdb_dev"))
 
-                (localhost.test
-                 (sql-name "localhost.test")
-                 (sql-default-directory nil)
-                 (sql-product 'postgres)
-                 (sql-port 5432)
-                 (sql-server "localhost")
-                 (sql-user "imstest")
-                 (sql-database "imsdb_test"))
+              (localhost.test
+               (sql-name "localhost.test")
+               (sql-postgres-program "psql")
+               (sql-default-directory nil)
+               (sql-product 'postgres)
+               (sql-port 5432)
+               (sql-server "localhost")
+               (sql-user "imstest")
+               (sql-database "imsdb_test"))
 
-                (oic.prod
-                 (sql-name "oic.prod")
-                 (sql-default-directory "/ssh:devel.jmayaalv@oicdb:")
-                 (sql-postgres-program"/usr/local/pgsql/bin/psql")
-                 (sql-product 'postgres)
-                 (sql-port 5432)
-                 (sql-server "localhost")
-                 (sql-user "imsoicprod")
-                 (sql-database "imsoicproddb"))
+              (oic.prod
+               (sql-name "oic.prod")
+               (sql-default-directory "/ssh:devel.jmayaalv@oicdb:")
+               (sql-postgres-program"/usr/local/pgsql/bin/psql")
+               (sql-product 'postgres)
+               (sql-port 5432)
+               (sql-server "localhost")
+               (sql-user "imsoicprod")
+               (sql-database "imsoicproddb"))
 
-                (oic.prod.tunnel
-                 (sql-name "oic.prod.tunnel")
-                 (sql-default-directory nil)
-                 (sql-product 'postgres)
-                 (sql-port 5437)
-                 (sql-server "localhost")
-                 (sql-user "imsoicprod")
-                 (sql-database "imsoicproddb"))
+              (veritas.test
+               (sql-name "veritas.test")
+               (sql-postgres-program "/usr/local/pgsql/bin/psql")
+               (sql-default-directory "/ssh:devel.jmayaalv@veritastest:")
+               (sql-product 'postgres)
+               (sql-port 5432)
+               (sql-server "localhost")
+               (sql-user "imsveritastest1")
+               (sql-database "imsveritastest1db"))
 
-                 (veritas.test
-                  (sql-name "veritas.test")
-                  (sql-postgres-program "/usr/local/pgsql/bin/psql")
-                  (sql-default-directory "/ssh:devel.jmayaalv@veritastest:")
-                  (sql-product 'postgres)
-                  (sql-port 5432)
-                  (sql-server "localhost")
-                  (sql-user "imsveritastest1")
-                  (sql-database "imsveritastest1db"))
+              (veritas.prod
+               (sql-name "veritas.prod")
+               (sql-postgres-program "/usr/local/pgsql/bin/psql")
+               (sql-default-directory "/ssh:devel.jmayaalv@veritasprod:")
+               (sql-product 'postgres)
+               (sql-port 5432)
+               (sql-server "localhost")
+               (sql-user "imsveritasprod")
+               (sql-database "imsveritasproddb"))
 
-                 (veritas.prod
-                  (sql-name "veritas.prod")
-                  (sql-postgres-program "/usr/local/pgsql/bin/psql")
-                  (sql-default-directory "/ssh:devel.jmayaalv@veritasprod:")
-                  (sql-product 'postgres)
-                  (sql-port 5432)
-                  (sql-server "localhost")
-                  (sql-user "imsveritasprod")
-                  (sql-database "imsveritasproddb"))
+              (omi.test1
+               (sql-name "omi.test1")
+               (sql-postgres-program "/usr/local/pgsql/bin/psql")
+               (sql-default-directory "/ssh:devel.jmayaalv@omitest:")
+               (sql-product 'postgres)
+               (sql-port 5432)
+               (sql-server "localhost")
+               (sql-user "imsomitest1")
+               (sql-database "imsomitest1db"))
 
-                 (omi.test1
-                  (sql-name "omi.test1")
-                  (sql-postgres-program "/usr/local/pgsql/bin/psql")
-                  (sql-default-directory "/ssh:devel.jmayaalv@omitest:")
-                  (sql-product 'postgres)
-                  (sql-port 5432)
-                  (sql-server "localhost")
-                  (sql-user "imsomitest1")
-                  (sql-database "imsomitest1db"))
+              (sanlam.prod
+               (sql-name "sanlam.prod")
+               (sql-postgres-program"/usr/local/pgsql/bin/psql")
+               (sql-default-directory "/ssh:devel.jmayaalv@sanlamdb:")
+               (sql-product 'postgres)
+               (sql-port 5432)
+               (sql-server "localhost")
+               (sql-user "imssanlamprod")
+               (sql-database "imssanlamproddb"))
 
-                 (sanlam.prod
-                  (sql-name "sanlam.prod")
-                  (sql-postgres-program"/usr/local/pgsql/bin/psql")
-                  (sql-default-directory "/ssh:devel.jmayaalv@sanlamdb:")
-                  (sql-product 'postgres)
-                  (sql-port 5432)
-                  (sql-server "localhost")
-                  (sql-user "imssanlamprod")
-                  (sql-database "imssanlamproddb"))
+              (glacier.test
+               (sql-name "glacier.test1")
+               (sql-default-directory "/glaciertest:")
+               (sql-postgres-program"/usr/local/pgsql/bin/psql")
+               (sql-product 'postgres)
+               (sql-port 5432)
+               (sql-server "localhost")
+               (sql-user "imsglaciertest1")
+               (sql-database "imsglaciertest1"))
 
-                 (glacier.test
-                  (sql-name "glacier.test1")
-                  (sql-default-directory "/glaciertest:")
-                  (sql-product 'postgres)
-                  (sql-port 5432)
-                  (sql-server "localhost")
-                  (sql-user "imsglaciertest1")
-                  (sql-database "imsglaciertest1"))
-
-                 (glacier.prod
-                  (sql-name "glacier.prod")
-                  (sql-postgres-program"/usr/local/pgsql/bin/psql")
-                  (sql-default-directory "/ssh:devel.jmayaalv@glacierdb:")
-                  (sql-product 'postgres)
-                  (sql-port 5432)
-                  (sql-server "localhost")
-                  (sql-user "imsglacierprod")
-                  (sql-database "imsglacierproddb"))
-
-                  (glacier.prod.tunnel
-                   (sql-name "glacier.prod.tunnel")
-                   (sql-default-directory nil)
-                   (sql-product 'postgres)
-                   (sql-port 5436)
-                   (sql-server "localhost")
-                   (sql-user "imsglacierprod")
-                   (sql-database "imsglacierproddb"))))
+              (glacier.prod
+               (sql-name "glacier.prod")
+               (sql-postgres-program"/usr/local/pgsql/bin/psql")
+               (sql-default-directory "/ssh:devel.jmayaalv@glacierdb:")
+               (sql-product 'postgres)
+               (sql-port 5432)
+               (sql-server "localhost")
+               (sql-user "imsglacierprod")
+               (sql-database "imsglacierproddb"))))
     #+END_SRC
 
     And this  makes all it all happen via M-x sql-xxx where xxx is the name of the pool in the prev list ex: sql-localhost.mbp
@@ -1597,17 +1582,9 @@
         (interactive)
         (my-sql-connect 'postgres 'oic.prod))
 
-      (defun sql-oic.prod.tunnel ()
-        (interactive)
-        (my-sql-connect 'postgres 'oic.prod.tunnel))
-
       (defun sql-glacier.prod ()
         (interactive)
         (my-sql-connect 'postgres 'glacier.prod))
-
-      (defun sql-glacier.prod.tunnel ()
-        (interactive)
-        (my-sql-connect 'postgres 'glacier.prod.tunnel))
 
       (defun sql-glacier.test ()
         (interactive)
