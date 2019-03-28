@@ -1475,7 +1475,7 @@
 *** db list
     This is the list of db connections
     #+BEGIN_SRC emacs-lisp
-      (setq sql-connection-alist
+    (setq sql-connection-alist
               '((localhost.dev
                  (sql-name "localhost.dev")
                  (sql-default-directory nil)
@@ -1515,7 +1515,8 @@
 
                  (veritas.test
                   (sql-name "veritas.test")
-                  (sql-default-directory "/veritastest:")
+                  (sql-postgres-program "/usr/local/pgsql/bin/psql")
+                  (sql-default-directory "/ssh:devel.jmayaalv@veritastest:")
                   (sql-product 'postgres)
                   (sql-port 5432)
                   (sql-server "localhost")
@@ -1837,15 +1838,6 @@
                      "* MEETING with %? :MEETING:\n%U" :clock-in t :clock-resume t)
                     ("h" "Habit" entry (file "~/org/refile.org")
                      "* NEXT %?\n%U\n%a\nSCHEDULED: %(format-time-string \"%<<%Y-%m-%d %a .+1d/3d>>\")\n:PROPERTIES:\n:STYLE: habit\n:REPEAT_TO_STATE: NEXT\n:END:\n"))))
-
-      ;; Remove empty LOGBOOK drawers on clock out
-      (defun jm/remove-empty-drawer-on-clock-out ()
-        (interactive)
-        (save-excursion
-          (beginning-of-line 0)
-          (org-remove-empty-drawer-at "LOGBOOK" (point))))
-
-      (add-hook 'org-clock-out-hook 'jm/remove-empty-drawer-on-clock-out 'append)
     #+end_src
 
 *** Refile
