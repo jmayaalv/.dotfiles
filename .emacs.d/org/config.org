@@ -2089,8 +2089,7 @@
      (eval-after-load 'tramp '(setenv "SHELL" "/bin/bash"))
   #+END_SRC
 
-(report-errors "File mode specification error: %s"
-  (set-auto-mode))
+
 ** gpg
 
    Secrets are safe here
