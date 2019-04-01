@@ -1098,6 +1098,11 @@
         :config (progn (global-company-mode)
                        (diminish 'company-mode)))
 
+      (use-package company-quickhelp
+       :ensure t
+       :bind (("C-c h" . company-quickhelp-manual-begin))
+       :configq
+       (setq company-quickhelp-delay nil))
      #+END_SRC
 *** Parentheses
 **** Show Parens
@@ -1327,6 +1332,7 @@
         ;;     (throw (ex-info \"Failed to initialize CLJS repl. Add com.cemerick/piggieback and optionally figwheel-sidecar to your project.\" {})))")
          )
 
+
       #+END_SRC
 
 ***** cider-test-report diff hook
@@ -1499,7 +1505,7 @@
               (oic.prod
                (sql-name "oic.prod")
                (sql-default-directory "/ssh:devel.jmayaalv@oicdb:")
-               (sql-postgres-program"/usr/local/pgsql/bin/psql")
+               (sql-postgres-program "/usr/local/pgsql/bin/psql")
                (sql-product 'postgres)
                (sql-port 5432)
                (sql-server "localhost")
@@ -1536,9 +1542,19 @@
                (sql-user "imsomitest1")
                (sql-database "imsomitest1db"))
 
+              (northstar.prod
+               (sql-name "northstar.prod")
+               (sql-postgres-program "/usr/local/pgsql/bin/psql")
+               (sql-default-directory "/ssh:devel.jmayaalv@nsdb:")
+               (sql-product 'postgres)
+               (sql-port 5432)
+               (sql-server "localhost")
+               (sql-user "imsbcgproddb")
+               (sql-database "imsbcgprod"))
+
               (sanlam.prod
                (sql-name "sanlam.prod")
-               (sql-postgres-program"/usr/local/pgsql/bin/psql")
+               (sql-postgres-program "/usr/local/pgsql/bin/psql")
                (sql-default-directory "/ssh:devel.jmayaalv@sanlamdb:")
                (sql-product 'postgres)
                (sql-port 5432)
@@ -1549,7 +1565,7 @@
               (glacier.test
                (sql-name "glacier.test1")
                (sql-default-directory "/glaciertest:")
-               (sql-postgres-program"/usr/local/pgsql/bin/psql")
+               (sql-postgres-program "/usr/local/pgsql/bin/psql")
                (sql-product 'postgres)
                (sql-port 5432)
                (sql-server "localhost")
@@ -1558,14 +1574,14 @@
 
               (glacier.prod
                (sql-name "glacier.prod")
-               (sql-postgres-program"/usr/local/pgsql/bin/psql")
+               (sql-postgres-program "/usr/local/pgsql/bin/psql")
                (sql-default-directory "/ssh:devel.jmayaalv@glacierdb:")
                (sql-product 'postgres)
                (sql-port 5432)
                (sql-server "localhost")
                (sql-user "imsglacierprod")
                (sql-database "imsglacierproddb"))))
-    #+END_SRC
+    #+End_SRC
 
     And this  makes all it all happen via M-x sql-xxx where xxx is the name of the pool in the prev list ex: sql-localhost.mbp
 
@@ -1601,6 +1617,10 @@
       (defun sql-sanlam.prod ()
         (interactive)
         (my-sql-connect 'postgres 'sanlam.prod))
+
+      (defun sql-northstar.prod ()
+        (interactive)
+        (my-sql-connect 'postgres 'northstar.prod))
 
       (defun sql-omi.test1 ()
         (interactive)
