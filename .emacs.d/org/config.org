@@ -708,7 +708,7 @@
       (beacon-mode 1)
       (setq beacon-blink-duration 0.5)
       (setq beacon-blink-delay 0.5)
-      (add-to-list 'beacon-dont-blink-major-modes '('term-mode 'treemacs-mode 'ediff-mode 'ediff)))
+      (add-to-list 'beacon-dont-blink-major-modes '('term-mode 'ediff-mode 'ediff)))
   #+END_SRC
 
 * directories, navigation, searching, movement
