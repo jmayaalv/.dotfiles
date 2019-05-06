@@ -17,5 +17,6 @@
 /.emacs.d/.mc-lists.el
 /.emacs.d/transient/
 /.emacs.d/auto-save-list/
+/.emacs.d/secrets/.authinfo.gpg
 *.swp
 *.plist
