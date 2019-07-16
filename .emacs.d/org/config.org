@@ -1395,6 +1395,7 @@
          (cljr-add-keybindings-with-prefix "C-c r"))
 
         (use-package clj-refactor
+         :pin melpa-stable
          :ensure t
            :config
           (setq cljr-warn-on-eval nil)
@@ -2122,6 +2123,11 @@
 ** Json
    #+BEGIN_SRC emacs-lisp
      (use-package json-mode
+       :ensure t)
+   #+END_SRC
+** YAML Mode
+      #+BEGIN_SRC emacs-lisp
+     (use-package yaml-mode
        :ensure t)
    #+END_SRC
 * Integrations

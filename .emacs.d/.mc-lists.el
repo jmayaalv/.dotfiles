@@ -8,6 +8,7 @@
 
 (setq mc/cmds-to-run-once
       '(
+        comint-previous-input
         end-of-buffer
         iedit-switch-to-mc-mode
         ivy-end-of-buffer
