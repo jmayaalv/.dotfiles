@@ -1776,6 +1776,7 @@
       (setq org-agenda-files (quote ("~/org"
                                      "~/Workspace/ms-edge/edge/doc"
                                      "~/Workspace/ims-api/docs/org"
+                                     "~/Workspace/kane-labs/silnik/doc"
                                      "~/org/architecture")))
 
       ;; Do not dim blocked tasks
@@ -2093,7 +2094,7 @@
      :mode (("README\\.md\\'" . gfm-mode)
       ("\\.md\\'" . markdown-mode)
       ("\\.markdown\\'" . markdown-mode))
-     :init (setq markdown-command "multimarkdown"))
+     :init (setq markdown-command "markdown"))
    #+END_SRC
 
 *** Github Flavouring
