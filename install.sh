@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# install ssh
+# install zsh
 brew install zsh
 
 # install oh-my-zsh
