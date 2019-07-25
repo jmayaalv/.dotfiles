@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+# install ssh
+brew install zsh
+
+# install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" "" --unattended
+
 # Get current dir (so run this script from anywhere)
 export DOTFILES_DIR DOTFILES_CACHE DOTFILES_EXTRA_DIR
 DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
