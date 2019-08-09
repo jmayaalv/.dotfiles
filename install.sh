@@ -24,6 +24,7 @@ ln -sfv "$DOTFILES_DIR/zsh/.zshrc" ~
 ln -sfv "$DOTFILES_DIR/zsh/custom.zsh" ~/.oh-my-zsh/custom/
 ln -sfv "$DOTFILES_DIR/iterm/com.googlecode.iterm2.plist" ~/Library/Preferences/com.googlecode.iterm2.plist
 ln -sfv "$DOTFILES_DIR/.emacs.d" ~
+ln -s "$DOTFILES_DIR/.emacs.d/.emacs-persistent-overlays" ~/.emacs-persistent-overlays
 
 ln -sfv  ~/.dotfiles/psql/.psqlrc ~/.psqlrc
 

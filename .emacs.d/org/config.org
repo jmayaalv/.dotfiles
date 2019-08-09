@@ -710,6 +710,16 @@
       (setq beacon-blink-delay 0.5)
       (add-to-list 'beacon-dont-blink-major-modes '('term-mode 'ediff-mode 'ediff)))
   #+END_SRC
+** Persistent Overlasy
+
+   an Emacs mode that allows you to store overlays between sessions. This is useful for storing overlays with the invisible property in hideshow and outline modes.
+
+     #+BEGIN_SRC emacs-lisp
+    (use-package persistent-overlays
+      :ensure t
+      :config
+      (add-hook 'prog-mode-hook (lambda () (hs-minor-mode 1) (setq hs-allow-nesting t) (persistent-overlays-minor-mode 1))))
+  #+END_SRC
 
 * directories, navigation, searching, movement
 ** Crux
