@@ -715,10 +715,13 @@
    an Emacs mode that allows you to store overlays between sessions. This is useful for storing overlays with the invisible property in hideshow and outline modes.
 
      #+BEGIN_SRC emacs-lisp
-    (use-package persistent-overlays
-      :ensure t
-      :config
-      (add-hook 'prog-mode-hook (lambda () (hs-minor-mode 1) (setq hs-allow-nesting t) (persistent-overlays-minor-mode 1))))
+       (use-package persistent-overlays
+         :ensure t
+         :config
+         (add-hook 'prog-mode-hook (lambda () (hs-minor-mode 1) (setq hs-allow-nesting t) (persistent-overlays-minor-mode 1)))
+         (setq persistent-overlays-auto-save t)
+         (setq persistent-overlays-auto-load t)
+         (setq persistent-overlays-auto-merge t))
   #+END_SRC
 
 * directories, navigation, searching, movement
@@ -1492,8 +1495,6 @@
            (flycheck-add-next-checker (car checkers) (cons 'error (cdr checkers)))))
      #+end_src
 
-
-
 ** javascript
 
    #+BEGIN_SRC emacs-lisp
@@ -1608,6 +1609,16 @@
                (sql-user "imsomitest1")
                (sql-database "imsomitest1db"))
 
+             (omi.test2
+               (sql-name "omi.test2")
+               (sql-postgres-program "/usr/local/pgsql/bin/psql")
+               (sql-default-directory "/ssh:devel.jmayaalv@omitest2:")
+               (sql-product 'postgres)
+               (sql-port 5432)
+               (sql-server "localhost")
+               (sql-user "imsomitest2")
+               (sql-database "imsomitest2db"))
+
               (northstar.prod
                (sql-name "northstar.prod")
                (sql-postgres-program "/usr/local/pgsql/bin/psql")
@@ -1699,6 +1710,10 @@
       (defun sql-omi.test1 ()
         (interactive)
         (my-sql-connect 'postgres 'omi.test1))
+
+     (defun sql-omi.test2 ()
+        (interactive)
+        (my-sql-connect 'postgres 'omi.test2))
 
       (defun my-sql-connect (product connection)
         (setq sql-product product)
