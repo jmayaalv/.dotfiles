@@ -2158,16 +2158,14 @@
        :config
        (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode)))
    #+END_SRC
-** Eyuml
+** Plant uml
 
-   Write textual uml diagram from emacs using yuml.me
    #+BEGIN_SRC emacs-lisp
-     (use-package eyuml
+     (use-package plantuml-mode
        :ensure t
        :config
-       (global-set-key (kbd "C-c a") 'eyuml-create-activity-diagra)
-       (global-set-key (kbd "C-c c") 'eyuml-create-class-diagram)
-       (global-set-key (kbd "C-c u") 'eyuml-create-usecase-diagram))
+
+       (add-to-list 'auto-mode-alist '("\\.plantuml\\'" . plantuml-mode)))
    #+END_SRC
 * Integrations
 ** rest
