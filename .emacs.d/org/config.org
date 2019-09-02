@@ -2152,11 +2152,22 @@
        :ensure t)
    #+END_SRC
 ** YAML Mode
-      #+BEGIN_SRC emacs-lisp
-     (use-package yaml-mode
+   #+BEGIN_SRC emacs-lisp
+   (use-package yaml-mode
        :ensure t
        :config
        (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode)))
+   #+END_SRC
+** Eyuml
+
+   Write textual uml diagram from emacs using yuml.me
+   #+BEGIN_SRC emacs-lisp
+     (use-package eyuml
+       :ensure t
+       :config
+       (global-set-key (kbd "C-c a") 'eyuml-create-activity-diagra)
+       (global-set-key (kbd "C-c c") 'eyuml-create-class-diagram)
+       (global-set-key (kbd "C-c u") 'eyuml-create-usecase-diagram))
    #+END_SRC
 * Integrations
 ** rest
