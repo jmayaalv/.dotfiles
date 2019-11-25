@@ -1483,6 +1483,7 @@
      #+END_SRC
 
 **** clj-kondo-flycheck
+
      This another nice clojure linter. It requires manual installation of https://github.com/borkdude/clj-kondo
 
      #+begin_src emacs-lisp
@@ -1494,6 +1495,23 @@
                              (clj-kondo-cljc . clojure-joker)))
            (flycheck-add-next-checker (car checkers) (cons 'error (cdr checkers)))))
      #+end_src
+
+**** Tooltips
+
+      #+begin_src emacs-lisp
+        (defun cider--tooltip-show ()
+         (interactive)
+         (if-let ((info (cider-var-info (thing-at-point 'symbol))))
+             (nrepl-dbind-response info (doc arglists-str name ns)
+               (pos-tip-show (format "%s : %s\n%s\n%s" ns name arglists-str doc)
+                             nil
+                             nil
+                             nil
+                             -1))
+           (message "info not found")))
+
+        (bind-key "C-c p" 'cider--tooltip-show)
+      #+end_src
 
 ** javascript
 
@@ -1629,6 +1647,17 @@
                (sql-user "imsbcgprod")
                (sql-database "imsbcgproddb"))
 
+
+             (northstar.test
+               (sql-name "northstar.test")
+               (sql-postgres-program "/usr/local/pgsql/bin/psql")
+               (sql-default-directory "/ssh:devel.jmayaalv@nstest1:")
+               (sql-product 'postgres)
+               (sql-port 5432)
+               (sql-server "localhost")
+               (sql-user "imsbcgt2")
+               (sql-database "imsbcgt2db"))
+
               (sanlam.prod
                (sql-name "sanlam.prod")
                (sql-postgres-program "/usr/local/pgsql/bin/psql")
@@ -1706,6 +1735,10 @@
       (defun sql-northstar.prod ()
         (interactive)
         (my-sql-connect 'postgres 'northstar.prod))
+
+      (defun sql-northstar.test ()
+        (interactive)
+        (my-sql-connect 'postgres 'northstar.test))
 
       (defun sql-omi.test1 ()
         (interactive)
@@ -1996,7 +2029,7 @@
     (use-package helm-orgcard
      :ensure t
      :config
-     (add-hook 'org-mode-hook
+     (add-hook 'org-mode-hookv
       (lambda () (local-set-key [s-f1] 'helm-orgcard))))
 
     #+END_SRC
@@ -2009,18 +2042,16 @@
     reveal.js.
 
     #+BEGIN_SRC emacs-lisp
-      ;(use-package ox-reveal :ensure t)
+      (use-package ox-reveal :ensure t)
     #+END_SRC
 
     As a part of the installation we need to point at where we have
     our copy of reveal.js. It uses a lot of disk space, but put it
     into a sub directory for each presentation. Then you can serve it
     up using http-server in node or a python webserver locally and
-    then things like speaker notes will work. Full screen in Lion is
-    still b0rken. Yet another reason to go over to linux.
-
+    then things like speaker notes will work.
     #+BEGIN_SRC emacs-lisp
-      ;(setq org-reveal-root "reveal.js-2.5.0/")
+      (setq org-reveal-root "https://cdn.jsdelivr.net/npm/reveal.js")
     #+END_SRC
 
 *** org and magit
@@ -2164,7 +2195,6 @@
      (use-package plantuml-mode
        :ensure t
        :config
-
        (add-to-list 'auto-mode-alist '("\\.plantuml\\'" . plantuml-mode)))
    #+END_SRC
 * Integrations

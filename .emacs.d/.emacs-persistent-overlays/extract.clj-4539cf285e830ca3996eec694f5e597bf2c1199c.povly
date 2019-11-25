@@ -1,3 +1,4 @@
 ;; 
-;; Fri Aug 30 10:21:08 2019
-(let ((tovly (make-overlay 5259 16842)) (tplist '(invisible hs hs code hs-b-offset -7 hs-e-offset 0 isearch-open-invisible hs-isearch-show isearch-open-invisible-temporary hs-isearch-show-temporary))) (while tplist (let ((tp (car tplist)) (tpv (cadr tplist))) (overlay-put tovly tp tpv)) (setq tplist (cddr tplist))))
+;; Thu Nov 21 18:35:36 2019
+(let ((tovly (make-overlay 5263 5263)) (tplist '(invisible hs hs code hs-b-offset -7 hs-e-offset 0 isearch-open-invisible hs-isearch-show isearch-open-invisible-temporary hs-isearch-show-temporary))) (while tplist (let ((tp (car tplist)) (tpv (cadr tplist))) (overlay-put tovly tp tpv)) (setq tplist (cddr tplist))))
+(let ((tovly (make-overlay 5263 5263)) (tplist '(isearch-open-invisible-temporary hs-isearch-show-temporary isearch-open-invisible hs-isearch-show hs-e-offset 0 hs-b-offset -7 hs code invisible hs))) (while tplist (let ((tp (car tplist)) (tpv (cadr tplist))) (overlay-put tovly tp tpv)) (setq tplist (cddr tplist))))
