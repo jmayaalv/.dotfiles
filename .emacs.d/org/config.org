@@ -227,6 +227,13 @@
        :ensure t)
    #+END_SRC
 
+** Emacs's GPG keyring for GNU ELPA
+
+   #+BEGIN_SRC emacs-lisp
+     (use-package gnu-elpa-keyring-update
+       :ensure t)
+   #+END_SRC
+
 * Non-elpa
 
    #+BEGIN_SRC emacs-lisp
@@ -1196,8 +1203,8 @@
     (use-package yasnippet
         :ensure t
         :config
-        (setq yas-snippet-dirs      '("~/.emacs.d/snippets"))
-;        (yas-global-model 1)
+         (setq yas-snippet-dirs      '("~/.emacs.d/snippets"))
+         (yas-global-mode 1)
 )
     #+END_SRC
 **** Diminish it
@@ -1686,7 +1693,16 @@
                (sql-port 5432)
                (sql-server "localhost")
                (sql-user "imsglacierprod")
-               (sql-database "imsglacierproddb"))))
+               (sql-database "imsglacierproddb"))
+              (argus.prod
+               (sql-name "argus.prod")
+               (sql-postgres-program "/usr/local/pgsql/bin/psql")
+               (sql-default-directory "/ssh:devel.jmayaalv@argusprod:")
+               (sql-product 'postgres)
+               (sql-port 5432)
+               (sql-server "localhost")
+               (sql-user "imsargusprod")
+               (sql-database "imsargusproddb"))))
     #+End_SRC
 
     And this  makes all it all happen via M-x sql-xxx where xxx is the name of the pool in the prev list ex: sql-localhost.mbp
@@ -1715,6 +1731,10 @@
       (defun sql-glacier.prod ()
         (interactive)
         (my-sql-connect 'postgres 'glacier.prod))
+
+      (defun sql-argus.prod ()
+        (interactive)
+        (my-sql-connect 'postgres 'argus.prod))
 
       (defun sql-glacier.test ()
         (interactive)

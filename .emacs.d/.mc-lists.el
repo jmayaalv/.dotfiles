@@ -4,6 +4,8 @@
 (setq mc/cmds-to-run-for-all
       '(
         beginning-of-buffer
+        cider-load-buffer
+        swiper
         ))
 
 (setq mc/cmds-to-run-once
