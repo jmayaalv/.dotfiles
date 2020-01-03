@@ -1,0 +1,249 @@
+!SESSION 2019-12-26 10:26:25.431 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_192-ea
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_CO
+Command-line arguments:  -data /Users/juan.maya/.emacs.d/workspace/
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:26:27.297
+!MESSAGE class org.eclipse.jdt.ls.core.internal.JavaLanguageServerPlugin is started
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:26:27.394
+!MESSAGE Main thread is waiting
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:26:27.413
+!MESSAGE >> initialize
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:26:27.414
+!MESSAGE Initializing Java Language Server 0.50.0.201912241817
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:26:27.423
+!MESSAGE Installed reference:file:/Users/juan.maya/.emacs.d/eclipse.jdt.ls/server/bundles/com.microsoft.java.test.plugin-0.19.0.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:26:27.425
+!MESSAGE Installed reference:file:/Users/juan.maya/.emacs.d/eclipse.jdt.ls/server/bundles/com.microsoft.jdtls.ext.core-0.5.1.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:26:27.426
+!MESSAGE Installed reference:file:/Users/juan.maya/.emacs.d/eclipse.jdt.ls/server/bundles/dg.jdt.ls.decompiler.cfr-0.0.2-201802221740.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:26:27.428
+!MESSAGE Installed reference:file:/Users/juan.maya/.emacs.d/eclipse.jdt.ls/server/bundles/dg.jdt.ls.decompiler.common-0.0.2-201802221740.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:26:27.429
+!MESSAGE Installed reference:file:/Users/juan.maya/.emacs.d/eclipse.jdt.ls/server/bundles/dg.jdt.ls.decompiler.fernflower-0.0.2-201802221740.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:26:27.430
+!MESSAGE Installed reference:file:/Users/juan.maya/.emacs.d/eclipse.jdt.ls/server/bundles/dg.jdt.ls.decompiler.procyon-0.0.2-201802221740.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:26:27.434
+!MESSAGE Installed reference:file:/Users/juan.maya/.emacs.d/eclipse.jdt.ls/server/bundles/io.projectreactor.reactor-core.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:26:27.436
+!MESSAGE Installed reference:file:/Users/juan.maya/.emacs.d/eclipse.jdt.ls/server/bundles/java.debug.plugin.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:26:27.438
+!MESSAGE Installed reference:file:/Users/juan.maya/.emacs.d/eclipse.jdt.ls/server/bundles/jdt-ls-commons.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:26:27.439
+!MESSAGE Installed reference:file:/Users/juan.maya/.emacs.d/eclipse.jdt.ls/server/bundles/jdt-ls-extension.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:26:27.441
+!MESSAGE Installed reference:file:/Users/juan.maya/.emacs.d/eclipse.jdt.ls/server/bundles/org.reactivestreams.reactive-streams.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:26:27.563
+!MESSAGE Started reference:file:/Users/juan.maya/.emacs.d/eclipse.jdt.ls/server/bundles/org.reactivestreams.reactive-streams.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:26:27.563
+!MESSAGE Started reference:file:/Users/juan.maya/.emacs.d/eclipse.jdt.ls/server/bundles/dg.jdt.ls.decompiler.fernflower-0.0.2-201802221740.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:26:27.564
+!MESSAGE Started reference:file:/Users/juan.maya/.emacs.d/eclipse.jdt.ls/server/bundles/io.projectreactor.reactor-core.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:26:27.564
+!MESSAGE Started reference:file:/Users/juan.maya/.emacs.d/eclipse.jdt.ls/server/bundles/dg.jdt.ls.decompiler.procyon-0.0.2-201802221740.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:26:27.565
+!MESSAGE Started reference:file:/Users/juan.maya/.emacs.d/eclipse.jdt.ls/server/bundles/jdt-ls-commons.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:26:27.565
+!MESSAGE Started reference:file:/Users/juan.maya/.emacs.d/eclipse.jdt.ls/server/bundles/dg.jdt.ls.decompiler.cfr-0.0.2-201802221740.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:26:27.566
+!MESSAGE Started reference:file:/Users/juan.maya/.emacs.d/eclipse.jdt.ls/server/bundles/jdt-ls-extension.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:26:27.572
+!MESSAGE Static Commands: []
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:26:27.572
+!MESSAGE Non-Static Commands: [java.edit.organizeImports, java.project.updateSourceAttachment, java.project.removeFromSourcePath, java.project.listSourcePaths, java.project.resolveSourceAttachment, java.project.addToSourcePath]
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:26:27.573
+!MESSAGE Static Commands: []
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:26:27.573
+!MESSAGE Non-Static Commands: [vscode.java.resolveMainMethod, vscode.java.checkProjectSettings, vscode.java.fetchUsageData, vscode.java.resolveClasspath, vscode.java.validateLaunchConfig, vscode.java.resolveMainClass, vscode.java.updateDebugSettings, vscode.java.buildWorkspace, vscode.java.startDebugSession, vscode.java.inferLaunchCommandLength]
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:26:27.573
+!MESSAGE Static Commands: []
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:26:27.574
+!MESSAGE Non-Static Commands: [sts.java.addClasspathListener, sts.java.removeClasspathListener]
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:26:27.574
+!MESSAGE Static Commands: []
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:26:27.575
+!MESSAGE Non-Static Commands: [sts.java.javadoc]
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:26:27.575
+!MESSAGE Static Commands: []
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:26:27.575
+!MESSAGE Non-Static Commands: [sts.java.type]
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:26:27.576
+!MESSAGE Static Commands: []
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:26:27.576
+!MESSAGE Non-Static Commands: [sts.java.javadocHoverLink]
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:26:27.576
+!MESSAGE Static Commands: []
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:26:27.577
+!MESSAGE Non-Static Commands: [sts.java.location]
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:26:27.577
+!MESSAGE Static Commands: []
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:26:27.577
+!MESSAGE Non-Static Commands: [sts.java.search.packages, sts.java.search.types]
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:26:27.578
+!MESSAGE Static Commands: []
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:26:27.578
+!MESSAGE Non-Static Commands: [sts.java.hierarchy.supertypes, sts.java.hierarchy.subtypes]
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:26:27.578
+!MESSAGE Static Commands: []
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:26:27.579
+!MESSAGE Non-Static Commands: [java.project.list, java.getPackageData, java.resolvePath]
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:26:27.579
+!MESSAGE Static Commands: []
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:26:27.579
+!MESSAGE Non-Static Commands: [vscode.java.test.search.codelens, vscode.java.test.runtime.classpath, vscode.java.test.project.info, vscode.java.test.search.items.all, vscode.java.test.search.location, vscode.java.test.search.items, vscode.java.test.get.testpath]
+
+!ENTRY org.eclipse.core.net 1 0 2019-12-26 10:26:27.601
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:26:27.613
+!MESSAGE Creating the Java project jdt.ls-java-project
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:26:27.673
+!MESSAGE >> initialized
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:26:28.150
+!MESSAGE Finished creating the Java project jdt.ls-java-project
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:26:28.717
+!MESSAGE Importing Maven project(s)
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:27:00.668
+!MESSAGE Workspace initialized in 33085ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:27:00.838
+!MESSAGE >> initialization job finished
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:27:00.842
+!MESSAGE >> workspace/didChangeConfiguration
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:27:00.851
+!MESSAGE >> New configuration: {java={dependency={packagePresentation=flat}, errors={incompleteClasspath={severity=warning}}, trace={server=off}, maven={downloadSources=false}, referencesCodeLens={enabled=false}, signatureHelp={enabled=true}, implementationsCodeLens={enabled=false}, configuration={checkProjectSettingsExclusions=true, updateBuildConfiguration=automatic, maven={userSettings=null}}, saveActions={organizeImports=false}, import={gradle={enabled=true}, maven={enabled=true}, exclusions=[**/node_modules/**, **/.metadata/**, **/archetype-resources/**, **/META-INF/maven/**]}, contentProvider={preferred=null}, selection={enabled=true}, autobuild={enabled=true}, maxConcurrentBuilds=1.0, completion={filteredTypes=[java.awt.*, com.sun.*], enabled=true, overwrite=true, guessMethodArguments=true, favoriteStaticMembers=[org.junit.Assert.*, org.junit.Assume.*, org.junit.jupiter.api.Assertions.*, org.junit.jupiter.api.Assumptions.*, org.junit.jupiter.api.DynamicContainer.*, org.junit.jupiter.api.DynamicTest.*, org.mockito.Mockito.*, org.mockito.ArgumentMatchers.*, org.mockito.Answers.*], importOrder=[java, javax, com, org]}, foldingRange={enabled=true}, progressReports={enabled=true}, format={enabled=true, settings={url=null, profile=null}, comments={enabled=true}, onType={enabled=true}}, codeGeneration={hashCodeEquals={useJava7Objects=false, useInstanceof=false}, useBlocks=false, generateComments=false, toString={template=${object.className} [${member.name()}=${member.value}, ${otherMembers}], codeStyle=STRING_CONCATENATION, skipNullValues=false, listArrayContents=true, limitElements=0.0}}}}
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:27:00.897
+!MESSAGE >> document/didOpen
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:27:03.186
+!MESSAGE >> document/documentHighlight
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:27:03.193
+!MESSAGE >> document/documentHighlight
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:27:03.194
+!MESSAGE >> document/documentHighlight
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:27:03.194
+!MESSAGE >> document/hover
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:27:03.195
+!MESSAGE >> document/documentHighlight
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:27:03.196
+!MESSAGE >> document/documentHighlight
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:27:03.197
+!MESSAGE >> document/hover
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:27:03.197
+!MESSAGE >> document/documentHighlight
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:27:03.202
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:27:03.255
+!MESSAGE >> document/onTypeFormatting
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:27:03.257
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:27:03.469
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:27:03.471
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:27:03.514
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:27:03.516
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:27:03.591
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:27:05.684
+!MESSAGE Reconciled 0. Took 242 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:27:05.689
+!MESSAGE >> document/completion
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:27:05.838
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:27:05.843
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:27:05.966
+!MESSAGE >> document/completion
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:27:05.980
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:27:05.982
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:27:05.987
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:27:05.989
+!MESSAGE >> document/didClose
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:27:06.019
+!MESSAGE begin problem for /BrandingMessages.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-26 10:27:06.020
+!MESSAGE 0 problems reported for /BrandingMessages.java
