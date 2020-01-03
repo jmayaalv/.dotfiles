@@ -154,9 +154,9 @@
 	<key>NSWindow Frame ProfilesPanel</key>
 	<string>0 0 1680 1027 0 0 1680 1027 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
-	<string>760 786 400 129 0 0 1920 1177 </string>
+	<string>640 449 400 129 0 0 1680 1027 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>490 203 700 622 0 0 1680 1027 </string>
+	<string>490 303 700 622 0 0 1680 1027 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>329 39 606 469 0 0 1920 1177 </string>
 	<key>NSWindow Frame SharedPreferences</key>
@@ -19966,7 +19966,7 @@ ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 pbtest2</string>
 			<key>Columns</key>
 			<integer>80</integer>
 			<key>Command</key>
-			<string>ssh -C -o 'ServerAliveInterval 180'  -L 5437:127.0.0.1:5432 devel.jmayaalv@nsdb</string>
+			<string>ssh -C -o 'ServerAliveInterval 180'  -L 5436:127.0.0.1:5432 devel.jmayaalv@nsdb</string>
 			<key>Cursor Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -32992,7 +32992,7 @@ ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 pbtest2</string>
 			<key>Columns</key>
 			<integer>80</integer>
 			<key>Command</key>
-			<string>ssh -C -o 'ServerAliveInterval 180'  -L 5436:127.0.0.1:5432 devel.jmayaalv@veritastest2</string>
+			<string>ssh -C -o 'ServerAliveInterval 180'  -L 5436:veritastest1:5432 devel.jmayaalv@veritastest2</string>
 			<key>Cursor Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -34670,23 +34670,25 @@ ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 pbtest2</string>
 	<array>
 		<string>3.3.3beta1</string>
 		<string>3.3.5beta2</string>
-		<string>3.3.0beta11</string>
 		<string>3.3.2beta1</string>
-		<string>3.3.0beta12</string>
 		<string>3.3.7beta1</string>
-		<string>3.3.0beta13</string>
 		<string>3.3.7beta3</string>
 		<string>3.3.1beta1</string>
-		<string>3.3.0beta15</string>
+		<string>3.3.8beta2</string>
 		<string>3.3.5beta1</string>
 		<string>3.3.0beta8</string>
+		<string>3.3.0beta15</string>
 		<string>3.3.3beta2</string>
+		<string>3.3.0beta13</string>
+		<string>3.3.0beta12</string>
+		<string>3.3.0beta11</string>
 		<string>3.3.5beta3</string>
 		<string>3.3.7beta2</string>
 		<string>3.3.4beta1</string>
 		<string>3.3.2beta2</string>
 		<string>3.3.7beta4</string>
 		<string>3.3.8beta1</string>
+		<string>3.3.8beta3</string>
 	</array>
 	<key>NoSyncCommandHistoryHasEverBeenUsed</key>
 	<true/>
@@ -34719,7 +34721,7 @@ ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 pbtest2</string>
 	<key>NoSyncLastTipTime</key>
 	<real>489424643.50832599</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>108</integer>
+	<integer>135</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>575345177.85879505</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
@@ -35567,7 +35569,7 @@ ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 pbtest2</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-11-30T14:30:35Z</date>
+	<date>2019-12-27T13:36:00Z</date>
 	<key>SUUpdateRelaunchingMarker</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -35631,7 +35633,7 @@ ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 pbtest2</string>
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.3.8beta1</string>
+	<string>3.3.8beta3</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>

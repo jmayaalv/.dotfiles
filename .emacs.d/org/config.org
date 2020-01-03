@@ -284,10 +284,10 @@
    [[https://github.com/purcell/exec-path-from-shell][exec-path-from-shell]].
 
    #+BEGIN_SRC emacs-lisp
-   (use-package exec-path-from-shell
-     :config
-     (when (memq window-system '(mac ns))
-     (exec-path-from-shell-initialize)))
+   ;;(use-package exec-path-from-shell
+   ;;  :config
+   ;;  (when (memq window-system '(mac ns))
+   ;;  (exec-path-from-shell-initialize)))
 
    #+END_SRC
 
@@ -2248,8 +2248,13 @@
    Secrets are safe here
 
    #+begin_src emacs-lisp
+
    (setq auth-sources
     '((:source "~/.emacs.d/secrets/.authinfo.gpg")))
+
+    (custom-set-variables '(epg-gpg-program  "/usr/local/bin/gpg"))
+
+
    #+end_src
 
    Handle querying the passphrase through minibuffer.
