@@ -284,10 +284,11 @@
    [[https://github.com/purcell/exec-path-from-shell][exec-path-from-shell]].
 
    #+BEGIN_SRC emacs-lisp
-   ;;(use-package exec-path-from-shell
-   ;;  :config
-   ;;  (when (memq window-system '(mac ns))
-   ;;  (exec-path-from-shell-initialize)))
+   (use-package exec-path-from-shell
+     :ensure t
+     :config
+     (when (memq window-system '(mac ns))
+     (exec-path-from-shell-initialize)))
 
    #+END_SRC
 
