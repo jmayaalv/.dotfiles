@@ -415,9 +415,9 @@
           (lambda ()
             (setq auto-composition-mode nil)))
 
-      (add-hook 'helm-major-mode-hook
-          (lambda ()
-            (setq auto-composition-mode nil)))
+;;      (add-hook 'helm-major-mode-hook
+ ;;         (lambda ()
+   ;;         (setq auto-composition-mode nil)))
 
 
 
@@ -791,30 +791,86 @@
      (setq dired-use-ls-dired nil))
    (setq dired-listing-switches "-alh")
    #+END_SRC
+** Counsel
+   #+BEGIN_SRC emacs-lisp
+   (use-package counsel :ensure t
+    :pin melpa-stable
+    :init (counsel-mode 1))
+   #+END_SRC
+** Ivy
+      #+BEGIN_SRC emacs-lisp
+        (use-package ivy
+          :ensure t
+          :init
+          (progn
+            (ivy-mode 1)
+            (setq ivy-use-virtual-buffers t)
+            (setq enable-recursive-minibuffers t)
+            (global-set-key (kbd "C-c C-r") 'ivy-resume)
+            (global-set-key (kbd "<f6>") 'ivy-resume)
+            (setq projectile-completion-system 'ivy)
+            ;; swiper provides enhanced buffer search
+            ;; counsel supercharges a lot of commands with some ivy magic
 
+            (global-set-key (kbd "M-x") 'counsel-M-x)
+            (global-set-key (kbd "C-x C-f") 'counsel-find-file)
+            (global-set-key (kbd "<f1> f") 'counsel-describe-function)
+            (global-set-key (kbd "<f1> v") 'counsel-describe-variable)
+            (global-set-key (kbd "<f1> l") 'counsel-find-library)
+            (global-set-key (kbd "<f2> i") 'counsel-info-lookup-symbol)
+            (global-set-key (kbd "<f2> u") 'counsel-unicode-char)
+            (global-set-key (kbd "C-c g") 'counsel-git)
+            (global-set-key (kbd "C-c j") 'counsel-git-grep)
+            (global-set-key (kbd "C-c a") 'counsel-ag)
+            (global-set-key (kbd "C-x l") 'counsel-locate)
+            (define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history)))
+
+        (use-package ivy-posframe
+          :ensure t
+          :after ivy
+          :diminish
+          :config
+          (setq ivy-posframe-display-functions-alist '((t . ivy-posframe-display-at-frame-top-center))
+                ivy-posframe-height-alist '((t . 20))
+                ivy-posframe-parameters '((internal-border-width . 10)))
+          (setq ivy-posframe-width 150)
+          (ivy-posframe-mode +1))
+
+        (use-package ivy-rich
+          :ensure t
+          :diminish
+          :init
+          (setcdr (assq t ivy-format-functions-alist) #'ivy-format-function-line)
+;          (setq ivy-rich-display-transformers-list
+;                '(counsel-find-file
+;                  (:columns
+;                   ((ivy-read-file-transformer)
+;                    (ivy-rich-counsel-find-file-truename (:face font-lock-doc-face))))))
+          (ivy-rich-mode 1))
+      #+END_SRC
 ** helm-mode
    #+BEGIN_SRC emacs-lisp
-     (use-package helm
-       :ensure t
-       :bind (("C-x C-f" . helm-find-files)
-              ("C-x b" . helm-buffers-list)
-              ("C-x h" . helm-command-prefix)
-              ("M-x" . helm-M-x)
-              ("M-y" . helm-show-kill-ring))
-       :init
-       (progn (setq helm-split-window-in-side-p nil)
-              (setq helm-mode-fuzzy-match t) ;Fuzzy matching
+     ;; (use-package helm
+     ;;   :ensure t
+     ;;   :bind (("C-x C-f" . helm-find-files)
+     ;;          ("C-x b" . helm-buffers-list)
+     ;;          ("C-x h" . helm-command-prefix)
+     ;;          ("M-x" . helm-M-x)
+     ;;          ("M-y" . helm-show-kill-ring))
+     ;;   :init
+     ;;   (progn (setq helm-split-window-in-side-p nil)
+     ;;          (setq helm-mode-fuzzy-match t) ;Fuzzy matching
 
-              (when (executable-find "curl")
-                (setq helm-google-suggest-use-curl-p t))
+     ;;          (when (executable-find "curl")
+     ;;            (setq helm-google-suggest-use-curl-p t))
 
-              (setq helm-split-window-in-side-p     t ; open helm buffer inside current window, not occupy whole other window
-                    helm-move-to-line-cycle-in-source     t ; move to end or beginning of source when reaching top or bottom of source.
-                    helm-ff-search-library-in-sexp        t ; search for library in `require' and `declare-function' sexp.
-                    helm-scroll-amount                    8 ; scroll 8 lines other window using M-<next>/M-<prior>
-                    helm-ff-file-name-history-use-recentf t)
-              (helm-mode 1)
-              (diminish 'helm-mode)))
+     ;;          (setq helm-split-window-in-side-p     t ; open helm buffer inside current window, not occupy whole other window
+     ;;                helm-move-to-line-cycle-in-source     t ; move to end or beginning of source when reaching top or bottom of source.
+     ;;                helm-ff-search-library-in-sexp        t ; search for library in `require' and `declare-function' sexp.
+     ;;                helm-scroll-amount                    8 ; scroll 8 lines other window using M-<next>/M-<prior>
+     ;;                helm-ff-file-name-history-use-recentf t)
+     ;;          (helm-mode 1)
+     ;;          (diminish 'helm-mode)))
    #+END_SRC
 
 ** git
@@ -845,15 +901,25 @@
        (diminish 'git-gutter+-mode))
     #+END_SRC
 ** swiper
+    #+BEGIN_SRC emacs-lisp
+       (use-package swiper
+         :ensure t
+         :bind
+         (("C-s" . swiper)
+          ("C-r" . swiper))
+         :config
+         (progn
+           (setq enable-recursive-minibuffers t)))
+   #+END_SRC
    #+BEGIN_SRC emacs-lisp
-     (use-package swiper-helm
-       :ensure t
-       :bind
-       (("C-s" . swiper)
-        ("C-r" . swiper))
-       :config
-       (progn
-         (setq enable-recursive-minibuffers t)))
+     ;; (use-package swiper-helm
+     ;;   :ensure t
+     ;;   :bind
+     ;;   (("C-s" . swiper)
+     ;;    ("C-r" . swiper))
+     ;;   :config
+     ;;   (progn
+     ;;     (setq enable-recursive-minibuffers t)))
    #+END_SRC
 ** avy-mode
 
@@ -978,27 +1044,23 @@
        :init
        (projectile-global-mode))
 
-     (use-package helm-projectile
+     (use-package counsel-projectile
        :ensure t
-       :requires projectile
-       :config
-       (helm-projectile-on))
-   #+END_SRC
+       :requires (projectile counsel)
+       :init
+       (counsel-projectile-mode)
+       (diminish 'projectile-mode)
+       (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+       (global-set-key (kbd "s-f") 'counsel-projectile)
+       (global-set-key (kbd "s-E") 'projectile-recentf)
+       (global-set-key (kbd "s-s") 'projectile-grep)
+)
 
-   But we don't need to see that projectile mode is running everywhere
-   so let's diminish it.
-
-   #+BEGIN_SRC emacs-lisp
-     (diminish 'projectile-mode)
-   #+END_SRC
-
-   And we some handy shortcuts
-
-   #+BEGIN_SRC emacs-lisp
-     (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
-     (global-set-key (kbd "s-f") 'projectile-find-file)
-     (global-set-key (kbd "s-E") 'projectile-recentf)
-     (global-set-key (kbd "s-s") 'projectile-grep)
+     ;; (use-package helm-projectile
+     ;;   :ensure t
+     ;;   :requires (projectile helm)
+     ;;   :config
+     ;;   (helm-projectile-on))
    #+END_SRC
 
 ** Autosave
@@ -1437,15 +1499,15 @@
 **** helm and clojure
 
      #+BEGIN_SRC emacs-lisp
-       (defun helm-clojure-headlines ()
-         "Display headlines for the current Clojure file."
-         (interactive)
-         (helm :sources '(((name . "Clojure Headlines")
-                           (volatile)
-                           (headline "^[;(]")))))
+       ;; (defun helm-clojure-headlines ()
+       ;;   "Display headlines for the current Clojure file."
+       ;;   (interactive)
+       ;;   (helm :sources '(((name . "Clojure Headlines")
+       ;;                     (volatile)
+       ;;                     (headline "^[;(]")))))
 
-       (add-hook 'clojure-mode-hook
-                 (lambda () (local-set-key (kbd "s-h") 'helm-clojure-headlines)))
+       ;; (add-hook 'clojure-mode-hook
+       ;;           (lambda () (local-set-key (kbd "s-h") 'helm-clojure-headlines)))
      #+END_SRC
 
 **** sw1nn-cider-perspective or Engineering
@@ -2037,8 +2099,8 @@
     the headlines in org-mode too.
 
     #+BEGIN_SRC emacs-lisp
-      (add-hook 'org-mode-hook
-                (lambda () (local-set-key (kbd "s-h") 'helm-org-headlines)))
+;;      (add-hook 'org-mode-hook
+;;                (lambda () (local-set-key (kbd "s-h") 'helm-org-headlines)))
     #+END_SRC
 
 *** org-cheatsheet
@@ -2047,11 +2109,11 @@
     modes like org-mode.
 
     #+BEGIN_SRC emacs-lisp
-    (use-package helm-orgcard
-     :ensure t
-     :config
-     (add-hook 'org-mode-hookv
-      (lambda () (local-set-key [s-f1] 'helm-orgcard))))
+      ;; (use-package helm-orgcard
+      ;;  :ensure t
+      ;;  :config
+      ;;  (add-hook 'org-mode-hookv
+      ;;   (lambda () (local-set-key [s-f1] 'helm-orgcard))))
 
     #+END_SRC
 
@@ -2148,11 +2210,11 @@
 **** helm support
 
      #+BEGIN_SRC emacs-lisp
-     (use-package helm-css-scss
-      :ensure t
-      :config
-      (add-hook 'css-mode-hook
-                 (lambda () (local-set-key (kbd "s-h") 'helm-css-scss))))
+       ;; (use-package helm-css-scss
+       ;;  :ensure t
+       ;;  :config
+       ;;  (add-hook 'css-mode-hook
+       ;;             (lambda () (local-set-key (kbd "s-h") 'helm-css-scss))))
      #+END_SRC
 
 *** htmlize

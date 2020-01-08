@@ -32992,7 +32992,7 @@ ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 pbtest2</string>
 			<key>Columns</key>
 			<integer>80</integer>
 			<key>Command</key>
-			<string>ssh -C -o 'ServerAliveInterval 180'  -L 5436:veritastest1:5432 devel.jmayaalv@veritastest2</string>
+			<string>ssh -C -o 'ServerAliveInterval 180'  -L 5436:veritastest2:5432 devel.jmayaalv@veritastest1</string>
 			<key>Cursor Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -34721,7 +34721,7 @@ ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 pbtest2</string>
 	<key>NoSyncLastTipTime</key>
 	<real>489424643.50832599</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>135</integer>
+	<integer>141</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>575345177.85879505</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
@@ -35569,7 +35569,7 @@ ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 pbtest2</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-12-27T13:36:00Z</date>
+	<date>2020-01-03T13:17:00Z</date>
 	<key>SUUpdateRelaunchingMarker</key>
 	<false/>
 	<key>SavePasteHistory</key>
