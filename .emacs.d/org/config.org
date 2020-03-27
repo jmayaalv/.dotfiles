@@ -2277,8 +2277,20 @@
        :config
        (add-to-list 'auto-mode-alist '("\\.plantuml\\'" . plantuml-mode)))
    #+END_SRC
+** VLF
+   #+BEGIN_SRC emacs-lisp
+   (use-package vlf :ensure t)
+   #+END_SRC
+** Logs
+
+   #+BEGIN_SRC emacs-lisp
+     (use-package logview
+       :ensure t
+       :config
+       (add-to-list 'auto-mode-alist '("\\.log\\'" . logview-mode)))
+   #+END_SRC
 * Integrations
-** rest
+** Rest
    #+begin_src emacs-lisp
      (use-package restclient
        :ensure t
@@ -2294,10 +2306,9 @@
      (setq auth-source-debug t)
      (setq tramp-default-user "devel.jmayaalv")
      (setq tramp-default-method "ssh")
-
-
      (setq tramp-chunksize 500)
      (eval-after-load 'tramp '(setenv "SHELL" "/bin/bash"))
+     (add-to-list 'auto-mode-alist '("\\.log\\'" . auto-revert-mode))
   #+END_SRC
 ** gpg
 
