@@ -5,14 +5,18 @@
       '(
         beginning-of-buffer
         cider-load-buffer
+        cljr-slash
         swiper
         ))
 
 (setq mc/cmds-to-run-once
       '(
+        backward-sexp
         comint-previous-input
+        crux-move-beginning-of-line
         end-of-buffer
         iedit-switch-to-mc-mode
         ivy-end-of-buffer
         sql-magic-go
+        sql-magic-semicolon
         ))

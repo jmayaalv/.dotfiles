@@ -360,7 +360,8 @@
     #+BEGIN_SRC emacs-lisp
     (use-package zenburn-theme
       :ensure t
-      :config (load-theme 'zenburn t))
+      :config
+      (load-theme 'zenburn t))
     #+END_SRC
 
 ** fonts
@@ -825,28 +826,25 @@
             (global-set-key (kbd "C-x l") 'counsel-locate)
             (define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history)))
 
-        (use-package ivy-posframe
+        (use-package flx
+         :ensure t
+         :requires counsel
+         :config
+         (setq ivy-initial-inputs-alist nil)
+         (setq ivy-re-builders-alist
+               '((t . ivy--regex-plus))))
+
+       (use-package ivy-posframe
           :ensure t
+          :requires counsel
           :after ivy
           :diminish
-          :config
+          :init
           (setq ivy-posframe-display-functions-alist '((t . ivy-posframe-display-at-frame-top-center))
                 ivy-posframe-height-alist '((t . 20))
                 ivy-posframe-parameters '((internal-border-width . 10)))
           (setq ivy-posframe-width 150)
-          (ivy-posframe-mode +1))
-
-        (use-package ivy-rich
-          :ensure t
-          :diminish
-          :init
-          (setcdr (assq t ivy-format-functions-alist) #'ivy-format-function-line)
-;          (setq ivy-rich-display-transformers-list
-;                '(counsel-find-file
-;                  (:columns
-;                   ((ivy-read-file-transformer)
-;                    (ivy-rich-counsel-find-file-truename (:face font-lock-doc-face))))))
-          (ivy-rich-mode 1))
+          (ivy-posframe-mode 1))
       #+END_SRC
 ** helm-mode
    #+BEGIN_SRC emacs-lisp
@@ -1311,40 +1309,6 @@
      #+BEGIN_SRC emacs-lisp
        (add-hook 'emacs-lisp-mode-hook lisp-hooks)
      #+END_SRC
-
-**** Pop Up Help in Emacs Lisp
-
-     #+BEGIN_SRC emacs-lisp
-       (require 'popup)
-
-       (defun describe-thing-in-popup ()
-         (interactive)
-         (let* ((thing (symbol-at-point))
-                (help-xref-following t)
-                (description (with-temp-buffer
-                               (help-mode)
-                               (help-xref-interned thing)
-                               (buffer-string))))
-           (popup-tip description
-                      :point (point)
-                      :around t
-                      :height 30
-                      :scroll-bar t
-                      :margin t)))
-     #+END_SRC
-
-***** The usual help keybinding
-
-      Let's use C-c C-d for describing functions at point as this is
-      the binding in cider/nrepl that I'm used to. We'll probably do
-      this in other modes as well so we'll make it a local keybinding
-      and then it will more or less [[http://en.wikipedia.org/wiki/DWIM][dwim]].
-
-      #+BEGIN_SRC emacs-lisp
-        (add-hook 'emacs-lisp-mode-hook
-                  (lambda () (local-set-key (kbd "C-c C-d") 'describe-thing-in-popup)))
-      #+END_SRC
-
 *** clojure
 **** cider
 
@@ -1593,6 +1557,11 @@
        (add-to-list 'interpreter-mode-alist '("node" . js2-mode)))
    #+END_SRC
 
+** ocaml
+   #+BEGIN_SRC emacs-lisp
+   (use-package tuareg
+     :ensure t)
+   #+END_SRC
 ** pastebins
 
    gist, pastebin, refheap. All good ways of sharing snippets of code
@@ -1707,6 +1676,16 @@
                (sql-user "imsomitest2")
                (sql-database "imsomitest2db"))
 
+            (omi.test4
+               (sql-name "omi.test4")
+               (sql-postgres-program "/usr/local/pgsql/bin/psql")
+               (sql-default-directory "/ssh:devel.jmayaalv@omitest4:")
+               (sql-product 'postgres)
+               (sql-port 5432)
+               (sql-server "localhost")
+               (sql-user "imsomitest4")
+               (sql-database "imsomitest4db"))
+
               (northstar.prod
                (sql-name "northstar.prod")
                (sql-postgres-program "/usr/local/pgsql/bin/psql")
@@ -1757,6 +1736,16 @@
                (sql-server "localhost")
                (sql-user "imsglacierprod")
                (sql-database "imsglacierproddb"))
+
+              (agl.prod
+               (sql-name "agl.prod")
+               (sql-postgres-program "/usr/local/pgsql/bin/psql")
+               (sql-default-directory "/ssh:devel.jmayaalv@agldb:")
+               (sql-product 'postgres)
+               (sql-port 5432)
+               (sql-server "localhost")
+               (sql-user "imsdartaprod")
+               (sql-database "imsdartaproddb"))
               (argus.prod
                (sql-name "argus.prod")
                (sql-postgres-program "/usr/local/pgsql/bin/psql")
@@ -1782,6 +1771,10 @@
       (defun sql-oic.prod ()
         (interactive)
         (my-sql-connect 'postgres 'oic.prod))
+
+      (defun sql-agl.prod ()
+        (interactive)
+        (my-sql-connect 'postgres 'agl.prod))
 
       (defun sql-omi.prod ()
         (interactive)
@@ -1830,6 +1823,10 @@
      (defun sql-omi.test2 ()
         (interactive)
         (my-sql-connect 'postgres 'omi.test2))
+
+     (defun sql-omi.test4 ()
+        (interactive)
+        (my-sql-connect 'postgres 'omi.test4))
 
       (defun my-sql-connect (product connection)
         (setq sql-product product)
@@ -2294,13 +2291,9 @@
 
    #+BEGIN_SRC emacs-lisp
      (setq auth-source-debug t)
-     (setq tramp-default-method "ssh")
-     (add-to-list 'tramp-default-user-alist
-                  '(nil "oicdb" "devel.jmayaalv"))
-     (add-to-list 'tramp-default-user-alist
-                    '(nil "veritastest" "devel.jmayaalv"))
-     (add-to-list 'tramp-default-user-alist
-                  '(nil nil "jmayaalv") t)
+     (custom-set-variables
+                '(tramp-default-method "ssh")
+                '(tramp-default-user "devel.jmayaalv"))
      (setq tramp-chunksize 500)
      (eval-after-load 'tramp '(setenv "SHELL" "/bin/bash"))
   #+END_SRC
@@ -2324,4 +2317,4 @@
 
    #+begin_src emacs-lisp
    (setq epa-pinentry-mode 'loopback)
-   #+end_src
+   #+end_sr

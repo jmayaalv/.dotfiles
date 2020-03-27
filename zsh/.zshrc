@@ -8,6 +8,15 @@ export PATH=$HOME/bin:/usr/local/bin:/Applications/Tools/apache-maven-3.3.3/bin:
 # Emacs Anywhere
 export EA_EDITOR='emacsclient -a "" -c --display ns'
 
+# Fancy clojure repl
+function clj() {
+    if [[ -z $@ ]]
+    then
+        command clojure -A:repl
+    else
+        command clj $@
+    fi
+}
  
 # Datomic
 
