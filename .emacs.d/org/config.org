@@ -2285,36 +2285,36 @@
        :config
        (add-to-list 'auto-mode-alist '("\\.rest\\'" . restclient-mode)))
    #+end_src
+
 ** Tramp
 
    Tramp defaults
 
    #+BEGIN_SRC emacs-lisp
      (setq auth-source-debug t)
-     (custom-set-variables
-                '(tramp-default-method "ssh")
-                '(tramp-default-user "devel.jmayaalv"))
+     (setq tramp-default-user "devel.jmayaalv")
+     (setq tramp-default-method "ssh")
+
+
      (setq tramp-chunksize 500)
      (eval-after-load 'tramp '(setenv "SHELL" "/bin/bash"))
   #+END_SRC
-
-
 ** gpg
 
    Secrets are safe here
 
-   #+begin_src emacs-lisp
 
+   #+BEGIN_SRC emacs-lisp
    (setq auth-sources
     '((:source "~/.emacs.d/secrets/.authinfo.gpg")))
 
-    (custom-set-variables '(epg-gpg-program  "/usr/local/bin/gpg"))
+    ;(custom-set-variables '(epg-gpg-program  "/usr/local/bin/gpg2"))
+   #+END_SRC
 
 
-   #+end_src
 
    Handle querying the passphrase through minibuffer.
 
-   #+begin_src emacs-lisp
+   #+BEGIN_SRC emacs-lisp
    (setq epa-pinentry-mode 'loopback)
-   #+end_sr
+   #+END_SRC
