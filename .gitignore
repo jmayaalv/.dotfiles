@@ -6,7 +6,6 @@
 /.emacs.d/recentf
 /.emacs.d/org/config.el
 /.emacs.d/network-security.data
-/.emacs.d/elpa
 /.emacs.d/projectile-bookmarks.eld
 /.emacs.d/.cask/
 /.emacs.d/eshell

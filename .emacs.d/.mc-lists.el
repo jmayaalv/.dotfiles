@@ -15,6 +15,7 @@
         comint-previous-input
         crux-move-beginning-of-line
         end-of-buffer
+        forward-sexp
         iedit-switch-to-mc-mode
         ivy-end-of-buffer
         sql-magic-go

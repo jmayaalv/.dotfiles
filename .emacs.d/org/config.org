@@ -1727,6 +1727,16 @@
                (sql-user "imsglaciertest1")
                (sql-database "imsglaciertest1db"))
 
+             (glacier.test2
+               (sql-name "glacier.test2")
+               (sql-postgres-program "/usr/local/pgsql/bin/psql")
+               (sql-default-directory "/ssh:devel.jmayaalv@glaciertest2:")
+               (sql-product 'postgres)
+               (sql-port 5432)
+               (sql-server "localhost")
+               (sql-user "imsglaciertest2")
+               (sql-database "imsglaciertest2db"))
+
               (glacier.prod
                (sql-name "glacier.prod")
                (sql-postgres-program "/usr/local/pgsql/bin/psql")
@@ -1754,7 +1764,16 @@
                (sql-port 5432)
                (sql-server "localhost")
                (sql-user "imsargusprod")
-               (sql-database "imsargusproddb"))))
+               (sql-database "imsargusproddb"))
+              (providence.prod
+               (sql-name "providence.prod")
+               (sql-postgres-program "/usr/local/pgsql/bin/psql")
+               (sql-default-directory "/ssh:devel.jmayaalv@providenceprod:")
+               (sql-product 'postgres)
+               (sql-port 5432)
+               (sql-server "localhost")
+               (sql-user "imsprovidenceprod")
+               (sql-database "imsprovidenceproddb"))))
     #+End_SRC
 
     And this  makes all it all happen via M-x sql-xxx where xxx is the name of the pool in the prev list ex: sql-localhost.mbp
@@ -1792,9 +1811,17 @@
         (interactive)
         (my-sql-connect 'postgres 'argus.prod))
 
+      (defun sql-providence.prod ()
+        (interactive)
+        (my-sql-connect 'postgres 'providence.prod))
+
       (defun sql-glacier.test ()
         (interactive)
         (my-sql-connect 'postgres 'glacier.test))
+
+     (defun sql-glacier.test2 ()
+        (interactive)
+        (my-sql-connect 'postgres 'glacier.test2))
 
       (defun sql-veritas.test ()
         (interactive)

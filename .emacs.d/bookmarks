@@ -9,7 +9,7 @@
  (position . 326))
 ("org-capture-last-stored"
  (filename . "~/org/refile.org")
- (front-context-string . "* TODO update nr")
- (rear-context-string . "4-03 Wed 20:29]\n")
- (position . 2830))
+ (front-context-string . "* TODO \n  :LOGBO")
+ (rear-context-string . "4-10 Wed 20:57]\n")
+ (position . 5034))
 )
