@@ -795,7 +795,6 @@
 ** Counsel
    #+BEGIN_SRC emacs-lisp
    (use-package counsel :ensure t
-    :pin melpa-stable
     :init (counsel-mode 1))
    #+END_SRC
 ** Ivy

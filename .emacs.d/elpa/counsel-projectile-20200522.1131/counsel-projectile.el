@@ -4,8 +4,8 @@
 
 ;; Author: Eric Danan
 ;; URL: https://github.com/ericdanan/counsel-projectile
-;; Package-Version: 0.3.1
-;; Package-Commit: d71a3274cfa9d7425f1bcee3eb2dfed9714ac16d
+;; Package-Version: 20200522.1131
+;; Package-Commit: 77392cbbc42e98fc137b43f1db1b111ba6e2dd75
 ;; Keywords: project, convenience
 ;; Version: 0.3.1
 ;; Package-Requires: ((counsel "0.13.0") (projectile "2.0.0"))
@@ -245,17 +245,6 @@ If anything goes wrong, throw an error and do not modify ACTION-VAR."
                      (cdr action-list))))))
     (set action-var action-list)))
 
-;; Copy the function `string-trim-right' from emacs 26 here so as to
-;; support emacs 25 (the function exists in emacs 25 but doesn't
-;; accept the REGEXP optional argument).
-(defsubst counsel-projectile--string-trim-right (string &optional regexp)
-  "Trim STRING of trailing string matching REGEXP.
-
-REGEXP defaults to  \"[ \\t\\n\\r]+\"."
-  (if (string-match (concat "\\(?:" (or regexp "[ \t\n\r]+") "\\)\\'") string)
-      (replace-match "" t t string)
-    string))
-
 ;;* counsel-projectile-find-file
 
 (defcustom counsel-projectile-sort-files nil
@@ -412,9 +401,8 @@ non-nil, use completion based on context."
                 :action counsel-projectile-find-file-action
                 :caller 'counsel-projectile-find-file))))
 
-(ivy-set-display-transformer
- 'counsel-projectile-find-file
- 'counsel-projectile-find-file-transformer)
+(ivy-configure 'counsel-projectile-find-file
+ :display-transformer-fn #'counsel-projectile-find-file-transformer)
 
 ;;;###autoload
 (defun counsel-projectile-find-file-dwim (&optional arg)
@@ -504,9 +492,8 @@ With a prefix ARG, invalidate the cache first."
               :action counsel-projectile-find-dir-action
               :caller 'counsel-projectile-find-dir)))
 
-(ivy-set-display-transformer
- 'counsel-projectile-find-dir
- 'counsel-projectile-find-dir-transformer)
+(ivy-configure 'counsel-projectile-find-dir
+ :display-transformer-fn #'counsel-projectile-find-dir-transformer)
 
 ;;* counsel-projectile-switch-to-buffer
 
@@ -585,7 +572,7 @@ names as in `ivy--buffer-list', and remove current buffer if
   "Transform candidate STR when switching project buffers.
 
 This simply applies the same transformer as in `ivy-switch-buffer', which is `ivy-switch-buffer-transformer' by default but could have been modified e.g. by the ivy-rich package."
-  (funcall (plist-get ivy--display-transformers-list 'ivy-switch-buffer)
+  (funcall (ivy-alist-setting ivy--display-transformers-alist 'ivy-switch-buffer)
            str))
 
 ;;;###autoload
@@ -607,9 +594,8 @@ This simply applies the same transformer as in `ivy-switch-buffer', which is `iv
               :keymap counsel-projectile-switch-to-buffer-map
               :caller 'counsel-projectile-switch-to-buffer)))
 
-(ivy-set-display-transformer
- 'counsel-projectile-switch-to-buffer
- 'counsel-projectile-switch-to-buffer-transformer)
+(ivy-configure 'counsel-projectile-switch-to-buffer
+ :display-transformer-fn #'counsel-projectile-switch-to-buffer-transformer)
 
 ;;* counsel-projectile-grep
 
@@ -650,7 +636,7 @@ of `(ivy-thing-at-point)' by hitting \"M-n\" in the minibuffer."
                        (string   :tag "    name")))
   :group 'counsel-projectile)
 
-(defvar counsel-projectile-grep-base-command "grep -rnEI %s -- %%s %s"
+(defvar counsel-projectile-grep-base-command "grep -rnEI %s %%s"
   "Format string to use in `cousel-projectile-grep' to
 construct the command.")
 
@@ -674,7 +660,7 @@ construct the command.")
   (counsel-projectile-switch-project 'counsel-projectile-switch-project-action-git-grep))
 
 (defun counsel-projectile-grep-transformer (str)
-  "Higlight file and line number in STR, first removing the
+  "Highlight file and line number in STR, first removing the
 \"./\" prefix from the filename."
   ;; This makes the display consistent with `counsel-git-grep' and
   ;; `counsel-ag'-like commands.
@@ -703,12 +689,7 @@ called with a prefix argument."
     (if (and (eq (projectile-project-vcs) 'git)
              projectile-use-git-grep)
         (counsel-projectile-git-grep options-or-cmd)
-      (let* ((path
-              (mapconcat 'shell-quote-argument
-                         (projectile-normalise-paths
-                          (car (projectile-parse-dirconfig-file)))
-                         " "))
-             (ignored-files
+      (let* ((ignored-files
               (mapconcat (lambda (i)
                            (concat "--exclude=" (shell-quote-argument i)))
                          (append
@@ -725,7 +706,7 @@ called with a prefix argument."
         (counsel-require-program
          (car (split-string counsel-projectile-grep-base-command)))
         (setq counsel-projectile-grep-command
-              (format counsel-projectile-grep-base-command ignored path))
+              (format counsel-projectile-grep-base-command ignored))
         (ivy-read (projectile-prepend-project-name "grep: ")
                   #'counsel-projectile-grep-function
                   :initial-input (eval counsel-projectile-grep-initial-input)
@@ -738,10 +719,11 @@ called with a prefix argument."
                             (swiper--cleanup))
                   :caller 'counsel-projectile-grep)))))
 
-(cl-pushnew 'counsel-projectile-grep ivy-highlight-grep-commands)
-(counsel-set-async-exit-code 'counsel-projectile-grep 1 "No matches found")
-(ivy-set-occur 'counsel-projectile-grep 'counsel-projectile-grep-occur)
-(ivy-set-display-transformer 'counsel-projectile-grep  'counsel-projectile-grep-transformer)
+(ivy-configure 'counsel-projectile-grep
+  :display-transformer-fn #'counsel-projectile-grep-transformer
+  :occur #'counsel-projectile-grep-occur
+  :grep-p t
+  :exit-codes '(1 "No matches found"))
 
 ;;;###autoload
 (defun counsel-projectile-git-grep (&optional cmd)
@@ -754,15 +736,7 @@ with a prefix argument."
   (if (and (eq projectile-require-project-root 'prompt)
            (not (projectile-project-p)))
       (counsel-projectile-git-grep-action-switch-project)
-    (let* ((ivy--actions-list (copy-sequence ivy--actions-list))
-           (path
-            (mapconcat 'shell-quote-argument
-                       (projectile-normalise-paths
-                        (car (projectile-parse-dirconfig-file)))
-                       " "))
-           (counsel-git-grep-cmd-default
-            (concat (counsel-projectile--string-trim-right counsel-git-grep-cmd-default " \\.")
-                    " " path)))
+    (let ((ivy--actions-list (copy-sequence ivy--actions-list)))
       (ivy-add-actions
        'counsel-git-grep
        counsel-projectile-git-grep-extra-actions)
@@ -815,10 +789,6 @@ is called with a prefix argument."
            (not (projectile-project-p)))
       (counsel-projectile-ag-action-switch-project)
     (let* ((ivy--actions-list (copy-sequence ivy--actions-list))
-           (path (mapconcat 'shell-quote-argument
-                            (projectile-normalise-paths
-                             (car (projectile-parse-dirconfig-file)))
-                            " "))
            (ignored
             (mapconcat (lambda (i)
                          (concat "--ignore " (shell-quote-argument i)))
@@ -827,9 +797,10 @@ is called with a prefix argument."
                         (projectile-ignored-files-rel)
                         (projectile-ignored-directories-rel))
                        " "))
+           (counsel-ag-command counsel-ag-base-command)
            (counsel-ag-base-command
-            (format (counsel-projectile--string-trim-right counsel-ag-base-command " \\.")
-                    (concat ignored " %s " path))))
+            (let ((counsel-ag-command counsel-ag-base-command))
+              (counsel--format-ag-command ignored "%s"))))
       (ivy-add-actions
        'counsel-ag
        counsel-projectile-ag-extra-actions)
@@ -837,7 +808,10 @@ is called with a prefix argument."
                   (projectile-project-root)
                   options
                   (projectile-prepend-project-name
-                   (concat (car (split-string counsel-ag-base-command)) ": "))))))
+                   (concat (car (if (listp counsel-ag-base-command)
+                                    counsel-ag-base-command
+                                  (split-string counsel-ag-base-command)))
+                           ": "))))))
 
 ;;* counsel-projectile-rg
 
@@ -885,12 +859,6 @@ is called with a prefix argument."
            (not (projectile-project-p)))
       (counsel-projectile-rg-action-switch-project)
     (let* ((ivy--actions-list (copy-sequence ivy--actions-list))
-           (path
-            (mapconcat 'shell-quote-argument
-                       (or (projectile-normalise-paths
-                            (car (projectile-parse-dirconfig-file)))
-                           '("."))
-                       " "))
            (ignored
             (mapconcat (lambda (i)
                          (concat "--glob !" (shell-quote-argument i)))
@@ -898,10 +866,10 @@ is called with a prefix argument."
                         (projectile--globally-ignored-file-suffixes-glob)
                         (projectile-ignored-files-rel)
                         (projectile-ignored-directories-rel))
-                       " "))
+                       " "))        
            (counsel-rg-base-command
-            (format (counsel-projectile--string-trim-right counsel-rg-base-command " \\.")
-                    (concat ignored " %s " path))))
+            (let ((counsel-ag-command counsel-rg-base-command))
+              (counsel--format-ag-command ignored "%s"))))
       (ivy-add-actions
        'counsel-rg
        counsel-projectile-rg-extra-actions)
@@ -909,7 +877,10 @@ is called with a prefix argument."
                   (projectile-project-root)
                   options
                   (projectile-prepend-project-name
-                   (concat (car (split-string counsel-rg-base-command)) ": "))))))
+                   (concat (car (if (listp counsel-rg-base-command)
+                                    counsel-rg-base-command
+                                  (split-string counsel-rg-base-command)))
+                           ": "))))))
 
 ;;* counsel-projectile-org-capture
 
@@ -1061,6 +1032,11 @@ The format is the same as in `org-capture-templates-contexts'."
                        (string   :tag "    name")))
   :group 'counsel-projectile)
 
+(defcustom counsel-projectile-org-capture-templates-first-p t
+  "Non-nil if `counsel-projectile-org-capture' should display templates from `counsel-projectile-org-capture-templates' before those from `org-capture-templates'."
+  :type 'boolean
+  :group 'counsel-projectile)
+
 (defvar counsel-projectile--org-capture-templates-backup nil
   "Stores a backup of `org-capture-templates'.")
 
@@ -1096,6 +1072,8 @@ capture."
                   org-capture-templates-contexts))
          (org-capture-templates
           (append
+           (unless counsel-projectile-org-capture-templates-first-p
+             org-capture-templates)
            (when root
              (cl-loop
               with replace-fun = `(lambda (string)
@@ -1120,7 +1098,8 @@ capture."
                                 collect x)
                        else
                        collect item)))
-           org-capture-templates)))
+           (when counsel-projectile-org-capture-templates-first-p
+             org-capture-templates))))
     (ivy-add-actions
      'counsel-org-capture
      counsel-projectile-org-capture-extra-actions)
@@ -1215,6 +1194,8 @@ candidates list of `counsel-projectile-switch-project'."
     "invoke eshell from project root")
    ("xt" counsel-projectile-switch-project-action-run-term
     "invoke term from project root")
+   ("xv" counsel-projectile-switch-project-action-run-vterm
+    "invoke vterm from project root")
    ("Oc" counsel-projectile-switch-project-action-org-capture
     "capture into project")
    ("Oa" counsel-projectile-switch-project-action-org-agenda
@@ -1329,19 +1310,30 @@ action."
 
 (defun counsel-projectile-switch-project-action-run-shell (project)
   "Invoke `shell' from PROJECT's root."
-  (let ((projectile-switch-project-action 'projectile-run-shell))
+  (let ((projectile-switch-project-action
+         (lambda ()
+           (projectile-run-shell ivy-current-prefix-arg))))
     (counsel-projectile-switch-project-by-name project)))
 
 (defun counsel-projectile-switch-project-action-run-eshell (project)
   "Invoke `eshell' from PROJECT's root."
-  (let ((projectile-switch-project-action 'projectile-run-eshell))
+  (let ((projectile-switch-project-action
+         (lambda ()
+           (projectile-run-eshell ivy-current-prefix-arg))))
     (counsel-projectile-switch-project-by-name project)))
 
 (defun counsel-projectile-switch-project-action-run-term (project)
   "Invoke `term' from PROJECT's root."
   (let ((projectile-switch-project-action
          (lambda ()
-           (projectile-run-term nil))))
+           (projectile-run-term ivy-current-prefix-arg))))
+    (counsel-projectile-switch-project-by-name project)))
+
+(defun counsel-projectile-switch-project-action-run-vterm (project)
+  "Invoke `vterm' from PROJECT's root."
+  (let ((projectile-switch-project-action
+         (lambda ()
+           (projectile-run-vterm ivy-current-prefix-arg))))
     (counsel-projectile-switch-project-by-name project)))
 
 (defun counsel-projectile-switch-project-action-grep (project)
@@ -1554,9 +1546,8 @@ If not inside a project, call `counsel-projectile-switch-project'."
               :keymap counsel-projectile-map
               :caller 'counsel-projectile)))
 
-(ivy-set-display-transformer
- 'counsel-projectile
- 'counsel-projectile-transformer)
+(ivy-configure 'counsel-projectile
+ :display-transformer-fn #'counsel-projectile-transformer)
 
 ;;* counsel-projectile-mode
 
