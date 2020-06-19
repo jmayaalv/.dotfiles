@@ -2315,6 +2315,11 @@
        :config
        (add-to-list 'auto-mode-alist '("\\.log\\'" . logview-mode)))
    #+END_SRC
+*** Remamp comment-dwin to comment line
+    #+begin_src emacs-lisp
+    (global-set-key [remap comment-dwim] #'comment-line)
+    (global-set-key [remap paredit-comment-dwim] #'comment-line)
+    #+end_src
 * Integrations
 ** Rest
    #+begin_src emacs-lisp
