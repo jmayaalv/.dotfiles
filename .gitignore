@@ -18,3 +18,4 @@
 /.emacs.d/auto-save-list/
 *.swp
 *.plist
+/.emacs.d/elpa/doom-themes-*/

@@ -456,7 +456,7 @@
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string></string>
+			<string>ssh -C -o "ServerAliveInterval=180" -L 7000:localhost:7000 devel.jmayaalv@providenceprod</string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -1391,7 +1391,7 @@
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string></string>
+			<string>ssh -C -o "ServerAliveInterval=180" -L 5436:provtest1:5432 devel.jmayaalv@veritastest</string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -2338,7 +2338,7 @@
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string></string>
+			<string>ssh -C -o 'ServerAliveInterval 180'  -L 5436:127.0.0.1:5432 devel.jmayaalv@dartadb</string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -3256,7 +3256,7 @@
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string></string>
+			<string>ssh -C -o 'ServerAliveInterval 180'  devel.jmayaalv@aglweb1</string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -4195,7 +4195,7 @@
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string></string>
+			<string>ssh -C -o 'ServerAliveInterval 180'  -L 7000:127.0.0.1:7000 devel.jmayaalv@aglweb2</string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -6079,7 +6079,7 @@ ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 glacierdb</string>
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string></string>
+			<string>ssh -C -o 'ServerAliveInterval 180'  -L 5436:127.0.0.1:5432 devel.jmayaalv@glacierdb</string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -6997,7 +6997,7 @@ ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 glacierdb</string>
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string></string>
+			<string>ssh -C  -o 'ServerAliveInterval 180' devel.jmayaalv@glacierweb1</string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -7915,7 +7915,7 @@ ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 glacierdb</string>
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string></string>
+			<string>ssh -C -o 'ServerAliveInterval 180'  -L 7000:127.0.0.1:7000 devel.jmayaalv@glacierweb2</string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -8834,7 +8834,7 @@ ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 glacierdb</string>
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string></string>
+			<string>ssh -C -o 'ServerAliveInterval 180'  -L 5436:127.0.0.1:5432 devel.jmayaalv@argustest1</string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -9777,7 +9777,7 @@ ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 glacierdb</string>
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string></string>
+			<string>ssh -C -o 'ServerAliveInterval 180'  -L 5436:127.0.0.1:5432 devel.jmayaalv@argustest2</string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -10720,7 +10720,7 @@ ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 glacierdb</string>
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string></string>
+			<string>ssh -C -o 'ServerAliveInterval 180'  -L 5436:127.0.0.1:5432 devel.jmayaalv@omitest</string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -11663,7 +11663,7 @@ ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 glacierdb</string>
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string></string>
+			<string>ssh -C -o 'ServerAliveInterval 180'  -L 5436:127.0.0.1:5432 devel.jmayaalv@omitest2</string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -12608,7 +12608,7 @@ ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 glacierdb</string>
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string></string>
+			<string>ssh -C -o 'ServerAliveInterval 180'  -L 5436:127.0.0.1:5432 devel.jmayaalv@veritastest</string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -13549,7 +13549,7 @@ ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 glacierdb</string>
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string></string>
+			<string>ssh -C -o 'ServerAliveInterval 180'  -L 5437:127.0.0.1:5432 devel.jmayaalv@oicdb</string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -14479,7 +14479,19 @@ ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 pbtest2</string>
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string></string>
+			<string>ssh -C devel.jmayaalv@pbtest2
+ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 glacierdb
+ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 glacierdb
+ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 glacierdb
+ssh  -C -o "ServerAliveInterval 180" -L 5429:127.0.0.1:5432 172.22.104.66
+ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 glacierdb
+ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 glacierdb
+ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 glacierdb
+ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 glacierdb
+ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 glacierdb
+ssh  -C -o "ServerAliveInterval 180" -L 5429:127.0.0.1:5432 172.22.104.66
+ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 glacierdb
+ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 pbtest2</string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -15426,7 +15438,7 @@ ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 pbtest2</string>
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string></string>
+			<string>ssh -C -o 'ServerAliveInterval 180'  -L 5436:127.0.0.1:5432 devel.jmayaalv@sanlamdb</string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -16346,7 +16358,7 @@ ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 pbtest2</string>
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string></string>
+			<string>ssh -C -o 'ServerAliveInterval 180'  -L 7000:127.0.0.1:7000 devel.jmayaalv@sanlamweb2</string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -17269,7 +17281,7 @@ ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 pbtest2</string>
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string></string>
+			<string>ssh -C -o 'ServerAliveInterval 180'  -L 5436:127.0.0.1:5432 devel.jmayaalv@sanlamtest1</string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -18188,7 +18200,7 @@ ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 pbtest2</string>
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string></string>
+			<string>ssh -C -o 'ServerAliveInterval 180'  devel.jmayaalv@sanlamweb1</string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -19109,7 +19121,7 @@ ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 pbtest2</string>
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string></string>
+			<string>ssh -C  -o 'ServerAliveInterval 180' -L 5436:127.0.0.1:5432 devel.jmayaalv@glaciertest</string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -20030,7 +20042,7 @@ ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 pbtest2</string>
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string></string>
+			<string>ssh -C -o 'ServerAliveInterval 180'  -L 7000:127.0.0.1:7000 devel.jmayaalv@172.22.104.79</string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -20883,7 +20895,7 @@ ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 pbtest2</string>
 			<key>Columns</key>
 			<integer>80</integer>
 			<key>Command</key>
-			<string>ssh -C -o 'ServerAliveInterval 180'  -L 5436:127.0.0.1:5432 devel.jmayaalv@pbihltest1</string>
+			<string>ssh -C -o 'ServerAliveInterval 180'  -L 5436:127.0.0.1:5432 devel.jmayaalv@nstest</string>
 			<key>Cursor Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -20951,7 +20963,7 @@ ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 pbtest2</string>
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string></string>
+			<string>ssh -C -o 'ServerAliveInterval 180'  -L 5436:127.0.0.1:5432 devel.jmayaalv@nstest</string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -21896,7 +21908,7 @@ ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 pbtest2</string>
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string></string>
+			<string>ssh -C -o 'ServerAliveInterval 180'  -L 7000:127.0.0.1:7000 devel.jmayaalv@veritasprod</string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -22836,7 +22848,7 @@ ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 pbtest2</string>
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string></string>
+			<string>ssh -C -o 'ServerAliveInterval 180'  -L 7000:127.0.0.1:7000 devel.jmayaalv@nsweb2</string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -23778,7 +23790,7 @@ ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 pbtest2</string>
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string></string>
+			<string>ssh -C -o 'ServerAliveInterval 180'  -L 5436:127.0.0.1:5432 devel.jmayaalv@nsdb</string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -24698,7 +24710,7 @@ ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 pbtest2</string>
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string></string>
+			<string>ssh -C -o 'ServerAliveInterval 180'  -L 7000:127.0.0.1:7000 devel.jmayaalv@oicweb2</string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -25619,7 +25631,7 @@ ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 pbtest2</string>
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string></string>
+			<string>ssh -C -o 'ServerAliveInterval 180'  -L 5436:127.0.0.1:5432 devel.jmayaalv@omitest4</string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -26566,7 +26578,7 @@ ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 pbtest2</string>
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string></string>
+			<string>ssh -C -o 'ServerAliveInterval 180'  -L 7000:127.0.0.1:7000 devel.jmayaalv@omiweb2</string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -27488,7 +27500,7 @@ ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 pbtest2</string>
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string></string>
+			<string>ssh -C -o 'ServerAliveInterval 180'  -L 8161:127.0.0.1:8161 devel.jmayaalv@omiweb1</string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -28409,7 +28421,7 @@ ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 pbtest2</string>
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string></string>
+			<string>ssh -C -o 'ServerAliveInterval 180'  devel.jmayaalv@oicweb1</string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -29327,7 +29339,7 @@ ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 pbtest2</string>
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string></string>
+			<string>ssh -C -o 'ServerAliveInterval 180'  -L 5436:127.0.0.1:5432 devel.jmayaalv@veritasprod</string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -30269,7 +30281,7 @@ ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 pbtest2</string>
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string></string>
+			<string>ssh -C -o 'ServerAliveInterval 180'  -L 5436:127.0.0.1:5432 devel.jmayaalv@omidb</string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -31185,7 +31197,7 @@ ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 pbtest2</string>
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string></string>
+			<string>ssh -C -o 'ServerAliveInterval 180'   -L 8080:127.0.0.1:8080 devel.jmayaalv@lpiversioncontrol</string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -32124,7 +32136,7 @@ ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 pbtest2</string>
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string></string>
+			<string>ssh -C -o 'ServerAliveInterval 180'  -L 5436:127.0.0.1:5432 devel.jmayaalv@oictest3</string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -33069,7 +33081,7 @@ ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 pbtest2</string>
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string></string>
+			<string>ssh -C -o 'ServerAliveInterval 180'  devel.jmayaalv@tom</string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -33999,7 +34011,7 @@ ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 pbtest2</string>
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string></string>
+			<string>ssh -C -o 'ServerAliveInterval 180'  -L 8161:127.0.0.1:8161 devel.jmayaalv@nsweb1</string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -34939,7 +34951,7 @@ ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 pbtest2</string>
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string></string>
+			<string>ssh -C -o 'ServerAliveInterval 180'  -L 5436:veritastest2:5432 devel.jmayaalv@veritastest2</string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -35878,7 +35890,7 @@ ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 pbtest2</string>
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string></string>
+			<string>ssh -C -o 'ServerAliveInterval 180'  -L 5436:127.0.0.1:5432 devel.jmayaalv@argusprod</string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -36825,7 +36837,7 @@ ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 pbtest2</string>
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string></string>
+			<string>ssh -C  -o 'ServerAliveInterval 180' -L 7000:127.0.0.1:7000 devel.jmayaalv@glaciertest2</string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -37496,6 +37508,7 @@ ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 pbtest2</string>
 		<string>3.3.10beta2</string>
 		<string>3.3.10beta3</string>
 		<string>3.3.10beta4</string>
+		<string>3.3.11beta1</string>
 	</array>
 	<key>NoSyncCommandHistoryHasEverBeenUsed</key>
 	<true/>
@@ -37530,7 +37543,7 @@ ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 pbtest2</string>
 	<key>NoSyncLastTipTime</key>
 	<real>489424643.50832599</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>217</integer>
+	<integer>252</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>575345177.85879505</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
@@ -38378,9 +38391,9 @@ ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 pbtest2</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-05-16T09:49:01Z</date>
+	<date>2020-06-24T06:33:50Z</date>
 	<key>SUUpdateGroupIdentifier</key>
-	<integer>2798009346</integer>
+	<integer>836836362</integer>
 	<key>SUUpdateRelaunchingMarker</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -38444,7 +38457,7 @@ ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 pbtest2</string>
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.3.10beta4</string>
+	<string>3.3.11beta1</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
