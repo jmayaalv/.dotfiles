@@ -2382,4 +2382,4 @@
 
    #+BEGIN_SRC emacs-lisp
    (setq epa-pinentry-mode 'loopback)
-   #+END_SRC
+   #
