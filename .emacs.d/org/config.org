@@ -24,6 +24,10 @@
    (maybe-install-and-require 'use-package)
    #+END_SRC
 * Globals
+** start as server
+    #+BEGIN_SRC emacs-lisp
+    (server-start)
+    #+END_SRC
 ** Preserve scroll screen position
     #+BEGIN_SRC emacs-lisp
     (setq scroll-preserve-screen-position t)
@@ -2370,7 +2374,7 @@
 
 
    #+BEGIN_SRC emacs-lisp
-   (setq auth-sources
+  (setq auth-sources
     '((:source "~/.emacs.d/secrets/.authinfo.gpg")))
 
     ;(custom-set-variables '(epg-gpg-program  "/usr/local/bin/gpg2"))

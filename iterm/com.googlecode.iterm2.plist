@@ -33943,7 +33943,7 @@ ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 pbtest2</string>
 			<key>Columns</key>
 			<integer>80</integer>
 			<key>Command</key>
-			<string>ssh -C -o 'ServerAliveInterval 180'  -L 8161:127.0.0.1:8161 devel.jmayaalv@nsweb1</string>
+			<string>ssh -C -o 'ServerAliveInterval 180'  devel.jmayaalv@nsweb1</string>
 			<key>Cursor Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -34011,7 +34011,7 @@ ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 pbtest2</string>
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string>ssh -C -o 'ServerAliveInterval 180'  -L 8161:127.0.0.1:8161 devel.jmayaalv@nsweb1</string>
+			<string>ssh -C -o 'ServerAliveInterval 180'  devel.jmayaalv@nsweb1</string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -37480,6 +37480,8 @@ ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 pbtest2</string>
 	</array>
 	<key>NoSyncAllAppVersions</key>
 	<array>
+		<string>3.3.12beta3</string>
+		<string>3.3.12beta2</string>
 		<string>3.3.3beta1</string>
 		<string>3.3.5beta2</string>
 		<string>3.3.2beta1</string>
@@ -37543,7 +37545,7 @@ ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 pbtest2</string>
 	<key>NoSyncLastTipTime</key>
 	<real>489424643.50832599</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>252</integer>
+	<integer>268</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>575345177.85879505</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
@@ -38391,9 +38393,9 @@ ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 pbtest2</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-06-24T06:33:50Z</date>
+	<date>2020-07-09T05:07:35Z</date>
 	<key>SUUpdateGroupIdentifier</key>
-	<integer>836836362</integer>
+	<integer>3286621775</integer>
 	<key>SUUpdateRelaunchingMarker</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -38457,7 +38459,7 @@ ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 pbtest2</string>
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.3.11beta1</string>
+	<string>3.3.12beta3</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
