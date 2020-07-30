@@ -1,0 +1,1 @@
+update rep_report set visible = false where code = 'COMM_TRAIL';

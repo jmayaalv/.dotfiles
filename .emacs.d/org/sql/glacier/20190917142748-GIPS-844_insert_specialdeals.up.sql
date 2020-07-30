@@ -1,0 +1,4 @@
+insert into ims.rpt_specialdeals (deal_type,orgid,max_comm_allow,deal_perc,score,scorex,val_from,val_to) values (1,18111,2.75,0.25,0.425,0.25,0,9999999999999.00 );
+insert into ims.rpt_specialdeals (deal_type,orgid,max_comm_allow,deal_perc,score,scorex,val_from,val_to) values (1,18019,2.75,0.25,0.425,0.25,0,9999999999999.00 );
+insert into ims.rpt_specialdeals (deal_type,orgid,max_comm_allow,deal_perc,score,scorex,val_from,val_to) values (2,18111,2.75,0.25,0.425,0.25,0,9999999999999.00 );
+insert into ims.rpt_specialdeals (deal_type,orgid,max_comm_allow,deal_perc,score,scorex,val_from,val_to) values (2,18019,3,0.25,0.425,0.25,0,9999999999999.00 );

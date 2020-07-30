@@ -1,0 +1,3 @@
+update ent_pref set name = 'acct:eacDetailAsJSON_OLD_1000009355' where name = 'acct:eacDetailAsJSON' and entity_id = (select acctid from ims_acct where acctnum = '1000009355');
+update ent_pref set name = 'acct:eacDetailAsJSON_OLD_1000010262' where name = 'acct:eacDetailAsJSON' and entity_id = (select acctid from ims_acct where acctnum = '1000010262');
+update doc_tag set archived = true where entity_id in (select acctid from ims_acct where acctnum in ('1000009355', '1000010262')) and tag='STATEMENTS_YEARLYPRINTED' and cdate > '2019-03-01';

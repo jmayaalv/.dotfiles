@@ -1,0 +1,1 @@
+insert into rel_user_permission (userid, permissionid) values (338307, -76),(470495, -76),(338313, -76);
