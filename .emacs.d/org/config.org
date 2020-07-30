@@ -2404,6 +2404,5 @@
                (shell-command (format "git --git-dir=%s/.git checkout -b %s" *atlas-home* branch))
                (switch-to-buffer (generate-new-buffer migration-file-path))
                (write-file migration-file-path)
-               (find-file migration-file-path "")
                (message (format "new migration: %s on branch: %s" migration-file-path branch))))
    #+END_SRC
