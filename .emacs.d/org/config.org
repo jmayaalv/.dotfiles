@@ -2394,7 +2394,7 @@
 
      (defun atlas-migration-name (path client branch)
           "New migration with `PATH` name on the given `CLIENT` using the `BRANCH` and current time."
-          (format "%s/sql/%s/%s-%s.up.sql" path client (format-time-string "%Y%m%dT%H%M%S") branch))
+          (format "%s/sql/%s/%s-%s.up.sql" path client (format-time-string "%Y%m%d%H%M%S") branch))
 
      (defun atlas-migration (client branch)
               "Create a new migration on the given `CLIENT` in the new `BRANCH` and outputs the migration on a new buffer."
