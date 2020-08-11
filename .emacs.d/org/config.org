@@ -406,7 +406,7 @@
 
    #+BEGIN_SRC emacs-lisp
       (when (window-system)
-       (set-default-font "Fira Code"))
+       (set-frame-font "Fira Code"))
       (let ((alist '((33 . ".\\(?:\\(?:==\\|!!\\)\\|[!=]\\)")
                (35 . ".\\(?:###\\|##\\|_(\\|[#(?[_{]\\)")
                (36 . ".\\(?:>\\)")
@@ -2400,10 +2400,10 @@
               "Create a new migration on the given `CLIENT` in the new `BRANCH` and outputs the migration on a new buffer."
               (interactive "sclient? \nsbranch? ")
               (let ((migration-file-path (atlas-migration-name *atlas-home* client branch)))
-              (shell-command (format "git --git-dir=%s/.git reset --hard HEAD" *atlas-home*))
-              (shell-command (format "git --git-dir=%s/.git checkout %s" *atlas-home* client))
-              (shell-command (format "git --git-dir=%s/.git checkout -b %s" *atlas-home* branch))
-              (switch-to-buffer (generate-new-buffer migration-file-path))
-              (write-file migration-file-path)
-              (message (format "new migration: %s on branch: %s" migration-file-path branch))))
+              ;(shell-command (format "git --git-dir=%s/.git reset --hard HEAD" *atlas-home*))
+              ;(shell-command (format "git --git-dir=%s/.git checkout %s" *atlas-home* client))
+              ;(shell-command (format "git --git-dir=%s/.git checkout -b %s" *atlas-home* branch))
+               (switch-to-buffer (generate-new-buffer migration-file-path))
+               (write-file migration-file-path)
+               (message (format "new migration: %s on branch: %s" migration-file-path branch))))
    #+END_SRC
