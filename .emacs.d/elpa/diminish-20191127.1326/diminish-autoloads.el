@@ -46,9 +46,7 @@ Echo all active diminished or minor modes as if they were minor.
 The display goes in the echo area; if it's too long even for that,
 you can see the whole thing in the *Messages* buffer.
 This doesn't change the status of any modes; it just lets you see
-what diminished modes would be on the mode-line if they were still minor.
-
-\(fn)" t nil)
+what diminished modes would be on the mode-line if they were still minor." t nil)
 
 ;;;### (autoloads "actual autoloads are elsewhere" "diminish" "../../../../.emacs.d/elpa/diminish-20191127.1326/diminish.el"
 ;;;;;;  (0 0 0 0))
