@@ -6,8 +6,8 @@
 
 ;; Author: Natalie Weizenbaum <nex342@gmail.com>
 ;; URL: http://github.com/nex3/perspective-el
-;; Package-Version: 20200720.1814
-;; Package-Commit: 532962f63a2c4e8c4618cd96a419915e0f90d022
+;; Package-Version: 20200812.548
+;; Package-Commit: ba5e590aeed9329c52ae8906a58061c5dc242c36
 ;; Package-Requires: ((emacs "24.4") (cl-lib "0.5"))
 ;; Version: 2.9
 ;; Created: 2008-03-05
@@ -1028,11 +1028,9 @@ By default, this uses the current frame."
     (modify-frame-parameters
      frame
      '((persp--hash) (persp--curr) (persp--last) (persp--recursive) (persp--modestring)))
-
     ;; Don't set these variables in modify-frame-parameters
     ;; because that won't do anything if they've already been accessed
     (set-frame-parameter frame 'persp--hash (make-hash-table :test 'equal :size 10))
-
     (when persp-show-modestring
       (if (eq persp-show-modestring 'header)
           (let ((val (or (default-value 'header-line-format) '(""))))
@@ -1042,7 +1040,16 @@ By default, this uses the current frame."
         (unless (member '(:eval (persp-mode-line)) global-mode-string)
           (setq global-mode-string (append global-mode-string '((:eval (persp-mode-line)))))))
       (persp-update-modestring))
-
+    ;; A frame must open with a reasonable initial buffer in its main
+    ;; perspective. This behaves differently from an emacsclient invocation, but
+    ;; should respect `initial-buffer-choice'.
+    (when (frame-parameter frame 'client)
+      (let* ((scratch-buf (persp-scratch-buffer persp-initial-frame-name))
+             (init-buf (cond ((stringp initial-buffer-choice) initial-buffer-choice)
+                             ((functionp initial-buffer-choice) (or (funcall initial-buffer-choice)
+                                                                    scratch-buf))
+                             (t scratch-buf))))
+        (switch-to-buffer init-buf t)))
     (persp-activate
      (make-persp :name persp-initial-frame-name :buffers (list (current-buffer))
        :window-configuration (current-window-configuration)
@@ -1052,7 +1059,16 @@ By default, this uses the current frame."
   "Clean up perspectives in FRAME.
 By default this uses the current frame."
   (with-selected-frame frame
-    (mapcar #'persp-kill (persp-names))))
+    ;; XXX: Only clean up frame perspectives when frame was _not_ created with
+    ;; emacsclient. Attempting this cleanup causes crashes for unclear reasons.
+    ;; Investigation shows that persp-delete-frame gets called multiple times in
+    ;; unexpected ways. To reproduce: (1) get a session going with a main frame,
+    ;; (2) use emacsclient -c to edit a file in a new frame, (3) C-x 5 0 to kill
+    ;; that frame.
+    ;; TODO: Try to fix this, since emacsclient -c use with perspective can
+    ;; leave dangling buffers unassociated with any perspective.
+    (unless (frame-parameter frame 'client)
+      (mapcar #'persp-kill (persp-names)))))
 
 (defun persp-make-variable-persp-local (variable)
   "Make VARIABLE become perspective-local.
