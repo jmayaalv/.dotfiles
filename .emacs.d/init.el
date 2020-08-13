@@ -8,7 +8,7 @@
 (require 'package)
 
 (setq package-enable-at-startup nil)
-    (package-initialize)
+;;(package-initialize)
 
 
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
