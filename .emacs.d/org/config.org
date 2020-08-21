@@ -301,10 +301,11 @@
    (setq delete-by-moving-to-trash t)
    (setq trash-directory "~/.Trash")
    #+END_SRC
-** change meta key
+**  set keys for Apple keyboard, for emacs in OS X
    #+BEGIN_SRC emacs-lisp
    (setq mac-option-modifier 'super)
    (setq mac-command-modifier 'meta)
+   (setq ns-function-modifier 'hyper)q
    #+END_SRC
 ** Nice scrolling
 
@@ -377,7 +378,8 @@
     ;; Global settings (defaults)
     (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
     doom-themes-enable-italic t) ; if nil, italics is universally disabled
-    (load-theme 'doom-one-light t)
+    ;;(load-theme 'doom-one-light t)
+    (load-theme 'doom-one t)
 
     ;; Enable flashing mode-line on errors
     (doom-themes-visual-bell-config)
@@ -1572,6 +1574,15 @@
 
         (bind-key "C-c p" 'cider--tooltip-show)
       #+end_src
+
+**** Convert html to hiccup
+
+   #+BEGIN_SRC emacs-lisp
+     (use-package html-to-hiccup
+       :ensure t
+       :config
+         (define-key clojure-mode-map (kbd "H-h") 'html-to-hiccup-convert-region))
+   #+END_SRC
 
 ** javascript
 
