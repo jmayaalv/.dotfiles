@@ -305,7 +305,7 @@
    #+BEGIN_SRC emacs-lisp
    (setq mac-option-modifier 'super)
    (setq mac-command-modifier 'meta)
-   (setq ns-function-modifier 'hyper)q
+   (setq ns-function-modifier 'hyper)
    #+END_SRC
 ** Nice scrolling
 
@@ -2386,7 +2386,7 @@
 
    #+BEGIN_SRC emacs-lisp
   (setq auth-sources
-    '((:source "~/.emacs.d/secrets/.authinfo.gpg")))
+    '((:source "~/.emacs.d/secrets/authinfo.gpg")))
 
     ;(custom-set-variables '(epg-gpg-program  "/usr/local/bin/gpg2"))
    #+END_SRC
