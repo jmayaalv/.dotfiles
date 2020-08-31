@@ -6,8 +6,9 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "inf-clojure" "inf-clojure.el" (0 0 0 0))
-;;; Generated autoloads from inf-clojure.el
+;;;### (autoloads nil "inf-clojure" "../../../../.emacs.d/elpa/inf-clojure-20200801.1128/inf-clojure.el"
+;;;;;;  "db0be080065b2e3e1f9cabddbaa6d952")
+;;; Generated autoloads from ../../../../.emacs.d/elpa/inf-clojure-20200801.1128/inf-clojure.el
 
 (autoload 'inf-clojure-minor-mode "inf-clojure" "\
 Minor mode for interacting with the inferior Clojure process buffer.
@@ -48,8 +49,21 @@ Connect to a running socket-repl via `inf-clojure'.
 HOST is the host the process is running on, PORT is where it's listening.
 
 \(fn HOST PORT)" t nil)
+
+;;;### (autoloads "actual autoloads are elsewhere" "inf-clojure"
+;;;;;;  "../../../../.emacs.d/elpa/inf-clojure-20200801.1128/inf-clojure.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../../../../.emacs.d/elpa/inf-clojure-20200801.1128/inf-clojure.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "inf-clojure" '("inf-clojure-")))
+
+;;;***
+
+;;;***
+
+;;;### (autoloads nil nil ("../../../../.emacs.d/elpa/inf-clojure-20200801.1128/inf-clojure-autoloads.el"
+;;;;;;  "../../../../.emacs.d/elpa/inf-clojure-20200801.1128/inf-clojure.el")
+;;;;;;  (0 0 0 0))
 
 ;;;***
 

@@ -6,11 +6,17 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "git-gutter+" "git-gutter+.el" (0 0 0 0))
-;;; Generated autoloads from git-gutter+.el
+;;;### (autoloads nil "git-gutter+" "../../../../.emacs.d/elpa/git-gutter+-20151204.1723/git-gutter+.el"
+;;;;;;  "6847b33c38c4065bed24effea85c2ec3")
+;;; Generated autoloads from ../../../../.emacs.d/elpa/git-gutter+-20151204.1723/git-gutter+.el
 
 (autoload 'git-gutter+-mode "git-gutter+" "\
 Git-Gutter mode
+
+If called interactively, enable Git-Gutter+ mode if ARG is
+positive, and disable it if ARG is zero or negative.  If called
+from Lisp, also enable the mode if ARG is omitted or nil, and
+toggle it if ARG is `toggle'; disable the mode otherwise.
 
 \(fn &optional ARG)" t nil)
 
@@ -26,19 +32,33 @@ or call the function `global-git-gutter+-mode'.")
 
 (autoload 'global-git-gutter+-mode "git-gutter+" "\
 Toggle Global Git-Gutter+ mode on or off.
-With a prefix argument ARG, enable Global Git-Gutter+ mode if ARG is
-positive, and disable it otherwise.  If called from Lisp, enable
-the mode if ARG is omitted or nil, and toggle it if ARG is `toggle'.
+
+If called interactively, enable Global Git-Gutter+ mode if ARG is
+positive, and disable it if ARG is zero or negative.  If called
+from Lisp, also enable the mode if ARG is omitted or nil, and
+toggle it if ARG is `toggle'; disable the mode otherwise.
+
 \\{global-git-gutter+-mode-map}
 
 \(fn &optional ARG)" t nil)
 
 (autoload 'git-gutter+-commit "git-gutter+" "\
-Commit staged changes. If nothing is staged, ask to stage the current buffer.
-
-\(fn)" t nil)
+Commit staged changes. If nothing is staged, ask to stage the current buffer." t nil)
+
+;;;### (autoloads "actual autoloads are elsewhere" "git-gutter+"
+;;;;;;  "../../../../.emacs.d/elpa/git-gutter+-20151204.1723/git-gutter+.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../../../../.emacs.d/elpa/git-gutter+-20151204.1723/git-gutter+.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "git-gutter+" '("git-gutter+-")))
+
+;;;***
+
+;;;***
+
+;;;### (autoloads nil nil ("../../../../.emacs.d/elpa/git-gutter+-20151204.1723/git-gutter+-autoloads.el"
+;;;;;;  "../../../../.emacs.d/elpa/git-gutter+-20151204.1723/git-gutter+.el")
+;;;;;;  (0 0 0 0))
 
 ;;;***
 

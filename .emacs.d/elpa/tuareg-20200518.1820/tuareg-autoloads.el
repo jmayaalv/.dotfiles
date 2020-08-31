@@ -6,8 +6,9 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "ocamldebug" "ocamldebug.el" (0 0 0 0))
-;;; Generated autoloads from ocamldebug.el
+;;;### (autoloads nil "ocamldebug" "../../../../.emacs.d/elpa/tuareg-20200518.1820/ocamldebug.el"
+;;;;;;  "7a031fe80e3d14ee6139cc0bb4d7cb37")
+;;; Generated autoloads from ../../../../.emacs.d/elpa/tuareg-20200518.1820/ocamldebug.el
 
 (autoload 'ocamldebug "ocamldebug" "\
 Run ocamldebug on program FILE in buffer *ocamldebug-FILE*.
@@ -18,13 +19,20 @@ the ocamldebug commands `cd DIR' and `directory'.
 \(fn PGM-PATH)" t nil)
 
 (defalias 'camldebug 'ocamldebug)
+
+;;;### (autoloads "actual autoloads are elsewhere" "ocamldebug" "../../../../.emacs.d/elpa/tuareg-20200518.1820/ocamldebug.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../../../../.emacs.d/elpa/tuareg-20200518.1820/ocamldebug.el
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "ocamldebug" '("ocamldebug-" "def-ocamldebug")))
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "ocamldebug" '("def-ocamldebug" "ocamldebug-")))
+
+;;;***
 
 ;;;***
 
-;;;### (autoloads nil "tuareg" "tuareg.el" (0 0 0 0))
-;;; Generated autoloads from tuareg.el
+;;;### (autoloads nil "tuareg" "../../../../.emacs.d/elpa/tuareg-20200518.1820/tuareg.el"
+;;;;;;  "00263837d72ee9f7f4efcd71f625d333")
+;;; Generated autoloads from ../../../../.emacs.d/elpa/tuareg-20200518.1820/tuareg.el
 (add-to-list 'auto-mode-alist '("\\.ml[ip]?\\'" . tuareg-mode))
 (add-to-list 'auto-mode-alist '("\\.eliomi?\\'" . tuareg-mode))
 (dolist (ext '(".cmo" ".cmx" ".cma" ".cmxa" ".cmi"
@@ -74,22 +82,27 @@ Short cuts for interactions with the REPL:
 \(fn)" t nil)
 
 (autoload 'tuareg-run-ocaml "tuareg" "\
-Run an OCaml REPL process.  I/O via buffer `*OCaml*'.
-
-\(fn)" t nil)
+Run an OCaml REPL process.  I/O via buffer `*OCaml*'." t nil)
 
 (defalias 'run-ocaml 'tuareg-run-ocaml)
 
 (add-to-list 'interpreter-mode-alist '("ocamlrun" . tuareg-mode))
 
 (add-to-list 'interpreter-mode-alist '("ocaml" . tuareg-mode))
+
+;;;### (autoloads "actual autoloads are elsewhere" "tuareg" "../../../../.emacs.d/elpa/tuareg-20200518.1820/tuareg.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../../../../.emacs.d/elpa/tuareg-20200518.1820/tuareg.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "tuareg" '("tuareg-")))
 
 ;;;***
+
+;;;***
 
-;;;### (autoloads nil "tuareg-jbuild" "tuareg-jbuild.el" (0 0 0 0))
-;;; Generated autoloads from tuareg-jbuild.el
+;;;### (autoloads nil "tuareg-jbuild" "../../../../.emacs.d/elpa/tuareg-20200518.1820/tuareg-jbuild.el"
+;;;;;;  "1e889f998c8b6ca5c00442189f9d7a23")
+;;; Generated autoloads from ../../../../.emacs.d/elpa/tuareg-20200518.1820/tuareg-jbuild.el
 
 (autoload 'tuareg-jbuild-mode "tuareg-jbuild" "\
 Major mode to edit jbuild files.
@@ -97,13 +110,21 @@ Major mode to edit jbuild files.
 \(fn)" t nil)
 
 (add-to-list 'auto-mode-alist '("\\(?:\\`\\|/\\)jbuild\\(?:\\.inc\\)?\\'" . tuareg-jbuild-mode))
+
+;;;### (autoloads "actual autoloads are elsewhere" "tuareg-jbuild"
+;;;;;;  "../../../../.emacs.d/elpa/tuareg-20200518.1820/tuareg-jbuild.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../../../../.emacs.d/elpa/tuareg-20200518.1820/tuareg-jbuild.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "tuareg-jbuild" '("tuareg-jbuild-" "verbose-tuareg-jbuild-smie-rules")))
 
 ;;;***
+
+;;;***
 
-;;;### (autoloads nil "tuareg-menhir" "tuareg-menhir.el" (0 0 0 0))
-;;; Generated autoloads from tuareg-menhir.el
+;;;### (autoloads nil "tuareg-menhir" "../../../../.emacs.d/elpa/tuareg-20200518.1820/tuareg-menhir.el"
+;;;;;;  "f1865266e69c6df20cf39723155a4e55")
+;;; Generated autoloads from ../../../../.emacs.d/elpa/tuareg-20200518.1820/tuareg-menhir.el
 
 (add-to-list 'auto-mode-alist '("\\.mly\\'" . tuareg-menhir-mode))
 
@@ -111,13 +132,21 @@ Major mode to edit jbuild files.
 Major mode to edit Menhir (and Ocamlyacc) files.
 
 \(fn)" t nil)
+
+;;;### (autoloads "actual autoloads are elsewhere" "tuareg-menhir"
+;;;;;;  "../../../../.emacs.d/elpa/tuareg-20200518.1820/tuareg-menhir.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../../../../.emacs.d/elpa/tuareg-20200518.1820/tuareg-menhir.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "tuareg-menhir" '("tuareg-menhir-")))
 
 ;;;***
+
+;;;***
 
-;;;### (autoloads nil "tuareg-opam" "tuareg-opam.el" (0 0 0 0))
-;;; Generated autoloads from tuareg-opam.el
+;;;### (autoloads nil "tuareg-opam" "../../../../.emacs.d/elpa/tuareg-20200518.1820/tuareg-opam.el"
+;;;;;;  "a5dc531a0ccc40783ff9d4ee5467579b")
+;;; Generated autoloads from ../../../../.emacs.d/elpa/tuareg-20200518.1820/tuareg-opam.el
 
 (autoload 'tuareg-opam-mode "tuareg-opam" "\
 Major mode to edit opam files.
@@ -130,21 +159,37 @@ Update the environment to follow current OPAM switch configuration.
 \(fn SWITCH)" t nil)
 
 (add-to-list 'auto-mode-alist '("[./]opam_?\\'" . tuareg-opam-mode))
+
+;;;### (autoloads "actual autoloads are elsewhere" "tuareg-opam"
+;;;;;;  "../../../../.emacs.d/elpa/tuareg-20200518.1820/tuareg-opam.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../../../../.emacs.d/elpa/tuareg-20200518.1820/tuareg-opam.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "tuareg-opam" '("tuareg-" "verbose-tuareg-opam-smie-rules")))
 
 ;;;***
-
-;;;### (autoloads nil "tuareg-site-file" "tuareg-site-file.el" (0
-;;;;;;  0 0 0))
-;;; Generated autoloads from tuareg-site-file.el
-
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "tuareg-site-file" '("run-ocaml" "camldebug")))
 
 ;;;***
 
-;;;### (autoloads nil nil ("dot-emacs.el" "tuareg-pkg.el") (0 0 0
-;;;;;;  0))
+;;;### (autoloads "actual autoloads are elsewhere" "tuareg-site-file"
+;;;;;;  "../../../../.emacs.d/elpa/tuareg-20200518.1820/tuareg-site-file.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../../../../.emacs.d/elpa/tuareg-20200518.1820/tuareg-site-file.el
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "tuareg-site-file" '("camldebug" "run-ocaml")))
+
+;;;***
+
+;;;### (autoloads nil nil ("../../../../.emacs.d/elpa/tuareg-20200518.1820/dot-emacs.el"
+;;;;;;  "../../../../.emacs.d/elpa/tuareg-20200518.1820/ocamldebug.el"
+;;;;;;  "../../../../.emacs.d/elpa/tuareg-20200518.1820/tuareg-autoloads.el"
+;;;;;;  "../../../../.emacs.d/elpa/tuareg-20200518.1820/tuareg-jbuild.el"
+;;;;;;  "../../../../.emacs.d/elpa/tuareg-20200518.1820/tuareg-menhir.el"
+;;;;;;  "../../../../.emacs.d/elpa/tuareg-20200518.1820/tuareg-opam.el"
+;;;;;;  "../../../../.emacs.d/elpa/tuareg-20200518.1820/tuareg-pkg.el"
+;;;;;;  "../../../../.emacs.d/elpa/tuareg-20200518.1820/tuareg-site-file.el"
+;;;;;;  "../../../../.emacs.d/elpa/tuareg-20200518.1820/tuareg.el")
+;;;;;;  (0 0 0 0))
 
 ;;;***
 

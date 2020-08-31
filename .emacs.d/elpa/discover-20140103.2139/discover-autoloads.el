@@ -6,8 +6,9 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "discover" "discover.el" (0 0 0 0))
-;;; Generated autoloads from discover.el
+;;;### (autoloads nil "discover" "../../../../.emacs.d/elpa/discover-20140103.2139/discover.el"
+;;;;;;  "7926e68fac68f2f091569e6d6eddf514")
+;;; Generated autoloads from ../../../../.emacs.d/elpa/discover-20140103.2139/discover.el
 
 (autoload 'discover-show-context-menu "discover" "\
 Shows a context menu GROUP-NAME
@@ -83,10 +84,17 @@ with the symbol name of the context menu..
 (autoload 'discover-mode "discover" "\
 Helps you discover Emacs with interactive context menus.
 
+If called interactively, enable Discover mode if ARG is positive,
+and disable it if ARG is zero or negative.  If called from Lisp,
+also enable the mode if ARG is omitted or nil, and toggle it if
+ARG is `toggle'; disable the mode otherwise.
+
 Key bindings:
 \\{discover-map}
 
 \(fn &optional ARG)" t nil)
+
+(put 'global-discover-mode 'globalized-minor-mode t)
 
 (defvar global-discover-mode nil "\
 Non-nil if Global Discover mode is enabled.
@@ -109,8 +117,20 @@ Discover mode is enabled in all buffers where
 See `discover-mode' for more information on Discover mode.
 
 \(fn &optional ARG)" t nil)
+
+;;;### (autoloads "actual autoloads are elsewhere" "discover" "../../../../.emacs.d/elpa/discover-20140103.2139/discover.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../../../../.emacs.d/elpa/discover-20140103.2139/discover.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "discover" '("discover-")))
+
+;;;***
+
+;;;***
+
+;;;### (autoloads nil nil ("../../../../.emacs.d/elpa/discover-20140103.2139/discover-autoloads.el"
+;;;;;;  "../../../../.emacs.d/elpa/discover-20140103.2139/discover.el")
+;;;;;;  (0 0 0 0))
 
 ;;;***
 

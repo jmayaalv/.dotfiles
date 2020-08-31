@@ -6,8 +6,9 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "orgit" "orgit.el" (0 0 0 0))
-;;; Generated autoloads from orgit.el
+;;;### (autoloads nil "orgit" "../../../../.emacs.d/elpa/orgit-20200714.1943/orgit.el"
+;;;;;;  "0a719993e9b789261b2924dafde7b650")
+;;; Generated autoloads from ../../../../.emacs.d/elpa/orgit-20200714.1943/orgit.el
 
 (autoload 'orgit-link-set-parameters "orgit" "\
 
@@ -26,9 +27,7 @@ Like `org-store-link' but store links to all selected commits, if any.
 (autoload 'orgit-status-store "orgit" "\
 Store a link to a Magit-Status mode buffer.
 When the region selects one or more commits, then do nothing.
-In that case `orgit-rev-store' stores one or more links instead.
-
-\(fn)" nil nil)
+In that case `orgit-rev-store' stores one or more links instead." nil nil)
 
 (autoload 'orgit-status-open "orgit" "\
 
@@ -50,9 +49,7 @@ In that case `orgit-rev-store' stores one or more links instead.
 (autoload 'orgit-log-store "orgit" "\
 Store a link to a Magit-Log mode buffer.
 When the region selects one or more commits, then do nothing.
-In that case `orgit-rev-store' stores one or more links instead.
-
-\(fn)" nil nil)
+In that case `orgit-rev-store' stores one or more links instead." nil nil)
 
 (autoload 'orgit-log-open "orgit" "\
 
@@ -80,9 +77,7 @@ If `orgit-store-reference' is non-nil, then the meaning of the
 prefix argument is reversed.
 
 When the region selects one or more commits, e.g. in a log, then
-store links to the Magit-Revision mode buffers for these commits.
-
-\(fn)" nil nil)
+store links to the Magit-Revision mode buffers for these commits." nil nil)
 
 (autoload 'orgit-rev-open "orgit" "\
 
@@ -98,8 +93,20 @@ store links to the Magit-Revision mode buffers for these commits.
 
 
 \(fn &optional ARG)" nil nil)
+
+;;;### (autoloads "actual autoloads are elsewhere" "orgit" "../../../../.emacs.d/elpa/orgit-20200714.1943/orgit.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../../../../.emacs.d/elpa/orgit-20200714.1943/orgit.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "orgit" '("orgit-")))
+
+;;;***
+
+;;;***
+
+;;;### (autoloads nil nil ("../../../../.emacs.d/elpa/orgit-20200714.1943/orgit-autoloads.el"
+;;;;;;  "../../../../.emacs.d/elpa/orgit-20200714.1943/orgit.el")
+;;;;;;  (0 0 0 0))
 
 ;;;***
 

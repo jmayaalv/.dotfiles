@@ -6,8 +6,9 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "avy" "avy.el" (0 0 0 0))
-;;; Generated autoloads from avy.el
+;;;### (autoloads nil "avy" "../../../../.emacs.d/elpa/avy-20200624.1148/avy.el"
+;;;;;;  "b9f0ea0b27ab0dce5904c0056336a96f")
+;;; Generated autoloads from ../../../../.emacs.d/elpa/avy-20200624.1148/avy.el
 
 (autoload 'avy-process "avy" "\
 Select one of CANDIDATES using `avy-read'.
@@ -55,9 +56,7 @@ When ARG is non-nil, do the opposite of `avy-all-windows'.
 \(fn CHAR1 CHAR2 &optional ARG)" t nil)
 
 (autoload 'avy-isearch "avy" "\
-Jump to one of the current isearch candidates.
-
-\(fn)" t nil)
+Jump to one of the current isearch candidates." t nil)
 
 (autoload 'avy-goto-word-0 "avy" "\
 Jump to a word start.
@@ -147,9 +146,7 @@ The case of CHAR is ignored.
 
 (autoload 'avy-goto-word-or-subword-1 "avy" "\
 Forward to `avy-goto-subword-1' or `avy-goto-word-1'.
-Which one depends on variable `subword-mode'.
-
-\(fn)" t nil)
+Which one depends on variable `subword-mode'." t nil)
 
 (autoload 'avy-goto-line "avy" "\
 Jump to a line start in current buffer.
@@ -206,9 +203,7 @@ The window scope is determined by `avy-all-windows' or
 \(fn ARG)" t nil)
 
 (autoload 'avy-move-region "avy" "\
-Select two lines and move the text between them above the current line.
-
-\(fn)" t nil)
+Select two lines and move the text between them above the current line." t nil)
 
 (autoload 'avy-kill-region "avy" "\
 Select two lines and kill the region between them.
@@ -257,17 +252,27 @@ newline.
 \(fn ARG)" t nil)
 
 (autoload 'avy-setup-default "avy" "\
-Setup the default shortcuts.
-
-\(fn)" nil nil)
+Setup the default shortcuts." nil nil)
 
 (autoload 'avy-goto-char-timer "avy" "\
 Read one or many consecutive chars and jump to the first one.
 The window scope is determined by `avy-all-windows' (ARG negates it).
 
 \(fn &optional ARG)" t nil)
+
+;;;### (autoloads "actual autoloads are elsewhere" "avy" "../../../../.emacs.d/elpa/avy-20200624.1148/avy.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../../../../.emacs.d/elpa/avy-20200624.1148/avy.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "avy" '("avy-")))
+
+;;;***
+
+;;;***
+
+;;;### (autoloads nil nil ("../../../../.emacs.d/elpa/avy-20200624.1148/avy-autoloads.el"
+;;;;;;  "../../../../.emacs.d/elpa/avy-20200624.1148/avy.el") (0
+;;;;;;  0 0 0))
 
 ;;;***
 

@@ -6,16 +6,14 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "gnu-elpa-keyring-update" "gnu-elpa-keyring-update.el"
-;;;;;;  (0 0 0 0))
-;;; Generated autoloads from gnu-elpa-keyring-update.el
+;;;### (autoloads nil "gnu-elpa-keyring-update" "../../../../.emacs.d/elpa/gnu-elpa-keyring-update-2019.3/gnu-elpa-keyring-update.el"
+;;;;;;  "08bcfbc7452b089c54c22883e6d852f7")
+;;; Generated autoloads from ../../../../.emacs.d/elpa/gnu-elpa-keyring-update-2019.3/gnu-elpa-keyring-update.el
 
 (defvar gnu-elpa-keyring-update--keyring (let ((kr (expand-file-name "etc/gnu-elpa.gpg-keyring" (file-name-directory load-file-name)))) (if (and load-file-name (file-readable-p kr)) kr "etc/gnu-elpa.gpg-keyring")))
 
 (autoload 'gnu-elpa-keyring-update "gnu-elpa-keyring-update" "\
-Import new GNU ELPA keys (if any) into package.el's keyring.
-
-\(fn)" nil nil)
+Import new GNU ELPA keys (if any) into package.el's keyring." nil nil)
  (eval-after-load 'package
   `(and (bound-and-true-p package-user-dir)
         (file-directory-p package-user-dir)
@@ -29,13 +27,22 @@ Import new GNU ELPA keys (if any) into package.el's keyring.
                (file-readable-p kr)
                (file-newer-than-file-p kr ts)
                (gnu-elpa-keyring-update)))))
+
+;;;### (autoloads "actual autoloads are elsewhere" "gnu-elpa-keyring-update"
+;;;;;;  "../../../../.emacs.d/elpa/gnu-elpa-keyring-update-2019.3/gnu-elpa-keyring-update.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../../../../.emacs.d/elpa/gnu-elpa-keyring-update-2019.3/gnu-elpa-keyring-update.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "gnu-elpa-keyring-update" '("gnu-elpa-keyring-update--keyring")))
 
 ;;;***
+
+;;;***
 
-;;;### (autoloads nil nil ("gnu-elpa-keyring-update-pkg.el") (0 0
-;;;;;;  0 0))
+;;;### (autoloads nil nil ("../../../../.emacs.d/elpa/gnu-elpa-keyring-update-2019.3/gnu-elpa-keyring-update-autoloads.el"
+;;;;;;  "../../../../.emacs.d/elpa/gnu-elpa-keyring-update-2019.3/gnu-elpa-keyring-update-pkg.el"
+;;;;;;  "../../../../.emacs.d/elpa/gnu-elpa-keyring-update-2019.3/gnu-elpa-keyring-update.el")
+;;;;;;  (0 0 0 0))
 
 ;;;***
 

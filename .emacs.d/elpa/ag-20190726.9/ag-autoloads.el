@@ -6,8 +6,9 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "ag" "ag.el" (0 0 0 0))
-;;; Generated autoloads from ag.el
+;;;### (autoloads nil "ag" "../../../../.emacs.d/elpa/ag-20190726.9/ag.el"
+;;;;;;  "73095ac5797a5eae5fca753779be1e33")
+;;; Generated autoloads from ../../../../.emacs.d/elpa/ag-20190726.9/ag.el
 
 (autoload 'ag "ag" "\
 Search using ag in a given DIRECTORY for a given literal search STRING,
@@ -106,16 +107,23 @@ See also `ag-dired-regexp'.
 \(fn REGEXP)" t nil)
 
 (autoload 'ag-kill-buffers "ag" "\
-Kill all `ag-mode' buffers.
-
-\(fn)" t nil)
+Kill all `ag-mode' buffers." t nil)
 
 (autoload 'ag-kill-other-buffers "ag" "\
-Kill all `ag-mode' buffers other than the current buffer.
-
-\(fn)" t nil)
+Kill all `ag-mode' buffers other than the current buffer." t nil)
+
+;;;### (autoloads "actual autoloads are elsewhere" "ag" "../../../../.emacs.d/elpa/ag-20190726.9/ag.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../../../../.emacs.d/elpa/ag-20190726.9/ag.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "ag" '("ag-" "ag/")))
+
+;;;***
+
+;;;***
+
+;;;### (autoloads nil nil ("../../../../.emacs.d/elpa/ag-20190726.9/ag-autoloads.el"
+;;;;;;  "../../../../.emacs.d/elpa/ag-20190726.9/ag.el") (0 0 0 0))
 
 ;;;***
 

@@ -6,13 +6,12 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "sesman" "sesman.el" (0 0 0 0))
-;;; Generated autoloads from sesman.el
+;;;### (autoloads nil "sesman" "../../../../.emacs.d/elpa/sesman-20190909.1754/sesman.el"
+;;;;;;  "8c89768102b95bb7d32b08a233c4afe4")
+;;; Generated autoloads from ../../../../.emacs.d/elpa/sesman-20190909.1754/sesman.el
 
 (autoload 'sesman-start "sesman" "\
-Start a Sesman session.
-
-\(fn)" t nil)
+Start a Sesman session." t nil)
 
 (autoload 'sesman-restart "sesman" "\
 Restart sesman session.
@@ -70,30 +69,43 @@ buffer.
 \(fn &optional SESSION)" t nil)
 
 (autoload 'sesman-unlink "sesman" "\
-Break any of the previously created links.
-
-\(fn)" t nil)
+Break any of the previously created links." t nil)
  (autoload 'sesman-map "sesman" "Session management prefix keymap." t 'keymap)
+
+;;;### (autoloads "actual autoloads are elsewhere" "sesman" "../../../../.emacs.d/elpa/sesman-20190909.1754/sesman.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../../../../.emacs.d/elpa/sesman-20190909.1754/sesman.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "sesman" '("sesman-")))
 
 ;;;***
+
+;;;***
 
-;;;### (autoloads nil "sesman-browser" "sesman-browser.el" (0 0 0
-;;;;;;  0))
-;;; Generated autoloads from sesman-browser.el
+;;;### (autoloads nil "sesman-browser" "../../../../.emacs.d/elpa/sesman-20190909.1754/sesman-browser.el"
+;;;;;;  "85974a460384de6ced9a4af86228d06a")
+;;; Generated autoloads from ../../../../.emacs.d/elpa/sesman-20190909.1754/sesman-browser.el
 
 (autoload 'sesman-browser "sesman-browser" "\
 Display an interactive session browser.
-See `sesman-browser-mode' for more details.
-
-\(fn)" t nil)
+See `sesman-browser-mode' for more details." t nil)
+
+;;;### (autoloads "actual autoloads are elsewhere" "sesman-browser"
+;;;;;;  "../../../../.emacs.d/elpa/sesman-20190909.1754/sesman-browser.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../../../../.emacs.d/elpa/sesman-20190909.1754/sesman-browser.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "sesman-browser" '("sesman-")))
 
 ;;;***
+
+;;;***
 
-;;;### (autoloads nil nil ("sesman-pkg.el") (0 0 0 0))
+;;;### (autoloads nil nil ("../../../../.emacs.d/elpa/sesman-20190909.1754/sesman-autoloads.el"
+;;;;;;  "../../../../.emacs.d/elpa/sesman-20190909.1754/sesman-browser.el"
+;;;;;;  "../../../../.emacs.d/elpa/sesman-20190909.1754/sesman-pkg.el"
+;;;;;;  "../../../../.emacs.d/elpa/sesman-20190909.1754/sesman.el")
+;;;;;;  (0 0 0 0))
 
 ;;;***
 

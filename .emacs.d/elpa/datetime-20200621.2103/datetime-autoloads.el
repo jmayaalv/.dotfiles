@@ -6,14 +6,18 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "datetime" "datetime.el" (0 0 0 0))
-;;; Generated autoloads from datetime.el
+;;;### (autoloads "actual autoloads are elsewhere" "datetime" "../../../../.emacs.d/elpa/datetime-20200621.2103/datetime.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../../../../.emacs.d/elpa/datetime-20200621.2103/datetime.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "datetime" '("datetime-")))
 
 ;;;***
 
-;;;### (autoloads nil nil ("datetime-pkg.el") (0 0 0 0))
+;;;### (autoloads nil nil ("../../../../.emacs.d/elpa/datetime-20200621.2103/datetime-autoloads.el"
+;;;;;;  "../../../../.emacs.d/elpa/datetime-20200621.2103/datetime-pkg.el"
+;;;;;;  "../../../../.emacs.d/elpa/datetime-20200621.2103/datetime.el")
+;;;;;;  (0 0 0 0))
 
 ;;;***
 

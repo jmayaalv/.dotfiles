@@ -6,9 +6,9 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "counsel-projectile" "counsel-projectile.el"
-;;;;;;  (0 0 0 0))
-;;; Generated autoloads from counsel-projectile.el
+;;;### (autoloads nil "counsel-projectile" "../../../../.emacs.d/elpa/counsel-projectile-20200522.1131/counsel-projectile.el"
+;;;;;;  "037c9254d9960b4d5abe1b3e51190779")
+;;; Generated autoloads from ../../../../.emacs.d/elpa/counsel-projectile-20200522.1131/counsel-projectile.el
 
 (autoload 'counsel-projectile-find-file "counsel-projectile" "\
 Jump to a file in the current project.
@@ -33,9 +33,7 @@ With a prefix ARG, invalidate the cache first.
 \(fn &optional ARG)" t nil)
 
 (autoload 'counsel-projectile-switch-to-buffer "counsel-projectile" "\
-Jump to a buffer in the current project.
-
-\(fn)" t nil)
+Jump to a buffer in the current project." t nil)
 
 (autoload 'counsel-projectile-grep "counsel-projectile" "\
 Search the current project with grep.
@@ -150,8 +148,21 @@ bind keys to counsel-projectile commands that have no projectile
 counterparts.
 
 \(fn &optional ARG)" t nil)
+
+;;;### (autoloads "actual autoloads are elsewhere" "counsel-projectile"
+;;;;;;  "../../../../.emacs.d/elpa/counsel-projectile-20200522.1131/counsel-projectile.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../../../../.emacs.d/elpa/counsel-projectile-20200522.1131/counsel-projectile.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "counsel-projectile" '("counsel-projectile-")))
+
+;;;***
+
+;;;***
+
+;;;### (autoloads nil nil ("../../../../.emacs.d/elpa/counsel-projectile-20200522.1131/counsel-projectile-autoloads.el"
+;;;;;;  "../../../../.emacs.d/elpa/counsel-projectile-20200522.1131/counsel-projectile.el")
+;;;;;;  (0 0 0 0))
 
 ;;;***
 

@@ -6,8 +6,9 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "ox-reveal" "ox-reveal.el" (0 0 0 0))
-;;; Generated autoloads from ox-reveal.el
+;;;### (autoloads nil "ox-reveal" "../../../../.emacs.d/elpa/ox-reveal-20200802.710/ox-reveal.el"
+;;;;;;  "a626ea12c580a704c2d8cb78149f3063")
+;;; Generated autoloads from ../../../../.emacs.d/elpa/ox-reveal-20200802.710/ox-reveal.el
 
 (autoload 'org-reveal-publish-to-reveal "ox-reveal" "\
 Publish an org file to Html.
@@ -19,8 +20,20 @@ publishing directory.
 Return output file name.
 
 \(fn PLIST FILENAME PUB-DIR)" nil nil)
+
+;;;### (autoloads "actual autoloads are elsewhere" "ox-reveal" "../../../../.emacs.d/elpa/ox-reveal-20200802.710/ox-reveal.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../../../../.emacs.d/elpa/ox-reveal-20200802.710/ox-reveal.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "ox-reveal" '("client-multiplex" "frag-" "if-format" "org-reveal-")))
+
+;;;***
+
+;;;***
+
+;;;### (autoloads nil nil ("../../../../.emacs.d/elpa/ox-reveal-20200802.710/ox-reveal-autoloads.el"
+;;;;;;  "../../../../.emacs.d/elpa/ox-reveal-20200802.710/ox-reveal.el")
+;;;;;;  (0 0 0 0))
 
 ;;;***
 

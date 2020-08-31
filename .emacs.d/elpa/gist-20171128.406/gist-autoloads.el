@@ -6,8 +6,9 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "gist" "gist.el" (0 0 0 0))
-;;; Generated autoloads from gist.el
+;;;### (autoloads nil "gist" "../../../../.emacs.d/elpa/gist-20171128.406/gist.el"
+;;;;;;  "c8a78cb7bd462146694db8cf62a4e3ef")
+;;; Generated autoloads from ../../../../.emacs.d/elpa/gist-20171128.406/gist.el
 
 (autoload 'gist-region "gist" "\
 Post the current region as a new paste at gist.github.com
@@ -33,9 +34,7 @@ With a prefix argument, makes a private paste.
 
 (autoload 'gist-buffer-private "gist" "\
 Post the current buffer as a new private paste at gist.github.com.
-Copies the URL into the kill ring.
-
-\(fn)" t nil)
+Copies the URL into the kill ring." t nil)
 
 (autoload 'gist-region-or-buffer "gist" "\
 Post either the current region, or if mark is not set, the
@@ -51,9 +50,7 @@ With a prefix argument, makes a private paste.
 Post either the current region, or if mark is not set, the
   current buffer as a new private paste at gist.github.com
 
-Copies the URL into the kill ring.
-
-\(fn)" t nil)
+Copies the URL into the kill ring." t nil)
 
 (autoload 'gist-list-user "gist" "\
 Displays a list of a user's gists in a new buffer.  When called from
@@ -73,15 +70,9 @@ Displays a list of all of the current user's gists in a new buffer.
 
 \(fn ID)" t nil)
 
-(autoload 'gist-star "gist" "\
+(autoload 'gist-star "gist" nil t nil)
 
-
-\(fn)" t nil)
-
-(autoload 'gist-unstar "gist" "\
-
-
-\(fn)" t nil)
+(autoload 'gist-unstar "gist" nil t nil)
 
 (autoload 'gist-list-starred "gist" "\
 List your starred gists.
@@ -89,11 +80,21 @@ List your starred gists.
 \(fn &optional BACKGROUND)" t nil)
 
 (autoload 'gist-fork "gist" "\
-Fork a gist.
-
-\(fn)" t nil)
+Fork a gist." t nil)
+
+;;;### (autoloads "actual autoloads are elsewhere" "gist" "../../../../.emacs.d/elpa/gist-20171128.406/gist.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../../../../.emacs.d/elpa/gist-20171128.406/gist.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "gist" '("dired-do-gist" "gist-")))
+
+;;;***
+
+;;;***
+
+;;;### (autoloads nil nil ("../../../../.emacs.d/elpa/gist-20171128.406/gist-autoloads.el"
+;;;;;;  "../../../../.emacs.d/elpa/gist-20171128.406/gist.el") (0
+;;;;;;  0 0 0))
 
 ;;;***
 

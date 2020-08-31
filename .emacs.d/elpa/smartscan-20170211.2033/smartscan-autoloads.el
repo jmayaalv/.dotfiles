@@ -6,18 +6,15 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "smartscan" "smartscan.el" (0 0 0 0))
-;;; Generated autoloads from smartscan.el
+;;;### (autoloads nil "smartscan" "../../../../.emacs.d/elpa/smartscan-20170211.2033/smartscan.el"
+;;;;;;  "7039ed5499e5998192974b7283a17f54")
+;;; Generated autoloads from ../../../../.emacs.d/elpa/smartscan-20170211.2033/smartscan.el
 
 (autoload 'smartscan-symbol-go-forward "smartscan" "\
-Jumps forward to the next symbol at point
-
-\(fn)" t nil)
+Jumps forward to the next symbol at point" t nil)
 
 (autoload 'smartscan-symbol-go-backward "smartscan" "\
-Jumps backward to the previous symbol at point
-
-\(fn)" t nil)
+Jumps backward to the previous symbol at point" t nil)
 
 (autoload 'smartscan-symbol-replace "smartscan" "\
 Replaces the symbol at point with another string in the entire buffer.
@@ -33,6 +30,11 @@ actual work.
 (autoload 'smartscan-mode "smartscan" "\
 Jumps between other symbols found at point.
 
+If called interactively, enable Smartscan mode if ARG is
+positive, and disable it if ARG is zero or negative.  If called
+from Lisp, also enable the mode if ARG is omitted or nil, and
+toggle it if ARG is `toggle'; disable the mode otherwise.
+
 When Smart Scan mode is enabled, you can jump between the all the
 symbols in your current buffer that point is on.
 
@@ -43,6 +45,8 @@ Key bindings:
 \\{smartscan-map}
 
 \(fn &optional ARG)" t nil)
+
+(put 'global-smartscan-mode 'globalized-minor-mode t)
 
 (defvar global-smartscan-mode nil "\
 Non-nil if Global Smartscan mode is enabled.
@@ -65,8 +69,20 @@ Smartscan mode is enabled in all buffers where
 See `smartscan-mode' for more information on Smartscan mode.
 
 \(fn &optional ARG)" t nil)
+
+;;;### (autoloads "actual autoloads are elsewhere" "smartscan" "../../../../.emacs.d/elpa/smartscan-20170211.2033/smartscan.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../../../../.emacs.d/elpa/smartscan-20170211.2033/smartscan.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "smartscan" '("smartscan-")))
+
+;;;***
+
+;;;***
+
+;;;### (autoloads nil nil ("../../../../.emacs.d/elpa/smartscan-20170211.2033/smartscan-autoloads.el"
+;;;;;;  "../../../../.emacs.d/elpa/smartscan-20170211.2033/smartscan.el")
+;;;;;;  (0 0 0 0))
 
 ;;;***
 

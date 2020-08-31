@@ -9,7 +9,7 @@
     (parseedn "0.1")
     (inflections "2.3")
     (hydra "0.13.2"))
-  :keywords
+  :commit "92d372393a031e5fa73ef926447afe72b574cb45" :keywords
   '("convenience" "clojure" "cider")
   :authors
   '(("Magnar Sveen" . "magnars@gmail.com")

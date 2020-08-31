@@ -6,8 +6,9 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "with-editor" "with-editor.el" (0 0 0 0))
-;;; Generated autoloads from with-editor.el
+;;;### (autoloads nil "with-editor" "../../../../.emacs.d/elpa/with-editor-20200720.2014/with-editor.el"
+;;;;;;  "17c2f46dace9bcf546903994d3303036")
+;;; Generated autoloads from ../../../../.emacs.d/elpa/with-editor-20200720.2014/with-editor.el
 
 (autoload 'with-editor-export-editor "with-editor" "\
 Teach subsequent commands to use current Emacs instance as editor.
@@ -21,14 +22,10 @@ This works in `shell-mode', `term-mode' and `eshell-mode'.
 \(fn &optional (ENVVAR \"EDITOR\"))" t nil)
 
 (autoload 'with-editor-export-git-editor "with-editor" "\
-Like `with-editor-export-editor' but always set `$GIT_EDITOR'.
-
-\(fn)" t nil)
+Like `with-editor-export-editor' but always set `$GIT_EDITOR'." t nil)
 
 (autoload 'with-editor-export-hg-editor "with-editor" "\
-Like `with-editor-export-editor' but always set `$HG_EDITOR'.
-
-\(fn)" t nil)
+Like `with-editor-export-editor' but always set `$HG_EDITOR'." t nil)
 
 (defvar shell-command-with-editor-mode nil "\
 Non-nil if Shell-Command-With-Editor mode is enabled.
@@ -39,6 +36,11 @@ for a description of this minor mode.")
 
 (autoload 'shell-command-with-editor-mode "with-editor" "\
 Teach `shell-command' to use current Emacs instance as editor.
+
+If called interactively, enable Shell-Command-With-Editor mode if
+ARG is positive, and disable it if ARG is zero or negative.  If
+called from Lisp, also enable the mode if ARG is omitted or nil,
+and toggle it if ARG is `toggle'; disable the mode otherwise.
 
 Teach `shell-command', and all commands that ultimately call that
 command, to use the current Emacs instance as editor by executing
@@ -81,12 +83,22 @@ If COMMAND ends with \"&\" behave like the latter,
 else like the former.
 
 \(fn COMMAND &optional OUTPUT-BUFFER ERROR-BUFFER ENVVAR)" t nil)
+
+;;;### (autoloads "actual autoloads are elsewhere" "with-editor"
+;;;;;;  "../../../../.emacs.d/elpa/with-editor-20200720.2014/with-editor.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../../../../.emacs.d/elpa/with-editor-20200720.2014/with-editor.el
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "with-editor" '("with-editor" "start-file-process--with-editor-process-filter" "server-" "shell-command--shell-command-with-editor-mode")))
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "with-editor" '("server-" "shell-command--shell-command-with-editor-mode" "start-file-process--with-editor-process-filter" "with-editor")))
+
+;;;***
 
 ;;;***
 
-;;;### (autoloads nil nil ("with-editor-pkg.el") (0 0 0 0))
+;;;### (autoloads nil nil ("../../../../.emacs.d/elpa/with-editor-20200720.2014/with-editor-autoloads.el"
+;;;;;;  "../../../../.emacs.d/elpa/with-editor-20200720.2014/with-editor-pkg.el"
+;;;;;;  "../../../../.emacs.d/elpa/with-editor-20200720.2014/with-editor.el")
+;;;;;;  (0 0 0 0))
 
 ;;;***
 

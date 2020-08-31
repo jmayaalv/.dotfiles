@@ -6,13 +6,12 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "swiper" "swiper.el" (0 0 0 0))
-;;; Generated autoloads from swiper.el
+;;;### (autoloads nil "swiper" "../../../../.emacs.d/elpa/swiper-20200503.1102/swiper.el"
+;;;;;;  "e6dc5ba0d11ef765949bf3f71d578771")
+;;; Generated autoloads from ../../../../.emacs.d/elpa/swiper-20200503.1102/swiper.el
 
 (autoload 'swiper-avy "swiper" "\
-Jump to one of the current swiper candidates.
-
-\(fn)" t nil)
+Jump to one of the current swiper candidates." t nil)
 
 (autoload 'swiper-backward "swiper" "\
 `isearch-backward' with an overview.
@@ -21,14 +20,10 @@ When non-nil, INITIAL-INPUT is the initial search pattern.
 \(fn &optional INITIAL-INPUT)" t nil)
 
 (autoload 'swiper-thing-at-point "swiper" "\
-`swiper' with `ivy-thing-at-point'.
-
-\(fn)" t nil)
+`swiper' with `ivy-thing-at-point'." t nil)
 
 (autoload 'swiper-all-thing-at-point "swiper" "\
-`swiper-all' with `ivy-thing-at-point'.
-
-\(fn)" t nil)
+`swiper-all' with `ivy-thing-at-point'." t nil)
 
 (autoload 'swiper "swiper" "\
 `isearch-forward' with an overview.
@@ -50,8 +45,20 @@ A `swiper' that's not line-based.
 Like `swiper-isearch' but the first result is before the point.
 
 \(fn &optional INITIAL-INPUT)" t nil)
+
+;;;### (autoloads "actual autoloads are elsewhere" "swiper" "../../../../.emacs.d/elpa/swiper-20200503.1102/swiper.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../../../../.emacs.d/elpa/swiper-20200503.1102/swiper.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "swiper" '("swiper-")))
+
+;;;***
+
+;;;***
+
+;;;### (autoloads nil nil ("../../../../.emacs.d/elpa/swiper-20200503.1102/swiper-autoloads.el"
+;;;;;;  "../../../../.emacs.d/elpa/swiper-20200503.1102/swiper.el")
+;;;;;;  (0 0 0 0))
 
 ;;;***
 

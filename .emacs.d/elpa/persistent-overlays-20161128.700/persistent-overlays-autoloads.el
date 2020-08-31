@@ -6,9 +6,9 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "persistent-overlays" "persistent-overlays.el"
-;;;;;;  (0 0 0 0))
-;;; Generated autoloads from persistent-overlays.el
+;;;### (autoloads nil "persistent-overlays" "../../../../.emacs.d/elpa/persistent-overlays-20161128.700/persistent-overlays.el"
+;;;;;;  "820e7a83d9b27702e9f880655fe8d6cd")
+;;; Generated autoloads from ../../../../.emacs.d/elpa/persistent-overlays-20161128.700/persistent-overlays.el
 
 (autoload 'persistent-overlays-merge-overlays "persistent-overlays" "\
 Merge overlays.
@@ -61,6 +61,11 @@ is named using the underscore delimited full path of the file
 instead of using a SHA1 hash. Overlay file names always end with
 .povly.
 
+If called interactively, enable Persistent-Overlays minor mode if
+ARG is positive, and disable it if ARG is zero or negative.  If
+called from Lisp, also enable the mode if ARG is omitted or nil,
+and toggle it if ARG is `toggle'; disable the mode otherwise.
+
 `persistent-overlays-property-names' specifies a list of property
 symbols that must exist in an overlay for it to be handled by
 this mode. By default it is set to a list containing the symbol
@@ -104,12 +109,22 @@ Key bindings:
 \\{persistent-overlays-minor-mode-map}
 
 \(fn &optional ARG)" t nil)
+
+;;;### (autoloads "actual autoloads are elsewhere" "persistent-overlays"
+;;;;;;  "../../../../.emacs.d/elpa/persistent-overlays-20161128.700/persistent-overlays.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../../../../.emacs.d/elpa/persistent-overlays-20161128.700/persistent-overlays.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "persistent-overlays" '("persistent-overlays-")))
 
 ;;;***
+
+;;;***
 
-;;;### (autoloads nil nil ("persistent-overlays-pkg.el") (0 0 0 0))
+;;;### (autoloads nil nil ("../../../../.emacs.d/elpa/persistent-overlays-20161128.700/persistent-overlays-autoloads.el"
+;;;;;;  "../../../../.emacs.d/elpa/persistent-overlays-20161128.700/persistent-overlays-pkg.el"
+;;;;;;  "../../../../.emacs.d/elpa/persistent-overlays-20161128.700/persistent-overlays.el")
+;;;;;;  (0 0 0 0))
 
 ;;;***
 
