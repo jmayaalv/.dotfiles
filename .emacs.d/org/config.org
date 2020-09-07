@@ -1539,9 +1539,9 @@
          (global-flycheck-mode)
          (diminish 'flycheck-mode))
 
-       (use-package flycheck-joker
-         :ensure t
-         :requires flycheck)
+       ;; (use-package flycheck-joker
+       ;;   :ensure t
+       ;;   :requires flycheck)
      #+END_SRC
 
 **** clj-kondo-flycheck
@@ -1551,11 +1551,21 @@
      #+begin_src emacs-lisp
        (use-package flycheck-clj-kondo
          :ensure t
-         :config
-         (dolist (checkers '((clj-kondo-clj . clojure-joker)
-                             (clj-kondo-cljs . clojurescript-joker)
-                             (clj-kondo-cljc . clojure-joker)))
-           (flycheck-add-next-checker (car checkers) (cons 'error (cdr checkers)))))
+;;         :config
+
+         ;;(dolist (checkers '((clj-kondo-clj . clojure-joker)
+         ;;                    (clj-kondo-cljs . clojurescript-joker)
+         ;;                    (clj-kondo-cljc . clojure-joker)))
+         ;;  (flycheck-add-next-checker (car checkers) (cons 'error (cdr checkers))))
+        )
+
+        ;; then install the checker as soon as `clojure-mode' is loaded
+        (use-package clojure-mode
+        :ensure t
+        :config
+        (require 'flycheck-clj-kondo))
+
+
      #+end_src
 
 **** Tooltips
@@ -1663,6 +1673,16 @@
                (sql-user "imsomiprod")
                (sql-database "imsomiproddb"))
 
+               (omnia.test
+               (sql-name "omnia.test")
+               (sql-default-directory "/ssh:devel.jmayaalv@omniatest:")
+               (sql-postgres-program "/usr/local/pgsql/bin/psql")
+               (sql-product 'postgres)
+               (sql-port 5432)
+               (sql-server "localhost")
+               (sql-user "imsombps")
+               (sql-database "imsombpsdb"))
+
               (oic.test3
                (sql-name "oic.test3")
                (sql-default-directory "/ssh:devel.jmayaalv@oictest3:")
@@ -1741,8 +1761,8 @@
                (sql-product 'postgres)
                (sql-port 5432)
                (sql-server "localhost")
-               (sql-user "imsbcgt2")
-               (sql-database "imsbcgt2db"))
+               (sql-user "imsnfstest1db")
+               (sql-database "imsnfstest1"))
 
               (sanlam.prod
                (sql-name "sanlam.prod")
@@ -1892,6 +1912,10 @@
         (interactive)
         (my-sql-connect 'postgres 'omi.test4))
 
+      (defun sql-omnia.test ()
+        (interactive)
+        (my-sql-connect 'postgres 'omnia.test))
+
       (defun my-sql-connect (product connection)
         (setq sql-product product)
         (sql-connect connection))
@@ -1946,6 +1970,7 @@
 
     #+END_SRC
   #+end_src
+
 * Text Modes
 ** Check spelling
    #+BEGIN_SRC emacs-lisp

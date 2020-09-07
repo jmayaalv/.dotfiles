@@ -5,8 +5,8 @@
 ;; Author: Justin Burkett <justin@burkett.cc>
 ;; Maintainer: Justin Burkett <justin@burkett.cc>
 ;; URL: https://github.com/justbur/emacs-which-key
-;; Package-Version: 20200828.1417
-;; Package-Commit: e5543269fc2295e196a7824715b2e88b1b70345d
+;; Package-Version: 20200902.135
+;; Package-Commit: 2b10b8e77dc53f4d88191ac6e6675ecf1f1ccc63
 ;; Version: 3.3.2
 ;; Keywords:
 ;; Package-Requires: ((emacs "24.4"))
@@ -817,8 +817,6 @@ problems at github. If DISABLE is non-nil disable support."
         (when which-key-show-remaining-keys
           (add-hook 'pre-command-hook #'which-key--lighter-restore))
         (add-hook 'pre-command-hook #'which-key--hide-popup)
-        (add-hook 'focus-out-hook #'which-key--stop-timer)
-        (add-hook 'focus-in-hook #'which-key--start-timer)
         (add-hook 'window-size-change-functions
                   'which-key--hide-popup-on-frame-size-change)
         (which-key--start-timer))
@@ -828,8 +826,6 @@ problems at github. If DISABLE is non-nil disable support."
     (when which-key-show-remaining-keys
       (remove-hook 'pre-command-hook #'which-key--lighter-restore))
     (remove-hook 'pre-command-hook #'which-key--hide-popup)
-    (remove-hook 'focus-out-hook #'which-key--stop-timer)
-    (remove-hook 'focus-in-hook #'which-key--start-timer)
     (remove-hook 'window-size-change-functions
                  'which-key--hide-popup-on-frame-size-change)
     (which-key--stop-timer)))

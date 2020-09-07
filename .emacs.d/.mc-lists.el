@@ -12,6 +12,7 @@
 (setq mc/cmds-to-run-once
       '(
         backward-sexp
+        buf-move-down
         comint-previous-input
         crux-move-beginning-of-line
         end-of-buffer
