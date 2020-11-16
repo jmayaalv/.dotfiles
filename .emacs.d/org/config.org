@@ -1587,12 +1587,38 @@
 
 **** Convert html to hiccup
 
+
    #+BEGIN_SRC emacs-lisp
      (use-package html-to-hiccup
        :ensure t
        :config
          (define-key clojure-mode-map (kbd "H-h") 'html-to-hiccup-convert-region))
    #+END_SRC
+
+** lsp
+      #+begin_src emacs-lisp
+        (use-package lsp-mode
+          :commands lsp
+          :ensure t
+          :hook ((clojure-mode . lsp)
+                 (clojurec-mode . lsp)
+                 (clojurescript-mode . lsp))
+          :init
+          (setq lsp-keymap-prefix "s-l")
+          :config
+          (lsp-enable-which-key-integration t)
+          ;; add paths to your local installation of project mgmt tools, like lein
+          (setenv "PATH" (concat
+                           "/usr/local/bin" path-separator
+                           (getenv "PATH")))
+          (dolist (m '(clojure-mode
+                       clojurec-mode
+                       clojurescript-mode
+                       clojurex-mode))
+             (add-to-list 'lsp-language-id-configuration `(,m . "clojure")))
+          (setq lsp-clojure-server-command '("bash" "-c" "clojure-lsp") ;; Optional: In case `clojure-lsp` is not in your PATH
+                lsp-enable-indentation nil))
+      #+end_src
 
 ** javascript
 
@@ -1604,11 +1630,6 @@
        (add-to-list 'interpreter-mode-alist '("node" . js2-mode)))
    #+END_SRC
 
-** ocaml
-   #+BEGIN_SRC emacs-lisp
-   (use-package tuareg
-     :ensure t)
-   #+END_SRC
 ** pastebins
 
    gist, pastebin, refheap. All good ways of sharing snippets of code
@@ -1781,8 +1802,8 @@
                (sql-product 'postgres)
                (sql-port 5432)
                (sql-server "localhost")
-               (sql-user "imsglaciertest1")
-               (sql-database "imsglaciertest1db"))
+               (sql-user "imsombprod")
+               (sql-database "imsombproddb"))
 
              (glacier.test2
                (sql-name "glacier.test2")
@@ -1803,6 +1824,16 @@
                (sql-server "localhost")
                (sql-user "imsglacierprod")
                (sql-database "imsglacierproddb"))
+
+              (omnia.prod
+               (sql-name "omnia.prod")
+               (sql-postgres-program "/usr/local/postgresql-12.2/bin/psql")
+               (sql-default-directory "/ssh:devel.jmayaalv@omniadb:")
+               (sql-product 'postgres)
+               (sql-port 5432)
+               (sql-server "localhost")
+               (sql-user "imsombprod")
+               (sql-database "imsombproddb"))
 
               (agl.prod
                (sql-name "agl.prod")
@@ -1847,6 +1878,10 @@
       (defun sql-oic.prod ()
         (interactive)
         (my-sql-connect 'postgres 'oic.prod))
+
+      (defun sql-omnia.prod ()
+        (interactive)
+        (my-sql-connect 'postgres 'omnia.prod))
 
       (defun sql-agl.prod ()
         (interactive)
@@ -2001,9 +2036,9 @@
 *** Agenda
     #+begin_src emacs-lisp
       (setq org-agenda-files (quote ("~/org"
-                                     "~/Workspace/ms-edge/edge/doc"
-                                     "~/Workspace/ims-api/docs/org"
-                                     "~/Workspace/kane-labs/silnik/doc"
+                                     "~/Developer/ms-edge/edge/doc"
+                                     "~/Developer/ims-api/docs/org"
+                                     "~/Developer/kane-labs/silnik/doc"
                                      "~/org/architecture")))
 
       ;; Do not dim blocked tasks
@@ -2426,7 +2461,7 @@
 ** atlas
    Atlas migrations
    #+BEGIN_SRC emacs-lisp
-     (defvar *atlas-home* "/Users/juan.maya/Workspace/db-support")
+     (defvar *atlas-home* "/Users/juan.maya/Developer/db-support")
 
      (defun atlas-migration-name (path client branch)
           "New migration with `PATH` name on the given `CLIENT` using the `BRANCH` and current time."

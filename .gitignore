@@ -19,3 +19,4 @@
 *.swp
 *.plist
 /.emacs.d/elpa/doom-themes-*/
+/.emacs.d/.lsp-session-v1

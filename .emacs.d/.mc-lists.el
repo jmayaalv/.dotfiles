@@ -21,4 +21,5 @@
         ivy-end-of-buffer
         sql-magic-go
         sql-magic-semicolon
+        xref-find-references
         ))

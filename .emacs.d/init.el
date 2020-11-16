@@ -65,7 +65,7 @@
  '(org-agenda-files
    '("/Users/juan.maya/org/refile.org" "/Users/juan.maya/Workspace/ms-edge/edge/doc/edge.org"))
  '(package-selected-packages
-   '(eglot html-to-hiccup doom-themes itail logview log4j-mode vlf anzu tuareg ivy-posframe counsel-projectile ivy-rich counsel lsp-java gnu-elpa-keyring-update plantuml-mode eyuml cider-hydra hercules persistent-overlays yaml-mode flycheck-clj-kondo company-quickhelp discover-my-major helm-descbinds restclient ag persp-projectile perspective yasnippet material-theme beacon nord-theme dracula-theme darkula-theme treemacs-projectile treemacs 0blayout ta crux key-chord spaceline airline-themes solarized-theme flycheck-color-mode-line helm-ag eyebrowse iedit expand-region flycheck-joker nyan-mode ssh-tunnels htmlize swiper-helm try org-bullets asana ace-window avy markdown-mode helm-css-scss css-eldoc tagedit orgit zenburn-theme which-key use-package super-save smartscan refheap rainbow-mode rainbow-delimiters ox-reveal neotree magit js2-mode inf-clojure highlight-symbol helm-projectile helm-orgcard git-gutter-fringe+ gist exec-path-from-shell discover company-flx clojure-cheatsheet clj-refactor buffer-move all-the-icons align-cljlet ace-jump-mode))
+   '(lsp-mode eglot html-to-hiccup doom-themes itail logview log4j-mode vlf anzu tuareg ivy-posframe counsel-projectile ivy-rich counsel lsp-java gnu-elpa-keyring-update plantuml-mode eyuml cider-hydra hercules persistent-overlays yaml-mode flycheck-clj-kondo company-quickhelp discover-my-major helm-descbinds restclient ag persp-projectile perspective yasnippet material-theme beacon nord-theme dracula-theme darkula-theme treemacs-projectile treemacs 0blayout ta crux key-chord spaceline airline-themes solarized-theme flycheck-color-mode-line helm-ag eyebrowse iedit expand-region flycheck-joker nyan-mode ssh-tunnels htmlize swiper-helm try org-bullets asana ace-window avy markdown-mode helm-css-scss css-eldoc tagedit orgit zenburn-theme which-key use-package super-save smartscan refheap rainbow-mode rainbow-delimiters ox-reveal neotree magit js2-mode inf-clojure highlight-symbol helm-projectile helm-orgcard git-gutter-fringe+ gist exec-path-from-shell discover company-flx clojure-cheatsheet clj-refactor buffer-move all-the-icons align-cljlet ace-jump-mode))
  '(pdf-view-midnight-colors '("#DCDCCC" . "#383838"))
  '(safe-local-variable-values
    '((cider-ns-refresh-after-fn . "user/start")
@@ -113,3 +113,4 @@
  '(flycheck-color-mode-line-error-face ((t (:inherit flycheck-fringe-error :background "#F07667" :foreground "#efefef" :weight normal))))
  '(helm-match ((t (:background "#2B2B2B" :foreground "#DFAF8F" :weight bold :family "Menlo")))))
 (put 'narrow-to-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
