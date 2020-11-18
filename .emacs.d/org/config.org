@@ -1350,6 +1350,7 @@
                   :pin melpa-stable
                   :bind
                   (("C-c M-o" . cider-repl-clear-buffer)
+                   ("C-c M-s" . cider-selector)
                    ("<tab>" . company-indent-or-complete-common))
                   :config
                   (setq cider-clojure-cli-global-options "-C:dev") ;set dv as default alias in cli
