@@ -28,6 +28,14 @@
     #+BEGIN_SRC emacs-lisp
     (server-start)
     #+END_SRC
+** Memory
+    #+BEGIN_SRC emacs-lisp
+    ;;Set it to big number(100mb) like most of the popular starter kits like Spacemacs/Doom/Prelude, etc do:
+    (setq gc-cons-threshold 100000000)
+
+    ;;Increase the amount of data which Emacs reads from the process
+    (setq read-process-output-max (* 1024 1024)) ;; 1mb
+    #+END_SRC
 ** Preserve scroll screen position
     #+BEGIN_SRC emacs-lisp
     (setq scroll-preserve-screen-position t)
@@ -1574,30 +1582,33 @@
 
 ** lsp
       #+begin_src emacs-lisp
-         (use-package lsp-mode
-           :commands lsp
-           :ensure t
-           :hook ((clojure-mode . lsp)
-                  (clojurec-mode . lsp)
-                  (clojurescript-mode . lsp))
-           :init
-           (setq lsp-keymap-prefix "s-l")
-           (setq lsp-clojure-server-command '("bash" "-c" "cd ~/projects/clojure/clojure-lsp && lein run"))
-           (setq lsp-enable-indentation nil)
-           (setq lsp-enable-completion-at-point nil)
-           :config
-           (lsp-enable-which-key-integration t)
-        ;;    add paths to your local installation of project mgmt tools, like lein
-           (setenv "PATH" (concat
-                            "/usr/local/bin" path-separator
-                            (getenv "PATH")))
-           (dolist (m '(clojure-mode
-                        clojurec-mode
-                        clojurescript-mode
-                        clojurex-mode))
-              (add-to-list 'lsp-language-id-configuration `(,m . "clojure")))
-           (setq lsp-clojure-server-command '("bash" "-c" "clojure-lsp")  ;;Optional: In case `clojure-lsp` is not in your PATH
-                 lsp-enable-indentation nil))
+          (use-package lsp-mode
+            :commands lsp
+            :ensure t
+            :hook ((clojure-mode . lsp)
+                   (clojurec-mode . lsp)
+                   (clojurescript-mode . lsp))
+            :init
+            (setq lsp-keymap-prefix "s-l")
+            (setq lsp-clojure-server-command '("bash" "-c" "cd ~/projects/clojure/clojure-lsp && lein run"))
+            (setq lsp-enable-indentation nil)
+            (setq lsp-enable-completion-at-point nil)
+            (setq lsp-eldoc-enable-hover nil)
+;;            (setq lsp-enable-symbol-highlighting nil)
+
+            :config
+            (lsp-enable-which-key-integration t)
+             ;;add paths to your local installation of project mgmt tools, like lein
+            (setenv "PATH" (concat
+                             "/usr/local/bin" path-separator
+                             (getenv "PATH")))
+            (dolist (m '(clojure-mode
+                         clojurec-mode
+                         clojurescript-mode
+                         clojurex-mode))
+               (add-to-list 'lsp-language-id-configuration `(,m . "clojure")))
+            (setq lsp-clojure-server-command '("bash" "-c" "clojure-lsp")  ;;Optional: In case `clojure-lsp` is not in your PATH
+                  lsp-enable-indentation nil))
       #+end_src
 
 ** javascript
