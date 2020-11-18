@@ -1574,27 +1574,30 @@
 
 ** lsp
       #+begin_src emacs-lisp
-        ;; (use-package lsp-mode
-        ;;   :commands lsp
-        ;;   :ensure t
-        ;;   :hook ((clojure-mode . lsp)
-        ;;          (clojurec-mode . lsp)
-        ;;          (clojurescript-mode . lsp))
-        ;;   :init
-        ;;   (setq lsp-keymap-prefix "s-l")
-        ;;   :config
-        ;;   (lsp-enable-which-key-integration t)
+         (use-package lsp-mode
+           :commands lsp
+           :ensure t
+           :hook ((clojure-mode . lsp)
+                  (clojurec-mode . lsp)
+                  (clojurescript-mode . lsp))
+           :init
+           (setq lsp-keymap-prefix "s-l")
+           (setq lsp-clojure-server-command '("bash" "-c" "cd ~/projects/clojure/clojure-lsp && lein run"))
+           (setq lsp-enable-indentation nil)
+           (setq lsp-enable-completion-at-point nil)
+           :config
+           (lsp-enable-which-key-integration t)
         ;;    add paths to your local installation of project mgmt tools, like lein
-        ;;   (setenv "PATH" (concat
-        ;;                    "/usr/local/bin" path-separator
-        ;;                    (getenv "PATH")))
-        ;;   (dolist (m '(clojure-mode
-        ;;                clojurec-mode
-        ;;                clojurescript-mode
-        ;;                clojurex-mode))
-        ;;      (add-to-list 'lsp-language-id-configuration `(,m . "clojure")))
-        ;;   (setq lsp-clojure-server-command '("bash" "-c" "clojure-lsp")  Optional: In case `clojure-lsp` is not in your PATH
-        ;;         lsp-enable-indentation nil))
+           (setenv "PATH" (concat
+                            "/usr/local/bin" path-separator
+                            (getenv "PATH")))
+           (dolist (m '(clojure-mode
+                        clojurec-mode
+                        clojurescript-mode
+                        clojurex-mode))
+              (add-to-list 'lsp-language-id-configuration `(,m . "clojure")))
+           (setq lsp-clojure-server-command '("bash" "-c" "clojure-lsp")  ;;Optional: In case `clojure-lsp` is not in your PATH
+                 lsp-enable-indentation nil))
       #+end_src
 
 ** javascript
