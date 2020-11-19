@@ -498,13 +498,9 @@
      (setq inhibit-startup-screen t)
    #+END_SRC
 
-** alpha alpha alpha
+** Transparency
 
-   I don't use this all the time, but sometimes, when I'm hacking
-   only on my diddy 13" laptop I like to have a window tailing a file
-   in the background while I'm writing something in the
-   foreground. This let's us toggle transparency. Who wouldn't like
-   that? I'm pretty sure I got this from [[https://twitter.com/IORayne][Anthony Grimes]].
+   Make the background transparent
 
    #+BEGIN_SRC emacs-lisp
      (defun toggle-transparency ()
@@ -1361,7 +1357,7 @@
                    ("C-c M-s" . cider-selector)
                    ("<tab>" . company-indent-or-complete-common))
                   :config
-                  (setq cider-clojure-cli-global-options "-C:dev") ;set dv as default alias in cli
+                  (setq cider-clojure-cli-global-options "-J-Dguardrails.enabled -A:dev") ;set dv as default alias in cli
                   (add-hook 'clojure-mode-hook lisp-hooks)
 
                   ;(setq cider-lein-global-options "-o") ;sets lein to offine
