@@ -1,2 +1,0 @@
-alter table ims_acct_type_commissionoption_aud add column if not exists custom_upfront_schedule bigint;
-alter table ims_acct_type_commissionoption_aud add column if not exists custom_trail_schedule bigint;

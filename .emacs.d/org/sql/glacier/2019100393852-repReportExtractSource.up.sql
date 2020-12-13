@@ -1,1 +1,0 @@
-update rep_report set source = 'EXTRACT' where source = 'EXTRACTS';

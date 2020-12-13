@@ -6,9 +6,8 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "marshal" "../../../../.emacs.d/elpa/marshal-20180124.1239/marshal.el"
-;;;;;;  "18183d5d6e97a68b99a99487cd595a85")
-;;; Generated autoloads from ../../../../.emacs.d/elpa/marshal-20180124.1239/marshal.el
+;;;### (autoloads nil "marshal" "marshal.el" (0 0 0 0))
+;;; Generated autoloads from marshal.el
 
 (autoload 'marshal "marshal" "\
 
@@ -26,20 +25,8 @@
 \(fn NAME SUPERCLASS SLOTS &rest OPTIONS-AND-DOC)" nil t)
 
 (function-put 'marshal-defclass 'lisp-indent-function '2)
-
-;;;### (autoloads "actual autoloads are elsewhere" "marshal" "../../../../.emacs.d/elpa/marshal-20180124.1239/marshal.el"
-;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../.emacs.d/elpa/marshal-20180124.1239/marshal.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "marshal" '("marshal-" "unmarshal-")))
-
-;;;***
-
-;;;***
-
-;;;### (autoloads nil nil ("../../../../.emacs.d/elpa/marshal-20180124.1239/marshal-autoloads.el"
-;;;;;;  "../../../../.emacs.d/elpa/marshal-20180124.1239/marshal.el")
-;;;;;;  (0 0 0 0))
 
 ;;;***
 

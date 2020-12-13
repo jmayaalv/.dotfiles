@@ -1,2 +1,0 @@
-delete from ims_advisor_specialdeal_invoice_detail where invoiceid in (5177,5178,5192,5179,5173,5174,5115,5190,5191,5180,5175,5187,5114,5116,5193,5176,5181);
-delete from ims_advisor_specialdeal_invoice where invoiceid in (5177,5178,5192,5179,5173,5174,5115,5190,5191,5180,5175,5187,5114,5116,5193,5176,5181);

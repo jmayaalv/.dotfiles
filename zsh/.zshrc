@@ -4,6 +4,7 @@
 # If you come from bash you might have to change your $PATH.
 
 export PATH=$HOME/bin:/usr/local/bin:/Applications/Tools/apache-maven-3.3.3/bin:$PATH
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8.0_192)
 
 # Emacs Anywhere
 export EA_EDITOR='emacsclient -a "" -c --display ns'

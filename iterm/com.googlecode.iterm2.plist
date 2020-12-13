@@ -40437,7 +40437,7 @@ ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 pbtest2</string>
 			<key>Columns</key>
 			<integer>80</integer>
 			<key>Command</key>
-			<string>ssh -C -o 'ServerAliveInterval 180'  -L 8161:127.0.0.1:8161 devel.jmayaalv@omniaweb1</string>
+			<string>ssh -C -o 'ServerAliveInterval 180' devel.jmayaalv@omniaweb1</string>
 			<key>Cursor Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -40505,7 +40505,7 @@ ssh  -C -o "ServerAliveInterval 180" -L 5436:127.0.0.1:5432 pbtest2</string>
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string>ssh -C -o 'ServerAliveInterval 180'  -L 8161:127.0.0.1:8161 devel.jmayaalv@omniaweb1</string>
+			<string>ssh -C -o 'ServerAliveInterval 180'  devel.jmayaalv@omniaweb1</string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>

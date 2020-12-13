@@ -6,18 +6,14 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads "actual autoloads are elsewhere" "dash" "../../../../.emacs.d/elpa/dash-20200803.1520/dash.el"
-;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../.emacs.d/elpa/dash-20200803.1520/dash.el
+;;;### (autoloads nil "dash" "dash.el" (0 0 0 0))
+;;; Generated autoloads from dash.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "dash" '("!cdr" "!cons" "--" "->" "-a" "-butlast" "-c" "-d" "-e" "-f" "-gr" "-i" "-keep" "-l" "-m" "-non" "-only-some" "-p" "-r" "-s" "-t" "-u" "-value-to-list" "-when-let" "-zip" "dash-")))
 
 ;;;***
 
-;;;### (autoloads nil nil ("../../../../.emacs.d/elpa/dash-20200803.1520/dash-autoloads.el"
-;;;;;;  "../../../../.emacs.d/elpa/dash-20200803.1520/dash-pkg.el"
-;;;;;;  "../../../../.emacs.d/elpa/dash-20200803.1520/dash.el") (0
-;;;;;;  0 0 0))
+;;;### (autoloads nil nil ("dash-pkg.el") (0 0 0 0))
 
 ;;;***
 

@@ -1,2 +1,0 @@
-update ims_currency_forexhist set rate = rate / 100 where from_currid = 504 and to_currid in (2, 4, 462) and archived = false and feed_date between '2019-08-09' and '2019-09-09';
-update prc_nav_fund set bid_unit_price = bid_unit_price / 100, ask_unit_price = ask_unit_price / 100 where fundid in (select fundid from prc_fund where name in ('JPYEUR', 'JPYAUD', 'JPYCHF')) and archived = false and nav_date between '2019-08-09' and '2019-09-09';

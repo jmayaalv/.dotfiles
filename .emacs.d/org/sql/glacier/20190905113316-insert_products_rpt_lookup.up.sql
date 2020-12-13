@@ -1,4 +1,0 @@
-insert into rpt_lookup (id, code, key, value) values (nextval('seq_rpt_lookup'),'glc_ims_acct_typeid',800,'Global Life Plan') on conflict on constraint rpt_lookup_code_key_unq do nothing;
-insert into rpt_lookup (id, code, key, value) values (nextval('seq_rpt_lookup'),'glc_ims_acct_typeid',801,'Global Collection Plan') on conflict on constraint rpt_lookup_code_key_unq do nothing;
-insert into rpt_lookup (id, code, key, value) values (nextval('seq_rpt_lookup'),'glc_ims_acct_typeid',802,'Global Investment Plan') on conflict on constraint rpt_lookup_code_key_unq do nothing;
-insert into rpt_lookup (id, code, key, value) values (nextval('seq_rpt_lookup'),'glc_ims_acct_typeid',803,'SILA') on conflict on constraint rpt_lookup_code_key_unq do nothing;

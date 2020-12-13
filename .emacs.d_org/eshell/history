@@ -1,0 +1,92 @@
+clj -A:uberjar
+cd ../../
+cd ../
+cd ../
+cd ../
+ls
+lein migratus create daily-fees
+cd edge/
+ls
+lein migratius create min-amount-model-fee
+lein migratus create min-amount-model-fee
+ls
+cd edge
+ls
+lein migratus create fund-fees
+lein migratus create fee_config_collect_on
+cd ../../
+cd ,,
+cd ..
+cat make
+ls
+cat bin/
+cat deps.edn 
+lein migratus create fund_decimals
+lein migratus create fund_decimals
+cd ../../../
+cd ..
+lein clean
+cd ../../../
+cd ..
+cd ..
+lein migratus create swift-reports
+cd ../ms-edge/edge
+lein migratus create swift-reports
+cd ../../../
+cd ..
+lein migratus create fee-calculation-index
+./migration.sh oic magit
+cd ../../
+lein migratus create swift-report-mt35
+lein migratus create swift-report-mt535
+lein migratus create swift-report-mt535
+lein migratus create swift-report-mt535
+clj -A:artifact-name
+clojure -A:artifact-naem
+clojure -A:artifact-name
+clojure -A:artifact-name
+clojure -A:release minor
+git status
+git diff
+clojure -A:release minor
+git push --set-upstream origin master
+clojure -A:release minor
+clojure -A:release minor --without-sign
+clojure -A:artifact-name
+export TIMBRE_LEVEL=':warn'               # Elide all lower logging calls
+clojure -A:artifact-name
+clojure -A:artifact-name -e "(taoensso.timbre/set-level! :warn)"
+clojure  -e "(taoensso.timbre/set-level! :warn)" -A:artifact-name
+clojure  -e "(require '[taoensso.timbre :as timbre]) (timbre/set-level! :warn)" -A:artifact-name
+clojure -A:artifact-name
+clojure -A:artifact-name
+git describe
+./migration.sh veritas VIP-104
+cd ../../../../
+cd ..
+cd ..
+lein migratus create settlemnt-fee
+lein migratus create settlement-fees
+ls
+lein migratus create setlement-balance
+lein migratus create settlement-balance
+\q
+exit
+lein migratus create offer-trade
+cd ..
+lein migratus create trade-clearance-info
+cd ../../
+cd ..
+cd ..
+ls
+lein migratus create calendar-workdays
+cd ../../../
+cd ..
+lein migratus create more-indexes
+lein migratus create and-yet-more-indexes
+lein clj-kondo --lint src
+clj -A:uberjarcd ../../
+exit
+lein migratus create clearance_exceptions
+lein migratus create clearance_exceptions
+lein migratus create fee-fund-collect
