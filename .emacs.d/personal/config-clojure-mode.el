@@ -28,10 +28,7 @@
   (add-hook 'cider-mode-hook #'cider-company-enable-fuzzy-completion)
 
   ;;Enable paredit or smartparens for minibuffer evaluations
-  (add-hook 'eval-expression-minibuffer-setup-hook #'paredit-mode)
-
-  ;;Enable paredit in the repl
-  (add-hook 'cider-repl-mode-hook 'paredit-mode)
+  ;(add-hook 'eval-expression-minibuffer-setup-hook #'paredit-mode)
 
   ;;Interactive commands will try the command with the symbol at point first,
   ;;and only prompt if that fails
@@ -49,3 +46,16 @@
 
   ;;Remove banner
   (setq cider-repl-display-help-banner nil))
+
+(defun my-clojure-mode-hook ()
+  (clj-refactor-mode 1)
+  (yas-minor-mode 1) ; for adding require/use/import statements
+  ;; This choice of keybinding leaves cider-macroexpand-1 unbound
+  (cljr-add-keybindings-with-prefix "C-c r"))
+
+(use-package clj-refactor
+  :ensure t
+  :config
+  (setq cljr-warn-on-eval nil)
+  (add-hook 'clojure-mode-hook #'my-clojure-mode-hook)
+  (diminish 'clj-refactor-mode))

@@ -20,3 +20,4 @@
 *.plist
 /.emacs.d/elpa/doom-themes-*/
 /.emacs.d/.lsp-session-v1
+.emacs.d/elpa/archives/

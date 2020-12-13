@@ -22,8 +22,8 @@
 (use-package dimmer
   :ensure t
   :config
-  (setq dimmer-percent 0.4)
-  (dimmer-activate))
+  (progn (setq dimmer-percent 0.4)
+        (dimmer-activate)))
 
 
 ;;Highlights the current line
