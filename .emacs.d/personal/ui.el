@@ -34,3 +34,15 @@
   (custom-set-faces
    '(aw-leading-char-face
      ((t (:inherit ace-jump-face-foreground :height 3.0))))))
+
+;; Move buffers
+(use-package buffer-move
+  :ensure t
+  :bind (("<s-up>" . buf-move-up)
+         ("<s-down>" . buf-move-down)
+         ("<s-left>" . buf-move-left)
+         ("<s-right>" . buf-move-right)))
+
+
+;; Use Shift+arrow_keys to move cursor around split panes
+(windmove-default-keybindings)
