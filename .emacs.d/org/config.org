@@ -543,74 +543,76 @@
    #+END_SRC
 ** Modeline
    #+begin_src emacs-lisp
-       (defun d/flycheck-lighter (state)
-         "Return flycheck information for the given error type STATE.
 
-     Source: https://git.io/vQKzv"
-         (let* ((counts (flycheck-count-errors flycheck-current-errors))
-                (errorp (flycheck-has-current-errors-p state))
-                (err (or (cdr (assq state counts)) "?"))
-                (running (eq 'running flycheck-last-status-change)))
-           (if (or errorp running) (format "•%s" err))))
+          (which-function-mode 1)
 
-     (setq-default mode-line-format
-                   (list
-                    mode-line-modified
+          (defun d/flycheck-lighter (state)
+            "Return flycheck information for the given error type STATE. Source: https://git.io/vQKzv"
+            (let* ((counts (flycheck-count-errors flycheck-current-errors))
+                   (errorp (flycheck-has-current-errors-p state))
+                   (err (or (cdr (assq state counts)) "?"))
+                   (running (eq 'running flycheck-last-status-change)))
+              (if (or errorp running) (format "•%s" err))))
 
-                    mode-line-front-space
+          (setq-default mode-line-format
+                        (list
+                         mode-line-modified
 
-                    mode-line-my-vc
+                         mode-line-front-space
 
-                    '(:eval (propertize " %b "
-                                        'face
-                                        (let ((face (buffer-modified-p)))
-                                          (if face 'font-lock-warning-face
-                                            'font-lock-type-face))
-                                        'help-echo (buffer-file-name)))
+                         mode-line-my-vc
 
+                         '(:eval (propertize " %b "
+                                             'face
+                                             (let ((face (buffer-modified-p)))
+                                               (if face 'font-lock-warning-face
+                                                 'font-lock-type-face))
+                                             'help-echo (buffer-file-name)))
 
-                    mode-line-position
+                         mode-line-position
 
-                    mode-line-front-space
-                    ;; flycheck
-                    '(:eval
-                     (when (and (bound-and-true-p flycheck-mode)
-                                (or flycheck-current-errors
-                                    (eq 'running flycheck-last-status-change)))
-                       (concat
-                        (cl-loop for state in '((error . "#FB4933")
-                                                (warning . "#FABD2F")
-                                                (info . "#83A598"))
-                                 as lighter = (d/flycheck-lighter (car state))
-                                 when lighter
-                                 concat (propertize
-                                         lighter
-                                         'face `(:foreground ,(cdr state))))
-                        " ")))
+                         mode-line-front-space
+                         ;; flycheck
+                         '(:eval
+                           (when (and (bound-and-true-p flycheck-mode)
+                                      (or flycheck-current-errors
+                                          (eq 'running flycheck-last-status-change)))
+                             (concat
+                              (cl-loop for state in '((error . "#FB4933")
+                                                      (warning . "#FABD2F")
+                                                      (info . "#83A598"))
+                                       as lighter = (d/flycheck-lighter (car state))
+                                       when lighter
+                                       concat (propertize
+                                               lighter
+                                               'face `(:foreground ,(cdr state))))
+                              " ")))
 
-                    ;; spaces to align right
-                    '(:eval (propertize
-                     " " 'display
-                     `((space :align-to (- (+ right right-fringe right-margin)
-                                           ,(+ 3 (string-width mode-name)))))))
+                         ;; which function
+                         '(:eval (format "[%s] " (which-function)))
 
-                    ;; the current major mode
-                    (propertize " %m " 'face 'font-lock-string-face)))
+                         ;; spaces to align right
+                         '(:eval (propertize
+                                  " " 'display
+                                  `((space :align-to (- (+ right right-fringe right-margin)
+                                                        ,(+ 3 (string-width mode-name)))))))
 
-     (set-face-attribute 'mode-line nil
-                         :background "#353644"
-                         :foreground "white"
-                         :box '(:line-width 8 :color "#353644")
-                         :overline nil
-                         :underline nil)
+                         ;; the current major mode
+                         (propertize " %m " 'face 'font-lock-string-face)))
 
-     (set-face-attribute 'mode-line-inactive nil
-                         :background "#565063"
-                         :foreground "white"
-                         :box '(:line-width 8 :color "#565063")
-                         :overline nil
-                         :underline nil)
+          (set-face-attribute 'mode-line nil
+                              :background "#353644"
+                              :foreground "white"
+                              :box '(:line-width 8 :color "#353644")
+                              :overline nil
+                              :underline nil)
 
+          (set-face-attribute 'mode-line-inactive nil
+                              :background "#565063"
+                              :foreground "white"
+                              :box '(:line-width 8 :color "#565063")
+                              :overline nil
+                              :underline nil)
    #+end_src
 ** Dimmer
   subtle visual indication which window is currently active by dimming the faces on the others.
@@ -1137,11 +1139,6 @@
    (whitespace-mode +1)
    (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
    #+END_SRC
-*** Which function
-    Show current definition name in the modeline
-    #+BEGIN_SRC emacs-lisp
-    (which-function-mode 1)
-    #+END_SRC
 *** Code Annotations
     #+BEGIN_SRC emacs-lisp
     (use-package hl-todo
@@ -2318,7 +2315,6 @@
    #+BEGIN_SRC emacs-lisp
   (setq auth-sources
     '((:source "~/.emacs.d/secrets/authinfo.gpg")))
-
     ;(custom-set-variables '(epg-gpg-program  "/usr/local/bin/gpg2"))
    #+END_SRC
 

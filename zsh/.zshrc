@@ -6,6 +6,8 @@
 export PATH=$HOME/bin:/usr/local/bin:/Applications/Tools/apache-maven-3.3.3/bin:$PATH
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8.0_192)
 
+
+
 # Emacs Anywhere
 export EA_EDITOR='emacsclient -a "" -c --display ns'
 
@@ -18,11 +20,11 @@ function clj() {
         command clj $@
     fi
 }
- 
+
 # Datomic
 
 export DATOMIC_PATH=~/Documents/workspace/datomic
- 
+
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
 
@@ -113,6 +115,12 @@ ddRPROMPT='$(prompt_online)'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+
+alias e='emacsclient -t'
+alias ec='emacsclient -c'
+alias vim='emacsclient -t'
+alias vi='emacsclient -t'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
