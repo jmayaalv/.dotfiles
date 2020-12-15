@@ -6,8 +6,9 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "super-save" "super-save.el" (0 0 0 0))
-;;; Generated autoloads from super-save.el
+;;;### (autoloads nil "super-save" "../../../../.emacs.d/elpa/super-save-20200930.1634/super-save.el"
+;;;;;;  "30dd9f1c6e074e12850ee7d723b2aa3b")
+;;; Generated autoloads from ../../../../.emacs.d/elpa/super-save-20200930.1634/super-save.el
 
 (defvar super-save-mode nil "\
 Non-nil if Super-Save mode is enabled.
@@ -28,8 +29,20 @@ from Lisp, also enable the mode if ARG is omitted or nil, and
 toggle it if ARG is `toggle'; disable the mode otherwise.
 
 \(fn &optional ARG)" t nil)
+
+;;;### (autoloads "actual autoloads are elsewhere" "super-save" "../../../../.emacs.d/elpa/super-save-20200930.1634/super-save.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../../../../.emacs.d/elpa/super-save-20200930.1634/super-save.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "super-save" '("super-save-")))
+
+;;;***
+
+;;;***
+
+;;;### (autoloads nil nil ("../../../../.emacs.d/elpa/super-save-20200930.1634/super-save-autoloads.el"
+;;;;;;  "../../../../.emacs.d/elpa/super-save-20200930.1634/super-save.el")
+;;;;;;  (0 0 0 0))
 
 ;;;***
 
