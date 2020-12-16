@@ -521,7 +521,7 @@
 ** Modeline
    #+begin_src emacs-lisp
 
-          (which-function-mode 1)
+          ;;(which-function-mode 1)
 
           (defun d/flycheck-lighter (state)
             "Return flycheck information for the given error type STATE. Source: https://git.io/vQKzv"
@@ -566,7 +566,7 @@
                               " ")))
 
                          ;; which function
-                         '(:eval (format "[%s] " (which-function)))
+                         ;;'(:eval (format "[%s] " (which-function)))
 
                          ;; spaces to align right
                          '(:eval (propertize
@@ -635,12 +635,12 @@
    #+BEGIN_SRC emacs-lisp
    (use-package guru-mode
     :ensure t
-    :init
-    (setq guru-warn-only t)
-    (guru-mode +1)
-    (diminish 'guru-mode))
-
+    :config
+     (setq guru-warn-only t)
+     (guru-mode +1)
+     (diminish 'guru-mode))
    #+END_SRC
+
 ** Easy kill
    Kill & Mark Things Easily
   #+BEGIN_SRC emacs-lisp
