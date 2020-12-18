@@ -119,8 +119,7 @@ ddRPROMPT='$(prompt_online)'
 
 alias e='emacsclient -t'
 alias ec='emacsclient -c'
-alias vim='emacsclient -t'
-alias vi='emacsclient -t'
+
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

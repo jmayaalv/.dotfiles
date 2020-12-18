@@ -2253,7 +2253,7 @@
 * Integrations
 ** Terminal
     #+begin_src emacs-lisp
-      ;;(defvar my-prezto-files '("zlogin" "zlogin" "zlogout" "zpreztorc" "zprofile" "zshenv" "zshrc"))
+      (defvar my-prezto-files '("zlogin" "zlogin" "zlogout" "zpreztorc" "zprofile" "zshenv" "zshrc"))
 
       ;; (mapc (lambda (file)
       ;;     (add-to-list 'auto-mode-alist `(,(format "\\%s\\'" file) . sh-mode)))
