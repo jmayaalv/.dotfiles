@@ -1703,99 +1703,121 @@
 
     #+BEGIN_SRC emacs-lisp
       (defun sql-localhost.dev ()
+        "Create a new sql connection to the local dev db."
         (interactive)
         (my-sql-connect  'postgres 'localhost.dev))
 
       (defun sql-localhost.test ()
+        "Create a new sql connection to the local test db."
         (interactive)
         (my-sql-connect  'postgres 'localhost.test))
 
       (defun sql-oic.prod ()
-        (interactive)
-        (my-sql-connect 'postgres 'oic.prod))
+        "Create a new sql connection to the oic prod db."
+         (interactive)
+         (my-sql-connect 'postgres 'oic.prod))
 
       (defun sql-omnia.prod ()
+        "Create a new sql connection to the omnia prod db."
         (interactive)
         (my-sql-connect 'postgres 'omnia.prod))
 
       (defun sql-agl.prod ()
+        "Create a new sql connection to the agl prod db."
         (interactive)
         (my-sql-connect 'postgres 'agl.prod))
 
       (defun sql-omi.prod ()
+        "Create a new sql connection to the omi prod db."
         (interactive)
         (my-sql-connect 'postgres 'omi.prod))
 
       (defun sql-oic.test3 ()
-        (interactive)
-        (my-sql-connect 'postgres 'oic.test3))
+        "Create a new sql connection to the oic test3 db."
+         (interactive)
+         (my-sql-connect 'postgres 'oic.test3))
 
       (defun sql-glacier.prod ()
+        "Create a new sql connection to the glacier prod db."
         (interactive)
         (my-sql-connect 'postgres 'glacier.prod))
 
       (defun sql-argus.prod ()
-        (interactive)
-        (my-sql-connect 'postgres 'argus.prod))
+        "Create a new sql connection to the argus prod db."
+         (interactive)
+         (my-sql-connect 'postgres 'argus.prod))
 
       (defun sql-providence.prod ()
-        (interactive)
-        (my-sql-connect 'postgres 'providence.prod))
+        "Create a new sql connection to the providence prod db."
+         (interactive)
+         (my-sql-connect 'postgres 'providence.prod))
 
       (defun sql-glacier.test ()
-        (interactive)
-        (my-sql-connect 'postgres 'glacier.test))
+        "Create a new sql connection to the glacier test db."
+         (interactive)
+         (my-sql-connect 'postgres 'glacier.test))
 
-     (defun sql-glacier.test2 ()
-        (interactive)
-        (my-sql-connect 'postgres 'glacier.test2))
+      (defun sql-glacier.test2 ()
+        "Create a new sql connection to the glacier test2 db."
+         (interactive)
+         (my-sql-connect 'postgres 'glacier.test2))
 
       (defun sql-veritas.test ()
-        (interactive)
-        (my-sql-connect 'postgres 'veritas.test))
+        "Create a new sql connection to the veritas test db."
+         (interactive)
+         (my-sql-connect 'postgres 'veritas.test))
 
       (defun sql-veritas.prod ()
-        (interactive)
-        (my-sql-connect 'postgres 'veritas.prod))
+        "Create a new sql connection to the veritas prod db."
+         (interactive)
+         (my-sql-connect 'postgres 'veritas.prod))
 
       (defun sql-sanlam.prod ()
-        (interactive)
-        (my-sql-connect 'postgres 'sanlam.prod))
+        "Create a new sql connection to the sanlam prod db."
+         (interactive)
+         (my-sql-connect 'postgres 'sanlam.prod))
 
       (defun sql-northstar.prod ()
-        (interactive)
-        (my-sql-connect 'postgres 'northstar.prod))
+        "Create a new sql connection to the sanlam prod db."
+         (interactive)
+         (my-sql-connect 'postgres 'northstar.prod))
 
       (defun sql-northstar.test ()
-        (interactive)
-        (my-sql-connect 'postgres 'northstar.test))
+        "Create a new sql connection to the northstar test db."
+         (interactive)
+         (my-sql-connect 'postgres 'northstar.test))
 
       (defun sql-omi.test1 ()
-        (interactive)
-        (my-sql-connect 'postgres 'omi.test1))
+        "Create a new sql connection to the omi test1 db."
+         (interactive)
+         (my-sql-connect 'postgres 'omi.test1))
 
-     (defun sql-omi.test2 ()
-        (interactive)
-        (my-sql-connect 'postgres 'omi.test2))
+      (defun sql-omi.test2 ()
+        "Create a new sql connection to the omi test2 db."
+         (interactive)
+         (my-sql-connect 'postgres 'omi.test2))
 
-     (defun sql-omi.test4 ()
-        (interactive)
-        (my-sql-connect 'postgres 'omi.test4))
+      (defun sql-omi.test4 ()
+        "Create a new sql connection to the omi test4 db."
+         (interactive)
+         (my-sql-connect 'postgres 'omi.test4))
 
       (defun sql-omnia.test ()
-        (interactive)
-        (my-sql-connect 'postgres 'omnia.test))
+        "Create a new sql connection to the omnia test db."
+         (interactive)
+         (my-sql-connect 'postgres 'omnia.test))
 
       (defun my-sql-connect (product connection)
-        (setq sql-product product)
-        (sql-connect connection))
+        "Create a new sql CONNECTION with a given PRODUCT."
+         (setq sql-product product)
+         (sql-connect connection))
 
-      (defun sql-connect-preset (product name)
-        "Connect to a predefined SQL connection listed in `sql-connection-alist'"
-        (setq sql-product product)
-        (eval `(let ,(cdr (assoc name sql-connection-alist))
-                 (flet ((sql-get-login (&rest what)))
-                   (sql-product-interactive sql-product)))))
+       (defun sql-connect-preset (product name)
+         "Connect to a predefined SQL connection listed in `sql-connection-alist'"
+         (setq sql-product product)
+         (eval `(let ,(cdr (assoc name sql-connection-alist))
+                  (flet ((sql-get-login (&rest what)))
+                    (sql-product-interactive sql-product)))))
     #+END_SRC
 
     And now we want the buffer to use the name of the pool *SQL: <host>_<db>, which is easier to  find when you M-x list-buffers, or C-x C-b

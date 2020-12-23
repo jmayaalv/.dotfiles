@@ -510,7 +510,7 @@
 	       ("Toby Cubitt" . "toby-predictive@dr-qubit.org"))
 	      (:keywords "extensions" "matching" "data structures trie" "tree" "dictionary" "completion" "regexp"))])
  (diff-hl .
-	  [(1 8 7)
+	  [(1 8 8)
 	   ((cl-lib
 	     (0 2))
 	    (emacs
@@ -662,13 +662,19 @@
 	 ("Eduardo Ochs" . "eduardoochs@gmail.com"))
 	(:keywords "lisp" "e-scripts"))])
  (eglot .
-	[(1 6)
+	[(1 7)
 	 ((emacs
 	   (26 1))
 	  (jsonrpc
-	   (1 0 7))
+	   (1 0 14))
 	  (flymake
-	   (1 0 5)))
+	   (1 0 9))
+	  (project
+	   (0 3 0))
+	  (xref
+	   (1 0 1))
+	  (eldoc
+	   (1 11 0)))
 	 "Client for Language Server Protocol (LSP) servers" tar
 	 ((:url . "https://github.com/joaotavora/eglot")
 	  (:maintainer "João Távora" . "joaotavora@gmail.com")
@@ -1146,7 +1152,7 @@
 		 ("Stefan Monnier" . "monnier@iro.umontreal.ca"))
 		(:maintainer "Stefan Monnier" . "monnier@iro.umontreal.ca"))])
  (js2-mode .
-	   [(20190219)
+	   [(20201220)
 	    ((emacs
 	      (24 1))
 	     (cl-lib
@@ -1918,7 +1924,7 @@
 	      ("Stefan Monnier" . "monnier@iro.umontreal.ca"))
 	     (:maintainer "Stefan Monnier" . "monnier@iro.umontreal.ca"))])
  (rt-liberation .
-		[(1 31)
+		[(2 1)
 		 nil "Emacs interface to RT" tar
 		 ((:url . "http://www.nongnu.org/rtliber/")
 		  (:maintainer "Yoni Rabkin" . "yrk@gnu.org")
