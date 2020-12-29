@@ -1,2 +1,0 @@
-;;; Generated package description from /Users/juan.maya/.emacs.d/elpa/marshal-20201222.226/marshal.el  -*- no-byte-compile: t -*-
-(define-package "marshal" "20201222.226" "eieio extension for automatic (un)marshalling" '((emacs "25.1") (ht "2.1")) :commit "d581bc526470c2a23b5ff1ba2ddd7f47c155821c" :keywords '("extensions") :authors '(("Yann Hodique" . "yann.hodique@gmail.com")) :maintainer '("Yann Hodique" . "yann.hodique@gmail.com") :url "https://github.com/sigma/marshal.el")
