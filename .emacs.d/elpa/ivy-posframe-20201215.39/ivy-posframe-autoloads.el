@@ -6,8 +6,9 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "ivy-posframe" "ivy-posframe.el" (0 0 0 0))
-;;; Generated autoloads from ivy-posframe.el
+;;;### (autoloads nil "ivy-posframe" "../../../../.emacs.d/elpa/ivy-posframe-20201215.39/ivy-posframe.el"
+;;;;;;  "e0763574eb64695bb0d96e883d2377c0")
+;;; Generated autoloads from ../../../../.emacs.d/elpa/ivy-posframe-20201215.39/ivy-posframe.el
 
 (defvar ivy-posframe-mode nil "\
 Non-nil if Ivy-Posframe mode is enabled.
@@ -28,8 +29,21 @@ from Lisp, also enable the mode if ARG is omitted or nil, and
 toggle it if ARG is `toggle'; disable the mode otherwise.
 
 \(fn &optional ARG)" t nil)
+
+;;;### (autoloads "actual autoloads are elsewhere" "ivy-posframe"
+;;;;;;  "../../../../.emacs.d/elpa/ivy-posframe-20201215.39/ivy-posframe.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../../../../.emacs.d/elpa/ivy-posframe-20201215.39/ivy-posframe.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "ivy-posframe" '("ivy-posframe-")))
+
+;;;***
+
+;;;***
+
+;;;### (autoloads nil nil ("../../../../.emacs.d/elpa/ivy-posframe-20201215.39/ivy-posframe-autoloads.el"
+;;;;;;  "../../../../.emacs.d/elpa/ivy-posframe-20201215.39/ivy-posframe.el")
+;;;;;;  (0 0 0 0))
 
 ;;;***
 
