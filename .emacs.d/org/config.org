@@ -737,9 +737,11 @@
    #+END_SRC
 ** Selectrum
     #+BEGIN_SRC emacs-lisp
-      (use-package selectrum
+    (use-package selectrum
        :ensure t
-       :init (selectrum-mode 1))
+       :init
+       (selectrum-mode 1))
+
 
       (use-package selectrum-prescient
         :ensure t
@@ -773,8 +775,7 @@
         ;; By default only the keybinding is shown as annotation.
         ;; Note that there is the command `marginalia-cycle' to
         ;; switch between the annotators.
-        (setq marginalia-annotators '(marginalia-annotators-heavy marginalia-annotators-light nil))
-      )
+        (setq marginalia-annotators '(marginalia-annotators-heavy marginalia-annotators-light nil)))
       ;; (use-package marginalia
       ;;   :ensure t
       ;;   :init
@@ -911,9 +912,11 @@
 
 ** Counsel
    #+BEGIN_SRC emacs-lisp
-     ;; (use-package counsel
-     ;;  :ensure t
-     ;;  :init (counsel-mode 1))
+      (use-package counsel
+       :ensure t
+       :bind (("C-x C-f" . counsel-find-file))
+;;       :init (counsel-mode 1)
+)
    #+END_SRC
 ** Ivy
       #+BEGIN_SRC emacs-lisp
@@ -929,7 +932,6 @@
         ;;                (setq projectile-completion-system 'ivy)
         ;;                ;; swiper provides enhanced buffer search
         ;;                ;; counsel supercharges a lot of commands with some ivy magic
-
         ;;                (global-set-key (kbd "M-x") 'counsel-M-x)
         ;;                (global-set-key (kbd "C-x C-f") 'counsel-find-file)
         ;;                (global-set-key (kbd "<f1> f") 'counsel-describe-function)
@@ -978,7 +980,7 @@
     #+BEGIN_SRC emacs-lisp
       (use-package magit
       :ensure t
-       :bind
+      :bind
        ("C-x g" . magit-status))
     #+END_SRC
 
@@ -1020,14 +1022,14 @@
 
 ** swiper
     #+BEGIN_SRC emacs-lisp
-      ;; (use-package swiper
-      ;;   :ensure t
-      ;;   :bind
-      ;;   (("C-s" . swiper)
-      ;;    ("C-r" . swiper))
-      ;;   :config
-      ;;   (progn
-      ;;     (setq enable-recursive-minibuffers t)))
+      ;;(use-package swiper
+        ;;   :ensure t
+        ;;   :bind
+        ;;   (("C-s" . swiper)
+        ;;    ("C-r" . swiper))
+           ;; :config
+           ;; (progn
+           ;;   (setq enable-recursive-minibuffers t)))
    #+END_SRC
 ** avy-mode
 
@@ -1597,33 +1599,46 @@
 
 ** lsp
       #+begin_src emacs-lisp
-        ;;           (use-package lsp-mode
-        ;;             :commands lsp
-        ;;             :ensure t
-        ;;             :hook ((clojure-mode . lsp)
-        ;;                    (clojurec-mode . lsp)
-        ;;                    (clojurescript-mode . lsp))
-        ;;             :init
-        ;;             (setq lsp-keymap-prefix "s-l")
-        ;;             (setq lsp-clojure-server-command '("bash" "-c" "cd ~/projects/clojure/clojure-lsp && lein run"))
-        ;;             (setq lsp-enable-indentation nil)
-        ;;             (setq lsp-enable-completion-at-point nil)
-        ;;             (setq lsp-eldoc-enable-hover nil)
-        ;; ;;            (setq lsp-enable-symbol-highlighting nil)
+        (use-package lsp-mode
+          :commands lsp
+          :ensure t
+          :hook ((clojure-mode . lsp)
+                 (clojurec-mode . lsp)
+                 (clojurescript-mode . lsp))
+          :init
 
-        ;;             :config
-        ;;             (lsp-enable-which-key-integration t)
-        ;;              ;;add paths to your local installation of project mgmt tools, like lein
-        ;;             (setenv "PATH" (concat
-        ;;                              "/usr/local/bin" path-separator
-        ;;                              (getenv "PATH")))
-        ;;             (dolist (m '(clojure-mode
-        ;;                          clojurec-mode
-        ;;                          clojurescript-mode
-        ;;                          clojurex-mode))
-        ;;                (add-to-list 'lsp-language-id-configuration `(,m . "clojure")))
-        ;;             (setq lsp-clojure-server-command '("bash" "-c" "clojure-lsp")  ;;Optional: In case `clojure-lsp` is not in your PATH
-        ;;                   lsp-enable-indentation nil))
+          (setq gc-cons-threshold 100000000
+                lsp-keymap-prefix "s-l"
+                read-process-output-max (* 1024 1024)
+                company-bidle-delay 0.5
+                treemacs-space-between-root-nodes nil
+                lsp-lens-enable t
+                lsp-signature-auto-activate nil
+                ;;lsp-clojure-server-command '("bash" "-c" "cd ~/projects/clojure/clojure-lsp && lein run")
+                lsp-enable-indentation nil
+                lsp-headerline-breadcrumb-enable nil
+                lsp-enable-completion-at-point nil
+                lsp-diagnostics-provider :none
+                lsp-eldoc-enable-hover nil
+                lsp-log-io nil
+                lsp-enable-which-key-integration  t)
+
+          :config
+          ;;add paths to your local installation of project mgmt tools, like lein
+          (setenv "PATH" (concat
+                          "/usr/local/bin" path-separator
+                          (getenv "PATH")))
+          (dolist (m '(clojure-mode
+                       clojurec-mode
+                       clojurescript-mode
+                       clojurex-mode))
+            (add-to-list 'lsp-language-id-configuration `(,m . "clojure")))
+        ;;   (setq lsp-clojure-server-command '("bash" "-c" "clojure-lsp")  ;;Optional: In case `clojure-lsp` is not in your PATH
+        )
+
+        (use-package lsp-treemacs
+          :ensure t
+          :requires lsp-mode)
       #+end_src
 
 ** javascript
@@ -1850,6 +1865,7 @@
                (sql-server "localhost")
                (sql-user "imsdartaprod")
                (sql-database "imsdartaproddb"))
+
               (argus.prod
                (sql-name "argus.prod")
                (sql-postgres-program "/usr/local/pgsql/bin/psql")
@@ -1859,6 +1875,17 @@
                (sql-server "localhost")
                (sql-user "imsargusprod")
                (sql-database "imsargusproddb"))
+
+             (argus.test2
+               (sql-name "argus.test2")
+               (sql-postgres-program "/usr/local/pgsql/bin/psql")
+               (sql-default-directory "/ssh:devel.jmayaalv@argustest2:")
+               (sql-product 'postgres)
+               (sql-port 5432)
+               (sql-server "localhost")
+               (sql-user "imsargust2")
+               (sql-database "imsargust2db"))
+
               (providence.prod
                (sql-name "providence.prod")
                (sql-postgres-program "/usr/local/pgsql/bin/psql")
@@ -1917,6 +1944,11 @@
         "Create a new sql connection to the argus prod db."
          (interactive)
          (my-sql-connect 'postgres 'argus.prod))
+
+      (defun sql-argus.test2 ()
+        "Create a new sql connection to the argus prod db."
+         (interactive)
+         (my-sql-connect 'postgres 'argus.test2))
 
       (defun sql-providence.prod ()
         "Create a new sql connection to the providence prod db."
