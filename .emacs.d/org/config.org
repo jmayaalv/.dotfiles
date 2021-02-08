@@ -649,7 +649,7 @@
    Kill & Mark Things Easily
   #+BEGIN_SRC emacs-lisp
      (use-package easy-kill
-          :ensure t
+          :ensure f ;;disable for the time being. Need to learn how to use it as is affecint my wf
           :config
           (global-set-key [remap kill-ring-save] 'easy-kill)
           (global-set-key [remap mark-sexp] 'easy-mark))
