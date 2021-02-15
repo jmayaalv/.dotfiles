@@ -1417,64 +1417,67 @@
 **** cider
 
       #+BEGIN_SRC emacs-lisp
-                       ;; load CIDER from its source code
-                ;;       (add-to-list 'load-path "~/Documents/workspace/cider")
-                ;;       (require 'cider)
+               ;; load CIDER from its source code
+        ;;       (add-to-list 'load-path "~/Documents/workspace/cider")
+        ;;       (require 'cider)
 
-                (use-package cider
-                  :ensure t
-                  :pin melpa-stable
-                  :bind
-                  (("C-c M-o" . cider-repl-clear-buffer)
-                   ("C-c M-s" . cider-selector)
-                   ("<tab>" . company-indent-or-complete-common))
-                  :config
-                  (setq cider-clojure-cli-global-options "-J-Dguardrails.enabled -A:dev") ;set dv as default alias in cli
-                  (add-hook 'clojure-mode-hook lisp-hooks)
+        (use-package cider
+          :ensure t
+          :pin melpa-stable
+          :bind
+          (("C-c M-o" . cider-repl-clear-buffer)
+           ("C-c M-s" . cider-selector)
+           ("<tab>" . company-indent-or-complete-common))
+          :config
+          (setq cider-clojure-cli-global-options "-J-Dguardrails.enabled -A:dev") ;set dv as default alias in cli
+          (add-hook 'clojure-mode-hook lisp-hooks)
 
-                  ;(setq cider-lein-global-options "-o") ;sets lein to offine
-                  ;(setq cider-clojure-cli-global-options "-o")
+          ;(setq cider-lein-global-options "-o") ;sets lein to offine
+          ;(setq cider-clojure-cli-global-options "-o")
 
-                  ;;history
-                  (setq cider-history-file (concat user-emacs-directory "cider-history"))
-                  (setq cider-repl-wrap-history t)
-                  (setq cider-repl-history-file "~/.cider-repl-history")
-                  (setq clojure-align-forms-automatically t)
-                  ;  (setq cider-cljs-lein-repl "(do (use 'figwheel-sidecar.repl-api) (start-figwheel!) (cljs-repl))") ;i dont' think this is needed anymore with fighweel.main
-                   (setq-default ediff-ignore-similar-regions t)
-                   ;; used when calling ediff-show-diff-output from ediff session
-                   ;; (bound to D). Not interactive.
-                   (setq ediff-custom-diff-options "--suppress-common-lines")
+          ;;history
+          (setq cider-history-file (concat user-emacs-directory "cider-history"))
+          (setq cider-repl-wrap-history t)
+          (setq cider-repl-history-file "~/.cider-repl-history")
+          (setq clojure-align-forms-automatically t)
+          ;  (setq cider-cljs-lein-repl "(do (use 'figwheel-sidecar.repl-api) (start-figwheel!) (cljs-repl))") ;i dont' think this is needed anymore with fighweel.main
+           (setq-default ediff-ignore-similar-regions t)
+           ;; used when calling ediff-show-diff-output from ediff session
+           ;; (bound to D). Not interactive.
+           (setq ediff-custom-diff-options "--suppress-common-lines")
 
-                   ;Prevent C-c C-k from prompting to save the file corresponding to the buffer being loaded, if it's modified:
-                   (setq cider-save-file-on-load nil)
-                   (setq cider-save-file-on-load t)
+           ;Prevent C-c C-k from prompting to save the file corresponding to the buffer being loaded, if it's modified:
+           (setq cider-save-file-on-load nil)
+           (setq cider-save-file-on-load t)
 
-                   ;;Fuzzy Completion
-                   (add-hook 'cider-repl-mode-hook #'cider-company-enable-fuzzy-completion)
-                   (add-hook 'cider-mode-hook #'cider-company-enable-fuzzy-completion)
+           ;;Fuzzy Completion
+           (add-hook 'cider-repl-mode-hook #'cider-company-enable-fuzzy-completion)
+           (add-hook 'cider-mode-hook #'cider-company-enable-fuzzy-completion)
 
 
-                   ;Enable paredit or smartparens for minibuffer evaluations
-                   (add-hook 'eval-expression-minibuffer-setup-hook #'paredit-mode)
+           ;;Enable paredit or smartparens for minibuffer evaluations
+           (add-hook 'eval-expression-minibuffer-setup-hook #'paredit-mode)
 
-                   ;Enable paredit in the repl
-                   (add-hook 'cider-repl-mode-hook 'paredit-mode)
+           ;;Enable paredit in the repl
+           (add-hook 'cider-repl-mode-hook 'paredit-mode)
 
-                   ;Interactive commands will try the command with the symbol at point first, and only prompt if that fails
-                   (setq cider-prompt-for-symbol nil)
+           ;;Interactive commands will try the command with the symbol at point first, and only prompt if that fails
+           (setq cider-prompt-for-symbol nil)
 
-                   ;Dont log communication with nrepl server
-                   (setq nrepl-log-messages nil)
+           ;;Dont log communication with nrepl server
+           (setq nrepl-log-messages nil)
 
-                    ;hide the *nrepl-connection* and *nrepl-server* buffers from appearing
-                    (setq nrepl-hide-special-buffers t)
+            ;;hide the *nrepl-connection* and *nrepl-server* buffers from appearing
+            (setq nrepl-hide-special-buffers t)
 
-                    ;Highlight symbols that are known to be defined.
-                    (setq cider-font-lock-dynamically '(macro core function var))
+            ;;Highlight symbols that are known to be defined.
+            (setq cider-font-lock-dynamically '(macro core function var))
 
-                    ;Remove banner
-                    (setq cider-repl-display-help-banner nil))
+            ;;Remove banner
+            (setq cider-repl-display-help-banner nil)
+
+             ;;support for guardrails
+             (put '>defn 'clojure-doc-string-elt 2))
       #+END_SRC
 
 ***** cider-test-report diff hook
