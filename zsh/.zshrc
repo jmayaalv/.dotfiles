@@ -120,6 +120,14 @@ ddRPROMPT='$(prompt_online)'
 alias e='emacsclient -t'
 alias ec='emacsclient -c'
 
+# Babashka tasks completion
+_bb_tasks() {
+    local matches=(`bb tasks |tail -n +3 |cut -f1 -d ' '`)
+    compadd -a matches
+    _files # autocomplete filenames as well
+}
+compdef _bb_tasks bb
+
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

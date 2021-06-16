@@ -1,0 +1,2 @@
+;;; Generated package description from /Users/juan.maya/.emacs.d/elpa/orgit-20210615.1516/orgit.el  -*- no-byte-compile: t -*-
+(define-package "orgit" "20210615.1516" "support for Org links to Magit buffers" '((emacs "25.1") (magit "3.0") (org "9.4")) :commit "1b0e34b596aae64b91c97bb7673c7c58ff5f44fd" :authors '(("Jonas Bernoulli" . "jonas@bernoul.li")) :maintainer '("Jonas Bernoulli" . "jonas@bernoul.li") :url "https://github.com/magit/orgit")

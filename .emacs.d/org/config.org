@@ -630,7 +630,14 @@
          (setq persistent-overlays-auto-load t)
          (setq persistent-overlays-auto-merge t))
   #+END_SRC
+** Spinner
 
+      Add spinners and progress-bars to the mode-line for ongoing operations.
+
+     #+BEGIN_SRC emacs-lisp
+     (use-package spinner
+       :ensure t)
+     #+END_SRC
 * directories, navigation, searching, movement
 ** Async
 
@@ -648,11 +655,11 @@
 ** Easy kill
    Kill & Mark Things Easily
   #+BEGIN_SRC emacs-lisp
-     (use-package easy-kill
-          :ensure f ;;disable for the time being. Need to learn how to use it as is affecint my wf
-          :config
-          (global-set-key [remap kill-ring-save] 'easy-kill)
-          (global-set-key [remap mark-sexp] 'easy-mark))
+     ;;(use-package easy-kill
+     ;;     :ensure f ;;disable for the time being. Need to learn how to use it as is affecint my wf
+     ;;     :config
+     ;;     (global-set-key [remap kill-ring-save] 'easy-kill)
+     ;;     (global-set-key [remap mark-sexp] 'easy-mark))
    #+END_SRC
 ** key chord
 
@@ -740,7 +747,7 @@
     (use-package selectrum
        :ensure t
        :init
-       (selectrum-mode 1))
+       (selectrum-mode +1))
 
 
       (use-package selectrum-prescient
@@ -929,7 +936,6 @@
         ;;                (setq enable-recursive-minibuffers t)
         ;;                (global-set-key (kbd "C-c C-r") 'ivy-resume)
         ;;                (global-set-key (kbd "<f6>") 'ivy-resume)
-        ;;                (setq projectile-completion-system 'ivy)
         ;;                ;; swiper provides enhanced buffer search
         ;;                ;; counsel supercharges a lot of commands with some ivy magic
         ;;                (global-set-key (kbd "M-x") 'counsel-M-x)
@@ -1429,7 +1435,8 @@
            ("C-c M-s" . cider-selector)
            ("<tab>" . company-indent-or-complete-common))
           :config
-          (setq cider-clojure-cli-global-options "-J-Dguardrails.enabled -A:dev") ;set dv as default alias in cli
+          (setq cider-clojure-cli-global-options "-A:dev")
+          ;;(setq cider-clojure-cli-global-options "-J-Dguardrails.enabled -A:dev") ;set dv as default alias in cli
           (add-hook 'clojure-mode-hook lisp-hooks)
 
           ;(setq cider-lein-global-options "-o") ;sets lein to offine
@@ -1610,34 +1617,38 @@
                  (clojurescript-mode . lsp))
           :init
 
-          (setq gc-cons-threshold 100000000
+          (setq gc-cons-threshold (* 100 1024 1024)
                 lsp-keymap-prefix "s-l"
                 read-process-output-max (* 1024 1024)
                 company-bidle-delay 0.5
                 treemacs-space-between-root-nodes nil
                 lsp-lens-enable t
                 lsp-signature-auto-activate nil
-                ;;lsp-clojure-server-command '("bash" "-c" "cd ~/projects/clojure/clojure-lsp && lein run")
+                lsp-clojure-server-command '("bash" "-c" "clojure-lsp")
                 lsp-enable-indentation nil
                 lsp-headerline-breadcrumb-enable nil
                 lsp-enable-completion-at-point nil
                 lsp-diagnostics-provider :none
                 lsp-eldoc-enable-hover nil
                 lsp-log-io nil
-                lsp-enable-which-key-integration  t)
+                lsp-enable-which-key-integration  nil)
 
           :config
           ;;add paths to your local installation of project mgmt tools, like lein
           (setenv "PATH" (concat
                           "/usr/local/bin" path-separator
                           (getenv "PATH")))
+
+
           (dolist (m '(clojure-mode
                        clojurec-mode
                        clojurescript-mode
                        clojurex-mode))
             (add-to-list 'lsp-language-id-configuration `(,m . "clojure")))
+
+            (setq cljr-add-ns-to-blank-clj-files nil) ; disable clj-refactor adding ns to blank files
         ;;   (setq lsp-clojure-server-command '("bash" "-c" "clojure-lsp")  ;;Optional: In case `clojure-lsp` is not in your PATH
-        )
+            )
 
         (use-package lsp-treemacs
           :ensure t
@@ -1727,6 +1738,16 @@
                (sql-server "localhost")
                (sql-user "imsombps")
                (sql-database "imsombpsdb"))
+
+              (oic.test2
+               (sql-name "oic.test2")
+               (sql-default-directory "/ssh:devel.jmayaalv@oictest2:")
+               (sql-postgres-program "/usr/local/pgsql/bin/psql")
+               (sql-product 'postgres)
+               (sql-port 5432)
+               (sql-server "localhost")
+               (sql-user "imsoictest2")
+               (sql-database "imsoictest2db"))
 
               (oic.test3
                (sql-name "oic.test3")
@@ -1897,7 +1918,27 @@
                (sql-port 5432)
                (sql-server "localhost")
                (sql-user "imsprovidenceprod")
-               (sql-database "imsprovidenceproddb"))))
+               (sql-database "imsprovidenceproddb"))
+
+             (providence.test
+               (sql-name "providence.test")
+               (sql-postgres-program "/usr/local/pgsql/bin/psql")
+               (sql-default-directory "/ssh:devel.jmayaalv@providencetest:")
+               (sql-product 'postgres)
+               (sql-port 5432)
+               (sql-server "localhost")
+               (sql-user "imsprovidencetest")
+               (sql-database "imsprovidencetestdb"))
+
+             (nextgen.test
+               (sql-name "nextgen.test")
+               (sql-default-directory "/ssh:devel.jmayaalv@nextgentest1:")
+               (sql-postgres-program "/usr/local/pgsql/bin/psql")
+               (sql-product 'postgres)
+               (sql-port 5432)
+               (sql-server "localhost")
+               (sql-user "imsngt1")
+               (sql-database "imsngt1db"))))
     #+End_SRC
 
     And this  makes all it all happen via M-x sql-xxx where xxx is the name of the pool in the prev list ex: sql-localhost.mbp
@@ -1912,6 +1953,11 @@
         "Create a new sql connection to the local test db."
         (interactive)
         (my-sql-connect  'postgres 'localhost.test))
+
+      (defun sql-nextgen.test ()
+        "Create a new sql connection to the next gen test db"
+        (interactive)
+        (my-sql-connect  'postgres 'nextgen.test))
 
       (defun sql-oic.prod ()
         "Create a new sql connection to the oic prod db."
@@ -1957,6 +2003,11 @@
         "Create a new sql connection to the providence prod db."
          (interactive)
          (my-sql-connect 'postgres 'providence.prod))
+
+      (defun sql-providence.test ()
+        "Create a new sql connection to the providence test db."
+         (interactive)
+         (my-sql-connect 'postgres 'providence.test))
 
       (defun sql-glacier.test ()
         "Create a new sql connection to the glacier test db."
