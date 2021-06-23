@@ -1423,68 +1423,69 @@
 **** cider
 
       #+BEGIN_SRC emacs-lisp
-               ;; load CIDER from its source code
-        ;;       (add-to-list 'load-path "~/Documents/workspace/cider")
-        ;;       (require 'cider)
-
-        (use-package cider
-          :ensure t
-          :pin melpa-stable
-          :bind
-          (("C-c M-o" . cider-repl-clear-buffer)
-           ("C-c M-s" . cider-selector)
-           ("<tab>" . company-indent-or-complete-common))
-          :config
-          (setq cider-clojure-cli-global-options "-A:dev")
-          ;;(setq cider-clojure-cli-global-options "-J-Dguardrails.enabled -A:dev") ;set dv as default alias in cli
-          (add-hook 'clojure-mode-hook lisp-hooks)
-
-          ;(setq cider-lein-global-options "-o") ;sets lein to offine
-          ;(setq cider-clojure-cli-global-options "-o")
-
-          ;;history
-          (setq cider-history-file (concat user-emacs-directory "cider-history"))
-          (setq cider-repl-wrap-history t)
-          (setq cider-repl-history-file "~/.cider-repl-history")
-          (setq clojure-align-forms-automatically t)
-          ;  (setq cider-cljs-lein-repl "(do (use 'figwheel-sidecar.repl-api) (start-figwheel!) (cljs-repl))") ;i dont' think this is needed anymore with fighweel.main
-           (setq-default ediff-ignore-similar-regions t)
-           ;; used when calling ediff-show-diff-output from ediff session
-           ;; (bound to D). Not interactive.
-           (setq ediff-custom-diff-options "--suppress-common-lines")
-
-           ;Prevent C-c C-k from prompting to save the file corresponding to the buffer being loaded, if it's modified:
-           (setq cider-save-file-on-load nil)
-           (setq cider-save-file-on-load t)
-
-           ;;Fuzzy Completion
-           (add-hook 'cider-repl-mode-hook #'cider-company-enable-fuzzy-completion)
-           (add-hook 'cider-mode-hook #'cider-company-enable-fuzzy-completion)
+                     ;; load CIDER from its source code
+              ;;       (add-to-list 'load-path "~/Documents/workspace/cider")
+              ;;       (require 'cider)
 
 
-           ;;Enable paredit or smartparens for minibuffer evaluations
-           (add-hook 'eval-expression-minibuffer-setup-hook #'paredit-mode)
+              (use-package cider
+                :ensure t
+                :pin melpa-stable
+                :bind
+                (("C-c M-o" . cider-repl-clear-buffer)
+                 ("C-c M-s" . cider-selector)
+                 ("<tab>" . company-indent-or-complete-common))
+                :config
+                (setq cider-clojure-cli-global-options "-A:dev")
+                ;;(setq cider-clojure-cli-global-options "-J-Dguardrails.enabled -A:dev") ;set dv as default alias in cli
+                (add-hook 'clojure-mode-hook lisp-hooks)
 
-           ;;Enable paredit in the repl
-           (add-hook 'cider-repl-mode-hook 'paredit-mode)
+                ;(setq cider-lein-global-options "-o") ;sets lein to offine
+                ;(setq cider-clojure-cli-global-options "-o")
 
-           ;;Interactive commands will try the command with the symbol at point first, and only prompt if that fails
-           (setq cider-prompt-for-symbol nil)
+                ;;history
+                (setq cider-history-file (concat user-emacs-directory "cider-history"))
+                (setq cider-repl-wrap-history t)
+                (setq cider-repl-history-file "~/.cider-repl-history")
+                (setq clojure-align-forms-automatically t)
+                ;  (setq cider-cljs-lein-repl "(do (use 'figwheel-sidecar.repl-api) (start-figwheel!) (cljs-repl))") ;i dont' think this is needed anymore with fighweel.main
+                 (setq-default ediff-ignore-similar-regions t)
+                 ;; used when calling ediff-show-diff-output from ediff session
+                 ;; (bound to D). Not interactive.
+                 (setq ediff-custom-diff-options "--suppress-common-lines")
 
-           ;;Dont log communication with nrepl server
-           (setq nrepl-log-messages nil)
+                 ;Prevent C-c C-k from prompting to save the file corresponding to the buffer being loaded, if it's modified:
+                 (setq cider-save-file-on-load nil)
+                 (setq cider-save-file-on-load t)
 
-            ;;hide the *nrepl-connection* and *nrepl-server* buffers from appearing
-            (setq nrepl-hide-special-buffers t)
+                 ;;Fuzzy Completion
+                 (add-hook 'cider-repl-mode-hook #'cider-company-enable-fuzzy-completion)
+                 (add-hook 'cider-mode-hook #'cider-company-enable-fuzzy-completion)
 
-            ;;Highlight symbols that are known to be defined.
-            (setq cider-font-lock-dynamically '(macro core function var))
 
-            ;;Remove banner
-            (setq cider-repl-display-help-banner nil)
+                 ;;Enable paredit or smartparens for minibuffer evaluations
+                 (add-hook 'eval-expression-minibuffer-setup-hook #'paredit-mode)
 
-             ;;support for guardrails
-             (put '>defn 'clojure-doc-string-elt 2))
+                 ;;Enable paredit in the repl
+                 (add-hook 'cider-repl-mode-hook 'paredit-mode)
+
+                 ;;Interactive commands will try the command with the symbol at point first, and only prompt if that fails
+                 (setq cider-prompt-for-symbol nil)
+
+                 ;;Dont log communication with nrepl server
+                 (setq nrepl-log-messages nil)
+
+                  ;;hide the *nrepl-connection* and *nrepl-server* buffers from appearing
+                  (setq nrepl-hide-special-buffers t)
+
+                  ;;Highlight symbols that are known to be defined.
+                  (setq cider-font-lock-dynamically '(macro core function var))
+
+                  ;;Remove banner
+                  (setq cider-repl-display-help-banner nil)
+
+                   ;;support for guardrails
+                  (put '>defn 'clojure-doc-string-elt 2))
       #+END_SRC
 
 ***** cider-test-report diff hook
@@ -1609,50 +1610,69 @@
 
 ** lsp
       #+begin_src emacs-lisp
-        (use-package lsp-mode
-          :commands lsp
-          :ensure t
-          :hook ((clojure-mode . lsp)
-                 (clojurec-mode . lsp)
-                 (clojurescript-mode . lsp))
-          :init
-
-          (setq gc-cons-threshold (* 100 1024 1024)
-                lsp-keymap-prefix "s-l"
-                read-process-output-max (* 1024 1024)
-                company-bidle-delay 0.5
-                treemacs-space-between-root-nodes nil
-                lsp-lens-enable t
-                lsp-signature-auto-activate nil
-                lsp-clojure-server-command '("bash" "-c" "clojure-lsp")
-                lsp-enable-indentation nil
-                lsp-headerline-breadcrumb-enable nil
-                lsp-enable-completion-at-point nil
-                lsp-diagnostics-provider :none
-                lsp-eldoc-enable-hover nil
-                lsp-log-io nil
-                lsp-enable-which-key-integration  nil)
-
-          :config
-          ;;add paths to your local installation of project mgmt tools, like lein
-          (setenv "PATH" (concat
-                          "/usr/local/bin" path-separator
-                          (getenv "PATH")))
 
 
-          (dolist (m '(clojure-mode
-                       clojurec-mode
-                       clojurescript-mode
-                       clojurex-mode))
-            (add-to-list 'lsp-language-id-configuration `(,m . "clojure")))
+                (defun find-definition ()
+                        "Try to find definition of cursor via LSP otherwise fallback to cider."
+                        (interactive)
+                        (let ((cursor (point))
+                              (buffer (current-buffer)))
+                          (lsp-find-definition)
+                          (when (and (eq buffer (current-buffer))
+                                     (eq cursor (point)))
+                            (cider-find-var))))
 
-            (setq cljr-add-ns-to-blank-clj-files nil) ; disable clj-refactor adding ns to blank files
-        ;;   (setq lsp-clojure-server-command '("bash" "-c" "clojure-lsp")  ;;Optional: In case `clojure-lsp` is not in your PATH
-            )
 
-        (use-package lsp-treemacs
-          :ensure t
-          :requires lsp-mode)
+                (use-package lsp-mode
+                  :commands lsp
+                  :ensure t
+                  :hook ((clojure-mode . lsp)
+                         (clojurec-mode . lsp)
+                         (clojurescript-mode . lsp))
+                  :init
+
+                 (define-key clojure-mode-map (kbd "M-.") #'find-definition)
+                 (define-key cider-mode-map (kbd "M-.") #'find-definition)
+                 (define-key clojurec-mode-map (kbd "M-.") #'find-definition)
+                 (define-key clojurescript-mode-map (kbd "M-.") #'find-definition)
+
+                  (setq gc-cons-threshold (* 100 1024 1024)
+                        lsp-keymap-prefix "s-l"
+                        read-process-output-max (* 1024 1024)
+                        company-bidle-delay 0.5
+                        treemacs-space-between-root-nodes nil
+                        lsp-lens-enable t
+                        lsp-signature-auto-activate nil
+                        lsp-clojure-server-command '("bash" "-c" "clojure-lsp")
+                        lsp-enable-indentation nil
+                        lsp-headerline-breadcrumb-enable nil
+                        lsp-enable-completion-at-point nil
+                        lsp-diagnostics-provider :none
+                        lsp-eldoc-enable-hover nil
+                        lsp-log-io nil
+                        lsp-enable-which-key-integration  nil)
+
+                  :config
+                  ;;add paths to your local installation of project mgmt tools, like lein
+                  (setenv "PATH" (concat
+                                  "/usr/local/bin" path-separator
+                                  (getenv "PATH")))
+
+
+                  (dolist (m '(clojure-mode
+                               clojurec-mode
+                               clojurescript-mode
+                               clojurex-mode))
+                    (add-to-list 'lsp-language-id-configuration `(,m . "clojure")))
+
+                    (setq cljr-add-ns-to-blank-clj-files nil) ; disable clj-refactor adding ns to blank files
+                ;;   (setq lsp-clojure-server-command '("bash" "-c" "clojure-lsp")  ;;Optional: In case `clojure-lsp` is not in your PATH
+
+        )
+
+                (use-package lsp-treemacs
+                  :ensure t
+                  :requires lsp-mode)
       #+end_src
 
 ** javascript
@@ -1978,6 +1998,11 @@
         "Create a new sql connection to the omi prod db."
         (interactive)
         (my-sql-connect 'postgres 'omi.prod))
+
+      (defun sql-oic.test2 ()
+        "Create a new sql connection to the oic test2 db."
+         (interactive)
+         (my-sql-connect 'postgres 'oic.test2))
 
       (defun sql-oic.test3 ()
         "Create a new sql connection to the oic test3 db."
