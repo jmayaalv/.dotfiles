@@ -24,6 +24,10 @@
    (maybe-install-and-require 'use-package)
    #+END_SRC
 * Globals
+** Disable siganture checking of packages. Use only on rare occasions;
+    #+BEGIN_SRC emacs-lisp
+      ;;(setq package-check-signature nil)
+    #+END_SRC
 ** start as server
     #+BEGIN_SRC emacs-lisp
     (server-start)
@@ -246,7 +250,7 @@
        :ensure t)
    #+END_SRC
 
-** NEXT Global Keybindings
+** Global Keybindings
    #+BEGIN_SRC emacs-lisp
      ; Align your code in a pretty way.
      (global-set-key (kbd "C-x \\") 'align-regexp)
@@ -744,177 +748,178 @@
    #+END_SRC
 ** Selectrum
     #+BEGIN_SRC emacs-lisp
-    (use-package selectrum
-       :ensure t
-       :init
-       (selectrum-mode +1))
+      (use-package selectrum
+         :ensure t
+         :init
+         (selectrum-mode +1))
 
 
-      (use-package selectrum-prescient
-        :ensure t
-        :requires selectrum
-        :init
-        (selectrum-prescient-mode 1)
-        (prescient-persist-mode 1)
-        (global-set-key [remap execute-extended-command] 'execute-extended-command))
+        (use-package selectrum-prescient
+          :ensure t
+          :requires selectrum
+          :init
+          (selectrum-prescient-mode 1)
+          (prescient-persist-mode 1)
+          (global-set-key [remap execute-extended-command] 'execute-extended-command))
 
-      (use-package marginalia
-        :bind (:map minibuffer-local-map
-                    ("C-M-a" . marginalia-cycle)
-               ;; When using the Embark package, you can bind `marginalia-cycle' as an Embark action!
-               ;;:map embark-general-map
-               ;;     ("A" . marginalia-cycle)
-              )
+        (use-package marginalia
+          :ensure t
+          :bind (:map minibuffer-local-map
+                      ("C-M-a" . marginalia-cycle)
+                 ;; When using the Embark package, you can bind `marginalia-cycle' as an Embark action!
+                 ;;:map embark-general-map
+                 ;;     ("A" . marginalia-cycle)
+                )
 
-        ;; The :init configuration is always executed (Not lazy!)
-        :init
+          ;; The :init configuration is always executed (Not lazy!)
+          :init
 
-        ;; Must be in the :init section of use-package such that the mode gets
-        ;; enabled right away. Note that this forces loading the package.
-        (marginalia-mode)
+          ;; Must be in the :init section of use-package such that the mode gets
+          ;; enabled right away. Note that this forces loading the package.
+          (marginalia-mode)
 
-        ;; When using Selectrum, ensure that Selectrum is refreshed when cycling annotations.
-        (advice-add #'marginalia-cycle :after
-                    (lambda () (when (bound-and-true-p selectrum-mode) (selectrum-exhibit))))
+          ;; When using Selectrum, ensure that Selectrum is refreshed when cycling annotations.
+          (advice-add #'marginalia-cycle :after
+                      (lambda () (when (bound-and-true-p selectrum-mode) (selectrum-exhibit))))
 
-        ;; Prefer richer, more heavy, annotations over the lighter default variant.
-        ;; E.g. M-x will show the documentation string additional to the keybinding.
-        ;; By default only the keybinding is shown as annotation.
-        ;; Note that there is the command `marginalia-cycle' to
-        ;; switch between the annotators.
-        (setq marginalia-annotators '(marginalia-annotators-heavy marginalia-annotators-light nil)))
-      ;; (use-package marginalia
-      ;;   :ensure t
-      ;;   :init
-      ;;   (marginalia-mode)
-      ;;   ;; When using Selectrum, ensure that Selectrum is refreshed when cycling annotations.
-      ;;   (advice-add #'marginalia-cycle :after
-      ;;   (lambda () (when (bound-and-true-p selectrum-mode) (selectrum-exhibit)))))
+          ;; Prefer richer, more heavy, annotations over the lighter default variant.
+          ;; E.g. M-x will show the documentation string additional to the keybinding.
+          ;; By default only the keybinding is shown as annotation.
+          ;; Note that there is the command `marginalia-cycle' to
+          ;; switch between the annotators.
+          (setq marginalia-annotators '(marginalia-annotators-heavy marginalia-annotators-light nil)))
+        ;; (use-package marginalia
+        ;;   :ensure t
+        ;;   :init
+        ;;   (marginalia-mode)
+        ;;   ;; When using Selectrum, ensure that Selectrum is refreshed when cycling annotations.
+        ;;   (advice-add #'marginalia-cycle :after
+        ;;   (lambda () (when (bound-and-true-p selectrum-mode) (selectrum-exhibit)))))
 
-      (use-package embark
-        :ensure t
-        :bind
-        ("C-c C-o" . embark-export)
-        ("C-c C-c" . embark-act-noexit)
-        ("C-S-a" . embark-act)               ; pick some comfortable binding
-        :config
-        ;; For Selectrum users:
-        (defun current-candidate+category ()
-          (when selectrum-active-p
-            (cons (selectrum--get-meta 'category)
-                  (selectrum-get-current-candidate))))
+        (use-package embark
+          :ensure t
+          :bind
+          ("C-c C-o" . embark-export)
+          ("C-c C-c" . embark-act-noexit)
+          ("C-S-a" . embark-act)               ; pick some comfortable binding
+          :config
+          ;; For Selectrum users:
+          (defun current-candidate+category ()
+            (when selectrum-active-p
+              (cons (selectrum--get-meta 'category)
+                    (selectrum-get-current-candidate))))
 
-        (add-hook 'embark-target-finders #'current-candidate+category)
+          (add-hook 'embark-target-finders #'current-candidate+category)
 
-        (defun current-candidates+category ()
-          (when selectrum-active-p
-            (cons (selectrum--get-meta 'category)
-                  (selectrum-get-current-candidates
-                   ;; Pass relative file names for dired.
-                   minibuffer-completing-file-name))))
+          (defun current-candidates+category ()
+            (when selectrum-active-p
+              (cons (selectrum--get-meta 'category)
+                    (selectrum-get-current-candidates
+                     ;; Pass relative file names for dired.
+                     minibuffer-completing-file-name))))
 
-        (add-hook 'embark-candidate-collectors #'current-candidates+category)
+          (add-hook 'embark-candidate-collectors #'current-candidates+category)
 
-        ;; No unnecessary computation delay after injection.
-        (add-hook 'embark-setup-hook 'selectrum-set-selected-candidate))
+          ;; No unnecessary computation delay after injection.
+          (add-hook 'embark-setup-hook 'selectrum-set-selected-candidate))
 
-      ;; Example configuration for Consult
-      (use-package consult
-        :ensure t
-        :after projectile
-        ;; Replace bindings. Lazily loaded due by `use-package'.
-        :bind (
-        ;;("C-x M-:" . consult-complex-command)
-        ;;("C-c h" . consult-history)
-               ;;("C-c m" . consult-mode-command)
-               ("C-c k" . consult-keep-lines)
-               ("C-c C-k" . consult-hide-lines)
-               ("C-x b" . consult-buffer)
-               ("C-x 4 b" . consult-buffer-other-window)
-               ("C-x 5 b" . consult-buffer-other-frame)
-               ("C-x r x" . consult-register)
-               ("C-x r b" . consult-bookmark)
-               ("M-g g" . consult-goto-line)
-               ("M-g M-g" . consult-goto-line)
-               ("M-g o" . consult-outline)       ;; "M-s o" is a good alternative.
-               ("M-g l" . consult-line)          ;; "M-s l" is a good alternative.
-               ("C-s" . consult-line)
-               ("M-g m" . consult-mark)          ;; I recommend to bind Consult navigation
-               ("M-g k" . consult-global-mark)   ;; commands under the "M-g" prefix.
-               ("M-g r" . consult-git-grep)      ;; or consult-grep, consult-ripgrep
-               ("M-g f" . consult-find)          ;; or consult-locate, my-fdfind
-               ("M-g i" . consult-project-imenu) ;; or consult-imenu
-               ("M-g e" . consult-error)
-               ("M-s m" . consult-multi-occur)
-               ("M-y" . consult-yank-pop)
-               ("<help> a" . consult-apropos))
+        ;; Example configuration for Consult
+        (use-package consult
+          :ensure t
+          :after projectile
+          ;; Replace bindings. Lazily loaded due by `use-package'.
+          :bind (
+          ;;("C-x M-:" . consult-complex-command)
+          ;;("C-c h" . consult-history)
+                 ;;("C-c m" . consult-mode-command)
+                 ("C-c k" . consult-keep-lines)
+                 ("C-c C-k" . consult-hide-lines)
+                 ("C-x b" . consult-buffer)
+                 ("C-x 4 b" . consult-buffer-other-window)
+                 ("C-x 5 b" . consult-buffer-other-frame)
+                 ("C-x r x" . consult-register)
+                 ("C-x r b" . consult-bookmark)
+                 ("M-g g" . consult-goto-line)
+                 ("M-g M-g" . consult-goto-line)
+                 ("M-g o" . consult-outline)       ;; "M-s o" is a good alternative.
+                 ("M-g l" . consult-line)          ;; "M-s l" is a good alternative.
+                 ("C-s" . consult-line)
+                 ("M-g m" . consult-mark)          ;; I recommend to bind Consult navigation
+                 ("M-g k" . consult-global-mark)   ;; commands under the "M-g" prefix.
+                 ("M-g r" . consult-git-grep)      ;; or consult-grep, consult-ripgrep
+                 ("M-g f" . consult-find)          ;; or consult-locate, my-fdfind
+                 ("M-g i" . consult-project-imenu) ;; or consult-imenu
+                 ("M-g e" . consult-error)
+                 ("M-s m" . consult-multi-occur)
+                 ("M-y" . consult-yank-pop)
+                 ("<help> a" . consult-apropos))
 
-        ;; The :init configuration is always executed (Not lazy!)
-        :init
+          ;; The :init configuration is always executed (Not lazy!)
+          :init
 
-        (setq-default consult-project-root-function 'projectile-project-root)
+          (setq-default consult-project-root-function 'projectile-project-root)
 
-        ;; Custom command wrappers. It is generally encouraged to write your own
-        ;; commands based on the Consult commands. Some commands have arguments which
-        ;; allow tweaking. Furthermore global configuration variables can be set
-        ;; locally in a let-binding.
-        (defun my-fdfind (&optional dir)
-          (interactive "P")
-          (let ((consult-find-command '("fdfind" "--color=never" "--full-path")))
-            (consult-find dir)))
+          ;; Custom command wrappers. It is generally encouraged to write your own
+          ;; commands based on the Consult commands. Some commands have arguments which
+          ;; allow tweaking. Furthermore global configuration variables can be set
+          ;; locally in a let-binding.
+          (defun my-fdfind (&optional dir)
+            (interactive "P")
+            (let ((consult-find-command '("fdfind" "--color=never" "--full-path")))
+              (consult-find dir)))
 
-        ;; Replace `multi-occur' with `consult-multi-occur', which is a drop-in replacement.
-        (fset 'multi-occur #'consult-multi-occur)
+          ;; Replace `multi-occur' with `consult-multi-occur', which is a drop-in replacement.
+          (fset 'multi-occur #'consult-multi-occur)
 
-        ;; Configure register preview function.
-        ;; This gives a consistent display for both `consult-register' and
-        ;; the register preview when editing registers.
-        (setq register-preview-delay 0
-              register-preview-function #'consult-register-preview)
+          ;; Configure register preview function.
+          ;; This gives a consistent display for both `consult-register' and
+          ;; the register preview when editing registers.
+          (setq register-preview-delay 0
+                register-preview-function #'consult-register-preview)
 
-        ;; Configure other variables and modes in the :config section, after lazily loading the package
-        :config
+          ;; Configure other variables and modes in the :config section, after lazily loading the package
+          :config
 
-        ;; Configure preview. Note that the preview-key can also be configured on a
-        ;; per-command basis via `consult-config'.
-        ;; The default value is 'any, such that any key triggers the preview.
-        ;; (setq consult-preview-key 'any)
-        ;; (setq consult-preview-key (kbd "M-p"))
-        ;; (setq consult-preview-key (list (kbd "<S-down>") (kbd "<S-up>")))
+          ;; Configure preview. Note that the preview-key can also be configured on a
+          ;; per-command basis via `consult-config'.
+          ;; The default value is 'any, such that any key triggers the preview.
+          ;; (setq consult-preview-key 'any)
+          ;; (setq consult-preview-key (kbd "M-p"))
+          ;; (setq consult-preview-key (list (kbd "<S-down>") (kbd "<S-up>")))
 
-        ;; Optionally configure narrowing key.
-        ;; Both < and C-+ work reasonably well.
-        (setq consult-narrow-key "<") ;; (kbd "C-+")
-        ;; Optionally make narrowing help available in the minibuffer.
-        ;; Probably not needed if you are using which-key.
-        ;; (define-key consult-narrow-map (vconcat consult-narrow-key "?") #'consult-narrow-help)
+          ;; Optionally configure narrowing key.
+          ;; Both < and C-+ work reasonably well.
+          (setq consult-narrow-key "<") ;; (kbd "C-+")
+          ;; Optionally make narrowing help available in the minibuffer.
+          ;; Probably not needed if you are using which-key.
+          ;; (define-key consult-narrow-map (vconcat consult-narrow-key "?") #'consult-narrow-help)
 
-        ;; Optional configure a view library to be used by `consult-buffer'.
-        ;; The view library must provide two functions, one to open the view by name,
-        ;; and one function which must return a list of views as strings.
-        ;; Example: https://github.com/minad/bookmark-view/
-        ;; (setq consult-view-open-function #'bookmark-jump
-        ;;       consult-view-list-function #'bookmark-view-names)
+          ;; Optional configure a view library to be used by `consult-buffer'.
+          ;; The view library must provide two functions, one to open the view by name,
+          ;; and one function which must return a list of views as strings.
+          ;; Example: https://github.com/minad/bookmark-view/
+          ;; (setq consult-view-open-function #'bookmark-jump
+          ;;       consult-view-list-function #'bookmark-view-names)
 
-        ;; Optionally configure a function which returns the project root directory
-        (autoload 'projectile-project-root "projectile")
-        (setq consult-project-root-function #'projectile-project-root))
+          ;; Optionally configure a function which returns the project root directory
+          (autoload 'projectile-project-root "projectile")
+          (setq consult-project-root-function #'projectile-project-root))
 
-      ;; Optionally add the `consult-flycheck' command.
-      (use-package consult-flycheck
-        :ensure t
-        :bind (:map flycheck-command-map
-                    ("!" . consult-flycheck)))
+        ;; Optionally add the `consult-flycheck' command.
+        (use-package consult-flycheck
+          :ensure t
+          :bind (:map flycheck-command-map
+                      ("!" . consult-flycheck)))
 
 
-        ;; Consult users will also want the embark-consult package.
-        (use-package embark-consult
-        :ensure t
-        :after (embark consult)
-        ;; if you want to have consult previews as you move around an
-        ;; auto-updating embark collect buffer
-        :hook
-        (embark-collect-mode . embark-consult-preview-minor-mode))
+          ;; Consult users will also want the embark-consult package.
+          (use-package embark-consult
+          :ensure t
+          :after (embark consult)
+          ;; if you want to have consult previews as you move around an
+          ;; auto-updating embark collect buffer
+          :hook
+          (embark-collect-mode . embark-consult-preview-minor-mode))
    #+END_SRC
 
 ** Counsel
@@ -1423,69 +1428,70 @@
 **** cider
 
       #+BEGIN_SRC emacs-lisp
-                     ;; load CIDER from its source code
-              ;;       (add-to-list 'load-path "~/Documents/workspace/cider")
-              ;;       (require 'cider)
+               ;; load CIDER from its source code
+        ;;       (add-to-list 'load-path "~/Documents/workspace/cider")
+        ;;       (require 'cider)
 
 
-              (use-package cider
-                :ensure t
-                :pin melpa-stable
-                :bind
-                (("C-c M-o" . cider-repl-clear-buffer)
-                 ("C-c M-s" . cider-selector)
-                 ("<tab>" . company-indent-or-complete-common))
-                :config
-                (setq cider-clojure-cli-global-options "-A:dev")
-                ;;(setq cider-clojure-cli-global-options "-J-Dguardrails.enabled -A:dev") ;set dv as default alias in cli
-                (add-hook 'clojure-mode-hook lisp-hooks)
+        (use-package cider
+          :ensure t
+          :pin melpa-stable
+          :bind
+          (("C-c M-o" . cider-repl-clear-buffer)
+           ("C-c M-s" . cider-selector)
+           ("<tab>" . company-indent-or-complete-common))
+          :config
+          (setq cider-eldoc-display-for-symbol-at-point nil) ;; disable cider showing eldoc during symbol at point
+          (setq cider-clojure-cli-global-options "-A:dev")
+          ;;(setq cider-clojure-cli-global-options "-J-Dguardrails.enabled -A:dev") ;set dv as default alias in cli
+          (add-hook 'clojure-mode-hook lisp-hooks)
 
-                ;(setq cider-lein-global-options "-o") ;sets lein to offine
-                ;(setq cider-clojure-cli-global-options "-o")
+          ;(setq cider-lein-global-options "-o") ;sets lein to offine
+          ;(setq cider-clojure-cli-global-options "-o")
 
-                ;;history
-                (setq cider-history-file (concat user-emacs-directory "cider-history"))
-                (setq cider-repl-wrap-history t)
-                (setq cider-repl-history-file "~/.cider-repl-history")
-                (setq clojure-align-forms-automatically t)
-                ;  (setq cider-cljs-lein-repl "(do (use 'figwheel-sidecar.repl-api) (start-figwheel!) (cljs-repl))") ;i dont' think this is needed anymore with fighweel.main
-                 (setq-default ediff-ignore-similar-regions t)
-                 ;; used when calling ediff-show-diff-output from ediff session
-                 ;; (bound to D). Not interactive.
-                 (setq ediff-custom-diff-options "--suppress-common-lines")
+          ;;history
+          (setq cider-history-file (concat user-emacs-directory "cider-history"))
+          (setq cider-repl-wrap-history t)
+          (setq cider-repl-history-file "~/.cider-repl-history")
+          (setq clojure-align-forms-automatically t)
+          ;  (setq cider-cljs-lein-repl "(do (use 'figwheel-sidecar.repl-api) (start-figwheel!) (cljs-repl))") ;i dont' think this is needed anymore with fighweel.main
+           (setq-default ediff-ignore-similar-regions t)
+           ;; used when calling ediff-show-diff-output from ediff session
+           ;; (bound to D). Not interactive.
+           (setq ediff-custom-diff-options "--suppress-common-lines")
 
-                 ;Prevent C-c C-k from prompting to save the file corresponding to the buffer being loaded, if it's modified:
-                 (setq cider-save-file-on-load nil)
-                 (setq cider-save-file-on-load t)
+           ;Prevent C-c C-k from prompting to save the file corresponding to the buffer being loaded, if it's modified:
+           (setq cider-save-file-on-load nil)
+           (setq cider-save-file-on-load t)
 
-                 ;;Fuzzy Completion
-                 (add-hook 'cider-repl-mode-hook #'cider-company-enable-fuzzy-completion)
-                 (add-hook 'cider-mode-hook #'cider-company-enable-fuzzy-completion)
+           ;;Fuzzy Completion
+           (add-hook 'cider-repl-mode-hook #'cider-company-enable-fuzzy-completion)
+           (add-hook 'cider-mode-hook #'cider-company-enable-fuzzy-completion)
 
 
-                 ;;Enable paredit or smartparens for minibuffer evaluations
-                 (add-hook 'eval-expression-minibuffer-setup-hook #'paredit-mode)
+           ;;Enable paredit or smartparens for minibuffer evaluations
+           (add-hook 'eval-expression-minibuffer-setup-hook #'paredit-mode)
 
-                 ;;Enable paredit in the repl
-                 (add-hook 'cider-repl-mode-hook 'paredit-mode)
+           ;;Enable paredit in the repl
+           (add-hook 'cider-repl-mode-hook 'paredit-mode)
 
-                 ;;Interactive commands will try the command with the symbol at point first, and only prompt if that fails
-                 (setq cider-prompt-for-symbol nil)
+           ;;Interactive commands will try the command with the symbol at point first, and only prompt if that fails
+           (setq cider-prompt-for-symbol nil)
 
-                 ;;Dont log communication with nrepl server
-                 (setq nrepl-log-messages nil)
+           ;;Dont log communication with nrepl server
+           (setq nrepl-log-messages nil)
 
-                  ;;hide the *nrepl-connection* and *nrepl-server* buffers from appearing
-                  (setq nrepl-hide-special-buffers t)
+            ;;hide the *nrepl-connection* and *nrepl-server* buffers from appearing
+            (setq nrepl-hide-special-buffers t)
 
-                  ;;Highlight symbols that are known to be defined.
-                  (setq cider-font-lock-dynamically '(macro core function var))
+            ;;Highlight symbols that are known to be defined.
+            (setq cider-font-lock-dynamically '(macro core function var))
 
-                  ;;Remove banner
-                  (setq cider-repl-display-help-banner nil)
+            ;;Remove banner
+            (setq cider-repl-display-help-banner nil)
 
-                   ;;support for guardrails
-                  (put '>defn 'clojure-doc-string-elt 2))
+             ;;support for guardrails
+            (put '>defn 'clojure-doc-string-elt 2))
       #+END_SRC
 
 ***** cider-test-report diff hook
@@ -1581,23 +1587,6 @@
          (diminish 'flycheck-mode))
      #+END_SRC
 
-**** clj-kondo-flycheck
-
-     This another nice clojure linter. It requires manual installation of https://github.com/borkdude/clj-kondo
-
-     #+begin_src emacs-lisp
-       (use-package flycheck-clj-kondo
-         :ensure t)
-
-        ;; then install the checker as soon as `clojure-mode' is loaded
-        (use-package clojure-mode
-         :ensure t
-         :config
-         (require 'flycheck-clj-kondo))
-
-
-     #+end_src
-
 **** Convert html to hiccup
 
 
@@ -1609,9 +1598,8 @@
    #+END_SRC
 
 ** lsp
+*** Clojure
       #+begin_src emacs-lisp
-
-
                 (defun find-definition ()
                         "Try to find definition of cursor via LSP otherwise fallback to cider."
                         (interactive)
@@ -1636,22 +1624,6 @@
                  (define-key clojurec-mode-map (kbd "M-.") #'find-definition)
                  (define-key clojurescript-mode-map (kbd "M-.") #'find-definition)
 
-                  (setq gc-cons-threshold (* 100 1024 1024)
-                        lsp-keymap-prefix "s-l"
-                        read-process-output-max (* 1024 1024)
-                        company-bidle-delay 0.5
-                        treemacs-space-between-root-nodes nil
-                        lsp-lens-enable t
-                        lsp-signature-auto-activate nil
-                        lsp-clojure-server-command '("bash" "-c" "clojure-lsp")
-                        lsp-enable-indentation nil
-                        lsp-headerline-breadcrumb-enable nil
-                        lsp-enable-completion-at-point nil
-                        lsp-diagnostics-provider :none
-                        lsp-eldoc-enable-hover nil
-                        lsp-log-io nil
-                        lsp-enable-which-key-integration  nil)
-
                   :config
                   ;;add paths to your local installation of project mgmt tools, like lein
                   (setenv "PATH" (concat
@@ -1665,14 +1637,43 @@
                                clojurex-mode))
                     (add-to-list 'lsp-language-id-configuration `(,m . "clojure")))
 
-                    (setq cljr-add-ns-to-blank-clj-files nil) ; disable clj-refactor adding ns to blank files
-                ;;   (setq lsp-clojure-server-command '("bash" "-c" "clojure-lsp")  ;;Optional: In case `clojure-lsp` is not in your PATH
+                  (set-face-foreground 'lsp-face-highlight-textual nil)
+                  (set-face-background 'lsp-face-highlight-textual nil)
+                  (set-face-attribute 'lsp-face-highlight-textual nil :weight 'extra-bold)
+                  (set-face-attribute 'lsp-face-highlight-textual nil :underline t)
 
-        )
+                  (setq gc-cons-threshold (* 100 1024 1024)
+                        lsp-keymap-prefix "s-l"
+                        read-process-output-max (* 1024 1024)
+                        lsp-file-watch-threshold 10000
+                        lsp-idle-delay 0.5
+                        lsp-modeline-diagnostics-enable t
+                        company-idle-delay 0.5
+                        company-minimum-prefix-length 1
+                        treemacs-space-between-root-nodes nil
+                        lsp-lens-enable t
+                        lsp-semantic-tokens-enable t
+                        lsp-signature-auto-activate t
+                        lsp-signature-render-documentation t
+                        lsp-clojure-server-command '("bash" "-c" "clojure-lsp")
+                        lsp-enable-indentation nil
+                        lsp-headerline-breadcrumb-enable nil
+                        lsp-completion-provider :capf
+                        lsp-enable-symbol-highlighting t
+                        ;; lsp-enable-completion-at-point nil ;; uncomment to use cider completion instead of lsp
+                        ;;lsp-diagnostics-provider :none
+                        lsp-eldoc-enable-hover t
+                        lsp-log-io nil
+                        cljr-add-ns-to-blank-clj-files nil ;; disable clj-refactor adding ns to blank files
+                        lsp-enable-which-key-integration  t))
 
-                (use-package lsp-treemacs
-                  :ensure t
-                  :requires lsp-mode)
+        (use-package lsp-treemacs
+          :ensure t
+          :requires lsp-mode)
+
+        (use-package consult-lsp
+          :ensure t
+          :requires lsp-mode)
       #+end_src
 
 ** javascript
@@ -1781,7 +1782,7 @@
 
               (veritas.test
                (sql-name "veritas.test")
-               (sql-postgres-program "/usr/local/pgsql/bin/psql")
+               (sql-postgres-program "/usr/local/postgresql-12.2/bin/psql")
                (sql-default-directory "/ssh:devel.jmayaalv@veritastest:")
                (sql-product 'postgres)
                (sql-port 5432)
@@ -2140,10 +2141,6 @@
 
       (add-hook 'sql-interactive-mode-hook 'sqli-add-hooks)
     #+END_SRC
-
-
-    #+END_SRC
-  #+end_src
 
 * Text Modes
 ** Check spelling
@@ -2671,9 +2668,10 @@
 
 
    #+BEGIN_SRC emacs-lisp
-  (setq auth-sources
-    '((:source "~/.emacs.d/secrets/authinfo.gpg")))
-    ;(custom-set-variables '(epg-gpg-program  "/usr/local/bin/gpg2"))
+     (setq auth-sources
+           '((:source "~/.emacs.d/secrets/authinfo2.gpg")))
+     (setq epg-gpg-program "/usr/local/MacGPG2/bin/gpg2")
+     (custom-set-variables '(epg-gpg-program  "/usr/local/MacGPG2/bin/gpg2"))
    #+END_SRC
 
 
@@ -2686,7 +2684,7 @@
 ** atlas
    Atlas migrations
    #+BEGIN_SRC emacs-lisp
-     (defvar *atlas-home* "/Users/juan.maya/Developer/db-support")
+     (defvar *atlas-home* "/Users/jmaya/Developer/db-support")
 
      (defun atlas-migration-name (path client branch)
           "New migration with `PATH` name on the given `CLIENT` using the `BRANCH` and current time."

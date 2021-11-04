@@ -10,10 +10,12 @@ fi
 
 # If you come from bash you might have to change your $PATH.
 
-export PATH=$HOME/bin:/usr/local/bin:/Applications/Tools/apache-maven-3.3.3/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/Applications/Tools/apache-maven-3.6.3/bin:$PATH
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8.0_192)
 export BW_SESSION="gtcu0Mt8f2QnEZheSgviX63sdEzh4h6PzFeFsef3NE8OIffXwF79Ua0K6TNGkd0MCMpdfEibeAxiYpgg+jN+fg=="
 
+# aliases
+source ~/.config/.aliases
 
 # Emacs Anywhere
 export EA_EDITOR='emacsclient -a "" -c --display ns'
@@ -139,3 +141,7 @@ compdef _bb_tasks bb
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

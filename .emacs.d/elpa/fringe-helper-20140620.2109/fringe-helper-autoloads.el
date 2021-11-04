@@ -6,10 +6,18 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "fringe-helper" "fringe-helper.el" (0 0 0 0))
-;;; Generated autoloads from fringe-helper.el
+;;;### (autoloads "actual autoloads are elsewhere" "fringe-helper"
+;;;;;;  "../../../../.emacs.d/elpa/fringe-helper-20140620.2109/fringe-helper.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../../../../.emacs.d/elpa/fringe-helper-20140620.2109/fringe-helper.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "fringe-helper" '("fringe-")))
+
+;;;***
+
+;;;### (autoloads nil nil ("../../../../.emacs.d/elpa/fringe-helper-20140620.2109/fringe-helper-autoloads.el"
+;;;;;;  "../../../../.emacs.d/elpa/fringe-helper-20140620.2109/fringe-helper.el")
+;;;;;;  (0 0 0 0))
 
 ;;;***
 

@@ -6,8 +6,9 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "smartscan" "smartscan.el" (0 0 0 0))
-;;; Generated autoloads from smartscan.el
+;;;### (autoloads nil "smartscan" "../../../../.emacs.d/elpa/smartscan-20170211.2033/smartscan.el"
+;;;;;;  "7039ed5499e5998192974b7283a17f54")
+;;; Generated autoloads from ../../../../.emacs.d/elpa/smartscan-20170211.2033/smartscan.el
 
 (autoload 'smartscan-symbol-go-forward "smartscan" "\
 Jumps forward to the next symbol at point" t nil)
@@ -68,8 +69,20 @@ Smartscan mode is enabled in all buffers where
 See `smartscan-mode' for more information on Smartscan mode.
 
 \(fn &optional ARG)" t nil)
+
+;;;### (autoloads "actual autoloads are elsewhere" "smartscan" "../../../../.emacs.d/elpa/smartscan-20170211.2033/smartscan.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../../../../.emacs.d/elpa/smartscan-20170211.2033/smartscan.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "smartscan" '("smartscan-")))
+
+;;;***
+
+;;;***
+
+;;;### (autoloads nil nil ("../../../../.emacs.d/elpa/smartscan-20170211.2033/smartscan-autoloads.el"
+;;;;;;  "../../../../.emacs.d/elpa/smartscan-20170211.2033/smartscan.el")
+;;;;;;  (0 0 0 0))
 
 ;;;***
 

@@ -6,8 +6,9 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "hl-todo" "hl-todo.el" (0 0 0 0))
-;;; Generated autoloads from hl-todo.el
+;;;### (autoloads nil "hl-todo" "../../../../.emacs.d/elpa/hl-todo-20210909.1114/hl-todo.el"
+;;;;;;  "94419a93265d4cea23b7435275836d70")
+;;; Generated autoloads from ../../../../.emacs.d/elpa/hl-todo-20210909.1114/hl-todo.el
 
 (autoload 'hl-todo-mode "hl-todo" "\
 Highlight TODO and similar keywords in comments and strings.
@@ -72,8 +73,20 @@ comment there, otherwise insert it as a new line before the
 current line.
 
 \(fn KEYWORD)" t nil)
+
+;;;### (autoloads "actual autoloads are elsewhere" "hl-todo" "../../../../.emacs.d/elpa/hl-todo-20210909.1114/hl-todo.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../../../../.emacs.d/elpa/hl-todo-20210909.1114/hl-todo.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "hl-todo" '("hl-todo-")))
+
+;;;***
+
+;;;***
+
+;;;### (autoloads nil nil ("../../../../.emacs.d/elpa/hl-todo-20210909.1114/hl-todo-autoloads.el"
+;;;;;;  "../../../../.emacs.d/elpa/hl-todo-20210909.1114/hl-todo.el")
+;;;;;;  (0 0 0 0))
 
 ;;;***
 

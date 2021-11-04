@@ -6,9 +6,9 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "persistent-overlays" "persistent-overlays.el"
-;;;;;;  (0 0 0 0))
-;;; Generated autoloads from persistent-overlays.el
+;;;### (autoloads nil "persistent-overlays" "../../../../.emacs.d/elpa/persistent-overlays-20161128.700/persistent-overlays.el"
+;;;;;;  "820e7a83d9b27702e9f880655fe8d6cd")
+;;; Generated autoloads from ../../../../.emacs.d/elpa/persistent-overlays-20161128.700/persistent-overlays.el
 
 (autoload 'persistent-overlays-merge-overlays "persistent-overlays" "\
 Merge overlays.
@@ -109,12 +109,22 @@ Key bindings:
 \\{persistent-overlays-minor-mode-map}
 
 \(fn &optional ARG)" t nil)
+
+;;;### (autoloads "actual autoloads are elsewhere" "persistent-overlays"
+;;;;;;  "../../../../.emacs.d/elpa/persistent-overlays-20161128.700/persistent-overlays.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../../../../.emacs.d/elpa/persistent-overlays-20161128.700/persistent-overlays.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "persistent-overlays" '("persistent-overlays-")))
 
 ;;;***
+
+;;;***
 
-;;;### (autoloads nil nil ("persistent-overlays-pkg.el") (0 0 0 0))
+;;;### (autoloads nil nil ("../../../../.emacs.d/elpa/persistent-overlays-20161128.700/persistent-overlays-autoloads.el"
+;;;;;;  "../../../../.emacs.d/elpa/persistent-overlays-20161128.700/persistent-overlays-pkg.el"
+;;;;;;  "../../../../.emacs.d/elpa/persistent-overlays-20161128.700/persistent-overlays.el")
+;;;;;;  (0 0 0 0))
 
 ;;;***
 

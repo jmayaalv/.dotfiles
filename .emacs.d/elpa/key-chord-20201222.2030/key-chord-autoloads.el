@@ -6,8 +6,9 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "key-chord" "key-chord.el" (0 0 0 0))
-;;; Generated autoloads from key-chord.el
+;;;### (autoloads nil "key-chord" "../../../../.emacs.d/elpa/key-chord-20201222.2030/key-chord.el"
+;;;;;;  "ecc85ac472b5cc5827c4beb5d7ffaa3e")
+;;; Generated autoloads from ../../../../.emacs.d/elpa/key-chord-20201222.2030/key-chord.el
 
 (defvar key-chord-mode nil "\
 Non-nil if Key-Chord mode is enabled.
@@ -74,8 +75,20 @@ COMMAND can be an interactive function, a string, or nil.
 If COMMAND is nil, the key-chord is removed.
 
 \(fn KEYMAP KEYS COMMAND)" nil nil)
+
+;;;### (autoloads "actual autoloads are elsewhere" "key-chord" "../../../../.emacs.d/elpa/key-chord-20201222.2030/key-chord.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../../../../.emacs.d/elpa/key-chord-20201222.2030/key-chord.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "key-chord" '("key-chord-")))
+
+;;;***
+
+;;;***
+
+;;;### (autoloads nil nil ("../../../../.emacs.d/elpa/key-chord-20201222.2030/key-chord-autoloads.el"
+;;;;;;  "../../../../.emacs.d/elpa/key-chord-20201222.2030/key-chord.el")
+;;;;;;  (0 0 0 0))
 
 ;;;***
 

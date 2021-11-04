@@ -6,9 +6,9 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "selectrum-prescient" "selectrum-prescient.el"
-;;;;;;  (0 0 0 0))
-;;; Generated autoloads from selectrum-prescient.el
+;;;### (autoloads nil "selectrum-prescient" "../../../../.emacs.d/elpa/selectrum-prescient-20210724.1756/selectrum-prescient.el"
+;;;;;;  "16808053229b13e207d47352a236784f")
+;;; Generated autoloads from ../../../../.emacs.d/elpa/selectrum-prescient-20210724.1756/selectrum-prescient.el
 
 (defvar selectrum-prescient-mode nil "\
 Non-nil if Selectrum-Prescient mode is enabled.
@@ -29,8 +29,21 @@ called from Lisp, also enable the mode if ARG is omitted or nil,
 and toggle it if ARG is `toggle'; disable the mode otherwise.
 
 \(fn &optional ARG)" t nil)
+
+;;;### (autoloads "actual autoloads are elsewhere" "selectrum-prescient"
+;;;;;;  "../../../../.emacs.d/elpa/selectrum-prescient-20210724.1756/selectrum-prescient.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../../../../.emacs.d/elpa/selectrum-prescient-20210724.1756/selectrum-prescient.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "selectrum-prescient" '("selectrum-prescient-")))
+
+;;;***
+
+;;;***
+
+;;;### (autoloads nil nil ("../../../../.emacs.d/elpa/selectrum-prescient-20210724.1756/selectrum-prescient-autoloads.el"
+;;;;;;  "../../../../.emacs.d/elpa/selectrum-prescient-20210724.1756/selectrum-prescient.el")
+;;;;;;  (0 0 0 0))
 
 ;;;***
 

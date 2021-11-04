@@ -73,10 +73,12 @@
  rest (fn ^:static rest [x] (. clojure.lang.RT (more x))))
 
 (def
- ^{:arglists '([coll x] [coll x & xs])
+ ^{:arglists '([] [coll] [coll x] [coll x & xs])
    :doc "conj[oin]. Returns a new collection with the xs
-    'added'. (conj nil item) returns (item).  The 'addition' may
-    happen at different 'places' depending on the concrete type."
+    'added'. (conj nil item) returns (item).
+    (conj coll) returns coll. (conj) returns [].
+    The 'addition' may happen at different 'places' depending
+    on the concrete type."
    :added "1.0"
    :static true}
  conj (fn ^:static conj
@@ -1651,10 +1653,12 @@
   [x & body]
   `(let [lockee# ~x]
      (try
-      (monitor-enter lockee#)
-      ~@body
-      (finally
-       (monitor-exit lockee#)))))
+       (let [locklocal# lockee#]
+         (monitor-enter locklocal#)
+         (try
+           ~@body
+           (finally
+            (monitor-exit locklocal#)))))))
 
 (defmacro ..
   "form => fieldName-symbol or (instanceMethodName-symbol args*)
@@ -3066,22 +3070,6 @@
 		   (reduce1 merge-entry (or m1 {}) (seq m2)))]
       (reduce1 merge2 maps))))
 
-
-
-(defn zipmap
-  "Returns a map with the keys mapped to the corresponding vals."
-  {:added "1.0"
-   :static true}
-  [keys vals]
-    (loop [map {}
-           ks (seq keys)
-           vs (seq vals)]
-      (if (and ks vs)
-        (recur (assoc map (first ks) (first vs))
-               (next ks)
-               (next vs))
-        map)))
-
 (defn line-seq
   "Returns the lines of text from rdr as a lazy sequence of strings.
   rdr must implement java.io.BufferedReader."
@@ -4383,7 +4371,19 @@
    :static true}
   ([] (. clojure.lang.PersistentArrayMap EMPTY))
   ([& keyvals]
-     (clojure.lang.PersistentArrayMap/createAsIfByAssoc (to-array keyvals))))
+     (let [ary (to-array keyvals)]
+       (if (odd? (alength ary))
+         (throw (IllegalArgumentException. (str "No value supplied for key: " (last keyvals))))
+         (clojure.lang.PersistentArrayMap/createAsIfByAssoc ary)))))
+
+(defn seq-to-map-for-destructuring
+  "Builds a map from a seq as described in
+  https://clojure.org/reference/special_forms#keyword-arguments"
+  {:added "1.11"}
+  [s]
+  (if (next s)
+    (clojure.lang.PersistentArrayMap/createAsIfByAssoc (to-array s))
+    (if (seq s) (first s) clojure.lang.PersistentArrayMap/EMPTY)))
 
 ;;redefine let and loop  with destructuring
 (defn destructure [bindings]
@@ -4431,7 +4431,11 @@
                            gmapseq (with-meta gmap {:tag 'clojure.lang.ISeq})
                            defaults (:or b)]
                        (loop [ret (-> bvec (conj gmap) (conj v)
-                                      (conj gmap) (conj `(if (seq? ~gmap) (clojure.lang.PersistentHashMap/create (seq ~gmapseq)) ~gmap))
+                                      (conj gmap) (conj `(if (seq? ~gmap)
+                                                           (if (next ~gmapseq)
+                                                             (clojure.lang.PersistentArrayMap/createAsIfByAssoc (to-array ~gmapseq))
+                                                             (if (seq ~gmapseq) (first ~gmapseq) clojure.lang.PersistentArrayMap/EMPTY))
+                                                           ~gmap))
                                       ((fn [ret]
                                          (if (:as b)
                                            (conj ret (:as b) gmap)
@@ -4480,10 +4484,15 @@
 
 (defmacro let
   "binding => binding-form init-expr
+  binding-form => name, or destructuring-form
+  destructuring-form => map-destructure-form, or seq-destructure-form
 
   Evaluates the exprs in a lexical context in which the symbols in
   the binding-forms are bound to their respective init-exprs or parts
-  therein."
+  therein.
+
+  See https://clojure.org/reference/special_forms#binding-forms for
+  more information about destructuring."
   {:added "1.0", :special-form true, :forms '[(let [bindings*] exprs*)]}
   [bindings & body]
   (assert-args
@@ -4511,12 +4520,14 @@
 
 ;redefine fn with destructuring and pre/post conditions
 (defmacro fn
-  "params => positional-params* , or positional-params* & next-param
+  "params => positional-params*, or positional-params* & rest-param
   positional-param => binding-form
-  next-param => binding-form
-  name => symbol
+  rest-param => binding-form
+  binding-form => name, or destructuring-form
 
-  Defines a function"
+  Defines a function.
+
+  See https://clojure.org/reference/special_forms#fn for more information"
   {:added "1.0", :special-form true,
    :forms '[(fn name? [params* ] exprs*) (fn name? ([params* ] exprs*)+)]}
   [& sigs]
@@ -4808,7 +4819,8 @@
 (defn ex-cause
   "Returns the cause of ex if ex is a Throwable.
   Otherwise returns nil."
-  {:added "1.10"}
+  {:tag Throwable
+   :added "1.10"}
   [ex]
   (when (instance? Throwable ex)
     (.getCause ^Throwable ex)))
@@ -5933,7 +5945,7 @@
             (name lib) prefix)
   (let [lib (if prefix (symbol (str prefix \. lib)) lib)
         opts (apply hash-map options)
-        {:keys [as reload reload-all require use verbose]} opts
+        {:keys [as reload reload-all require use verbose as-alias]} opts
         loaded (contains? @*loaded-libs* lib)
         load (cond reload-all
                    load-all
@@ -5943,21 +5955,28 @@
         filter-opts (select-keys opts '(:exclude :only :rename :refer))
         undefined-on-entry (not (find-ns lib))]
     (binding [*loading-verbosely* (or *loading-verbosely* verbose)]
-      (if load
-        (try
-          (load lib need-ns require)
-          (catch Exception e
-            (when undefined-on-entry
-              (remove-ns lib))
-            (throw e)))
-        (throw-if (and need-ns (not (find-ns lib)))
-                  "namespace '%s' not found" lib))
+      (if as-alias
+        (when (not (find-ns lib))
+          (create-ns lib))
+        (if load
+          (try
+            (load lib need-ns require)
+            (catch Exception e
+              (when undefined-on-entry
+                (remove-ns lib))
+              (throw e)))
+          (throw-if (and need-ns (not (find-ns lib)))
+            "namespace '%s' not found" lib)))
       (when (and need-ns *loading-verbosely*)
         (printf "(clojure.core/in-ns '%s)\n" (ns-name *ns*)))
       (when as
         (when *loading-verbosely*
           (printf "(clojure.core/alias '%s '%s)\n" as lib))
         (alias as lib))
+      (when as-alias
+        (when *loading-verbosely*
+          (printf "(clojure.core/alias '%s '%s)\n" as-alias lib))
+        (alias as-alias lib))
       (when (or use (:refer filter-opts))
         (when *loading-verbosely*
           (printf "(clojure.core/refer '%s" lib)
@@ -5974,7 +5993,7 @@
         opts (interleave flags (repeat true))
         args (filter (complement keyword?) args)]
     ; check for unsupported options
-    (let [supported #{:as :reload :reload-all :require :use :verbose :refer}
+    (let [supported #{:as :reload :reload-all :require :use :verbose :refer :as-alias}
           unsupported (seq (remove supported flags))]
       (throw-if unsupported
                 (apply str "Unsupported option(s) supplied: "
@@ -6038,6 +6057,9 @@
   Recognized options:
   :as takes a symbol as its argument and makes that symbol an alias to the
     lib's namespace in the current namespace.
+  :as-alias takes a symbol as its argument and aliases like :as, however
+    the lib will not be loaded. If the lib has not been loaded, a new
+    empty namespace will be created (as with create-ns).
   :refer takes a list of symbols to refer from the namespace or the :all
     keyword to bring in all public vars.
 
@@ -6054,9 +6076,10 @@
   A flag is a keyword.
   Recognized flags: :reload, :reload-all, :verbose
   :reload forces loading of all the identified libs even if they are
-    already loaded
+    already loaded (has no effect on libspecs using :as-alias)
   :reload-all implies :reload and also forces loading of all libs that the
     identified libs directly or indirectly load via require or use
+    (has no effect on libspecs using :as-alias)
   :verbose triggers printing information about each load, alias, and refer
 
   Example:
@@ -6578,6 +6601,19 @@ fails, attempts to require sym's namespace and retries."
      ([a b c] (f (if (nil? a) x a) (if (nil? b) y b) (if (nil? c) z c)))
      ([a b c & ds] (apply f (if (nil? a) x a) (if (nil? b) y b) (if (nil? c) z c) ds)))))
 
+(defn zipmap
+  "Returns a map with the keys mapped to the corresponding vals."
+  {:added "1.0"
+   :static true}
+  [keys vals]
+    (loop [map (transient {})
+           ks (seq keys)
+           vs (seq vals)]
+      (if (and ks vs)
+        (recur (assoc! map (first ks) (first vs))
+               (next ks)
+               (next vs))
+        (persistent! map))))
 
 ;;;;;;; case ;;;;;;;;;;;;;
 (defn- shift-mask [shift mask x]
@@ -6834,13 +6870,18 @@ fails, attempts to require sym's namespace and retries."
   init)
 
  ;;slow path default
- clojure.lang.IPersistentMap
- (kv-reduce 
+ java.lang.Object
+ (kv-reduce
   [amap f init]
-  (reduce (fn [ret [k v]] (f ret k v)) init amap))
+  (reduce (fn [ret ^java.util.Map$Entry me]
+            (f ret
+               (.getKey me)
+               (.getValue me)))
+          init
+          amap))
 
  clojure.lang.IKVReduce
- (kv-reduce 
+ (kv-reduce
   [amap f init]
   (.kvreduce amap f init)))
 
@@ -7052,7 +7093,8 @@ fails, attempts to require sym's namespace and retries."
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; clojure version number ;;;;;;;;;;;;;;;;;;;;;;
 
-(let [properties (with-open [version-stream (.getResourceAsStream
+(let [^java.util.Properties
+      properties (with-open [version-stream (.getResourceAsStream
                                              (clojure.lang.RT/baseLoader)
                                              "clojure/version.properties")]
                    (doto (new java.util.Properties)
@@ -7419,8 +7461,8 @@ fails, attempts to require sym's namespace and retries."
      (fn ep3
        ([] true)
        ([x] (boolean (and (p1 x) (p2 x) (p3 x))))
-       ([x y] (boolean (and (p1 x) (p2 x) (p3 x) (p1 y) (p2 y) (p3 y))))
-       ([x y z] (boolean (and (p1 x) (p2 x) (p3 x) (p1 y) (p2 y) (p3 y) (p1 z) (p2 z) (p3 z))))
+       ([x y] (boolean (and (p1 x) (p1 y) (p2 x) (p2 y) (p3 x) (p3 y))))
+       ([x y z] (boolean (and (p1 x) (p1 y) (p1 z) (p2 x) (p2 y) (p2 z) (p3 x) (p3 y) (p3 z))))
        ([x y z & args] (boolean (and (ep3 x y z)
                                      (every? #(and (p1 %) (p2 %) (p3 %)) args))))))
   ([p1 p2 p3 & ps]
@@ -7459,8 +7501,8 @@ fails, attempts to require sym's namespace and retries."
      (fn sp3
        ([] nil)
        ([x] (or (p1 x) (p2 x) (p3 x)))
-       ([x y] (or (p1 x) (p2 x) (p3 x) (p1 y) (p2 y) (p3 y)))
-       ([x y z] (or (p1 x) (p2 x) (p3 x) (p1 y) (p2 y) (p3 y) (p1 z) (p2 z) (p3 z)))
+       ([x y] (or (p1 x) (p1 y) (p2 x) (p2 y) (p3 x) (p3 y)))
+       ([x y z] (or (p1 x) (p1 y) (p1 z) (p2 x) (p2 y) (p2 z) (p3 x) (p3 y) (p3 z)))
        ([x y z & args] (or (sp3 x y z)
                            (some #(or (p1 %) (p2 %) (p3 %)) args)))))
   ([p1 p2 p3 & ps]
@@ -7890,3 +7932,35 @@ fails, attempts to require sym's namespace and retries."
   [x]
   (force tap-loop)
   (.offer tapq (if (nil? x) ::tap-nil x)))
+
+(defn update-vals
+  "m f => {k (f v) ...}
+
+  Given a map m and a function f of 1-argument, returns a new map where the keys of m
+  are mapped to result of applying f to the corresponding values of m."
+  {:added "1.11"}
+  [m f]
+  (with-meta
+    (persistent!
+     (reduce-kv (fn [acc k v] (assoc! acc k (f v)))
+                (if (instance? clojure.lang.IEditableCollection m)
+                  (transient m)
+                  (transient {}))
+                m))
+    (meta m)))
+
+(defn update-keys
+  "m f => {(f k) v ...}
+
+  Given a map m and a function f of 1-argument, returns a new map whose
+  keys are the result of applying f to the keys of m, mapped to the
+  corresponding values of m.
+  f must return a unique key for each key of m, else the behavior is undefined."
+  {:added "1.11"}
+  [m f]
+  (let [ret (persistent!
+             (reduce-kv (fn [acc k v] (assoc! acc (f k) v))
+                        (transient {})
+                        m))]
+    (with-meta ret (meta m))))
+

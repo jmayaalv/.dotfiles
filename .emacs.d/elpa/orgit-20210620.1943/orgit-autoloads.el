@@ -6,8 +6,9 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "orgit" "orgit.el" (0 0 0 0))
-;;; Generated autoloads from orgit.el
+;;;### (autoloads nil "orgit" "../../../../.emacs.d/elpa/orgit-20210620.1943/orgit.el"
+;;;;;;  "2ee6e41e73256afc2be830c88e496065")
+;;; Generated autoloads from ../../../../.emacs.d/elpa/orgit-20210620.1943/orgit.el
 
 (autoload 'orgit-link-set-parameters "orgit" "\
 
@@ -92,8 +93,20 @@ store links to the Magit-Revision mode buffers for these commits." nil nil)
 
 
 \(fn &optional ARG)" nil nil)
+
+;;;### (autoloads "actual autoloads are elsewhere" "orgit" "../../../../.emacs.d/elpa/orgit-20210620.1943/orgit.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../../../../.emacs.d/elpa/orgit-20210620.1943/orgit.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "orgit" '("orgit-")))
+
+;;;***
+
+;;;***
+
+;;;### (autoloads nil nil ("../../../../.emacs.d/elpa/orgit-20210620.1943/orgit-autoloads.el"
+;;;;;;  "../../../../.emacs.d/elpa/orgit-20210620.1943/orgit.el")
+;;;;;;  (0 0 0 0))
 
 ;;;***
 

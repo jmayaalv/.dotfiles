@@ -1,0 +1,25 @@
+{:paths []
+ :tasks {:requires   ([babashka.fs :as fs]
+                      [babashka.process :as p :refer [process]]
+                      [clojure.java.io :as io]
+                      [babashka.curl :as curl])
+         :init (do
+                 (def base-path (System/getProperty "user.dir"))
+                 (defn home-dir [path]
+                   (-> (System/getenv "HOME") (fs/path path) str)))
+
+         xcode       (shell "sudo xcode-select --install")
+
+         java        (shell "brew install openjdk")
+
+         sdkman      (do
+                       (io/copy (:body (curl/get "https://get.sdkman.io")) (io/file "tmp"))
+                       (shell "bash tmp")
+                       (io/delete-file "tmp")
+                       (println (format "source  \"%s/.sdkman/bin/sdkman-init.sh\"" base-path))
+                       (shell  (format "bash -c \"source %s/.sdkman/bin/sdkman-init.sh\"" base-path))
+                       )
+         zsh         (shell "brew install zsh")
+         clojure-cli (shell "brew install clojure")
+         clojure-lsp (shell " ")
+         alacritty   (shell "brew install --cask alacritty")}}

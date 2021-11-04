@@ -6,9 +6,9 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "highlight-symbol" "highlight-symbol.el" (0
-;;;;;;  0 0 0))
-;;; Generated autoloads from highlight-symbol.el
+;;;### (autoloads nil "highlight-symbol" "../../../../.emacs.d/elpa/highlight-symbol-20160102.2009/highlight-symbol.el"
+;;;;;;  "d49809056d8e0e2ab6c18f1832eada2c")
+;;; Generated autoloads from ../../../../.emacs.d/elpa/highlight-symbol-20160102.2009/highlight-symbol.el
 
 (autoload 'highlight-symbol-mode "highlight-symbol" "\
 Minor mode that highlights the symbol under point throughout the buffer.
@@ -84,8 +84,21 @@ Each line is displayed with NLINES lines before and after, or -NLINES
 before if NLINES is negative.
 
 \(fn &optional NLINES)" t nil)
+
+;;;### (autoloads "actual autoloads are elsewhere" "highlight-symbol"
+;;;;;;  "../../../../.emacs.d/elpa/highlight-symbol-20160102.2009/highlight-symbol.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../../../../.emacs.d/elpa/highlight-symbol-20160102.2009/highlight-symbol.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "highlight-symbol" '("highlight-symbol")))
+
+;;;***
+
+;;;***
+
+;;;### (autoloads nil nil ("../../../../.emacs.d/elpa/highlight-symbol-20160102.2009/highlight-symbol-autoloads.el"
+;;;;;;  "../../../../.emacs.d/elpa/highlight-symbol-20160102.2009/highlight-symbol.el")
+;;;;;;  (0 0 0 0))
 
 ;;;***
 
