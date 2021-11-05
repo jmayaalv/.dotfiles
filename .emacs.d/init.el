@@ -74,7 +74,10 @@
  '(rustic-ansi-faces
    ["#282c34" "#ff6c6b" "#98be65" "#ECBE7B" "#51afef" "#c678dd" "#46D9FF" "#bbc2cf"])
  '(safe-local-variable-values
-   '((cider-shadow-cljs-default-options . "app")
+   '((cider-ns-refresh-after-fn . "user/refresh-pathom!")
+     (cider-ns-refresh-before-fn . "user/stop-pathom!")
+     (cider-ns-refresh-after-fn . "user/pathom!")
+     (cider-shadow-cljs-default-options . "app")
      (cider-ns-refresh-after-fn . "user/start")
      (cider-ns-refresh-before-fn . "user/stop")
      (cider-preferred-build-tool . "clojure-cli")

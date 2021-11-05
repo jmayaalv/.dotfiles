@@ -1646,13 +1646,13 @@
                         lsp-keymap-prefix "s-l"
                         read-process-output-max (* 1024 1024)
                         lsp-file-watch-threshold 10000
-                        lsp-idle-delay 0.5
+                        ;;lsp-idle-delay 0.5
                         lsp-modeline-diagnostics-enable t
                         company-idle-delay 0.5
                         company-minimum-prefix-length 1
                         treemacs-space-between-root-nodes nil
                         lsp-lens-enable t
-                        lsp-semantic-tokens-enable t
+                        lsp-semantic-tokens-enable nil
                         lsp-signature-auto-activate t
                         lsp-signature-render-documentation t
                         lsp-clojure-server-command '("bash" "-c" "clojure-lsp")
