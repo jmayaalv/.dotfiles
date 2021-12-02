@@ -526,78 +526,89 @@
    #+END_SRC
 ** Modeline
    #+begin_src emacs-lisp
+     (use-package doom-modeline
+       :ensure t
+       :init
+       (doom-modeline-mode 1)
+       :config
 
-     ;;(which-function-mode 1)
+       (setq  all-the-icons-color-icons nil
+              inhibit-compacting-font-caches t
+              find-file-visit-truename t
+               doom-modeline-vcs-max-length 20
 
-     (defun d/flycheck-lighter (state)
-       "Return flycheck information for the given error type STATE. Source: https://git.io/vQKzv"
-       (let* ((counts (flycheck-count-errors flycheck-current-errors))
-              (errorp (flycheck-has-current-errors-p state))
-              (err (or (cdr (assq state counts)) "?"))
-              (running (eq 'running flycheck-last-status-change)))
-         (if (or errorp running) (format "•%s" err))))
+              ))
 
-     (setq-default mode-line-format
-                   (list
-                    mode-line-modified
 
-                    mode-line-front-space
+     ;; (defun d/flycheck-lighter (state)
+     ;;   "Return flycheck information for the given error type STATE. Source: https://git.io/vQKzv"
+     ;;   (let* ((counts (flycheck-count-errors flycheck-current-errors))
+     ;;          (errorp (flycheck-has-current-errors-p state))
+     ;;          (err (or (cdr (assq state counts)) "?"))
+     ;;          (running (eq 'running flycheck-last-status-change)))
+     ;;     (if (or errorp running) (format "•%s" err))))
 
-                    mode-line-my-vc
+     ;; (setq-default mode-line-format
+     ;;               (list
+     ;;                mode-line-modified
 
-                    '(:eval (propertize " %b "
-                                        'face
-                                        (let ((face (buffer-modified-p)))
-                                          (if face 'font-lock-warning-face
-                                            'font-lock-type-face))
-                                        'help-echo (buffer-file-name)))
+     ;;                mode-line-front-space
 
-                    mode-line-position
+     ;;                mode-line-my-vc
 
-                    mode-line-front-space
-                    ;; flycheck
-                    '(:eval
-                      (when (and (bound-and-true-p flycheck-mode)
-                                 (or flycheck-current-errors
-                                     (eq 'running flycheck-last-status-change)))
-                        (concat
-                         (cl-loop for state in '((error . "#FB4933")
-                                                 (warning . "#FABD2F")
-                                                 (info . "#83A598"))
-                                  as lighter = (d/flycheck-lighter (car state))
-                                  when lighter
-                                  concat (propertize
-                                          lighter
-                                          'face `(:foreground ,(cdr state))))
-                         " ")))
+     ;;                '(:eval (propertize " %b "
+     ;;                                    'face
+     ;;                                    (let ((face (buffer-modified-p)))
+     ;;                                      (if face 'font-lock-warning-face
+     ;;                                        'font-lock-type-face))
+     ;;                                    'help-echo (buffer-file-name)))
 
-                    ;; which function
-                    '(:eval (let ((fn (which-function)))
-                              (when fn
-                                (format "[%s] " fn))))
+     ;;                mode-line-position
 
-                    ;; spaces to align right
-                    '(:eval (propertize
-                             " " 'display
-                             `((space :align-to (- (+ right right-fringe right-margin)
-                                                   ,(+ 3 (string-width mode-name)))))))
+     ;;                mode-line-front-space
+     ;;                ;; flycheck
+     ;;                '(:eval
+     ;;                  (when (and (bound-and-true-p flycheck-mode)
+     ;;                             (or flycheck-current-errors
+     ;;                                 (eq 'running flycheck-last-status-change)))
+     ;;                    (concat
+     ;;                     (cl-loop for state in '((error . "#FB4933")
+     ;;                                             (warning . "#FABD2F")
+     ;;                                             (info . "#83A598"))
+     ;;                              as lighter = (d/flycheck-lighter (car state))
+     ;;                              when lighter
+     ;;                              concat (propertize
+     ;;                                      lighter
+     ;;                                      'face `(:foreground ,(cdr state))))
+     ;;                     " ")))
 
-                    ;; the current major mode
-                    (propertize " %m " 'face 'font-lock-string-face)))
+     ;;                ;; which function
+     ;;                '(:eval (let ((fn (which-function)))
+     ;;                          (when fn
+     ;;                            (format "[%s] " fn))))
 
-     (set-face-attribute 'mode-line nil
-                         :background "#353644"
-                         :foreground "white"
-                         :box '(:line-width 8 :color "#353644")
-                         :overline nil
-                         :underline nil)
+     ;;                ;; spaces to align right
+     ;;                '(:eval (propertize
+     ;;                         " " 'display
+     ;;                         `((space :align-to (- (+ right right-fringe right-margin)
+     ;;                                               ,(+ 3 (string-width mode-name)))))))
 
-     (set-face-attribute 'mode-line-inactive nil
-                         :background "#565063"
-                         :foreground "white"
-                         :box '(:line-width 8 :color "#565063")
-                         :overline nil
-                         :underline nil)
+     ;;                ;; the current major mode
+     ;;                (propertize " %m " 'face 'font-lock-string-face)))
+
+     ;; (set-face-attribute 'mode-line nil
+     ;;                     :background "#353644"
+     ;;                     :foreground "white"
+     ;;                     :box '(:line-width 8 :color "#353644")
+     ;;                     :overline nil
+     ;;                     :underline nil)
+
+     ;; (set-face-attribute 'mode-line-inactive nil
+     ;;                     :background "#565063"
+     ;;                     :foreground "white"
+     ;;                     :box '(:line-width 8 :color "#565063")
+     ;;                     :overline nil
+     ;;                     :underline nil)
    #+end_src
 ** Dimmer
   subtle visual indication which window is currently active by dimming the faces on the others.
@@ -1524,6 +1535,25 @@
                                (buffer-name actual-buffer)))))))))
      #+END_SRC
 
+**** Portal
+      #+BEGIN_SRC emacs-lisp
+
+
+        (defun portal.api/open ()
+          (interactive)
+          (cider-nrepl-sync-request:eval
+           "(require 'portal.api) (portal.api/tap) (portal.api/open)"))
+
+        (defun portal.api/clear ()
+          (interactive)
+          (cider-nrepl-sync-request:eval "(portal.api/clear)"))
+
+        (defun portal.api/close ()
+          (interactive)
+          (cider-nrepl-sync-request:eval "(portal.api/close)"))
+
+
+      #+END_SRC
 **** clojure refactor
      #+BEGIN_SRC emacs-lisp
        (defun my-clojure-mode-hook ()
@@ -1616,7 +1646,8 @@
                   :ensure t
                   :hook ((clojure-mode . lsp)
                          (clojurec-mode . lsp)
-                         (clojurescript-mode . lsp))
+                         (clojurescript-mode . lsp)
+                         (java-mode . lsp))
                   :init
 
                  (define-key clojure-mode-map (kbd "M-.") #'find-definition)
@@ -1665,8 +1696,20 @@
                         lsp-eldoc-enable-hover t
                         lsp-log-io nil
                         cljr-add-ns-to-blank-clj-files nil ;; disable clj-refactor adding ns to blank files
+                        cljr-magic-requires nil ;; temp disable to avoid problem with trade component
                         lsp-enable-which-key-integration  t))
 
+        (use-package lsp-java
+          :ensure t
+          :after lsp
+          :config
+          (setq lsp-java-references-code-lens-enabled t
+                lsp-java-implementations-code-lens-enabled t
+                lsp-file-watch-ignored-directories
+                '(".idea" ".ensime_cache" ".eunit" "node_modules"
+                  ".git" ".hg" ".fslckout" "_FOSSIL_"
+                  ".bzr" "_darcs" ".tox" ".svn" ".stack-work"
+                  "build")))
         (use-package lsp-treemacs
           :ensure t
           :requires lsp-mode)
@@ -1729,6 +1772,16 @@
                (sql-server "localhost")
                (sql-user "imstest")
                (sql-database "imsdb_test"))
+
+              (nav.prod
+               (sql-name "oic.prod")
+               (sql-default-directory "/ssh:devel.jmayaalv@navdb:")
+               (sql-postgres-program "/usr/local/pgsql/bin/psql")
+               (sql-product 'postgres)
+               (sql-port 5432)
+               (sql-server "localhost")
+               (sql-user "imsnavprod")
+               (sql-database "imsnavproddb"))
 
               (oic.prod
                (sql-name "oic.prod")
@@ -1861,10 +1914,20 @@
                (sql-user "imssanlamprod")
                (sql-database "imssanlamproddb"))
 
-              (glacier.test
+             (sanlam.test
+               (sql-name "sanlam.test")
+               (sql-postgres-program "/usr/local/pgsql/bin/psql")
+               (sql-default-directory "/ssh:devel.jmayaalv@sanlamtest1:")
+               (sql-product 'postgres)
+               (sql-port 5432)
+               (sql-server "localhost")
+               (sql-user "imssgist1")
+               (sql-database "imssgist1db"))
+
+             (glacier.test
                (sql-name "glacier.test1")
                (sql-postgres-program "/usr/local/pgsql/bin/psql")
-               (sql-default-directory "/ssh:devel.jmayaalv@glaciertest:")
+               (sql-default-directory "/ssh:devel.jmayaalv@glaciertest1:")
                (sql-product 'postgres)
                (sql-port 5432)
                (sql-server "localhost")
@@ -1941,6 +2004,16 @@
                (sql-user "imsprovidenceprod")
                (sql-database "imsprovidenceproddb"))
 
+             (allangray.test1
+               (sql-name "allangray.test1")
+               (sql-postgres-program "/usr/local/pgsql/bin/psql")
+               (sql-default-directory "/ssh:devel.jmayaalv@allangraytest1:")
+               (sql-product 'postgres)
+               (sql-port 5432)
+               (sql-server "localhost")
+               (sql-user "imsagrayt1")
+               (sql-database "imsagrayt1db"))
+
              (providence.test
                (sql-name "providence.test")
                (sql-postgres-program "/usr/local/pgsql/bin/psql")
@@ -1969,6 +2042,16 @@
         "Create a new sql connection to the local dev db."
         (interactive)
         (my-sql-connect  'postgres 'localhost.dev))
+
+       (defun sql-allangray.test1 ()
+        "Create a new sql connection to allan gray test1 db."
+        (interactive)
+        (my-sql-connect  'postgres 'allangray-test1))
+
+      (defun sql-nav.prod ()
+        "Create a new sql connection to nav  db."
+        (interactive)
+        (my-sql-connect  'postgres 'nav.prod))
 
       (defun sql-localhost.test ()
         "Create a new sql connection to the local test db."
@@ -2059,6 +2142,11 @@
         "Create a new sql connection to the sanlam prod db."
          (interactive)
          (my-sql-connect 'postgres 'sanlam.prod))
+
+     (defun sql-sanlam.test ()
+        "Create a new sql connection to the sanlam test 1 db."
+         (interactive)
+         (my-sql-connect 'postgres 'sanlam.test))
 
       (defun sql-northstar.prod ()
         "Create a new sql connection to the sanlam prod db."
@@ -2670,7 +2758,7 @@
    #+BEGIN_SRC emacs-lisp
      (setq auth-sources
            '((:source "~/.emacs.d/secrets/authinfo2.gpg")))
-     (setq epg-gpg-program "/usr/local/MacGPG2/bin/gpg2")
+     (setq epg-gpg-program "gpg2")
      (custom-set-variables '(epg-gpg-program  "/usr/local/MacGPG2/bin/gpg2"))
    #+END_SRC
 
