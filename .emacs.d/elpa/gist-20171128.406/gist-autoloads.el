@@ -6,9 +6,9 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "gist" "../../../../.emacs.d/elpa/gist-20171128.406/gist.el"
+;;;### (autoloads nil "gist" "../../../../../.emacs.d/elpa/gist-20171128.406/gist.el"
 ;;;;;;  "c8a78cb7bd462146694db8cf62a4e3ef")
-;;; Generated autoloads from ../../../../.emacs.d/elpa/gist-20171128.406/gist.el
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/gist-20171128.406/gist.el
 
 (autoload 'gist-region "gist" "\
 Post the current region as a new paste at gist.github.com
@@ -82,9 +82,9 @@ List your starred gists.
 (autoload 'gist-fork "gist" "\
 Fork a gist." t nil)
 
-;;;### (autoloads "actual autoloads are elsewhere" "gist" "../../../../.emacs.d/elpa/gist-20171128.406/gist.el"
+;;;### (autoloads "actual autoloads are elsewhere" "gist" "../../../../../.emacs.d/elpa/gist-20171128.406/gist.el"
 ;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../.emacs.d/elpa/gist-20171128.406/gist.el
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/gist-20171128.406/gist.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "gist" '("dired-do-gist" "gist-")))
 
@@ -92,9 +92,9 @@ Fork a gist." t nil)
 
 ;;;***
 
-;;;### (autoloads nil nil ("../../../../.emacs.d/elpa/gist-20171128.406/gist-autoloads.el"
-;;;;;;  "../../../../.emacs.d/elpa/gist-20171128.406/gist.el") (0
-;;;;;;  0 0 0))
+;;;### (autoloads nil nil ("../../../../../.emacs.d/elpa/gist-20171128.406/gist-autoloads.el"
+;;;;;;  "../../../../../.emacs.d/elpa/gist-20171128.406/gist.el")
+;;;;;;  (0 0 0 0))
 
 ;;;***
 

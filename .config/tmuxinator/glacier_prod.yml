@@ -1,6 +1,6 @@
 # /Users/jmaya/.config/tmuxinator/glacier_prod.yml
 
-name: glacier_prod
+name: glacier-prod
 root: ~/
 
 # Optional tmux socket

@@ -6,9 +6,9 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "restclient" "../../../../.emacs.d/elpa/restclient-20220101.1239/restclient.el"
+;;;### (autoloads nil "restclient" "../../../../../.emacs.d/elpa/restclient-20220101.1239/restclient.el"
 ;;;;;;  "d5161049207cbcc164cc0ab56988c1f5")
-;;; Generated autoloads from ../../../../.emacs.d/elpa/restclient-20220101.1239/restclient.el
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/restclient-20220101.1239/restclient.el
 
 (autoload 'restclient-http-send-current "restclient" "\
 Sends current request.
@@ -28,9 +28,9 @@ Turn on restclient mode.
 
 \(fn)" t nil)
 
-;;;### (autoloads "actual autoloads are elsewhere" "restclient" "../../../../.emacs.d/elpa/restclient-20220101.1239/restclient.el"
+;;;### (autoloads "actual autoloads are elsewhere" "restclient" "../../../../../.emacs.d/elpa/restclient-20220101.1239/restclient.el"
 ;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../.emacs.d/elpa/restclient-20220101.1239/restclient.el
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/restclient-20220101.1239/restclient.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "restclient" '("restclient-")))
 
@@ -38,8 +38,8 @@ Turn on restclient mode.
 
 ;;;***
 
-;;;### (autoloads nil nil ("../../../../.emacs.d/elpa/restclient-20220101.1239/restclient-autoloads.el"
-;;;;;;  "../../../../.emacs.d/elpa/restclient-20220101.1239/restclient.el")
+;;;### (autoloads nil nil ("../../../../../.emacs.d/elpa/restclient-20220101.1239/restclient-autoloads.el"
+;;;;;;  "../../../../../.emacs.d/elpa/restclient-20220101.1239/restclient.el")
 ;;;;;;  (0 0 0 0))
 
 ;;;***

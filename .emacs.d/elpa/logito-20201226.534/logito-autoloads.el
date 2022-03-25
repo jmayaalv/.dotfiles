@@ -6,16 +6,16 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads "actual autoloads are elsewhere" "logito" "../../../../.emacs.d/elpa/logito-20201226.534/logito.el"
+;;;### (autoloads "actual autoloads are elsewhere" "logito" "../../../../../.emacs.d/elpa/logito-20201226.534/logito.el"
 ;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../.emacs.d/elpa/logito-20201226.534/logito.el
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/logito-20201226.534/logito.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "logito" '("logito-")))
 
 ;;;***
 
-;;;### (autoloads nil nil ("../../../../.emacs.d/elpa/logito-20201226.534/logito-autoloads.el"
-;;;;;;  "../../../../.emacs.d/elpa/logito-20201226.534/logito.el")
+;;;### (autoloads nil nil ("../../../../../.emacs.d/elpa/logito-20201226.534/logito-autoloads.el"
+;;;;;;  "../../../../../.emacs.d/elpa/logito-20201226.534/logito.el")
 ;;;;;;  (0 0 0 0))
 
 ;;;***

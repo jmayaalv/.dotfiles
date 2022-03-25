@@ -6,9 +6,9 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "nyan-mode" "../../../../.emacs.d/elpa/nyan-mode-20200526.1054/nyan-mode.el"
+;;;### (autoloads nil "nyan-mode" "../../../../../.emacs.d/elpa/nyan-mode-20200526.1054/nyan-mode.el"
 ;;;;;;  "ef91d86058eb5bdc44523de930b5c110")
-;;; Generated autoloads from ../../../../.emacs.d/elpa/nyan-mode-20200526.1054/nyan-mode.el
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/nyan-mode-20200526.1054/nyan-mode.el
 
 (defvar nyan-mode nil "\
 Non-nil if Nyan mode is enabled.
@@ -34,9 +34,9 @@ option `scroll-bar-mode'.
 
 \(fn &optional ARG)" t nil)
 
-;;;### (autoloads "actual autoloads are elsewhere" "nyan-mode" "../../../../.emacs.d/elpa/nyan-mode-20200526.1054/nyan-mode.el"
+;;;### (autoloads "actual autoloads are elsewhere" "nyan-mode" "../../../../../.emacs.d/elpa/nyan-mode-20200526.1054/nyan-mode.el"
 ;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../.emacs.d/elpa/nyan-mode-20200526.1054/nyan-mode.el
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/nyan-mode-20200526.1054/nyan-mode.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "nyan-mode" '("+nyan-" "nyan-")))
 
@@ -44,9 +44,9 @@ option `scroll-bar-mode'.
 
 ;;;***
 
-;;;### (autoloads nil nil ("../../../../.emacs.d/elpa/nyan-mode-20200526.1054/nyan-mode-autoloads.el"
-;;;;;;  "../../../../.emacs.d/elpa/nyan-mode-20200526.1054/nyan-mode-pkg.el"
-;;;;;;  "../../../../.emacs.d/elpa/nyan-mode-20200526.1054/nyan-mode.el")
+;;;### (autoloads nil nil ("../../../../../.emacs.d/elpa/nyan-mode-20200526.1054/nyan-mode-autoloads.el"
+;;;;;;  "../../../../../.emacs.d/elpa/nyan-mode-20200526.1054/nyan-mode-pkg.el"
+;;;;;;  "../../../../../.emacs.d/elpa/nyan-mode-20200526.1054/nyan-mode.el")
 ;;;;;;  (0 0 0 0))
 
 ;;;***

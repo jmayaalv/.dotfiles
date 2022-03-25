@@ -6,8 +6,9 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "guru-mode" "guru-mode.el" (0 0 0 0))
-;;; Generated autoloads from guru-mode.el
+;;;### (autoloads nil "guru-mode" "../../../../../.emacs.d/elpa/guru-mode-20211025.1157/guru-mode.el"
+;;;;;;  "ee218c52f25fa7744ea756632b41aa8d")
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/guru-mode-20211025.1157/guru-mode.el
 
 (autoload 'guru-mode "guru-mode" "\
 A minor mode that teaches you to use Emacs effectively.
@@ -42,8 +43,20 @@ Guru mode is enabled in all buffers where
 See `guru-mode' for more information on Guru mode.
 
 \(fn &optional ARG)" t nil)
+
+;;;### (autoloads "actual autoloads are elsewhere" "guru-mode" "../../../../../.emacs.d/elpa/guru-mode-20211025.1157/guru-mode.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/guru-mode-20211025.1157/guru-mode.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "guru-mode" '("guru-")))
+
+;;;***
+
+;;;***
+
+;;;### (autoloads nil nil ("../../../../../.emacs.d/elpa/guru-mode-20211025.1157/guru-mode-autoloads.el"
+;;;;;;  "../../../../../.emacs.d/elpa/guru-mode-20211025.1157/guru-mode.el")
+;;;;;;  (0 0 0 0))
 
 ;;;***
 

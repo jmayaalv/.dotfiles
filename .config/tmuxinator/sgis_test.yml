@@ -1,6 +1,6 @@
 # /Users/jmaya/.config/tmuxinator/sgis_test.yml
 
-name: sgis_test
+name: sgis-test
 root: ~/
 
 # Optional tmux socket

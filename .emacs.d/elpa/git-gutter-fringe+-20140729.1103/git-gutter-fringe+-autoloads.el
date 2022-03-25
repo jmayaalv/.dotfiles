@@ -7,16 +7,16 @@
 
 
 ;;;### (autoloads "actual autoloads are elsewhere" "git-gutter-fringe+"
-;;;;;;  "../../../../.emacs.d/elpa/git-gutter-fringe+-20140729.1103/git-gutter-fringe+.el"
+;;;;;;  "../../../../../.emacs.d/elpa/git-gutter-fringe+-20140729.1103/git-gutter-fringe+.el"
 ;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../.emacs.d/elpa/git-gutter-fringe+-20140729.1103/git-gutter-fringe+.el
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/git-gutter-fringe+-20140729.1103/git-gutter-fringe+.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "git-gutter-fringe+" '("git-gutter")))
 
 ;;;***
 
-;;;### (autoloads nil nil ("../../../../.emacs.d/elpa/git-gutter-fringe+-20140729.1103/git-gutter-fringe+-autoloads.el"
-;;;;;;  "../../../../.emacs.d/elpa/git-gutter-fringe+-20140729.1103/git-gutter-fringe+.el")
+;;;### (autoloads nil nil ("../../../../../.emacs.d/elpa/git-gutter-fringe+-20140729.1103/git-gutter-fringe+-autoloads.el"
+;;;;;;  "../../../../../.emacs.d/elpa/git-gutter-fringe+-20140729.1103/git-gutter-fringe+.el")
 ;;;;;;  (0 0 0 0))
 
 ;;;***

@@ -1,6 +1,6 @@
 # /Users/jmaya/.config/tmuxinator/sanlam_prod.yml
 
-name: sanlam_prod
+name: sanlam-prod
 root: ~/
 
 # Optional tmux socket

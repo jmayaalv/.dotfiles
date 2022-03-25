@@ -1,6 +1,5 @@
 # Colors (One Darker)
 # Note I am using alacritty-ligatures until ligatures make it upstream
-background_opacity: 0.9
 colors:
   # Default colors
   primary:
@@ -68,6 +67,7 @@ font:
     x: 0
     y: 0
 window:
+  opacity: 0.9
   startup_mode: Maximized
   padding:
     x: 2

@@ -6,9 +6,9 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "selectrum-prescient" "../../../../.emacs.d/elpa/selectrum-prescient-20211228.417/selectrum-prescient.el"
-;;;;;;  "6b4689cf01f1c7f24d7700dc1cb0434a")
-;;; Generated autoloads from ../../../../.emacs.d/elpa/selectrum-prescient-20211228.417/selectrum-prescient.el
+;;;### (autoloads nil "selectrum-prescient" "../../../../../.emacs.d/elpa/selectrum-prescient-20211228.417/selectrum-prescient.el"
+;;;;;;  "7a9dec8a58e3e27286d119dd9fe3470f")
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/selectrum-prescient-20211228.417/selectrum-prescient.el
 
 (defvar selectrum-prescient-mode nil "\
 Non-nil if Selectrum-Prescient mode is enabled.
@@ -31,9 +31,9 @@ and toggle it if ARG is `toggle'; disable the mode otherwise.
 \(fn &optional ARG)" t nil)
 
 ;;;### (autoloads "actual autoloads are elsewhere" "selectrum-prescient"
-;;;;;;  "../../../../.emacs.d/elpa/selectrum-prescient-20211228.417/selectrum-prescient.el"
+;;;;;;  "../../../../../.emacs.d/elpa/selectrum-prescient-20211228.417/selectrum-prescient.el"
 ;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../.emacs.d/elpa/selectrum-prescient-20211228.417/selectrum-prescient.el
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/selectrum-prescient-20211228.417/selectrum-prescient.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "selectrum-prescient" '("selectrum-prescient-")))
 
@@ -41,8 +41,8 @@ and toggle it if ARG is `toggle'; disable the mode otherwise.
 
 ;;;***
 
-;;;### (autoloads nil nil ("../../../../.emacs.d/elpa/selectrum-prescient-20211228.417/selectrum-prescient-autoloads.el"
-;;;;;;  "../../../../.emacs.d/elpa/selectrum-prescient-20211228.417/selectrum-prescient.el")
+;;;### (autoloads nil nil ("../../../../../.emacs.d/elpa/selectrum-prescient-20211228.417/selectrum-prescient-autoloads.el"
+;;;;;;  "../../../../../.emacs.d/elpa/selectrum-prescient-20211228.417/selectrum-prescient.el")
 ;;;;;;  (0 0 0 0))
 
 ;;;***

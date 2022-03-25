@@ -6,9 +6,9 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "git-gutter+" "../../../../.emacs.d/elpa/git-gutter+-20151204.1723/git-gutter+.el"
+;;;### (autoloads nil "git-gutter+" "../../../../../.emacs.d/elpa/git-gutter+-20151204.1723/git-gutter+.el"
 ;;;;;;  "6847b33c38c4065bed24effea85c2ec3")
-;;; Generated autoloads from ../../../../.emacs.d/elpa/git-gutter+-20151204.1723/git-gutter+.el
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/git-gutter+-20151204.1723/git-gutter+.el
 
 (autoload 'git-gutter+-mode "git-gutter+" "\
 Git-Gutter mode
@@ -46,9 +46,9 @@ toggle it if ARG is `toggle'; disable the mode otherwise.
 Commit staged changes. If nothing is staged, ask to stage the current buffer." t nil)
 
 ;;;### (autoloads "actual autoloads are elsewhere" "git-gutter+"
-;;;;;;  "../../../../.emacs.d/elpa/git-gutter+-20151204.1723/git-gutter+.el"
+;;;;;;  "../../../../../.emacs.d/elpa/git-gutter+-20151204.1723/git-gutter+.el"
 ;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../.emacs.d/elpa/git-gutter+-20151204.1723/git-gutter+.el
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/git-gutter+-20151204.1723/git-gutter+.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "git-gutter+" '("git-gutter+-")))
 
@@ -56,8 +56,8 @@ Commit staged changes. If nothing is staged, ask to stage the current buffer." t
 
 ;;;***
 
-;;;### (autoloads nil nil ("../../../../.emacs.d/elpa/git-gutter+-20151204.1723/git-gutter+-autoloads.el"
-;;;;;;  "../../../../.emacs.d/elpa/git-gutter+-20151204.1723/git-gutter+.el")
+;;;### (autoloads nil nil ("../../../../../.emacs.d/elpa/git-gutter+-20151204.1723/git-gutter+-autoloads.el"
+;;;;;;  "../../../../../.emacs.d/elpa/git-gutter+-20151204.1723/git-gutter+.el")
 ;;;;;;  (0 0 0 0))
 
 ;;;***

@@ -1,0 +1,6 @@
+(undo-tree-save-format-version . 1)
+"c128f915df130768f30af94db0f6c4237dbd97c5"
+[nil nil nil nil (25149 65492 614287 0) 0 nil]
+([nil nil ((#("_" 0 1 (fontified t)) . -68) (undo-tree-id0 . -1) 69 (t 25149 60750 840770 91000)) nil (25149 65492 614286 0) 0 nil])
+([nil current ((68 . 69)) nil (25149 65492 614263 0) 0 nil])
+nil

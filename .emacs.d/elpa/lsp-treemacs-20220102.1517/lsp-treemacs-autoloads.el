@@ -6,9 +6,9 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "lsp-treemacs" "../../../../.emacs.d/elpa/lsp-treemacs-20220102.1517/lsp-treemacs.el"
+;;;### (autoloads nil "lsp-treemacs" "../../../../../.emacs.d/elpa/lsp-treemacs-20220102.1517/lsp-treemacs.el"
 ;;;;;;  "d6749c2bc7568caaab0f59a8fb0789e3")
-;;; Generated autoloads from ../../../../.emacs.d/elpa/lsp-treemacs-20220102.1517/lsp-treemacs.el
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/lsp-treemacs-20220102.1517/lsp-treemacs.el
 
 (autoload 'lsp-treemacs-symbols "lsp-treemacs" "\
 Show symbols view." t nil)
@@ -67,9 +67,9 @@ With prefix 2 show both.
 (autoload 'lsp-treemacs-errors-list "lsp-treemacs" nil t nil)
 
 ;;;### (autoloads "actual autoloads are elsewhere" "lsp-treemacs"
-;;;;;;  "../../../../.emacs.d/elpa/lsp-treemacs-20220102.1517/lsp-treemacs.el"
+;;;;;;  "../../../../../.emacs.d/elpa/lsp-treemacs-20220102.1517/lsp-treemacs.el"
 ;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../.emacs.d/elpa/lsp-treemacs-20220102.1517/lsp-treemacs.el
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/lsp-treemacs-20220102.1517/lsp-treemacs.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "lsp-treemacs" '("lsp-treemacs-")))
 
@@ -78,18 +78,18 @@ With prefix 2 show both.
 ;;;***
 
 ;;;### (autoloads "actual autoloads are elsewhere" "lsp-treemacs-themes"
-;;;;;;  "../../../../.emacs.d/elpa/lsp-treemacs-20220102.1517/lsp-treemacs-themes.el"
+;;;;;;  "../../../../../.emacs.d/elpa/lsp-treemacs-20220102.1517/lsp-treemacs-themes.el"
 ;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../.emacs.d/elpa/lsp-treemacs-20220102.1517/lsp-treemacs-themes.el
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/lsp-treemacs-20220102.1517/lsp-treemacs-themes.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "lsp-treemacs-themes" '("lsp-treemacs-theme")))
 
 ;;;***
 
-;;;### (autoloads nil nil ("../../../../.emacs.d/elpa/lsp-treemacs-20220102.1517/lsp-treemacs-autoloads.el"
-;;;;;;  "../../../../.emacs.d/elpa/lsp-treemacs-20220102.1517/lsp-treemacs-pkg.el"
-;;;;;;  "../../../../.emacs.d/elpa/lsp-treemacs-20220102.1517/lsp-treemacs-themes.el"
-;;;;;;  "../../../../.emacs.d/elpa/lsp-treemacs-20220102.1517/lsp-treemacs.el")
+;;;### (autoloads nil nil ("../../../../../.emacs.d/elpa/lsp-treemacs-20220102.1517/lsp-treemacs-autoloads.el"
+;;;;;;  "../../../../../.emacs.d/elpa/lsp-treemacs-20220102.1517/lsp-treemacs-pkg.el"
+;;;;;;  "../../../../../.emacs.d/elpa/lsp-treemacs-20220102.1517/lsp-treemacs-themes.el"
+;;;;;;  "../../../../../.emacs.d/elpa/lsp-treemacs-20220102.1517/lsp-treemacs.el")
 ;;;;;;  (0 0 0 0))
 
 ;;;***

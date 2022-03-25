@@ -1,6 +1,6 @@
 # /Users/jmaya/.config/tmuxinator/agl_prod.yml
 
-name: agl_prod
+name: agl-prod
 root: ~/
 
 # Optional tmux socket

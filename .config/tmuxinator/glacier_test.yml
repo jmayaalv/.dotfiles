@@ -1,6 +1,6 @@
 # /Users/jmaya/.config/tmuxinator/glacier_test.yml
 
-name: glacier_test
+name: glacier-test
 root: ~/
 
 # Optional tmux socket

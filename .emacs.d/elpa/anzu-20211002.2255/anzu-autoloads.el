@@ -6,9 +6,9 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "anzu" "../../../../.emacs.d/elpa/anzu-20211002.2255/anzu.el"
+;;;### (autoloads nil "anzu" "../../../../../.emacs.d/elpa/anzu-20211002.2255/anzu.el"
 ;;;;;;  "3e8acf414f9a34fc10729db464c6396d")
-;;; Generated autoloads from ../../../../.emacs.d/elpa/anzu-20211002.2255/anzu.el
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/anzu-20211002.2255/anzu.el
 
 (autoload 'anzu-mode "anzu" "\
 minor-mode which display search information in mode-line.
@@ -73,9 +73,9 @@ anzu version of `isearch-query-replace-regexp'.
 
 \(fn ARG)" t nil)
 
-;;;### (autoloads "actual autoloads are elsewhere" "anzu" "../../../../.emacs.d/elpa/anzu-20211002.2255/anzu.el"
+;;;### (autoloads "actual autoloads are elsewhere" "anzu" "../../../../../.emacs.d/elpa/anzu-20211002.2255/anzu.el"
 ;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../.emacs.d/elpa/anzu-20211002.2255/anzu.el
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/anzu-20211002.2255/anzu.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "anzu" '("anzu")))
 
@@ -83,9 +83,9 @@ anzu version of `isearch-query-replace-regexp'.
 
 ;;;***
 
-;;;### (autoloads nil nil ("../../../../.emacs.d/elpa/anzu-20211002.2255/anzu-autoloads.el"
-;;;;;;  "../../../../.emacs.d/elpa/anzu-20211002.2255/anzu.el") (0
-;;;;;;  0 0 0))
+;;;### (autoloads nil nil ("../../../../../.emacs.d/elpa/anzu-20211002.2255/anzu-autoloads.el"
+;;;;;;  "../../../../../.emacs.d/elpa/anzu-20211002.2255/anzu.el")
+;;;;;;  (0 0 0 0))
 
 ;;;***
 

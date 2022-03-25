@@ -1,6 +1,6 @@
 # /Users/jmaya/.config/tmuxinator/allangray_test.yml
 
-name: allangray_test
+name: allangray-test
 root: ~/
 
 # Optional tmux socket

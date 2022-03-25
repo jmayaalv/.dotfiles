@@ -7,16 +7,16 @@
 
 
 ;;;### (autoloads "actual autoloads are elsewhere" "fringe-helper"
-;;;;;;  "../../../../.emacs.d/elpa/fringe-helper-20140620.2109/fringe-helper.el"
+;;;;;;  "../../../../../.emacs.d/elpa/fringe-helper-20140620.2109/fringe-helper.el"
 ;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../.emacs.d/elpa/fringe-helper-20140620.2109/fringe-helper.el
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/fringe-helper-20140620.2109/fringe-helper.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "fringe-helper" '("fringe-")))
 
 ;;;***
 
-;;;### (autoloads nil nil ("../../../../.emacs.d/elpa/fringe-helper-20140620.2109/fringe-helper-autoloads.el"
-;;;;;;  "../../../../.emacs.d/elpa/fringe-helper-20140620.2109/fringe-helper.el")
+;;;### (autoloads nil nil ("../../../../../.emacs.d/elpa/fringe-helper-20140620.2109/fringe-helper-autoloads.el"
+;;;;;;  "../../../../../.emacs.d/elpa/fringe-helper-20140620.2109/fringe-helper.el")
 ;;;;;;  (0 0 0 0))
 
 ;;;***

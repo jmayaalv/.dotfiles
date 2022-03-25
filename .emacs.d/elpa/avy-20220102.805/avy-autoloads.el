@@ -6,9 +6,9 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "avy" "../../../../.emacs.d/elpa/avy-20220102.805/avy.el"
+;;;### (autoloads nil "avy" "../../../../../.emacs.d/elpa/avy-20220102.805/avy.el"
 ;;;;;;  "e580ab46112fc17d0c28c6c6e05a8503")
-;;; Generated autoloads from ../../../../.emacs.d/elpa/avy-20220102.805/avy.el
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/avy-20220102.805/avy.el
 
 (autoload 'avy-process "avy" "\
 Select one of CANDIDATES using `avy-read'.
@@ -263,9 +263,9 @@ The window scope is determined by `avy-all-windows' (ARG negates it).
 (autoload 'avy-transpose-lines-in-region "avy" "\
 Transpose lines in the active region." t nil)
 
-;;;### (autoloads "actual autoloads are elsewhere" "avy" "../../../../.emacs.d/elpa/avy-20220102.805/avy.el"
+;;;### (autoloads "actual autoloads are elsewhere" "avy" "../../../../../.emacs.d/elpa/avy-20220102.805/avy.el"
 ;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../.emacs.d/elpa/avy-20220102.805/avy.el
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/avy-20220102.805/avy.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "avy" '("avy-")))
 
@@ -273,9 +273,9 @@ Transpose lines in the active region." t nil)
 
 ;;;***
 
-;;;### (autoloads nil nil ("../../../../.emacs.d/elpa/avy-20220102.805/avy-autoloads.el"
-;;;;;;  "../../../../.emacs.d/elpa/avy-20220102.805/avy.el") (0 0
-;;;;;;  0 0))
+;;;### (autoloads nil nil ("../../../../../.emacs.d/elpa/avy-20220102.805/avy-autoloads.el"
+;;;;;;  "../../../../../.emacs.d/elpa/avy-20220102.805/avy.el") (0
+;;;;;;  0 0 0))
 
 ;;;***
 

@@ -6,9 +6,9 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "rainbow-delimiters" "../../../../.emacs.d/elpa/rainbow-delimiters-20210515.1254/rainbow-delimiters.el"
-;;;;;;  "5978f88ab96555ace6a69924e7aecb7f")
-;;; Generated autoloads from ../../../../.emacs.d/elpa/rainbow-delimiters-20210515.1254/rainbow-delimiters.el
+;;;### (autoloads nil "rainbow-delimiters" "../../../../../.emacs.d/elpa/rainbow-delimiters-20210515.1254/rainbow-delimiters.el"
+;;;;;;  "14d399c064f52e1c5bcd9493e17e248a")
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/rainbow-delimiters-20210515.1254/rainbow-delimiters.el
 
 (autoload 'rainbow-delimiters-mode "rainbow-delimiters" "\
 Highlight nested parentheses, brackets, and braces according to their depth.
@@ -27,9 +27,9 @@ Enable `rainbow-delimiters-mode'." nil nil)
 Disable `rainbow-delimiters-mode'." nil nil)
 
 ;;;### (autoloads "actual autoloads are elsewhere" "rainbow-delimiters"
-;;;;;;  "../../../../.emacs.d/elpa/rainbow-delimiters-20210515.1254/rainbow-delimiters.el"
+;;;;;;  "../../../../../.emacs.d/elpa/rainbow-delimiters-20210515.1254/rainbow-delimiters.el"
 ;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../.emacs.d/elpa/rainbow-delimiters-20210515.1254/rainbow-delimiters.el
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/rainbow-delimiters-20210515.1254/rainbow-delimiters.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "rainbow-delimiters" '("rainbow-delimiters-")))
 
@@ -37,8 +37,8 @@ Disable `rainbow-delimiters-mode'." nil nil)
 
 ;;;***
 
-;;;### (autoloads nil nil ("../../../../.emacs.d/elpa/rainbow-delimiters-20210515.1254/rainbow-delimiters-autoloads.el"
-;;;;;;  "../../../../.emacs.d/elpa/rainbow-delimiters-20210515.1254/rainbow-delimiters.el")
+;;;### (autoloads nil nil ("../../../../../.emacs.d/elpa/rainbow-delimiters-20210515.1254/rainbow-delimiters-autoloads.el"
+;;;;;;  "../../../../../.emacs.d/elpa/rainbow-delimiters-20210515.1254/rainbow-delimiters.el")
 ;;;;;;  (0 0 0 0))
 
 ;;;***

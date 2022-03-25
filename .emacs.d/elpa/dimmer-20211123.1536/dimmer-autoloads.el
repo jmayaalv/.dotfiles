@@ -6,9 +6,9 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "dimmer" "../../../../.emacs.d/elpa/dimmer-20211123.1536/dimmer.el"
+;;;### (autoloads nil "dimmer" "../../../../../.emacs.d/elpa/dimmer-20211123.1536/dimmer.el"
 ;;;;;;  "3f8933c8b6a9d9d2d424b7a4b7876c44")
-;;; Generated autoloads from ../../../../.emacs.d/elpa/dimmer-20211123.1536/dimmer.el
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/dimmer-20211123.1536/dimmer.el
 
 (autoload 'dimmer-configure-company-box "dimmer" "\
 Convenience setting for company-box users.
@@ -73,9 +73,9 @@ ARG is `toggle'; disable the mode otherwise.
 
 (define-obsolete-function-alias 'dimmer-activate 'dimmer-mode "0.2.0")
 
-;;;### (autoloads "actual autoloads are elsewhere" "dimmer" "../../../../.emacs.d/elpa/dimmer-20211123.1536/dimmer.el"
+;;;### (autoloads "actual autoloads are elsewhere" "dimmer" "../../../../../.emacs.d/elpa/dimmer-20211123.1536/dimmer.el"
 ;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../.emacs.d/elpa/dimmer-20211123.1536/dimmer.el
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/dimmer-20211123.1536/dimmer.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "dimmer" '("dimmer-")))
 
@@ -83,8 +83,8 @@ ARG is `toggle'; disable the mode otherwise.
 
 ;;;***
 
-;;;### (autoloads nil nil ("../../../../.emacs.d/elpa/dimmer-20211123.1536/dimmer-autoloads.el"
-;;;;;;  "../../../../.emacs.d/elpa/dimmer-20211123.1536/dimmer.el")
+;;;### (autoloads nil nil ("../../../../../.emacs.d/elpa/dimmer-20211123.1536/dimmer-autoloads.el"
+;;;;;;  "../../../../../.emacs.d/elpa/dimmer-20211123.1536/dimmer.el")
 ;;;;;;  (0 0 0 0))
 
 ;;;***

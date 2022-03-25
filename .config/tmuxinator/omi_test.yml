@@ -1,6 +1,6 @@
 # /Users/jmaya/.config/tmuxinator/omi_test.yml
 
-name: omi_test
+name: omi-test
 root: ~/
 
 # Optional tmux socket

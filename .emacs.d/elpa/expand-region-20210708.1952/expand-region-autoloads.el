@@ -7,71 +7,71 @@
 
 
 ;;;### (autoloads "actual autoloads are elsewhere" "cc-mode-expansions"
-;;;;;;  "../../../../.emacs.d/elpa/expand-region-20210708.1952/cc-mode-expansions.el"
+;;;;;;  "../../../../../.emacs.d/elpa/expand-region-20210708.1952/cc-mode-expansions.el"
 ;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../.emacs.d/elpa/expand-region-20210708.1952/cc-mode-expansions.el
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/expand-region-20210708.1952/cc-mode-expansions.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "cc-mode-expansions" '("er/")))
 
 ;;;***
 
 ;;;### (autoloads "actual autoloads are elsewhere" "clojure-mode-expansions"
-;;;;;;  "../../../../.emacs.d/elpa/expand-region-20210708.1952/clojure-mode-expansions.el"
+;;;;;;  "../../../../../.emacs.d/elpa/expand-region-20210708.1952/clojure-mode-expansions.el"
 ;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../.emacs.d/elpa/expand-region-20210708.1952/clojure-mode-expansions.el
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/expand-region-20210708.1952/clojure-mode-expansions.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "clojure-mode-expansions" '("er/")))
 
 ;;;***
 
 ;;;### (autoloads "actual autoloads are elsewhere" "cperl-mode-expansions"
-;;;;;;  "../../../../.emacs.d/elpa/expand-region-20210708.1952/cperl-mode-expansions.el"
+;;;;;;  "../../../../../.emacs.d/elpa/expand-region-20210708.1952/cperl-mode-expansions.el"
 ;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../.emacs.d/elpa/expand-region-20210708.1952/cperl-mode-expansions.el
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/expand-region-20210708.1952/cperl-mode-expansions.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "cperl-mode-expansions" '("er/")))
 
 ;;;***
 
 ;;;### (autoloads "actual autoloads are elsewhere" "css-mode-expansions"
-;;;;;;  "../../../../.emacs.d/elpa/expand-region-20210708.1952/css-mode-expansions.el"
+;;;;;;  "../../../../../.emacs.d/elpa/expand-region-20210708.1952/css-mode-expansions.el"
 ;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../.emacs.d/elpa/expand-region-20210708.1952/css-mode-expansions.el
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/expand-region-20210708.1952/css-mode-expansions.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "css-mode-expansions" '("er/")))
 
 ;;;***
 
 ;;;### (autoloads "actual autoloads are elsewhere" "enh-ruby-mode-expansions"
-;;;;;;  "../../../../.emacs.d/elpa/expand-region-20210708.1952/enh-ruby-mode-expansions.el"
+;;;;;;  "../../../../../.emacs.d/elpa/expand-region-20210708.1952/enh-ruby-mode-expansions.el"
 ;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../.emacs.d/elpa/expand-region-20210708.1952/enh-ruby-mode-expansions.el
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/expand-region-20210708.1952/enh-ruby-mode-expansions.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "enh-ruby-mode-expansions" '("er/add-enh-ruby-mode-expansions")))
 
 ;;;***
 
 ;;;### (autoloads "actual autoloads are elsewhere" "er-basic-expansions"
-;;;;;;  "../../../../.emacs.d/elpa/expand-region-20210708.1952/er-basic-expansions.el"
+;;;;;;  "../../../../../.emacs.d/elpa/expand-region-20210708.1952/er-basic-expansions.el"
 ;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../.emacs.d/elpa/expand-region-20210708.1952/er-basic-expansions.el
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/expand-region-20210708.1952/er-basic-expansions.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "er-basic-expansions" '("er--" "er/mark-")))
 
 ;;;***
 
 ;;;### (autoloads "actual autoloads are elsewhere" "erlang-mode-expansions"
-;;;;;;  "../../../../.emacs.d/elpa/expand-region-20210708.1952/erlang-mode-expansions.el"
+;;;;;;  "../../../../../.emacs.d/elpa/expand-region-20210708.1952/erlang-mode-expansions.el"
 ;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../.emacs.d/elpa/expand-region-20210708.1952/erlang-mode-expansions.el
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/expand-region-20210708.1952/erlang-mode-expansions.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "erlang-mode-expansions" '("er/add-erlang-mode-expansions")))
 
 ;;;***
 
-;;;### (autoloads nil "expand-region" "../../../../.emacs.d/elpa/expand-region-20210708.1952/expand-region.el"
+;;;### (autoloads nil "expand-region" "../../../../../.emacs.d/elpa/expand-region-20210708.1952/expand-region.el"
 ;;;;;;  "aaf5d7bb9953e8c4dc581760b598a497")
-;;; Generated autoloads from ../../../../.emacs.d/elpa/expand-region-20210708.1952/expand-region.el
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/expand-region-20210708.1952/expand-region.el
 
 (autoload 'er/expand-region "expand-region" "\
 Increase selected region by semantic units.
@@ -86,17 +86,17 @@ before calling `er/expand-region' for the first time.
 ;;;***
 
 ;;;### (autoloads "actual autoloads are elsewhere" "expand-region-core"
-;;;;;;  "../../../../.emacs.d/elpa/expand-region-20210708.1952/expand-region-core.el"
+;;;;;;  "../../../../../.emacs.d/elpa/expand-region-20210708.1952/expand-region-core.el"
 ;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../.emacs.d/elpa/expand-region-20210708.1952/expand-region-core.el
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/expand-region-20210708.1952/expand-region-core.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "expand-region-core" '("er--" "er/")))
 
 ;;;***
 
-;;;### (autoloads nil "expand-region-custom" "../../../../.emacs.d/elpa/expand-region-20210708.1952/expand-region-custom.el"
+;;;### (autoloads nil "expand-region-custom" "../../../../../.emacs.d/elpa/expand-region-20210708.1952/expand-region-custom.el"
 ;;;;;;  "aed247faf825fe6a106f39f34158f955")
-;;; Generated autoloads from ../../../../.emacs.d/elpa/expand-region-20210708.1952/expand-region-custom.el
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/expand-region-20210708.1952/expand-region-custom.el
 
 (let ((loads (get 'expand-region 'custom-loads))) (if (member '"expand-region-custom" loads) nil (put 'expand-region 'custom-loads (cons '"expand-region-custom" loads))))
 
@@ -160,9 +160,9 @@ Whether expand-region should use subword expansions.")
 (custom-autoload 'expand-region-subword-enabled "expand-region-custom" t)
 
 ;;;### (autoloads "actual autoloads are elsewhere" "expand-region-custom"
-;;;;;;  "../../../../.emacs.d/elpa/expand-region-20210708.1952/expand-region-custom.el"
+;;;;;;  "../../../../../.emacs.d/elpa/expand-region-20210708.1952/expand-region-custom.el"
 ;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../.emacs.d/elpa/expand-region-20210708.1952/expand-region-custom.el
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/expand-region-20210708.1952/expand-region-custom.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "expand-region-custom" '("expand-region-")))
 
@@ -171,197 +171,197 @@ Whether expand-region should use subword expansions.")
 ;;;***
 
 ;;;### (autoloads "actual autoloads are elsewhere" "feature-mode-expansions"
-;;;;;;  "../../../../.emacs.d/elpa/expand-region-20210708.1952/feature-mode-expansions.el"
+;;;;;;  "../../../../../.emacs.d/elpa/expand-region-20210708.1952/feature-mode-expansions.el"
 ;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../.emacs.d/elpa/expand-region-20210708.1952/feature-mode-expansions.el
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/expand-region-20210708.1952/feature-mode-expansions.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "feature-mode-expansions" '("er--block-between-keywords" "er/")))
 
 ;;;***
 
 ;;;### (autoloads "actual autoloads are elsewhere" "html-mode-expansions"
-;;;;;;  "../../../../.emacs.d/elpa/expand-region-20210708.1952/html-mode-expansions.el"
+;;;;;;  "../../../../../.emacs.d/elpa/expand-region-20210708.1952/html-mode-expansions.el"
 ;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../.emacs.d/elpa/expand-region-20210708.1952/html-mode-expansions.el
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/expand-region-20210708.1952/html-mode-expansions.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "html-mode-expansions" '("er--" "er/")))
 
 ;;;***
 
 ;;;### (autoloads "actual autoloads are elsewhere" "js-mode-expansions"
-;;;;;;  "../../../../.emacs.d/elpa/expand-region-20210708.1952/js-mode-expansions.el"
+;;;;;;  "../../../../../.emacs.d/elpa/expand-region-20210708.1952/js-mode-expansions.el"
 ;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../.emacs.d/elpa/expand-region-20210708.1952/js-mode-expansions.el
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/expand-region-20210708.1952/js-mode-expansions.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "js-mode-expansions" '("er/")))
 
 ;;;***
 
 ;;;### (autoloads "actual autoloads are elsewhere" "js2-mode-expansions"
-;;;;;;  "../../../../.emacs.d/elpa/expand-region-20210708.1952/js2-mode-expansions.el"
+;;;;;;  "../../../../../.emacs.d/elpa/expand-region-20210708.1952/js2-mode-expansions.el"
 ;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../.emacs.d/elpa/expand-region-20210708.1952/js2-mode-expansions.el
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/expand-region-20210708.1952/js2-mode-expansions.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "js2-mode-expansions" '("er/add-js2-mode-expansions" "js2-mark-parent-statement")))
 
 ;;;***
 
 ;;;### (autoloads "actual autoloads are elsewhere" "jsp-expansions"
-;;;;;;  "../../../../.emacs.d/elpa/expand-region-20210708.1952/jsp-expansions.el"
+;;;;;;  "../../../../../.emacs.d/elpa/expand-region-20210708.1952/jsp-expansions.el"
 ;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../.emacs.d/elpa/expand-region-20210708.1952/jsp-expansions.el
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/expand-region-20210708.1952/jsp-expansions.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "jsp-expansions" '("er/")))
 
 ;;;***
 
 ;;;### (autoloads "actual autoloads are elsewhere" "latex-mode-expansions"
-;;;;;;  "../../../../.emacs.d/elpa/expand-region-20210708.1952/latex-mode-expansions.el"
+;;;;;;  "../../../../../.emacs.d/elpa/expand-region-20210708.1952/latex-mode-expansions.el"
 ;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../.emacs.d/elpa/expand-region-20210708.1952/latex-mode-expansions.el
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/expand-region-20210708.1952/latex-mode-expansions.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "latex-mode-expansions" '("er/")))
 
 ;;;***
 
 ;;;### (autoloads "actual autoloads are elsewhere" "nxml-mode-expansions"
-;;;;;;  "../../../../.emacs.d/elpa/expand-region-20210708.1952/nxml-mode-expansions.el"
+;;;;;;  "../../../../../.emacs.d/elpa/expand-region-20210708.1952/nxml-mode-expansions.el"
 ;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../.emacs.d/elpa/expand-region-20210708.1952/nxml-mode-expansions.el
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/expand-region-20210708.1952/nxml-mode-expansions.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "nxml-mode-expansions" '("er/")))
 
 ;;;***
 
 ;;;### (autoloads "actual autoloads are elsewhere" "octave-expansions"
-;;;;;;  "../../../../.emacs.d/elpa/expand-region-20210708.1952/octave-expansions.el"
+;;;;;;  "../../../../../.emacs.d/elpa/expand-region-20210708.1952/octave-expansions.el"
 ;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../.emacs.d/elpa/expand-region-20210708.1952/octave-expansions.el
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/expand-region-20210708.1952/octave-expansions.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "octave-expansions" '("er/")))
 
 ;;;***
 
 ;;;### (autoloads "actual autoloads are elsewhere" "python-el-expansions"
-;;;;;;  "../../../../.emacs.d/elpa/expand-region-20210708.1952/python-el-expansions.el"
+;;;;;;  "../../../../../.emacs.d/elpa/expand-region-20210708.1952/python-el-expansions.el"
 ;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../.emacs.d/elpa/expand-region-20210708.1952/python-el-expansions.el
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/expand-region-20210708.1952/python-el-expansions.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "python-el-expansions" '("er--python-string-delimiter" "er/")))
 
 ;;;***
 
 ;;;### (autoloads "actual autoloads are elsewhere" "python-el-fgallina-expansions"
-;;;;;;  "../../../../.emacs.d/elpa/expand-region-20210708.1952/python-el-fgallina-expansions.el"
+;;;;;;  "../../../../../.emacs.d/elpa/expand-region-20210708.1952/python-el-fgallina-expansions.el"
 ;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../.emacs.d/elpa/expand-region-20210708.1952/python-el-fgallina-expansions.el
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/expand-region-20210708.1952/python-el-fgallina-expansions.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "python-el-fgallina-expansions" '("er--python-" "er/")))
 
 ;;;***
 
 ;;;### (autoloads "actual autoloads are elsewhere" "python-mode-expansions"
-;;;;;;  "../../../../.emacs.d/elpa/expand-region-20210708.1952/python-mode-expansions.el"
+;;;;;;  "../../../../../.emacs.d/elpa/expand-region-20210708.1952/python-mode-expansions.el"
 ;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../.emacs.d/elpa/expand-region-20210708.1952/python-mode-expansions.el
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/expand-region-20210708.1952/python-mode-expansions.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "python-mode-expansions" '("er--" "er/" "py-goto-beyond-clause")))
 
 ;;;***
 
 ;;;### (autoloads "actual autoloads are elsewhere" "ruby-mode-expansions"
-;;;;;;  "../../../../.emacs.d/elpa/expand-region-20210708.1952/ruby-mode-expansions.el"
+;;;;;;  "../../../../../.emacs.d/elpa/expand-region-20210708.1952/ruby-mode-expansions.el"
 ;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../.emacs.d/elpa/expand-region-20210708.1952/ruby-mode-expansions.el
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/expand-region-20210708.1952/ruby-mode-expansions.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "ruby-mode-expansions" '("er/")))
 
 ;;;***
 
 ;;;### (autoloads "actual autoloads are elsewhere" "sml-mode-expansions"
-;;;;;;  "../../../../.emacs.d/elpa/expand-region-20210708.1952/sml-mode-expansions.el"
+;;;;;;  "../../../../../.emacs.d/elpa/expand-region-20210708.1952/sml-mode-expansions.el"
 ;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../.emacs.d/elpa/expand-region-20210708.1952/sml-mode-expansions.el
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/expand-region-20210708.1952/sml-mode-expansions.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "sml-mode-expansions" '("er/")))
 
 ;;;***
 
 ;;;### (autoloads "actual autoloads are elsewhere" "subword-mode-expansions"
-;;;;;;  "../../../../.emacs.d/elpa/expand-region-20210708.1952/subword-mode-expansions.el"
+;;;;;;  "../../../../../.emacs.d/elpa/expand-region-20210708.1952/subword-mode-expansions.el"
 ;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../.emacs.d/elpa/expand-region-20210708.1952/subword-mode-expansions.el
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/expand-region-20210708.1952/subword-mode-expansions.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "subword-mode-expansions" '("er/")))
 
 ;;;***
 
 ;;;### (autoloads "actual autoloads are elsewhere" "text-mode-expansions"
-;;;;;;  "../../../../.emacs.d/elpa/expand-region-20210708.1952/text-mode-expansions.el"
+;;;;;;  "../../../../../.emacs.d/elpa/expand-region-20210708.1952/text-mode-expansions.el"
 ;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../.emacs.d/elpa/expand-region-20210708.1952/text-mode-expansions.el
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/expand-region-20210708.1952/text-mode-expansions.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "text-mode-expansions" '("er/")))
 
 ;;;***
 
 ;;;### (autoloads "actual autoloads are elsewhere" "the-org-mode-expansions"
-;;;;;;  "../../../../.emacs.d/elpa/expand-region-20210708.1952/the-org-mode-expansions.el"
+;;;;;;  "../../../../../.emacs.d/elpa/expand-region-20210708.1952/the-org-mode-expansions.el"
 ;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../.emacs.d/elpa/expand-region-20210708.1952/the-org-mode-expansions.el
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/expand-region-20210708.1952/the-org-mode-expansions.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "the-org-mode-expansions" '("er/")))
 
 ;;;***
 
 ;;;### (autoloads "actual autoloads are elsewhere" "web-mode-expansions"
-;;;;;;  "../../../../.emacs.d/elpa/expand-region-20210708.1952/web-mode-expansions.el"
+;;;;;;  "../../../../../.emacs.d/elpa/expand-region-20210708.1952/web-mode-expansions.el"
 ;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../.emacs.d/elpa/expand-region-20210708.1952/web-mode-expansions.el
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/expand-region-20210708.1952/web-mode-expansions.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "web-mode-expansions" '("er/add-web-mode-expansions")))
 
 ;;;***
 
 ;;;### (autoloads "actual autoloads are elsewhere" "yaml-mode-expansions"
-;;;;;;  "../../../../.emacs.d/elpa/expand-region-20210708.1952/yaml-mode-expansions.el"
+;;;;;;  "../../../../../.emacs.d/elpa/expand-region-20210708.1952/yaml-mode-expansions.el"
 ;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../.emacs.d/elpa/expand-region-20210708.1952/yaml-mode-expansions.el
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/expand-region-20210708.1952/yaml-mode-expansions.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "yaml-mode-expansions" '("er--" "er/" "yaml-indent")))
 
 ;;;***
 
-;;;### (autoloads nil nil ("../../../../.emacs.d/elpa/expand-region-20210708.1952/cc-mode-expansions.el"
-;;;;;;  "../../../../.emacs.d/elpa/expand-region-20210708.1952/clojure-mode-expansions.el"
-;;;;;;  "../../../../.emacs.d/elpa/expand-region-20210708.1952/cperl-mode-expansions.el"
-;;;;;;  "../../../../.emacs.d/elpa/expand-region-20210708.1952/css-mode-expansions.el"
-;;;;;;  "../../../../.emacs.d/elpa/expand-region-20210708.1952/enh-ruby-mode-expansions.el"
-;;;;;;  "../../../../.emacs.d/elpa/expand-region-20210708.1952/er-basic-expansions.el"
-;;;;;;  "../../../../.emacs.d/elpa/expand-region-20210708.1952/erlang-mode-expansions.el"
-;;;;;;  "../../../../.emacs.d/elpa/expand-region-20210708.1952/expand-region-autoloads.el"
-;;;;;;  "../../../../.emacs.d/elpa/expand-region-20210708.1952/expand-region-core.el"
-;;;;;;  "../../../../.emacs.d/elpa/expand-region-20210708.1952/expand-region-custom.el"
-;;;;;;  "../../../../.emacs.d/elpa/expand-region-20210708.1952/expand-region-pkg.el"
-;;;;;;  "../../../../.emacs.d/elpa/expand-region-20210708.1952/expand-region.el"
-;;;;;;  "../../../../.emacs.d/elpa/expand-region-20210708.1952/feature-mode-expansions.el"
-;;;;;;  "../../../../.emacs.d/elpa/expand-region-20210708.1952/html-mode-expansions.el"
-;;;;;;  "../../../../.emacs.d/elpa/expand-region-20210708.1952/js-mode-expansions.el"
-;;;;;;  "../../../../.emacs.d/elpa/expand-region-20210708.1952/js2-mode-expansions.el"
-;;;;;;  "../../../../.emacs.d/elpa/expand-region-20210708.1952/jsp-expansions.el"
-;;;;;;  "../../../../.emacs.d/elpa/expand-region-20210708.1952/latex-mode-expansions.el"
-;;;;;;  "../../../../.emacs.d/elpa/expand-region-20210708.1952/nxml-mode-expansions.el"
-;;;;;;  "../../../../.emacs.d/elpa/expand-region-20210708.1952/octave-expansions.el"
-;;;;;;  "../../../../.emacs.d/elpa/expand-region-20210708.1952/python-el-expansions.el"
-;;;;;;  "../../../../.emacs.d/elpa/expand-region-20210708.1952/python-el-fgallina-expansions.el"
-;;;;;;  "../../../../.emacs.d/elpa/expand-region-20210708.1952/python-mode-expansions.el"
-;;;;;;  "../../../../.emacs.d/elpa/expand-region-20210708.1952/ruby-mode-expansions.el"
-;;;;;;  "../../../../.emacs.d/elpa/expand-region-20210708.1952/sml-mode-expansions.el"
-;;;;;;  "../../../../.emacs.d/elpa/expand-region-20210708.1952/subword-mode-expansions.el"
-;;;;;;  "../../../../.emacs.d/elpa/expand-region-20210708.1952/text-mode-expansions.el"
-;;;;;;  "../../../../.emacs.d/elpa/expand-region-20210708.1952/the-org-mode-expansions.el"
-;;;;;;  "../../../../.emacs.d/elpa/expand-region-20210708.1952/web-mode-expansions.el"
-;;;;;;  "../../../../.emacs.d/elpa/expand-region-20210708.1952/yaml-mode-expansions.el")
+;;;### (autoloads nil nil ("../../../../../.emacs.d/elpa/expand-region-20210708.1952/cc-mode-expansions.el"
+;;;;;;  "../../../../../.emacs.d/elpa/expand-region-20210708.1952/clojure-mode-expansions.el"
+;;;;;;  "../../../../../.emacs.d/elpa/expand-region-20210708.1952/cperl-mode-expansions.el"
+;;;;;;  "../../../../../.emacs.d/elpa/expand-region-20210708.1952/css-mode-expansions.el"
+;;;;;;  "../../../../../.emacs.d/elpa/expand-region-20210708.1952/enh-ruby-mode-expansions.el"
+;;;;;;  "../../../../../.emacs.d/elpa/expand-region-20210708.1952/er-basic-expansions.el"
+;;;;;;  "../../../../../.emacs.d/elpa/expand-region-20210708.1952/erlang-mode-expansions.el"
+;;;;;;  "../../../../../.emacs.d/elpa/expand-region-20210708.1952/expand-region-autoloads.el"
+;;;;;;  "../../../../../.emacs.d/elpa/expand-region-20210708.1952/expand-region-core.el"
+;;;;;;  "../../../../../.emacs.d/elpa/expand-region-20210708.1952/expand-region-custom.el"
+;;;;;;  "../../../../../.emacs.d/elpa/expand-region-20210708.1952/expand-region-pkg.el"
+;;;;;;  "../../../../../.emacs.d/elpa/expand-region-20210708.1952/expand-region.el"
+;;;;;;  "../../../../../.emacs.d/elpa/expand-region-20210708.1952/feature-mode-expansions.el"
+;;;;;;  "../../../../../.emacs.d/elpa/expand-region-20210708.1952/html-mode-expansions.el"
+;;;;;;  "../../../../../.emacs.d/elpa/expand-region-20210708.1952/js-mode-expansions.el"
+;;;;;;  "../../../../../.emacs.d/elpa/expand-region-20210708.1952/js2-mode-expansions.el"
+;;;;;;  "../../../../../.emacs.d/elpa/expand-region-20210708.1952/jsp-expansions.el"
+;;;;;;  "../../../../../.emacs.d/elpa/expand-region-20210708.1952/latex-mode-expansions.el"
+;;;;;;  "../../../../../.emacs.d/elpa/expand-region-20210708.1952/nxml-mode-expansions.el"
+;;;;;;  "../../../../../.emacs.d/elpa/expand-region-20210708.1952/octave-expansions.el"
+;;;;;;  "../../../../../.emacs.d/elpa/expand-region-20210708.1952/python-el-expansions.el"
+;;;;;;  "../../../../../.emacs.d/elpa/expand-region-20210708.1952/python-el-fgallina-expansions.el"
+;;;;;;  "../../../../../.emacs.d/elpa/expand-region-20210708.1952/python-mode-expansions.el"
+;;;;;;  "../../../../../.emacs.d/elpa/expand-region-20210708.1952/ruby-mode-expansions.el"
+;;;;;;  "../../../../../.emacs.d/elpa/expand-region-20210708.1952/sml-mode-expansions.el"
+;;;;;;  "../../../../../.emacs.d/elpa/expand-region-20210708.1952/subword-mode-expansions.el"
+;;;;;;  "../../../../../.emacs.d/elpa/expand-region-20210708.1952/text-mode-expansions.el"
+;;;;;;  "../../../../../.emacs.d/elpa/expand-region-20210708.1952/the-org-mode-expansions.el"
+;;;;;;  "../../../../../.emacs.d/elpa/expand-region-20210708.1952/web-mode-expansions.el"
+;;;;;;  "../../../../../.emacs.d/elpa/expand-region-20210708.1952/yaml-mode-expansions.el")
 ;;;;;;  (0 0 0 0))
 
 ;;;***

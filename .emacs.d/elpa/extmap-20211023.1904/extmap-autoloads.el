@@ -6,10 +6,17 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "extmap" "extmap.el" (0 0 0 0))
-;;; Generated autoloads from extmap.el
+;;;### (autoloads "actual autoloads are elsewhere" "extmap" "../../../../../.emacs.d/elpa/extmap-20211023.1904/extmap.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/extmap-20211023.1904/extmap.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "extmap" '("extmap-")))
+
+;;;***
+
+;;;### (autoloads nil nil ("../../../../../.emacs.d/elpa/extmap-20211023.1904/extmap-autoloads.el"
+;;;;;;  "../../../../../.emacs.d/elpa/extmap-20211023.1904/extmap.el")
+;;;;;;  (0 0 0 0))
 
 ;;;***
 

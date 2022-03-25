@@ -6,9 +6,9 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "counsel" "../../../../.emacs.d/elpa/counsel-20211230.1909/counsel.el"
+;;;### (autoloads nil "counsel" "../../../../../.emacs.d/elpa/counsel-20211230.1909/counsel.el"
 ;;;;;;  "d3bc837c3e413024d19f3220a332d269")
-;;; Generated autoloads from ../../../../.emacs.d/elpa/counsel-20211230.1909/counsel.el
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/counsel-20211230.1909/counsel.el
 
 (autoload 'counsel-company "counsel" "\
 Complete using `company-candidates'." t nil)
@@ -507,9 +507,9 @@ Local bindings (`counsel-mode-map'):
 
 \(fn &optional ARG)" t nil)
 
-;;;### (autoloads "actual autoloads are elsewhere" "counsel" "../../../../.emacs.d/elpa/counsel-20211230.1909/counsel.el"
+;;;### (autoloads "actual autoloads are elsewhere" "counsel" "../../../../../.emacs.d/elpa/counsel-20211230.1909/counsel.el"
 ;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../.emacs.d/elpa/counsel-20211230.1909/counsel.el
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/counsel-20211230.1909/counsel.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "counsel" '("counsel-" "ivy-function-called-at-point" "tmm-km-list")))
 
@@ -517,8 +517,8 @@ Local bindings (`counsel-mode-map'):
 
 ;;;***
 
-;;;### (autoloads nil nil ("../../../../.emacs.d/elpa/counsel-20211230.1909/counsel-autoloads.el"
-;;;;;;  "../../../../.emacs.d/elpa/counsel-20211230.1909/counsel.el")
+;;;### (autoloads nil nil ("../../../../../.emacs.d/elpa/counsel-20211230.1909/counsel-autoloads.el"
+;;;;;;  "../../../../../.emacs.d/elpa/counsel-20211230.1909/counsel.el")
 ;;;;;;  (0 0 0 0))
 
 ;;;***

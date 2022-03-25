@@ -6,16 +6,16 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads "actual autoloads are elsewhere" "prescient" "../../../../.emacs.d/elpa/prescient-20211228.417/prescient.el"
+;;;### (autoloads "actual autoloads are elsewhere" "prescient" "../../../../../.emacs.d/elpa/prescient-20211228.417/prescient.el"
 ;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../.emacs.d/elpa/prescient-20211228.417/prescient.el
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/prescient-20211228.417/prescient.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "prescient" '("prescient-")))
 
 ;;;***
 
-;;;### (autoloads nil nil ("../../../../.emacs.d/elpa/prescient-20211228.417/prescient-autoloads.el"
-;;;;;;  "../../../../.emacs.d/elpa/prescient-20211228.417/prescient.el")
+;;;### (autoloads nil nil ("../../../../../.emacs.d/elpa/prescient-20211228.417/prescient-autoloads.el"
+;;;;;;  "../../../../../.emacs.d/elpa/prescient-20211228.417/prescient.el")
 ;;;;;;  (0 0 0 0))
 
 ;;;***

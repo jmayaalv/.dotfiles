@@ -1,6 +1,6 @@
 # /Users/jmaya/.config/tmuxinator/oic_test.yml
 
-name: oic_test
+name: oic-test
 root: ~/
 
 # Optional tmux socket
@@ -48,4 +48,3 @@ windows:
   - test1: ssh -C -o 'ServerAliveInterval 180' devel.jmayaalv@oictest1
   - test2: ssh -C -o 'ServerAliveInterval 180' -L 7000:127.0.0.1:7000 devel.jmayaalv@oictest2
   - test3: ssh -C -o 'ServerAliveInterval 180' -L 7000:127.0.0.1:7000 devel.jmayaalv@oictest3
-

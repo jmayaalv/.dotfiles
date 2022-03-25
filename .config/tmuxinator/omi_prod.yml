@@ -1,6 +1,6 @@
 # /Users/jmaya/.config/tmuxinator/omi_prod.yml
 
-name: omi_prod
+name: omi-prod
 root: ~/
 
 # Optional tmux socket

@@ -1,6 +1,6 @@
 # /Users/jmaya/.config/tmuxinator/oic_prod.yml
 
-name: oic_prod
+name: oic-prod
 root: ~/
 
 # Optional tmux socket

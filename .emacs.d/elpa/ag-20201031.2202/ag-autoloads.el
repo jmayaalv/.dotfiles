@@ -6,9 +6,9 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "ag" "../../../../.emacs.d/elpa/ag-20201031.2202/ag.el"
+;;;### (autoloads nil "ag" "../../../../../.emacs.d/elpa/ag-20201031.2202/ag.el"
 ;;;;;;  "92375525b598ed79349b6f72293dc8da")
-;;; Generated autoloads from ../../../../.emacs.d/elpa/ag-20201031.2202/ag.el
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/ag-20201031.2202/ag.el
 
 (autoload 'ag "ag" "\
 Search using ag in a given DIRECTORY for a given literal search STRING,
@@ -112,9 +112,9 @@ Kill all `ag-mode' buffers." t nil)
 (autoload 'ag-kill-other-buffers "ag" "\
 Kill all `ag-mode' buffers other than the current buffer." t nil)
 
-;;;### (autoloads "actual autoloads are elsewhere" "ag" "../../../../.emacs.d/elpa/ag-20201031.2202/ag.el"
+;;;### (autoloads "actual autoloads are elsewhere" "ag" "../../../../../.emacs.d/elpa/ag-20201031.2202/ag.el"
 ;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../.emacs.d/elpa/ag-20201031.2202/ag.el
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/ag-20201031.2202/ag.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "ag" '("ag-" "ag/")))
 
@@ -122,9 +122,9 @@ Kill all `ag-mode' buffers other than the current buffer." t nil)
 
 ;;;***
 
-;;;### (autoloads nil nil ("../../../../.emacs.d/elpa/ag-20201031.2202/ag-autoloads.el"
-;;;;;;  "../../../../.emacs.d/elpa/ag-20201031.2202/ag.el") (0 0
-;;;;;;  0 0))
+;;;### (autoloads nil nil ("../../../../../.emacs.d/elpa/ag-20201031.2202/ag-autoloads.el"
+;;;;;;  "../../../../../.emacs.d/elpa/ag-20201031.2202/ag.el") (0
+;;;;;;  0 0 0))
 
 ;;;***
 

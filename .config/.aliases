@@ -32,7 +32,7 @@ alias prospero-test='tmuxinator start prospero_test'
 alias sgis-test='tmuxinator start sgis_test'
 alias oic-test='tmuxinator start oic_test'
 
-alias omnia-prod='tmuxinator start omnia_prod'
+alias omnia-prod='tmuxinator start omnia-prod'
 alias agl-prod='tmuxinator start agl_prod'
 alias glacier-prod='tmuxinator start glacier_prod'
 alias oic-prod='tmuxinator start oic_prod'

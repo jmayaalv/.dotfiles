@@ -6,9 +6,9 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "company-quickhelp" "../../../../.emacs.d/elpa/company-quickhelp-20211115.1335/company-quickhelp.el"
+;;;### (autoloads nil "company-quickhelp" "../../../../../.emacs.d/elpa/company-quickhelp-20211115.1335/company-quickhelp.el"
 ;;;;;;  "fb4ebb87c67da0aea9ad3a328fc1e69e")
-;;; Generated autoloads from ../../../../.emacs.d/elpa/company-quickhelp-20211115.1335/company-quickhelp.el
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/company-quickhelp-20211115.1335/company-quickhelp.el
 
 (autoload 'company-quickhelp-local-mode "company-quickhelp" "\
 Provides documentation popups for `company-mode' using `pos-tip'.
@@ -45,9 +45,9 @@ See `company-quickhelp-local-mode' for more information on Company-Quickhelp-Loc
 \(fn &optional ARG)" t nil)
 
 ;;;### (autoloads "actual autoloads are elsewhere" "company-quickhelp"
-;;;;;;  "../../../../.emacs.d/elpa/company-quickhelp-20211115.1335/company-quickhelp.el"
+;;;;;;  "../../../../../.emacs.d/elpa/company-quickhelp-20211115.1335/company-quickhelp.el"
 ;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../.emacs.d/elpa/company-quickhelp-20211115.1335/company-quickhelp.el
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/company-quickhelp-20211115.1335/company-quickhelp.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "company-quickhelp" '("company-quickhelp-")))
 
@@ -55,8 +55,8 @@ See `company-quickhelp-local-mode' for more information on Company-Quickhelp-Loc
 
 ;;;***
 
-;;;### (autoloads nil nil ("../../../../.emacs.d/elpa/company-quickhelp-20211115.1335/company-quickhelp-autoloads.el"
-;;;;;;  "../../../../.emacs.d/elpa/company-quickhelp-20211115.1335/company-quickhelp.el")
+;;;### (autoloads nil nil ("../../../../../.emacs.d/elpa/company-quickhelp-20211115.1335/company-quickhelp-autoloads.el"
+;;;;;;  "../../../../../.emacs.d/elpa/company-quickhelp-20211115.1335/company-quickhelp.el")
 ;;;;;;  (0 0 0 0))
 
 ;;;***

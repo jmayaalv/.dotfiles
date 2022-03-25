@@ -1,6 +1,6 @@
 # /Users/jmaya/.config/tmuxinator/omnia_prod.yml
 
-name: omnia_prod
+name: omnia-prod
 root: ~/
 
 windows:

@@ -6,16 +6,16 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads "actual autoloads are elsewhere" "pcache" "../../../../.emacs.d/elpa/pcache-20201226.634/pcache.el"
+;;;### (autoloads "actual autoloads are elsewhere" "pcache" "../../../../../.emacs.d/elpa/pcache-20201226.634/pcache.el"
 ;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../.emacs.d/elpa/pcache-20201226.634/pcache.el
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/pcache-20201226.634/pcache.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "pcache" '("*pcache-repositor" "pcache-")))
 
 ;;;***
 
-;;;### (autoloads nil nil ("../../../../.emacs.d/elpa/pcache-20201226.634/pcache-autoloads.el"
-;;;;;;  "../../../../.emacs.d/elpa/pcache-20201226.634/pcache.el")
+;;;### (autoloads nil nil ("../../../../../.emacs.d/elpa/pcache-20201226.634/pcache-autoloads.el"
+;;;;;;  "../../../../../.emacs.d/elpa/pcache-20201226.634/pcache.el")
 ;;;;;;  (0 0 0 0))
 
 ;;;***

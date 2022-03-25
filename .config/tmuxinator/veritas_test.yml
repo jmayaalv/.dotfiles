@@ -1,6 +1,6 @@
 # /Users/jmaya/.config/tmuxinator/veritas_test.yml
 
-name: veritas_test
+name: veritas-test
 root: ~/
 
 # Optional tmux socket

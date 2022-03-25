@@ -1,6 +1,6 @@
 # /Users/jmaya/.config/tmuxinator/prospero_test.yml
 
-name: prospero_test
+name: prospero-test
 root: ~/
 
 # Optional tmux socket

@@ -6,9 +6,9 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "org-bullets" "../../../../.emacs.d/elpa/org-bullets-20200317.1740/org-bullets.el"
+;;;### (autoloads nil "org-bullets" "../../../../../.emacs.d/elpa/org-bullets-20200317.1740/org-bullets.el"
 ;;;;;;  "afc6147efb878777b368f8732ddd8538")
-;;; Generated autoloads from ../../../../.emacs.d/elpa/org-bullets-20200317.1740/org-bullets.el
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/org-bullets-20200317.1740/org-bullets.el
 
 (autoload 'org-bullets-mode "org-bullets" "\
 Use UTF8 bullets in Org mode headings.
@@ -21,9 +21,9 @@ toggle it if ARG is `toggle'; disable the mode otherwise.
 \(fn &optional ARG)" t nil)
 
 ;;;### (autoloads "actual autoloads are elsewhere" "org-bullets"
-;;;;;;  "../../../../.emacs.d/elpa/org-bullets-20200317.1740/org-bullets.el"
+;;;;;;  "../../../../../.emacs.d/elpa/org-bullets-20200317.1740/org-bullets.el"
 ;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../.emacs.d/elpa/org-bullets-20200317.1740/org-bullets.el
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/org-bullets-20200317.1740/org-bullets.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-bullets" '("org-bullets-")))
 
@@ -31,8 +31,8 @@ toggle it if ARG is `toggle'; disable the mode otherwise.
 
 ;;;***
 
-;;;### (autoloads nil nil ("../../../../.emacs.d/elpa/org-bullets-20200317.1740/org-bullets-autoloads.el"
-;;;;;;  "../../../../.emacs.d/elpa/org-bullets-20200317.1740/org-bullets.el")
+;;;### (autoloads nil nil ("../../../../../.emacs.d/elpa/org-bullets-20200317.1740/org-bullets-autoloads.el"
+;;;;;;  "../../../../../.emacs.d/elpa/org-bullets-20200317.1740/org-bullets.el")
 ;;;;;;  (0 0 0 0))
 
 ;;;***
