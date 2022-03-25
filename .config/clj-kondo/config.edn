@@ -1,0 +1,7 @@
+{:linters      {:clojure-lsp/unused-public-var {:level   :warning
+                                                :exclude #{user}}
+                :unsorted-required-namespaces  {:level :warning}}
+ :config-paths ["fulcro/" "kane/" "pathom/"]
+ :lint-as      {mount.core/defstate clojure.core/def
+                twarc.core/defjob clojure.core/defn}
+ }

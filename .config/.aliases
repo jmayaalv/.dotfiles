@@ -1,0 +1,40 @@
+# aliases
+
+# exits
+exists() {
+  type $1 > /dev/null 2>&1
+}
+
+is_osx() {
+  if [[ "$(uname)" == "Darwin" ]]; then
+    return 0
+  else
+    return 1
+  fi
+}
+
+alias vi='vim'
+alias cat='bat'
+alias clj-new='clojure -X:new :name'
+alias clj-new-lib='clojure -X:new  :template lib :name'
+
+alias tlocal='tmux new -s local'
+alias attach='tmux attach-session -t'
+
+alias medusa='tmuxinator start medusa'
+alias tom='tmuxinator start tom'
+
+alias allangray-test='tmuxinator start allangray_test'
+alias glacier-test='tmuxinator start glacier_test'
+alias omi-test='tmuxinator start omi_test'
+alias veritas-test='tmuxinator start veritas_test'
+alias prospero-test='tmuxinator start prospero_test'
+alias sgis-test='tmuxinator start sgis_test'
+alias oic-test='tmuxinator start oic_test'
+
+alias omnia-prod='tmuxinator start omnia_prod'
+alias agl-prod='tmuxinator start agl_prod'
+alias glacier-prod='tmuxinator start glacier_prod'
+alias oic-prod='tmuxinator start oic_prod'
+alias omi-prod='tmuxinator start omi_prod'
+alias sgis-prod='tmuxinator start sgis_prod'
