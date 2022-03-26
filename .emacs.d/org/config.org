@@ -311,11 +311,11 @@
    [[https://github.com/purcell/exec-path-from-shell][exec-path-from-shell]].
 
    #+BEGIN_SRC emacs-lisp
-   (use-package exec-path-from-shell
-     :ensure t
-     :config
-     (when (memq window-system '(mac ns))
-     (exec-path-from-shell-initialize)))
+     (use-package exec-path-from-shell
+         :ensure t
+         :config
+          (when (memq window-system '(mac ns))
+            (exec-path-from-shell-initialize)))
 
    #+END_SRC
 
@@ -720,11 +720,12 @@
 
 ** undo tree
    #+BEGIN_SRC emacs-lisp
-   (use-package undo-tree
-       :ensure t
-       :config
-       (global-undo-tree-mode)
-       (diminish 'undo-tree-mode))
+     (use-package undo-tree
+         :ensure t
+         :config
+         (setq undo-tree-auto-save-history nil)
+         (global-undo-tree-mode)
+         (diminish 'undo-tree-mode))
    #+END_SRC
 ** recentf
   #+BEGIN_SRC emacs-lisp
@@ -1658,7 +1659,7 @@
                   :config
                   ;;add paths to your local installation of project mgmt tools, like lein
                   (setenv "PATH" (concat
-                                  "/usr/local/bin" path-separator
+                                  "/opt/homebrew/bin" path-separator
                                   (getenv "PATH")))
 
 
@@ -2767,27 +2768,26 @@
   #+END_SRC
 ** gpg
 
-   Secrets are safe here
-
-
-   #+BEGIN_SRC emacs-lisp
-     (setq auth-sources
-           '((:source "~/.emacs.d/secrets/authinfo2.gpg")))
-     (setq epg-gpg-program "gpg2")
-     (custom-set-variables '(epg-gpg-program  "/usr/local/MacGPG2/bin/gpg2"))
-   #+END_SRC
-
-
 
    Handle querying the passphrase through minibuffer.
 
    #+BEGIN_SRC emacs-lisp
-   (setq epa-pinentry-mode 'loopback)
+     (setq epa-pinentry-mode 'loopback) ; prevent GUI input
+     (setq epg-gpg-program "/opt/homebrew/bin/gpg")
    #+END_SRC
+
+   Secrets are safe here
+
+   #+BEGIN_SRC emacs-lisp
+     (setq auth-sources
+                '((:source "~/.emacs.d/secrets/authinfo.gpg")))
+          ;;(custom-set-variables '(epg-gpg-program  "gpg"))
+   #+END_SRC
+
 ** atlas
    Atlas migrations
    #+BEGIN_SRC emacs-lisp
-     (defvar *atlas-home* "/Users/jmaya/Developer/db-support")
+     (defvar *atlas-home* "/Users/jmayaalv/Developer/db-support")
 
      (defun atlas-migration-name (path client branch)
           "New migration with `PATH` name on the given `CLIENT` using the `BRANCH` and current time."
