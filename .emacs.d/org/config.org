@@ -463,7 +463,9 @@
           (lambda ()
             (setq auto-composition-mode nil)))
 
-   #+END_SRC
+      (add-hook 'sql-interactive-mode-hook
+          (lambda ()
+            (setq auto-composition-mode nil)))
 
    #+END_SRC
 

@@ -1,6 +1,6 @@
-# /Users/jmaya/.config/tmuxinator/omi_test.yml
+# /Users/jmayaalv/.config/tmuxinator/veritas_prod.yml
 
-name: omi-test
+name: veritas-prod
 root: ~/
 
 # Optional tmux socket
@@ -45,6 +45,4 @@ root: ~/
 # attach: false
 
 windows:
-  - test1: ssh -C -o 'ServerAliveInterval 180' devel.jmayaalv@omitest1
-  - test2: ssh -C -o 'ServerAliveInterval 180' -L 7000:127.0.0.1:7000 devel.jmayaalv@omitest2
-  - test4: ssh -C -o 'ServerAliveInterval 180' -L 7000:127.0.0.1:7000 devel.jmayaalv@omitest4
+  - web1: ssh -C -o 'ServerAliveInterval 180' -L 8161:127.0.0.1:8161 devel.jmayaalv@veritasprod
