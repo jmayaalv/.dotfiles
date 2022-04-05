@@ -6,8 +6,9 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "doom-modeline" "doom-modeline.el" (0 0 0 0))
-;;; Generated autoloads from doom-modeline.el
+;;;### (autoloads nil "doom-modeline" "../../../../../.emacs.d/elpa/doom-modeline-20220325.554/doom-modeline.el"
+;;;;;;  "e2312eebdc786e8a6f80b1aba6641675")
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/doom-modeline-20220325.554/doom-modeline.el
 
 (autoload 'doom-modeline-init "doom-modeline" "\
 Initialize doom mode-line." nil nil)
@@ -78,42 +79,64 @@ from Lisp, also enable the mode if ARG is omitted or nil, and
 toggle it if ARG is `toggle'; disable the mode otherwise.
 
 \(fn &optional ARG)" t nil)
+
+;;;### (autoloads "actual autoloads are elsewhere" "doom-modeline"
+;;;;;;  "../../../../../.emacs.d/elpa/doom-modeline-20220325.554/doom-modeline.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/doom-modeline-20220325.554/doom-modeline.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-modeline" '("doom-modeline-mode-map")))
 
 ;;;***
+
+;;;***
 
-;;;### (autoloads nil "doom-modeline-core" "doom-modeline-core.el"
+;;;### (autoloads "actual autoloads are elsewhere" "doom-modeline-core"
+;;;;;;  "../../../../../.emacs.d/elpa/doom-modeline-20220325.554/doom-modeline-core.el"
 ;;;;;;  (0 0 0 0))
-;;; Generated autoloads from doom-modeline-core.el
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/doom-modeline-20220325.554/doom-modeline-core.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-modeline-core" '("doom-modeline")))
 
 ;;;***
 
-;;;### (autoloads nil "doom-modeline-env" "doom-modeline-env.el"
-;;;;;;  (0 0 0 0))
-;;; Generated autoloads from doom-modeline-env.el
+;;;### (autoloads nil "doom-modeline-env" "../../../../../.emacs.d/elpa/doom-modeline-20220325.554/doom-modeline-env.el"
+;;;;;;  "9b442575617512b0bf1f5ec8b60cac3c")
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/doom-modeline-20220325.554/doom-modeline-env.el
  (autoload 'doom-modeline-env-setup-python "doom-modeline-env")
  (autoload 'doom-modeline-env-setup-ruby "doom-modeline-env")
  (autoload 'doom-modeline-env-setup-perl "doom-modeline-env")
  (autoload 'doom-modeline-env-setup-go "doom-modeline-env")
  (autoload 'doom-modeline-env-setup-elixir "doom-modeline-env")
  (autoload 'doom-modeline-env-setup-rust "doom-modeline-env")
+
+;;;### (autoloads "actual autoloads are elsewhere" "doom-modeline-env"
+;;;;;;  "../../../../../.emacs.d/elpa/doom-modeline-20220325.554/doom-modeline-env.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/doom-modeline-20220325.554/doom-modeline-env.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-modeline-env" '("doom-modeline-")))
 
 ;;;***
+
+;;;***
 
-;;;### (autoloads nil "doom-modeline-segments" "doom-modeline-segments.el"
+;;;### (autoloads "actual autoloads are elsewhere" "doom-modeline-segments"
+;;;;;;  "../../../../../.emacs.d/elpa/doom-modeline-20220325.554/doom-modeline-segments.el"
 ;;;;;;  (0 0 0 0))
-;;; Generated autoloads from doom-modeline-segments.el
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/doom-modeline-20220325.554/doom-modeline-segments.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-modeline-segments" '("doom-modeline-")))
 
 ;;;***
 
-;;;### (autoloads nil nil ("doom-modeline-pkg.el") (0 0 0 0))
+;;;### (autoloads nil nil ("../../../../../.emacs.d/elpa/doom-modeline-20220325.554/doom-modeline-autoloads.el"
+;;;;;;  "../../../../../.emacs.d/elpa/doom-modeline-20220325.554/doom-modeline-core.el"
+;;;;;;  "../../../../../.emacs.d/elpa/doom-modeline-20220325.554/doom-modeline-env.el"
+;;;;;;  "../../../../../.emacs.d/elpa/doom-modeline-20220325.554/doom-modeline-pkg.el"
+;;;;;;  "../../../../../.emacs.d/elpa/doom-modeline-20220325.554/doom-modeline-segments.el"
+;;;;;;  "../../../../../.emacs.d/elpa/doom-modeline-20220325.554/doom-modeline.el")
+;;;;;;  (0 0 0 0))
 
 ;;;***
 

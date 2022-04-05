@@ -1176,26 +1176,27 @@
    project.
 
    #+BEGIN_SRC emacs-lisp
+
      (use-package projectile
        :ensure t
        :init
-       (projectile-global-mode)
+         (projectile-mode +1)
        :bind
-       ("s-p" . projectile-command-map)
-       ("s-f" . projectile-find-file)
-       ("s-e" . projectile-recentf)
-       ("s-s" . projectile-grep))
+        ("s-p" . projectile-command-map)
+        ("s-f" . projectile-find-file)
+        ("s-e" . projectile-recentf)
+        ("s-s" . projectile-grep))
 
-     ;; (use-package counsel-projectile
-     ;;   :ensure t
-     ;;   :requires (projectile counsel)
-     ;;   :init
-     ;;   (counsel-projectile-mode)
-     ;;   (diminish 'projectile-mode)
-     ;;   (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
-     ;;   (global-set-key (kbd "s-f") 'counsel-projectile)
-     ;;   (global-set-key (kbd "s-E") 'projectile-recentf)
-     ;;   (global-set-key (kbd "s-s") 'projectile-grep))
+          ;; (use-package counsel-projectile
+          ;;   :ensure t
+          ;;   :requires (projectile counsel)
+          ;;   :init
+          ;;   (counsel-projectile-mode)
+          ;;   (diminish 'projectile-mode)
+          ;;   (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+          ;;   (global-set-key (kbd "s-f") 'counsel-projectile)
+          ;;   (global-set-key (kbd "s-E") 'projectile-recentf)
+          ;;   (global-set-key (kbd "s-s") 'projectile-grep))
    #+END_SRC
 
 ** Autosave
@@ -1884,7 +1885,7 @@
                (sql-port 5432)
                (sql-server "localhost")
                (sql-user "imsomitest4")
-               (sql-database "imsomitest4db"))
+               (sql-database "imsomit4db"))
 
               (northstar.prod
                (sql-name "northstar.prod")
@@ -2637,6 +2638,7 @@
    #+BEGIN_SRC emacs-lisp
      (use-package plantuml-mode
        :ensure t
+       :defer t
        :config
        (add-to-list 'auto-mode-alist '("\\.plantuml\\'" . plantuml-mode)))
    #+END_SRC
@@ -2649,6 +2651,7 @@
    #+BEGIN_SRC emacs-lisp
      (use-package logview
        :ensure t
+       :defer t
        :config
        (add-to-list 'auto-mode-alist '("\\.log\\'" . logview-mode)))
    #+END_SRC

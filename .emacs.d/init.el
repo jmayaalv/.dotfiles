@@ -7,9 +7,9 @@
 ;; http://orgmode.org/worg/org-contrib/babel/intro.html
 (require 'package)
 
+(setq package-check-signature nil)
 (setq package-enable-at-startup nil)
 ;;(package-initialize)
-
 
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
 			;; ("marmalade" . "http://marmalade-repo.org/packages/")
