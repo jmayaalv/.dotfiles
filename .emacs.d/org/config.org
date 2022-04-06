@@ -3,6 +3,15 @@
   There are a number of helper functions that we'll need through the
   rest of this. We'll just define them up here.
 
+** Byte compile
+   compile all the files .elc files which has a corresponding newer .el file
+
+   #+BEGIN_SRC emacs-lisp
+  (byte-recompile-directory ".")
+   #+END_SRC
+
+
+
 ** load-if-exists-
 
    This is just a nice function to load a file if it exists, but just
@@ -279,7 +288,7 @@
 
      ;; Activate occur easily inside isearch
      (define-key isearch-mode-map (kbd "C-o") 'isearch-occur)
-   #+END_SRC
+     #+END_SRC
 * Non-elpa
 
    #+BEGIN_SRC emacs-lisp
