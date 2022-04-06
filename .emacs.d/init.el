@@ -17,6 +17,7 @@
                           ("melpa" . "http://melpa.org/packages/")
                           ("melpa-stable" . "https://stable.melpa.org/packages/")))
 
+
 ;;compile all the files .elc files which has a corresponding newer .el file
 (byte-recompile-directory (expand-file-name "~/.emacs.d/elpa") 0)
 ;;(byte-recompile-directory ".")
@@ -118,7 +119,8 @@
      (320 . "#8CD0D3")
      (340 . "#94BFF3")
      (360 . "#DC8CC3")))
- '(vc-annotate-very-old-color "#DC8CC3"))
+ '(vc-annotate-very-old-color "#DC8CC3")
+ '(warning-suppress-types '((use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

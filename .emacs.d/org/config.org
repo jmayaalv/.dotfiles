@@ -141,6 +141,7 @@
    #+BEGIN_SRC emacs-lisp
      (use-package discover
        :ensure t
+       :defer t
        :config (global-discover-mode 1))
    #+END_SRC
 
@@ -641,6 +642,7 @@
      #+BEGIN_SRC emacs-lisp
        (use-package persistent-overlays
          :ensure t
+         :defer t
          :config
          (add-hook 'prog-mode-hook (lambda () (hs-minor-mode 1) (setq hs-allow-nesting t) (persistent-overlays-minor-mode 1)))
          (setq persistent-overlays-auto-save t)
@@ -1031,6 +1033,7 @@
     #+BEGIN_SRC emacs-lisp
       (use-package diff-hl
        :ensure t
+       :defer t
        :hook ((dired-mode-hook . diff-hl-dired-mode)
               (magit-post-refresh-hook  . 'diff-hl-magit-post-refresh))
        :init
@@ -1041,8 +1044,9 @@
     Step through historic versions of git controlled file
 
     #+BEGIN_SRC emacs-lisp
-      (use-package git-timemachine
-       :ensure t)
+            (use-package git-timemachine
+             :ensure t
+             :defer t)
     #+END_SRC
 
 ** swiper
@@ -1284,6 +1288,7 @@
    #+begin_src emacs-lisp
      (use-package discover-my-major
        :ensure t
+       :defer t
        :bind
        (("C-h M-m" . discover-my-major)
         ("C-h M-M" . discover-my-mode)))
@@ -1319,8 +1324,8 @@
    #+END_SRC
 *** Code Annotations
     #+BEGIN_SRC emacs-lisp
-    (use-package hl-todo
-     :ensure t)
+      (use-package hl-todo
+       :ensure t)
      #+END_SRC
 *** company
     #+BEGIN_SRC emacs-lisp
@@ -1705,6 +1710,7 @@
 
         (use-package lsp-java
           :ensure t
+          :def t
           :after lsp
           :config
           (setq lsp-java-references-code-lens-enabled t
@@ -1744,7 +1750,7 @@
     way of sharing code snippets is a good idea.
 
     #+BEGIN_SRC emacs-lisp
-      (use-package gist :ensure t)
+      (use-package gist :ensure t :defer t)
     #+END_SRC
 
 ** sql
@@ -2484,7 +2490,7 @@
     reveal.js.
 
     #+BEGIN_SRC emacs-lisp
-      (use-package ox-reveal :ensure t)
+      (use-package ox-reveal :ensure t :defer t)
     #+END_SRC
 
     As a part of the installation we need to point at where we have
@@ -2505,6 +2511,7 @@
 
     #+BEGIN_SRC emacs-lisp
       (use-package orgit
+        :defer t
         :ensure t)
     #+END_SRC
 *** org bullets
