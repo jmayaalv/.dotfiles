@@ -17,6 +17,11 @@
                           ("melpa" . "http://melpa.org/packages/")
                           ("melpa-stable" . "https://stable.melpa.org/packages/")))
 
+;;compile all the files .elc files which has a corresponding newer .el file
+(byte-recompile-directory (expand-file-name "~/.emacs.d/elpa") 0)
+;;(byte-recompile-directory ".")
+
+
 ;; This means we prefer things from ~/.emacs.d/elpa over the standard packages.
 (package-initialize)
 
