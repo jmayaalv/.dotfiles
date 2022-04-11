@@ -1710,7 +1710,7 @@
 
         (use-package lsp-java
           :ensure t
-          :def t
+          :defer t
           :after lsp
           :config
           (setq lsp-java-references-code-lens-enabled t
