@@ -1,14 +1,16 @@
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; init --- General Config.
+;;; Commentary:
 ;; This is the minimal config needed to get org-mode from melpa and
-;; get it up and running so that we can load our emacs config from a
-;; .org file in a literate manner. The basis for this can be found
+;; get it up and running so that we can load our Emacs config from a
+;; .org file in a literate manner.  The basis for this can be found
 ;; here:
 ;;
 ;; http://orgmode.org/worg/org-contrib/babel/intro.html
+;;; Code:
 (require 'package)
 
 (setq package-check-signature nil)
-(setq package-enable-at-startup nil)
+;;(setq package-enable-at-startup nil)
 ;;(package-initialize)
 
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
@@ -19,7 +21,7 @@
 
 
 ;;compile all the files .elc files which has a corresponding newer .el file
-(byte-recompile-directory (expand-file-name "~/.emacs.d/elpa") 0)
+;;(byte-recompile-directory (expand-file-name "~/.emacs.d/elpa") 0)
 ;;(byte-recompile-directory ".")
 
 
