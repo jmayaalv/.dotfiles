@@ -22,6 +22,7 @@
 ;; Hippie Expand
 (global-set-key (kbd "M-RET") 'hippie-expand)
 
+
 ;; No tabs
 (setq-default indent-tabs-mode nil)
 
@@ -150,11 +151,6 @@
 
 ;; Clean obsolete buffers automatically
 (prelude-require-package 'midnight)
-
-;; Discover my major
-(prelude-require-package 'discover-my-major)
-(global-set-key (kbd "C-h M-m") 'discover-my-major)
-(global-set-key (kbd "C-h M-M") 'discover-my-mode)
 
 ;; Move lines
 (defun move-line-up ()

@@ -1,2 +1,2 @@
 (prelude-require-package 'restclient)
-(add-to-list 'auto-mode-alist '("\\.rest\\'" . restclient-mode)
+(add-to-list 'auto-mode-alist '("\\.rest\\'" . restclient-mode))
