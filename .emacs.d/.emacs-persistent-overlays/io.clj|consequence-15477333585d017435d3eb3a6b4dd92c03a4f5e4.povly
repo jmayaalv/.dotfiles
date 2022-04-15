@@ -1,3 +1,0 @@
-;; 
-;; Fri Aug 16 13:24:37 2019
-(let ((tovly (make-overlay 536 1248)) (tplist '(isearch-open-invisible-temporary hs-isearch-show-temporary isearch-open-invisible hs-isearch-show hs-e-offset 0 hs-b-offset -7 hs code invisible hs))) (while tplist (let ((tp (car tplist)) (tpv (cadr tplist))) (overlay-put tovly tp tpv)) (setq tplist (cddr tplist))))

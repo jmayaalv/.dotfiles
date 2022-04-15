@@ -1,4 +1,4 @@
-;;; shrink-path-autoloads.el --- automatically extracted autoloads
+;;; shrink-path-autoloads.el --- automatically extracted autoloads  -*- lexical-binding: t -*-
 ;;
 ;;; Code:
 
@@ -6,18 +6,10 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads "actual autoloads are elsewhere" "shrink-path"
-;;;;;;  "../../../../../.emacs.d/elpa/shrink-path-20190208.1335/shrink-path.el"
-;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../../.emacs.d/elpa/shrink-path-20190208.1335/shrink-path.el
+;;;### (autoloads nil "shrink-path" "shrink-path.el" (0 0 0 0))
+;;; Generated autoloads from shrink-path.el
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "shrink-path" '("shrink-path-")))
-
-;;;***
-
-;;;### (autoloads nil nil ("../../../../../.emacs.d/elpa/shrink-path-20190208.1335/shrink-path-autoloads.el"
-;;;;;;  "../../../../../.emacs.d/elpa/shrink-path-20190208.1335/shrink-path.el")
-;;;;;;  (0 0 0 0))
+(register-definition-prefixes "shrink-path" '("shrink-path-"))
 
 ;;;***
 

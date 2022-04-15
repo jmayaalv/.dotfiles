@@ -1,4 +1,4 @@
-;;; key-chord-autoloads.el --- automatically extracted autoloads
+;;; key-chord-autoloads.el --- automatically extracted autoloads  -*- lexical-binding: t -*-
 ;;
 ;;; Code:
 
@@ -6,9 +6,8 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "key-chord" "../../../../../.emacs.d/elpa/key-chord-20201222.2030/key-chord.el"
-;;;;;;  "ecc85ac472b5cc5827c4beb5d7ffaa3e")
-;;; Generated autoloads from ../../../../../.emacs.d/elpa/key-chord-20201222.2030/key-chord.el
+;;;### (autoloads nil "key-chord" "key-chord.el" (0 0 0 0))
+;;; Generated autoloads from key-chord.el
 
 (defvar key-chord-mode nil "\
 Non-nil if Key-Chord mode is enabled.
@@ -23,10 +22,19 @@ or call the function `key-chord-mode'.")
 (autoload 'key-chord-mode "key-chord" "\
 Map pairs of simultaneously pressed keys to commands.
 
-If called interactively, enable Key-Chord mode if ARG is
-positive, and disable it if ARG is zero or negative.  If called
-from Lisp, also enable the mode if ARG is omitted or nil, and
-toggle it if ARG is `toggle'; disable the mode otherwise.
+This is a minor mode.  If called interactively, toggle the
+`Key-Chord mode' mode.  If the prefix argument is positive,
+enable the mode, and if it is zero or negative, disable the mode.
+
+If called from Lisp, toggle the mode if ARG is `toggle'.  Enable
+the mode if ARG is nil, omitted, or is a positive number.
+Disable the mode if ARG is a negative number.
+
+To check whether the minor mode is enabled in the current buffer,
+evaluate `(default-value \\='key-chord-mode)'.
+
+The mode's hook is called both when the mode is enabled and when
+it is disabled.
 
 See functions `key-chord-define-global', `key-chord-define-local',
 and `key-chord-define' and variables `key-chord-two-keys-delay'
@@ -75,20 +83,8 @@ COMMAND can be an interactive function, a string, or nil.
 If COMMAND is nil, the key-chord is removed.
 
 \(fn KEYMAP KEYS COMMAND)" nil nil)
-
-;;;### (autoloads "actual autoloads are elsewhere" "key-chord" "../../../../../.emacs.d/elpa/key-chord-20201222.2030/key-chord.el"
-;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../../.emacs.d/elpa/key-chord-20201222.2030/key-chord.el
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "key-chord" '("key-chord-")))
-
-;;;***
-
-;;;***
-
-;;;### (autoloads nil nil ("../../../../../.emacs.d/elpa/key-chord-20201222.2030/key-chord-autoloads.el"
-;;;;;;  "../../../../../.emacs.d/elpa/key-chord-20201222.2030/key-chord.el")
-;;;;;;  (0 0 0 0))
+(register-definition-prefixes "key-chord" '("key-chord-"))
 
 ;;;***
 

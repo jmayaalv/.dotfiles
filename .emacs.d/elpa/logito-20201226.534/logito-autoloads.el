@@ -1,4 +1,4 @@
-;;; logito-autoloads.el --- automatically extracted autoloads
+;;; logito-autoloads.el --- automatically extracted autoloads  -*- lexical-binding: t -*-
 ;;
 ;;; Code:
 
@@ -6,17 +6,10 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads "actual autoloads are elsewhere" "logito" "../../../../../.emacs.d/elpa/logito-20201226.534/logito.el"
-;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../../.emacs.d/elpa/logito-20201226.534/logito.el
+;;;### (autoloads nil "logito" "logito.el" (0 0 0 0))
+;;; Generated autoloads from logito.el
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "logito" '("logito-")))
-
-;;;***
-
-;;;### (autoloads nil nil ("../../../../../.emacs.d/elpa/logito-20201226.534/logito-autoloads.el"
-;;;;;;  "../../../../../.emacs.d/elpa/logito-20201226.534/logito.el")
-;;;;;;  (0 0 0 0))
+(register-definition-prefixes "logito" '("logito-"))
 
 ;;;***
 

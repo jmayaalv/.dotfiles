@@ -1,4 +1,4 @@
-;;; dimmer-autoloads.el --- automatically extracted autoloads
+;;; dimmer-autoloads.el --- automatically extracted autoloads  -*- lexical-binding: t -*-
 ;;
 ;;; Code:
 
@@ -6,9 +6,8 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "dimmer" "../../../../../.emacs.d/elpa/dimmer-20211123.1536/dimmer.el"
-;;;;;;  "3f8933c8b6a9d9d2d424b7a4b7876c44")
-;;; Generated autoloads from ../../../../../.emacs.d/elpa/dimmer-20211123.1536/dimmer.el
+;;;### (autoloads nil "dimmer" "dimmer.el" (0 0 0 0))
+;;; Generated autoloads from dimmer.el
 
 (autoload 'dimmer-configure-company-box "dimmer" "\
 Convenience setting for company-box users.
@@ -64,28 +63,25 @@ or call the function `dimmer-mode'.")
 (autoload 'dimmer-mode "dimmer" "\
 Visually highlight the selected buffer.
 
-If called interactively, enable Dimmer mode if ARG is positive,
-and disable it if ARG is zero or negative.  If called from Lisp,
-also enable the mode if ARG is omitted or nil, and toggle it if
-ARG is `toggle'; disable the mode otherwise.
+This is a minor mode.  If called interactively, toggle the
+`Dimmer mode' mode.  If the prefix argument is positive, enable
+the mode, and if it is zero or negative, disable the mode.
+
+If called from Lisp, toggle the mode if ARG is `toggle'.  Enable
+the mode if ARG is nil, omitted, or is a positive number.
+Disable the mode if ARG is a negative number.
+
+To check whether the minor mode is enabled in the current buffer,
+evaluate `(default-value \\='dimmer-mode)'.
+
+The mode's hook is called both when the mode is enabled and when
+it is disabled.
 
 \(fn &optional ARG)" t nil)
 
 (define-obsolete-function-alias 'dimmer-activate 'dimmer-mode "0.2.0")
-
-;;;### (autoloads "actual autoloads are elsewhere" "dimmer" "../../../../../.emacs.d/elpa/dimmer-20211123.1536/dimmer.el"
-;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../../.emacs.d/elpa/dimmer-20211123.1536/dimmer.el
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "dimmer" '("dimmer-")))
-
-;;;***
-
-;;;***
-
-;;;### (autoloads nil nil ("../../../../../.emacs.d/elpa/dimmer-20211123.1536/dimmer-autoloads.el"
-;;;;;;  "../../../../../.emacs.d/elpa/dimmer-20211123.1536/dimmer.el")
-;;;;;;  (0 0 0 0))
+(register-definition-prefixes "dimmer" '("dimmer-"))
 
 ;;;***
 

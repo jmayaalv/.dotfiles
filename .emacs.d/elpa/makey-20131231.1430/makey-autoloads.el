@@ -1,4 +1,4 @@
-;;; makey-autoloads.el --- automatically extracted autoloads
+;;; makey-autoloads.el --- automatically extracted autoloads  -*- lexical-binding: t -*-
 ;;
 ;;; Code:
 
@@ -6,28 +6,15 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "makey" "../../../../../.emacs.d/elpa/makey-20131231.1430/makey.el"
-;;;;;;  "5b03268af5528090263524e3a0e8afa6")
-;;; Generated autoloads from ../../../../../.emacs.d/elpa/makey-20131231.1430/makey.el
+;;;### (autoloads nil "makey" "makey.el" (0 0 0 0))
+;;; Generated autoloads from makey.el
 
 (autoload 'makey-initialize-key-groups "makey" "\
 Initializes KEY-GROUP and creates all the relevant interactive commands.
 
 \(fn KEY-GROUP)" nil nil)
-
-;;;### (autoloads "actual autoloads are elsewhere" "makey" "../../../../../.emacs.d/elpa/makey-20131231.1430/makey.el"
-;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../../.emacs.d/elpa/makey-20131231.1430/makey.el
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "makey" '("makey-")))
-
-;;;***
-
-;;;***
-
-;;;### (autoloads nil nil ("../../../../../.emacs.d/elpa/makey-20131231.1430/makey-autoloads.el"
-;;;;;;  "../../../../../.emacs.d/elpa/makey-20131231.1430/makey.el")
-;;;;;;  (0 0 0 0))
+(register-definition-prefixes "makey" '("makey-"))
 
 ;;;***
 

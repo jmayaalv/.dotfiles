@@ -1,4 +1,4 @@
-;;; selectrum-autoloads.el --- automatically extracted autoloads
+;;; selectrum-autoloads.el --- automatically extracted autoloads  -*- lexical-binding: t -*-
 ;;
 ;;; Code:
 
@@ -6,9 +6,8 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "selectrum" "../../../../../.emacs.d/elpa/selectrum-20220323.10/selectrum.el"
-;;;;;;  "93ff6ed50146e8f34890096a92afa269")
-;;; Generated autoloads from ../../../../../.emacs.d/elpa/selectrum-20220323.10/selectrum.el
+;;;### (autoloads nil "selectrum" "selectrum.el" (0 0 0 0))
+;;; Generated autoloads from selectrum.el
 
 (defvar selectrum-complete-in-buffer t "\
 If non-nil, use Selectrum for `completion-in-region'.
@@ -120,20 +119,8 @@ ARGS are standard as in all `:around' advice.
 
 (define-minor-mode selectrum-mode "\
 Minor mode to use Selectrum for `completing-read'." :global t :group 'selectrum (if selectrum-mode (progn (selectrum-mode -1) (setq selectrum-mode t) (setq selectrum--old-completing-read-function (default-value 'completing-read-function)) (setq-default completing-read-function #'selectrum-completing-read) (setq selectrum--old-read-buffer-function (default-value 'read-buffer-function)) (setq-default read-buffer-function #'selectrum-read-buffer) (setq selectrum--old-read-file-name-function (default-value 'read-file-name-function)) (setq-default read-file-name-function #'selectrum-read-file-name) (setq selectrum--old-completion-in-region-function (default-value 'completion-in-region-function)) (when selectrum-complete-in-buffer (setq-default completion-in-region-function #'selectrum-completion-in-region)) (advice-add #'completing-read-multiple :override #'selectrum-completing-read-multiple) (advice-add 'dired-read-dir-and-switches :around #'selectrum--fix-dired-read-dir-and-switches) (advice-add 'read-library-name :override #'selectrum-read-library-name) (advice-add #'minibuffer-message :around #'selectrum--fix-minibuffer-message) (define-key minibuffer-local-map [remap previous-matching-history-element] 'selectrum-select-from-history)) (when (equal (default-value 'completing-read-function) #'selectrum-completing-read) (setq-default completing-read-function selectrum--old-completing-read-function)) (when (equal (default-value 'read-buffer-function) #'selectrum-read-buffer) (setq-default read-buffer-function selectrum--old-read-buffer-function)) (when (equal (default-value 'read-file-name-function) #'selectrum-read-file-name) (setq-default read-file-name-function selectrum--old-read-file-name-function)) (when (equal (default-value 'completion-in-region-function) #'selectrum-completion-in-region) (setq-default completion-in-region-function selectrum--old-completion-in-region-function)) (advice-remove #'completing-read-multiple #'selectrum-completing-read-multiple) (advice-remove 'dired-read-dir-and-switches #'selectrum--fix-dired-read-dir-and-switches) (advice-remove 'read-library-name #'selectrum-read-library-name) (advice-remove #'minibuffer-message #'selectrum--fix-minibuffer-message) (when (eq (lookup-key minibuffer-local-map [remap previous-matching-history-element]) #'selectrum-select-from-history) (define-key minibuffer-local-map [remap previous-matching-history-element] nil))))
-
-;;;### (autoloads "actual autoloads are elsewhere" "selectrum" "../../../../../.emacs.d/elpa/selectrum-20220323.10/selectrum.el"
-;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../../.emacs.d/elpa/selectrum-20220323.10/selectrum.el
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "selectrum" '("selectrum-")))
-
-;;;***
-
-;;;***
-
-;;;### (autoloads nil nil ("../../../../../.emacs.d/elpa/selectrum-20220323.10/selectrum-autoloads.el"
-;;;;;;  "../../../../../.emacs.d/elpa/selectrum-20220323.10/selectrum.el")
-;;;;;;  (0 0 0 0))
+(register-definition-prefixes "selectrum" '("selectrum-"))
 
 ;;;***
 

@@ -1,4 +1,4 @@
-;;; clojure-mode-autoloads.el --- automatically extracted autoloads
+;;; clojure-mode-autoloads.el --- automatically extracted autoloads  -*- lexical-binding: t -*-
 ;;
 ;;; Code:
 
@@ -6,9 +6,8 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "clojure-mode" "../../../../../.emacs.d/elpa/clojure-mode-20220307.1903/clojure-mode.el"
-;;;;;;  "e5e93cf82e12388c7e4b8ca683aed904")
-;;; Generated autoloads from ../../../../../.emacs.d/elpa/clojure-mode-20220307.1903/clojure-mode.el
+;;;### (autoloads nil "clojure-mode" "clojure-mode.el" (0 0 0 0))
+;;; Generated autoloads from clojure-mode.el
 
 (autoload 'clojure-mode "clojure-mode" "\
 Major mode for editing Clojure code.
@@ -125,21 +124,8 @@ Major mode for editing ClojureC code.
 (add-to-list 'auto-mode-alist '("\\(?:build\\|profile\\)\\.boot\\'" . clojure-mode))
 
 (add-to-list 'interpreter-mode-alist '("bb" . clojure-mode))
-
-;;;### (autoloads "actual autoloads are elsewhere" "clojure-mode"
-;;;;;;  "../../../../../.emacs.d/elpa/clojure-mode-20220307.1903/clojure-mode.el"
-;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../../.emacs.d/elpa/clojure-mode-20220307.1903/clojure-mode.el
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "clojure-mode" '("add-custom-clojure-indents" "clojure" "define-clojure-indent" "put-clojure-indent")))
-
-;;;***
-
-;;;***
-
-;;;### (autoloads nil nil ("../../../../../.emacs.d/elpa/clojure-mode-20220307.1903/clojure-mode-autoloads.el"
-;;;;;;  "../../../../../.emacs.d/elpa/clojure-mode-20220307.1903/clojure-mode.el")
-;;;;;;  (0 0 0 0))
+(register-definition-prefixes "clojure-mode" '("add-custom-clojure-indents" "clojure" "define-clojure-indent" "put-clojure-indent"))
 
 ;;;***
 

@@ -1,4 +1,4 @@
-;;; flycheck-autoloads.el --- automatically extracted autoloads
+;;; flycheck-autoloads.el --- automatically extracted autoloads  -*- lexical-binding: t -*-
 ;;
 ;;; Code:
 
@@ -6,9 +6,8 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "flycheck" "../../../../../.emacs.d/elpa/flycheck-20220328.1518/flycheck.el"
-;;;;;;  "fbc91bce1901e853af70cc823cb260eb")
-;;; Generated autoloads from ../../../../../.emacs.d/elpa/flycheck-20220328.1518/flycheck.el
+;;;### (autoloads nil "flycheck" "flycheck.el" (0 0 0 0))
+;;; Generated autoloads from flycheck.el
 
 (autoload 'flycheck-manual "flycheck" "\
 Open the Flycheck manual." t nil)
@@ -72,11 +71,15 @@ or call the function `global-flycheck-mode'.")
 (autoload 'global-flycheck-mode "flycheck" "\
 Toggle Flycheck mode in all buffers.
 With prefix ARG, enable Global Flycheck mode if ARG is positive;
-otherwise, disable it.  If called from Lisp, enable the mode if
-ARG is omitted or nil.
+otherwise, disable it.
 
-Flycheck mode is enabled in all buffers where
-`flycheck-mode-on-safe' would do it.
+If called from Lisp, toggle the mode if ARG is `toggle'.
+Enable the mode if ARG is nil, omitted, or is a positive number.
+Disable the mode if ARG is a negative number.
+
+Flycheck mode is enabled in all buffers where `flycheck-mode-on-safe'
+would do it.
+
 See `flycheck-mode' for more information on Flycheck mode.
 
 \(fn &optional ARG)" t nil)
@@ -274,41 +277,27 @@ SYMBOL with `flycheck-def-executable-var'.
 (function-put 'flycheck-define-checker 'lisp-indent-function '1)
 
 (function-put 'flycheck-define-checker 'doc-string-elt '2)
-
-;;;### (autoloads "actual autoloads are elsewhere" "flycheck" "../../../../../.emacs.d/elpa/flycheck-20220328.1518/flycheck.el"
-;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../../.emacs.d/elpa/flycheck-20220328.1518/flycheck.el
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "flycheck" '("flycheck-" "help-flycheck-checker-d" "list-flycheck-errors")))
-
-;;;***
+(register-definition-prefixes "flycheck" '("flycheck-" "help-flycheck-checker-d" "list-flycheck-errors"))
 
 ;;;***
 
-;;;### (autoloads "actual autoloads are elsewhere" "flycheck-buttercup"
-;;;;;;  "../../../../../.emacs.d/elpa/flycheck-20220328.1518/flycheck-buttercup.el"
+;;;### (autoloads nil "flycheck-buttercup" "flycheck-buttercup.el"
 ;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../../.emacs.d/elpa/flycheck-20220328.1518/flycheck-buttercup.el
+;;; Generated autoloads from flycheck-buttercup.el
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "flycheck-buttercup" '("flycheck-buttercup-format-error-list")))
+(register-definition-prefixes "flycheck-buttercup" '("flycheck-buttercup-format-error-list"))
 
 ;;;***
 
-;;;### (autoloads "actual autoloads are elsewhere" "flycheck-ert"
-;;;;;;  "../../../../../.emacs.d/elpa/flycheck-20220328.1518/flycheck-ert.el"
-;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../../.emacs.d/elpa/flycheck-20220328.1518/flycheck-ert.el
+;;;### (autoloads nil "flycheck-ert" "flycheck-ert.el" (0 0 0 0))
+;;; Generated autoloads from flycheck-ert.el
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "flycheck-ert" '("flycheck-er")))
+(register-definition-prefixes "flycheck-ert" '("flycheck-er"))
 
 ;;;***
 
-;;;### (autoloads nil nil ("../../../../../.emacs.d/elpa/flycheck-20220328.1518/flycheck-autoloads.el"
-;;;;;;  "../../../../../.emacs.d/elpa/flycheck-20220328.1518/flycheck-buttercup.el"
-;;;;;;  "../../../../../.emacs.d/elpa/flycheck-20220328.1518/flycheck-ert.el"
-;;;;;;  "../../../../../.emacs.d/elpa/flycheck-20220328.1518/flycheck-pkg.el"
-;;;;;;  "../../../../../.emacs.d/elpa/flycheck-20220328.1518/flycheck.el")
-;;;;;;  (0 0 0 0))
+;;;### (autoloads nil nil ("flycheck-pkg.el") (0 0 0 0))
 
 ;;;***
 

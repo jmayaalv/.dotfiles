@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: require
-# key: require
-# --
-(require '[${1:namespace} :as ${2:alias}])

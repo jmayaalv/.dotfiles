@@ -6,12 +6,10 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "../../../../../.emacs.d/elpa/gist-20171128.406/gist"
-;;;;;;  "../../../../../.emacs.d/elpa/gist-20171128.406/gist.el"
-;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../../.emacs.d/elpa/gist-20171128.406/gist.el
+;;;### (autoloads nil "gist" "gist.el" (0 0 0 0))
+;;; Generated autoloads from gist.el
 
-(autoload 'gist-region "../../../../../.emacs.d/elpa/gist-20171128.406/gist" "\
+(autoload 'gist-region "gist" "\
 Post the current region as a new paste at gist.github.com
 Copies the URL into the kill ring.
 
@@ -19,13 +17,13 @@ With a prefix argument, makes a private paste.
 
 \(fn BEGIN END &optional PRIVATE CALLBACK)" t nil)
 
-(autoload 'gist-region-private "../../../../../.emacs.d/elpa/gist-20171128.406/gist" "\
+(autoload 'gist-region-private "gist" "\
 Post the current region as a new private paste at gist.github.com
 Copies the URL into the kill ring.
 
 \(fn BEGIN END)" t nil)
 
-(autoload 'gist-buffer "../../../../../.emacs.d/elpa/gist-20171128.406/gist" "\
+(autoload 'gist-buffer "gist" "\
 Post the current buffer as a new paste at gist.github.com.
 Copies the URL into the kill ring.
 
@@ -33,11 +31,11 @@ With a prefix argument, makes a private paste.
 
 \(fn &optional PRIVATE)" t nil)
 
-(autoload 'gist-buffer-private "../../../../../.emacs.d/elpa/gist-20171128.406/gist" "\
+(autoload 'gist-buffer-private "gist" "\
 Post the current buffer as a new private paste at gist.github.com.
 Copies the URL into the kill ring." t nil)
 
-(autoload 'gist-region-or-buffer "../../../../../.emacs.d/elpa/gist-20171128.406/gist" "\
+(autoload 'gist-region-or-buffer "gist" "\
 Post either the current region, or if mark is not set, the
   current buffer as a new paste at gist.github.com
 
@@ -47,13 +45,13 @@ With a prefix argument, makes a private paste.
 
 \(fn &optional PRIVATE)" t nil)
 
-(autoload 'gist-region-or-buffer-private "../../../../../.emacs.d/elpa/gist-20171128.406/gist" "\
+(autoload 'gist-region-or-buffer-private "gist" "\
 Post either the current region, or if mark is not set, the
   current buffer as a new private paste at gist.github.com
 
 Copies the URL into the kill ring." t nil)
 
-(autoload 'gist-list-user "../../../../../.emacs.d/elpa/gist-20171128.406/gist" "\
+(autoload 'gist-list-user "gist" "\
 Displays a list of a user's gists in a new buffer.  When called from
   a program, pass 'current-user as the username to view the user's own
   gists, or nil for the username and a non-nil value for force-reload to
@@ -61,34 +59,29 @@ Displays a list of a user's gists in a new buffer.  When called from
 
 \(fn USERNAME &optional FORCE-RELOAD BACKGROUND)" t nil)
 
-(autoload 'gist-list "../../../../../.emacs.d/elpa/gist-20171128.406/gist" "\
+(autoload 'gist-list "gist" "\
 Displays a list of all of the current user's gists in a new buffer.
 
 \(fn &optional FORCE-RELOAD BACKGROUND)" t nil)
 
-(autoload 'gist-fetch "../../../../../.emacs.d/elpa/gist-20171128.406/gist" "\
+(autoload 'gist-fetch "gist" "\
 
 
 \(fn ID)" t nil)
 
-(autoload 'gist-star "../../../../../.emacs.d/elpa/gist-20171128.406/gist" nil t nil)
+(autoload 'gist-star "gist" nil t nil)
 
-(autoload 'gist-unstar "../../../../../.emacs.d/elpa/gist-20171128.406/gist" nil t nil)
+(autoload 'gist-unstar "gist" nil t nil)
 
-(autoload 'gist-list-starred "../../../../../.emacs.d/elpa/gist-20171128.406/gist" "\
+(autoload 'gist-list-starred "gist" "\
 List your starred gists.
 
 \(fn &optional BACKGROUND)" t nil)
 
-(autoload 'gist-fork "../../../../../.emacs.d/elpa/gist-20171128.406/gist" "\
+(autoload 'gist-fork "gist" "\
 Fork a gist." t nil)
 
-(register-definition-prefixes "../../../../../.emacs.d/elpa/gist-20171128.406/gist" '("dired-do-gist" "gist-"))
-
-;;;***
-
-;;;### (autoloads nil nil ("../../../../../.emacs.d/elpa/gist-20171128.406/gist-autoloads.el")
-;;;;;;  (0 0 0 0))
+(register-definition-prefixes "gist" '("dired-do-gist" "gist-"))
 
 ;;;***
 

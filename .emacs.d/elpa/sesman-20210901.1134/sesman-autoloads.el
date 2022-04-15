@@ -1,4 +1,4 @@
-;;; sesman-autoloads.el --- automatically extracted autoloads
+;;; sesman-autoloads.el --- automatically extracted autoloads  -*- lexical-binding: t -*-
 ;;
 ;;; Code:
 
@@ -6,9 +6,8 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "sesman" "../../../../../.emacs.d/elpa/sesman-20210901.1134/sesman.el"
-;;;;;;  "52ffdc0381e81665ad9edf40dcb6d677")
-;;; Generated autoloads from ../../../../../.emacs.d/elpa/sesman-20210901.1134/sesman.el
+;;;### (autoloads nil "sesman" "sesman.el" (0 0 0 0))
+;;; Generated autoloads from sesman.el
 
 (autoload 'sesman-start "sesman" "\
 Start a Sesman session." t nil)
@@ -75,41 +74,24 @@ links.
 
 \(fn &optional LINKS)" t nil)
  (autoload 'sesman-map "sesman" "Session management prefix keymap." t 'keymap)
-
-;;;### (autoloads "actual autoloads are elsewhere" "sesman" "../../../../../.emacs.d/elpa/sesman-20210901.1134/sesman.el"
-;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../../.emacs.d/elpa/sesman-20210901.1134/sesman.el
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "sesman" '("sesman-")))
-
-;;;***
+(register-definition-prefixes "sesman" '("sesman-"))
 
 ;;;***
 
-;;;### (autoloads nil "sesman-browser" "../../../../../.emacs.d/elpa/sesman-20210901.1134/sesman-browser.el"
-;;;;;;  "85974a460384de6ced9a4af86228d06a")
-;;; Generated autoloads from ../../../../../.emacs.d/elpa/sesman-20210901.1134/sesman-browser.el
+;;;### (autoloads nil "sesman-browser" "sesman-browser.el" (0 0 0
+;;;;;;  0))
+;;; Generated autoloads from sesman-browser.el
 
 (autoload 'sesman-browser "sesman-browser" "\
 Display an interactive session browser.
 See `sesman-browser-mode' for more details." t nil)
-
-;;;### (autoloads "actual autoloads are elsewhere" "sesman-browser"
-;;;;;;  "../../../../../.emacs.d/elpa/sesman-20210901.1134/sesman-browser.el"
-;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../../.emacs.d/elpa/sesman-20210901.1134/sesman-browser.el
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "sesman-browser" '("sesman-")))
-
-;;;***
+(register-definition-prefixes "sesman-browser" '("sesman-"))
 
 ;;;***
 
-;;;### (autoloads nil nil ("../../../../../.emacs.d/elpa/sesman-20210901.1134/sesman-autoloads.el"
-;;;;;;  "../../../../../.emacs.d/elpa/sesman-20210901.1134/sesman-browser.el"
-;;;;;;  "../../../../../.emacs.d/elpa/sesman-20210901.1134/sesman-pkg.el"
-;;;;;;  "../../../../../.emacs.d/elpa/sesman-20210901.1134/sesman.el")
-;;;;;;  (0 0 0 0))
+;;;### (autoloads nil nil ("sesman-pkg.el") (0 0 0 0))
 
 ;;;***
 

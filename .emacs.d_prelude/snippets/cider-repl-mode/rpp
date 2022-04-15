@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: rpp
-# key: rpp
-# --
-(require '[clojure.pprint :as rpp])

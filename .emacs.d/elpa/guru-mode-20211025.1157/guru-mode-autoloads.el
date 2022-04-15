@@ -1,4 +1,4 @@
-;;; guru-mode-autoloads.el --- automatically extracted autoloads
+;;; guru-mode-autoloads.el --- automatically extracted autoloads  -*- lexical-binding: t -*-
 ;;
 ;;; Code:
 
@@ -6,17 +6,25 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "guru-mode" "../../../../../.emacs.d/elpa/guru-mode-20211025.1157/guru-mode.el"
-;;;;;;  "ee218c52f25fa7744ea756632b41aa8d")
-;;; Generated autoloads from ../../../../../.emacs.d/elpa/guru-mode-20211025.1157/guru-mode.el
+;;;### (autoloads nil "guru-mode" "guru-mode.el" (0 0 0 0))
+;;; Generated autoloads from guru-mode.el
 
 (autoload 'guru-mode "guru-mode" "\
 A minor mode that teaches you to use Emacs effectively.
 
-If called interactively, enable Guru mode if ARG is positive, and
-disable it if ARG is zero or negative.  If called from Lisp, also
-enable the mode if ARG is omitted or nil, and toggle it if ARG is
-`toggle'; disable the mode otherwise.
+This is a minor mode.  If called interactively, toggle the `guru
+mode' mode.  If the prefix argument is positive, enable the mode,
+and if it is zero or negative, disable the mode.
+
+If called from Lisp, toggle the mode if ARG is `toggle'.  Enable
+the mode if ARG is nil, omitted, or is a positive number.
+Disable the mode if ARG is a negative number.
+
+To check whether the minor mode is enabled in the current buffer,
+evaluate `guru-mode'.
+
+The mode's hook is called both when the mode is enabled and when
+it is disabled.
 
 \(fn &optional ARG)" t nil)
 
@@ -35,28 +43,19 @@ or call the function `guru-global-mode'.")
 (autoload 'guru-global-mode "guru-mode" "\
 Toggle Guru mode in all buffers.
 With prefix ARG, enable Guru-Global mode if ARG is positive;
-otherwise, disable it.  If called from Lisp, enable the mode if
-ARG is omitted or nil.
+otherwise, disable it.
 
-Guru mode is enabled in all buffers where
-`guru-mode' would do it.
+If called from Lisp, toggle the mode if ARG is `toggle'.
+Enable the mode if ARG is nil, omitted, or is a positive number.
+Disable the mode if ARG is a negative number.
+
+Guru mode is enabled in all buffers where `guru-mode' would do it.
+
 See `guru-mode' for more information on Guru mode.
 
 \(fn &optional ARG)" t nil)
-
-;;;### (autoloads "actual autoloads are elsewhere" "guru-mode" "../../../../../.emacs.d/elpa/guru-mode-20211025.1157/guru-mode.el"
-;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../../.emacs.d/elpa/guru-mode-20211025.1157/guru-mode.el
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "guru-mode" '("guru-")))
-
-;;;***
-
-;;;***
-
-;;;### (autoloads nil nil ("../../../../../.emacs.d/elpa/guru-mode-20211025.1157/guru-mode-autoloads.el"
-;;;;;;  "../../../../../.emacs.d/elpa/guru-mode-20211025.1157/guru-mode.el")
-;;;;;;  (0 0 0 0))
+(register-definition-prefixes "guru-mode" '("guru-"))
 
 ;;;***
 

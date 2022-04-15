@@ -1,4 +1,4 @@
-;;; parseclj-autoloads.el --- automatically extracted autoloads
+;;; parseclj-autoloads.el --- automatically extracted autoloads  -*- lexical-binding: t -*-
 ;;
 ;;; Code:
 
@@ -6,58 +6,44 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads "actual autoloads are elsewhere" "parseclj" "../../../../../.emacs.d/elpa/parseclj-20220328.558/parseclj.el"
-;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../../.emacs.d/elpa/parseclj-20220328.558/parseclj.el
+;;;### (autoloads nil "parseclj" "parseclj.el" (0 0 0 0))
+;;; Generated autoloads from parseclj.el
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "parseclj" '("parseclj-")))
-
-;;;***
-
-;;;### (autoloads "actual autoloads are elsewhere" "parseclj-alist"
-;;;;;;  "../../../../../.emacs.d/elpa/parseclj-20220328.558/parseclj-alist.el"
-;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../../.emacs.d/elpa/parseclj-20220328.558/parseclj-alist.el
-
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "parseclj-alist" '("parseclj-")))
+(register-definition-prefixes "parseclj" '("parseclj-"))
 
 ;;;***
 
-;;;### (autoloads "actual autoloads are elsewhere" "parseclj-ast"
-;;;;;;  "../../../../../.emacs.d/elpa/parseclj-20220328.558/parseclj-ast.el"
-;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../../.emacs.d/elpa/parseclj-20220328.558/parseclj-ast.el
+;;;### (autoloads nil "parseclj-alist" "parseclj-alist.el" (0 0 0
+;;;;;;  0))
+;;; Generated autoloads from parseclj-alist.el
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "parseclj-ast" '("parseclj-ast-")))
-
-;;;***
-
-;;;### (autoloads "actual autoloads are elsewhere" "parseclj-lex"
-;;;;;;  "../../../../../.emacs.d/elpa/parseclj-20220328.558/parseclj-lex.el"
-;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../../.emacs.d/elpa/parseclj-20220328.558/parseclj-lex.el
-
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "parseclj-lex" '("parseclj-lex-")))
+(register-definition-prefixes "parseclj-alist" '("parseclj-"))
 
 ;;;***
 
-;;;### (autoloads "actual autoloads are elsewhere" "parseclj-parser"
-;;;;;;  "../../../../../.emacs.d/elpa/parseclj-20220328.558/parseclj-parser.el"
-;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../../.emacs.d/elpa/parseclj-20220328.558/parseclj-parser.el
+;;;### (autoloads nil "parseclj-ast" "parseclj-ast.el" (0 0 0 0))
+;;; Generated autoloads from parseclj-ast.el
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "parseclj-parser" '("parseclj-")))
+(register-definition-prefixes "parseclj-ast" '("parseclj-ast-"))
 
 ;;;***
 
-;;;### (autoloads nil nil ("../../../../../.emacs.d/elpa/parseclj-20220328.558/parseclj-alist.el"
-;;;;;;  "../../../../../.emacs.d/elpa/parseclj-20220328.558/parseclj-ast.el"
-;;;;;;  "../../../../../.emacs.d/elpa/parseclj-20220328.558/parseclj-autoloads.el"
-;;;;;;  "../../../../../.emacs.d/elpa/parseclj-20220328.558/parseclj-lex.el"
-;;;;;;  "../../../../../.emacs.d/elpa/parseclj-20220328.558/parseclj-parser.el"
-;;;;;;  "../../../../../.emacs.d/elpa/parseclj-20220328.558/parseclj-pkg.el"
-;;;;;;  "../../../../../.emacs.d/elpa/parseclj-20220328.558/parseclj.el")
-;;;;;;  (0 0 0 0))
+;;;### (autoloads nil "parseclj-lex" "parseclj-lex.el" (0 0 0 0))
+;;; Generated autoloads from parseclj-lex.el
+
+(register-definition-prefixes "parseclj-lex" '("parseclj-lex-"))
+
+;;;***
+
+;;;### (autoloads nil "parseclj-parser" "parseclj-parser.el" (0 0
+;;;;;;  0 0))
+;;; Generated autoloads from parseclj-parser.el
+
+(register-definition-prefixes "parseclj-parser" '("parseclj-"))
+
+;;;***
+
+;;;### (autoloads nil nil ("parseclj-pkg.el") (0 0 0 0))
 
 ;;;***
 

@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# -*- coding: utf-8 -*-
-# name: pprint
-# key: pprint
-# --
-(clojure.pprint/pprint $1)
-$0

@@ -1,4 +1,4 @@
-;;; parseedn-autoloads.el --- automatically extracted autoloads
+;;; parseedn-autoloads.el --- automatically extracted autoloads  -*- lexical-binding: t -*-
 ;;
 ;;; Code:
 
@@ -6,17 +6,10 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads "actual autoloads are elsewhere" "parseedn" "../../../../../.emacs.d/elpa/parseedn-20220207.1352/parseedn.el"
-;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../../.emacs.d/elpa/parseedn-20220207.1352/parseedn.el
+;;;### (autoloads nil "parseedn" "parseedn.el" (0 0 0 0))
+;;; Generated autoloads from parseedn.el
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "parseedn" '("parseedn-")))
-
-;;;***
-
-;;;### (autoloads nil nil ("../../../../../.emacs.d/elpa/parseedn-20220207.1352/parseedn-autoloads.el"
-;;;;;;  "../../../../../.emacs.d/elpa/parseedn-20220207.1352/parseedn.el")
-;;;;;;  (0 0 0 0))
+(register-definition-prefixes "parseedn" '("parseedn-"))
 
 ;;;***
 

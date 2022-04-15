@@ -1,4 +1,4 @@
-;;; projectile-autoloads.el --- automatically extracted autoloads
+;;; projectile-autoloads.el --- automatically extracted autoloads  -*- lexical-binding: t -*-
 ;;
 ;;; Code:
 
@@ -6,9 +6,8 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "projectile" "../../../../../.emacs.d/elpa/projectile-20220402.624/projectile.el"
-;;;;;;  "3e129bbc88a5f0be7cd29685fd71e06d")
-;;; Generated autoloads from ../../../../../.emacs.d/elpa/projectile-20220402.624/projectile.el
+;;;### (autoloads nil "projectile" "projectile.el" (0 0 0 0))
+;;; Generated autoloads from projectile.el
 
 (autoload 'projectile-version "projectile" "\
 Get the Projectile version as string.
@@ -599,20 +598,8 @@ Otherwise behave as if called interactively.
 \(fn &optional ARG)" t nil)
 
 (define-obsolete-function-alias 'projectile-global-mode 'projectile-mode "1.0")
-
-;;;### (autoloads "actual autoloads are elsewhere" "projectile" "../../../../../.emacs.d/elpa/projectile-20220402.624/projectile.el"
-;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../../.emacs.d/elpa/projectile-20220402.624/projectile.el
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "projectile" '("??" "compilation-find-file-projectile-find-compilation-buffer" "def-projectile-commander-method" "delete-file-projectile-remove-from-cache" "projectile-")))
-
-;;;***
-
-;;;***
-
-;;;### (autoloads nil nil ("../../../../../.emacs.d/elpa/projectile-20220402.624/projectile-autoloads.el"
-;;;;;;  "../../../../../.emacs.d/elpa/projectile-20220402.624/projectile.el")
-;;;;;;  (0 0 0 0))
+(register-definition-prefixes "projectile" '("??" "compilation-find-file-projectile-find-compilation-buffer" "def-projectile-commander-method" "delete-file-projectile-remove-from-cache" "projectile-"))
 
 ;;;***
 

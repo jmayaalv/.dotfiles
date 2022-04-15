@@ -1,4 +1,4 @@
-;;; hl-todo-autoloads.el --- automatically extracted autoloads
+;;; hl-todo-autoloads.el --- automatically extracted autoloads  -*- lexical-binding: t -*-
 ;;
 ;;; Code:
 
@@ -6,17 +6,25 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "hl-todo" "../../../../../.emacs.d/elpa/hl-todo-20220402.1112/hl-todo.el"
-;;;;;;  "ba53bd3f2e96ba318f7819004351053e")
-;;; Generated autoloads from ../../../../../.emacs.d/elpa/hl-todo-20220402.1112/hl-todo.el
+;;;### (autoloads nil "hl-todo" "hl-todo.el" (0 0 0 0))
+;;; Generated autoloads from hl-todo.el
 
 (autoload 'hl-todo-mode "hl-todo" "\
 Highlight TODO and similar keywords in comments and strings.
 
-If called interactively, enable Hl-Todo mode if ARG is positive,
-and disable it if ARG is zero or negative.  If called from Lisp,
-also enable the mode if ARG is omitted or nil, and toggle it if
-ARG is `toggle'; disable the mode otherwise.
+This is a minor mode.  If called interactively, toggle the
+`Hl-Todo mode' mode.  If the prefix argument is positive, enable
+the mode, and if it is zero or negative, disable the mode.
+
+If called from Lisp, toggle the mode if ARG is `toggle'.  Enable
+the mode if ARG is nil, omitted, or is a positive number.
+Disable the mode if ARG is a negative number.
+
+To check whether the minor mode is enabled in the current buffer,
+evaluate `hl-todo-mode'.
+
+The mode's hook is called both when the mode is enabled and when
+it is disabled.
 
 \(fn &optional ARG)" t nil)
 
@@ -35,11 +43,15 @@ or call the function `global-hl-todo-mode'.")
 (autoload 'global-hl-todo-mode "hl-todo" "\
 Toggle Hl-Todo mode in all buffers.
 With prefix ARG, enable Global Hl-Todo mode if ARG is positive;
-otherwise, disable it.  If called from Lisp, enable the mode if
-ARG is omitted or nil.
+otherwise, disable it.
+
+If called from Lisp, toggle the mode if ARG is `toggle'.
+Enable the mode if ARG is nil, omitted, or is a positive number.
+Disable the mode if ARG is a negative number.
 
 Hl-Todo mode is enabled in all buffers where
 `hl-todo--turn-on-mode-if-desired' would do it.
+
 See `hl-todo-mode' for more information on Hl-Todo mode.
 
 \(fn &optional ARG)" t nil)
@@ -73,20 +85,8 @@ comment there, otherwise insert it as a new line before the
 current line.
 
 \(fn KEYWORD)" t nil)
-
-;;;### (autoloads "actual autoloads are elsewhere" "hl-todo" "../../../../../.emacs.d/elpa/hl-todo-20220402.1112/hl-todo.el"
-;;;;;;  (0 0 0 0))
-;;; Generated autoloads from ../../../../../.emacs.d/elpa/hl-todo-20220402.1112/hl-todo.el
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "hl-todo" '("hl-todo-")))
-
-;;;***
-
-;;;***
-
-;;;### (autoloads nil nil ("../../../../../.emacs.d/elpa/hl-todo-20220402.1112/hl-todo-autoloads.el"
-;;;;;;  "../../../../../.emacs.d/elpa/hl-todo-20220402.1112/hl-todo.el")
-;;;;;;  (0 0 0 0))
+(register-definition-prefixes "hl-todo" '("hl-todo-"))
 
 ;;;***
 

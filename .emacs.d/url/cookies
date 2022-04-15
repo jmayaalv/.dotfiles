@@ -1,15 +1,0 @@
-;; Emacs-W3 HTTP cookies file
-;; Automatically generated file!!! DO NOT EDIT!!!
-
-(setq url-cookie-storage
- 'nil)
-(setq url-cookie-secure-storage
- '(("kane-dev.eu.auth0.com"
-  [url-cookie "did" "s%3Av0%3Ab6a23fc0-09f7-11ea-ad16-abe7ef88cc4f.JlpHUTQANQSOupP9ScX4imtC4NiFcOTy5UqMX%2Fj6iMU" "Thu Apr 15 21:43:00 2021 GMT" "/" "kane-dev.eu.auth0.com" t]
-  [url-cookie "did_compat" "s%3Av0%3Ab6a23fc0-09f7-11ea-ad16-abe7ef88cc4f.JlpHUTQANQSOupP9ScX4imtC4NiFcOTy5UqMX%2Fj6iMU" "Thu Apr 15 21:43:00 2021 GMT" "/" "kane-dev.eu.auth0.com" t]))
-)
-
-;; Local Variables:
-;; version-control: never
-;; no-byte-compile: t
-;; End:
