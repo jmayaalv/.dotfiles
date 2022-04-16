@@ -1,4 +1,4 @@
-(prelude-require-packages '(lsp-mode consult-lsp))
+(prelude-require-packages '(lsp-mode consult-lsp lsp-treemacs))
 (require 'cider)
 (require 'lsp)
 
@@ -18,9 +18,9 @@
 (define-key clojurec-mode-map (kbd "M-.") #'find-definition)
 (define-key clojurescript-mode-map (kbd "M-.") #'find-definition)
 
-(add-hook 'clojure-mode #'lsp)
-(add-hook 'clojurec-mode #'lsp)
-(add-hook 'clojurescript-mode #'lsp)
+(add-hook 'clojure-mode-hook #'lsp)
+(add-hook 'clojurec-mode-hook #'lsp)
+(add-hook 'clojurescript-mode-hook #'lsp)
 
 ;; Path for lsp
 (setenv "PATH" (concat "/opt/homebrew/bin" path-separator  (getenv "PATH")))

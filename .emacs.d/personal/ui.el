@@ -171,3 +171,8 @@
 
 (global-set-key [(control shift up)]  'move-line-up)
 (global-set-key [(control shift down)]  'move-line-down)
+
+
+;; Projectile
+(when prelude-super-keybindings
+  (define-key prelude-mode-map (kbd "s-R") 'projectile-recentf))

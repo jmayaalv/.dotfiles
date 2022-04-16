@@ -16,6 +16,7 @@
 /.emacs.d/.mc-lists.el
 /.emacs.d/transient/
 /.emacs.d/auto-save-list/
+.emacs.d/var/prescient-save.el
 *.elc
 *.swp
 *.plist
