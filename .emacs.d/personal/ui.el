@@ -130,6 +130,7 @@
 ;; Sometimes the problem isn't that you want to move the cursor to a
 ;; particular window, but you want to move a buffer. buffer-move lets
 ;; you do that.
+(require 'buffer-move)
 (global-set-key (kbd "<s-up>") 'buf-move-up)
 (global-set-key (kbd "<s-down>") 'buf-move-down)
 (global-set-key (kbd "<s-left>") 'buf-move-left)
@@ -169,10 +170,11 @@
   (indent-according-to-mode))
 
 
-(global-set-key [(control shift up)]  'move-line-up)
-(global-set-key [(control shift down)]  'move-line-down)
-
-
 ;; Projectile
 (when prelude-super-keybindings
-  (define-key prelude-mode-map (kbd "s-R") 'projectile-recentf))
+  (define-key prelude-mode-map (kbd "s-R") 'projectile-recentf)
+  (define-key prelude-mode-map (kbd "s-f") 'projectile-find-file))
+
+;; This seems to be a bug emacs 28.1
+;; https://emacs.stackexchange.com/questions/69066/problem-with-loading-packages-with-emacs-28
+(setq find-file-visit-truename nil)
