@@ -1,4 +1,5 @@
 {:lint-as {efekt.db.core/defquery                clojure.core/defn
-           efekt.db.core/defcommand              clojure.core/defn
            kane.intent.interface/defintent       clojure.core/defprotocol
-           kane.validator.interface/defvalidator clojure.core/defprotocol}}
+           kane.validator.interface/defvalidator clojure.core/defprotocol
+           kane.database.interface/defquery      clojure.core/defn
+           kane.database.interface/defcommand    clojure.core/defn}}

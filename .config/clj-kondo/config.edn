@@ -1,7 +1,16 @@
 {:linters      {:clojure-lsp/unused-public-var {:level   :warning
                                                 :exclude #{user}}
                 :unsorted-required-namespaces  {:level :warning}}
- :config-paths ["fulcro/" "kane/" "pathom/"]
- :lint-as      {mount.core/defstate clojure.core/def
-                twarc.core/defjob clojure.core/defn}
- }
+ :config-paths ["./fulcro/" "./kane/" "./pathom/" "./promesa/"]
+ :lint-as      {mount.core/defstate                clojure.core/def
+                twarc.core/defjob                  clojure.core/defn
+                kane.database.interface/defquery   clojure.core/defn
+                kane.db/defquery                   clojure.core/defn
+                efekt.db.core/defquery             clojure.core/defn
+                kane.db/defcommand                 clojure.core/defn
+                kane.database.interface/defcommand clojure.core/defn
+                promesa.core/->                    clojure.core/->
+                promesa.core/->>                   clojure.core/->>
+                promesa.core/as->                  clojure.core/as->
+                promesa.core/let                   clojure.core/let
+                promesa.core/plet                  clojure.core/let}}

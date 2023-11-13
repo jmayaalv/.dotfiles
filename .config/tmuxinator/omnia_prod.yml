@@ -4,6 +4,4 @@ name: omnia-prod
 root: ~/
 
 windows:
-  - web1: ssh -C -o 'ServerAliveInterval 180' devel.jmayaalv@omniaweb1
-  - web2: ssh -C -o 'ServerAliveInterval 180' -L 7000:127.0.0.1:7000 devel.jmayaalv@omniaweb2
-  - db: ssh -C -o 'ServerAliveInterval 180' -L 5436:127.0.0.1:5432 devel.jmayaalv@omniadb
+  - db: ssh -C -o 'ServerAliveInterval 180' -L 8161:127.0.0.1:8161 devel.jmayaalv@omniaprod

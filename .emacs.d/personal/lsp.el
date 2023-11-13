@@ -8,9 +8,10 @@
   (let ((cursor (point))
         (buffer (current-buffer)))
     (lsp-find-definition)
-    (when (and (eq buffer (current-buffer))
-               (eq cursor (point)))
-      (cider-find-var))))
+    ;;(when (and (eq buffer (current-buffer))
+               ;;(eq cursor (point)))
+    ;;(cider-find-var))
+    ))
 
 ;; Better find definition
 (define-key clojure-mode-map (kbd "M-.") #'find-definition)

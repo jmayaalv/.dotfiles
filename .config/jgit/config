@@ -4,3 +4,6 @@
 [filesystem "Oracle Corporation|15.0.2|/dev/disk1s1"]
 	timestampResolution = 5000 nanoseconds
 	minRacyThreshold = 0 nanoseconds
+[filesystem "Azul Systems, Inc.|17.0.2|/dev/disk3s5"]
+	timestampResolution = 3000 nanoseconds
+	minRacyThreshold = 0 nanoseconds

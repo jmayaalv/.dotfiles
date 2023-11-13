@@ -1,5 +1,16 @@
 (prelude-require-package  'diminish)
 
+;; disable warnings on arrow navigation
+(setq prelude-guru nil)
+
+;; disable tabs
+(tab-bar-mode -1)
+
+;; disable line length warnings
+(require 'whitespace)
+(setq whitespace-style nil)
+
+
 ;; Start emacs maximized
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
@@ -112,8 +123,8 @@
 ;;  subtle visual indication which window is currently active by dimming the
 ;;  faces on the others.
 (prelude-require-package 'dimmer)
-(setq dimmer-percent 0.4)
-(dimmer-activate)
+(setq dimmer-fraction 0.5)
+(dimmer-mode t)
 
 
 ;;; Beacon
@@ -178,3 +189,12 @@
 ;; This seems to be a bug emacs 28.1
 ;; https://emacs.stackexchange.com/questions/69066/problem-with-loading-packages-with-emacs-28
 (setq find-file-visit-truename nil)
+
+
+;; try new packages temporarily
+(prelude-require-package 'try)
+
+
+;; Dirvish - replacecment for Dired
+(prelude-require-packages '(dirvish))
+(dirvish-override-dired-mode)

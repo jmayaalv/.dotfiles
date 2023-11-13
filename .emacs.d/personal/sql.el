@@ -13,15 +13,15 @@
                    "/"))
               sql-database)))
 
-
-(add-hook 'sql-interactive-mode-hook
-          (lambda ()
-            (toggle-truncate-lines t)
-            (setq sql-alternate-buffer-name (sql-make-smart-buffer-name))
-            (sql-rename-buffer)))
+ (add-hook 'sql-interactive-mode-hook
+           (lambda ()
+             (setq truncate-lines nil)
+             (setq sql-alternate-buffer-name (sql-make-smart-buffer-name))
+             (sql-rename-buffer)))
 
 ;; Add a newline before the output
 (defun sql-add-newline-first (output)
+
   "Add newline to beginning of OUTPUT for `comint-preoutput-filter-functions'"
   (concat "\n" output))
 
@@ -30,4 +30,4 @@
   (add-hook 'comint-preoutput-filter-functions
             'sql-add-newline-first))
 
-(add-hook 'sql-interactive-mode-hook 'sqli-add-hooks)
+;;(add-hook 'sql-interactive-mode-hook 'sqli-add-hooks)

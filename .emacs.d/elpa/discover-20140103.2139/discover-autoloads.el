@@ -134,6 +134,10 @@ See `discover-mode' for more information on Discover mode.
 
 ;;;***
 
+;;;### (autoloads nil nil ("discover-pkg.el") (0 0 0 0))
+
+;;;***
+
 ;; Local Variables:
 ;; version-control: never
 ;; no-byte-compile: t

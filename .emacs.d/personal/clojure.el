@@ -1,12 +1,10 @@
 (require 'cider)
 
+(prelude-require-packages '(jet html-to-hiccup))
+
+
 
 ;;; CIDER
-
-;; Additional Hot Keys
-(define-key cider-mode-map (kbd "C-c M-o") #'cider-repl-clear-buffer)
-(define-key cider-mode-map (kbd "C-c M-S") #'cider-selector)
-(define-key cider-mode-map (kbd "<tab>") #'company-indent-or-complete-common)
 
 ;; config
 (setq-default ediff-ignore-similar-regions t)
@@ -14,6 +12,7 @@
       cider-clojure-cli-global-options "-A:dev"
       cider-history-file (concat user-emacs-directory "cider-history")
       cider-repl-wrap-history t
+      clojure-toplevel-inside-comment-form t
       cider-repl-history-file "~/.cider-repl-history"
       clojure-align-forms-automatically t
       diff-custom-diff-options "--suppress-common-lines"
@@ -35,7 +34,8 @@
 (defun portal.api/open ()
   (interactive)
   (cider-nrepl-sync-request:eval
-   "(require 'portal.api) (portal.api/tap) (portal.api/open)"))
+   "(do (ns dev) (def portal ((requiring-resolve 'portal.api/open))) (add-tap (requiring-resolve 'portal.api/submit)))"))
+
 
 (defun portal.api/clear ()
   (interactive)
@@ -44,3 +44,28 @@
 (defun portal.api/close ()
   (interactive)
   (cider-nrepl-sync-request:eval "(portal.api/close)"))
+
+(defun personal/insert-comment ()
+  (interactive)
+  (end-of-defun)
+  (insert "\n")
+  (insert "(comment\n  )\n")
+  (clojure-backward-logical-sexp)
+  (forward-char 1)
+  (clojure-forward-logical-sexp)
+  (insert "\n")
+  (indent-according-to-mode))
+
+
+
+;; Additional Hot Keys
+(define-key cider-mode-map (kbd "C-c M-o") #'cider-repl-clear-buffer)
+(define-key cider-mode-map (kbd "C-c M-S") #'cider-selector)
+(define-key cider-mode-map (kbd "<tab>") #'company-indent-or-complete-common)
+
+;; Font lock for >defn
+(font-lock-add-keywords
+ 'clojure-mode
+ '(("(\\(>defn\\)\\s-+\\(\\w+\\)"
+    (1 font-lock-keyword-face)
+    (2 font-lock-function-name-face))))

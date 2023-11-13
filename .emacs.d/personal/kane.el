@@ -37,14 +37,34 @@
          (sql-database "imsdb_test"))
 
         (nav.prod
-         (sql-name "oic.prod")
-         (sql-default-directory "/ssh:devel.jmayaalv@navdb:")
+         (sql-name "nav.prod")
+          (sql-default-directory "/ssh:devel.jmayaalv@navdb:")
          (sql-postgres-program "/usr/local/pgsql/bin/psql")
          (sql-product 'postgres)
          (sql-port 5432)
          (sql-server "localhost")
          (sql-user "imsnavprod")
          (sql-database "imsnavproddb"))
+
+       (axonic.test
+         (sql-name "axonic.test")
+         (sql-default-directory "/ssh:devel.jmayaalv@axonictest1:")
+         (sql-postgres-program "/usr/local/pgsql/bin/psql")
+         (sql-product 'postgres)
+         (sql-port 5432)
+         (sql-server "localhost")
+         (sql-user "imsaxonict1")
+         (sql-database "imsaxonict1db"))
+
+       (axonic.test2
+        (sql-name "axonic.test2")
+        (sql-default-directory "/ssh:devel.jmayaalv@axonictest2:")
+        (sql-postgres-program "/usr/local/pgsql/bin/psql")
+        (sql-product 'postgres)
+        (sql-port 5432)
+        (sql-server "localhost")
+        (sql-user "imsaxonict2")
+        (sql-database "imsaxonict2db"))
 
         (oic.prod
          (sql-name "oic.prod")
@@ -144,7 +164,7 @@
          (sql-port 5432)
          (sql-server "localhost")
          (sql-user "imsomitest4")
-         (sql-database "imsomit4db"))
+         (sql-database "imsomitest4db"))
 
         (northstar.prod
          (sql-name "northstar.prod")
@@ -207,6 +227,16 @@
          (sql-user "imsglaciertest2")
          (sql-database "imsglaciertest2db"))
 
+       (glacier.test3
+        (sql-name "glacier.test3")
+        (sql-postgres-program "/usr/local/pgsql/bin/psql")
+        (sql-default-directory "/ssh:devel.jmayaalv@glaciertest3:")
+        (sql-product 'postgres)
+        (sql-port 5432)
+        (sql-server "localhost")
+        (sql-user "imsglaciert3")
+        (sql-database "imsglaciert3db"))
+
         (glacier.prod
          (sql-name "glacier.prod")
          (sql-postgres-program "/usr/local/pgsql/bin/psql")
@@ -219,8 +249,8 @@
 
         (omnia.prod
          (sql-name "omnia.prod")
-         (sql-postgres-program "/usr/local/postgresql-12.2/bin/psql")
-         (sql-default-directory "/ssh:devel.jmayaalv@omniadb:")
+         (sql-postgres-program "/usr/local/pgsql/bin/psql")
+         (sql-default-directory "/ssh:devel.jmayaalv@omniaprod:")
          (sql-product 'postgres)
          (sql-port 5432)
          (sql-server "localhost")
@@ -237,9 +267,39 @@
          (sql-user "imsdartaprod")
          (sql-database "imsdartaproddb"))
 
+        (agl.test1
+         (sql-name "agl.test1")
+         (sql-postgres-program "/usr/local/pgsql/bin/psql")
+         (sql-default-directory "/ssh:devel.jmayaalv@agltest1:")
+         (sql-product 'postgres)
+         (sql-port 5432)
+         (sql-server "localhost")
+         (sql-user "imsdartatest1")
+         (sql-database "imsdartatest1db"))
+
+        (agl.test2
+         (sql-name "agl.test2")
+         (sql-postgres-program "/usr/local/pgsql/bin/psql")
+         (sql-default-directory "/ssh:devel.jmayaalv@agltest2:")
+         (sql-product 'postgres)
+         (sql-port 5432)
+         (sql-server "localhost")
+         (sql-user "imsdartatest2")
+         (sql-database "imsdartatest2db"))
+
+        (agl.test3
+         (sql-name "agl.test3")
+         (sql-postgres-program "/usr/local/pgsql/bin/psql")
+         (sql-default-directory "/ssh:devel.jmayaalv@agltest3:")
+         (sql-product 'postgres)
+         (sql-port 5432)
+         (sql-server "localhost")
+         (sql-user "imsdartatest3")
+         (sql-database "imsdartatest3db"))
+
         (argus.prod
          (sql-name "argus.prod")
-         (sql-postgres-program "/usr/local/pgsql/bin/psql")
+         (sql-postgres-program "/bin/psql")
          (sql-default-directory "/ssh:devel.jmayaalv@argusprod:")
          (sql-product 'postgres)
          (sql-port 5432)
@@ -287,6 +347,16 @@
          (sql-user "imsagrayt2")
          (sql-database "imsagrayt2db"))
 
+       (allangray.prod
+        (sql-name "allangray.prod")
+        (sql-postgres-program "/usr/local/pgsql/bin/psql")
+        (sql-default-directory "/ssh:devel.jmayaalv@allangraydb:")
+        (sql-product 'postgres)
+        (sql-port 5432)
+        (sql-server "localhost")
+        (sql-user "imsagrayprod")
+        (sql-database "imsagrayproddb"))
+
        (providence.test
          (sql-name "providence.test")
          (sql-postgres-program "/usr/local/pgsql/bin/psql")
@@ -305,17 +375,98 @@
          (sql-port 5432)
          (sql-server "localhost")
          (sql-user "imsngt1")
-         (sql-database "imsngt1db"))))
+         (sql-database "imsngt1db"))
+
+       (prospero.prod
+        (sql-name "prospero.prod")
+        (sql-default-directory "/ssh:devel.jmayaalv@prosperodb:")
+        (sql-postgres-program "/usr/local/pgsql/bin/psql")
+        (sql-product 'postgres)
+        (sql-port 5432)
+        (sql-server "localhost")
+        (sql-user "imsprosprod")
+        (sql-database "imsprosproddb"))
+
+       (secura.test1
+        (sql-name "secura.test1")
+        (sql-default-directory "/ssh:devel.jmayaalv@securatest1:")
+        (sql-postgres-program "/usr/local/pgsql/bin/psql")
+        (sql-product 'postgres)
+        (sql-port 5432)
+        (sql-server "localhost")
+        (sql-user "imssecurat1")
+        (sql-database "imssecurat1db"))
+
+       (secura.prod
+        (sql-name "secura.prod")
+        (sql-default-directory "/ssh:devel.jmayaalv@securaprod:")
+        (sql-postgres-program "/usr/local/pgsql/bin/psql")
+        (sql-product 'postgres)
+        (sql-port 5432)
+        (sql-server "localhost")
+        (sql-user "imssecuraprod")
+        (sql-database "imssecuraproddb"))
+
+       (lic.test
+        (sql-name "lic.test")
+        (sql-default-directory "/ssh:devel.jmayaalv@lictest1:")
+        (sql-postgres-program "/usr/local/pgsql/bin/psql")
+        (sql-product 'postgres)
+        (sql-port 5432)
+        (sql-server "localhost")
+        (sql-user "imslict1")
+        (sql-database "imslict1db"))
+
+       (lic.prod
+        (sql-name "lic.prod")
+        (sql-default-directory "/ssh:devel.jmayaalv@licprod:")
+        (sql-postgres-program "/usr/local/pgsql/bin/psql")
+        (sql-product 'postgres)
+        (sql-port 5432)
+        (sql-server "localhost")
+        (sql-user "imslicprod")
+        (sql-database "imslicproddb"))
+       ))
 
  (defun sql-localhost.dev ()
    "Create a new sql connection to the local dev db."
    (interactive)
    (my-sql-connect  'postgres 'localhost.dev))
 
-  (defun sql-allangray.test1 ()
+ (defun sql-allangray.test1 ()
    "Create a new sql connection to allan gray test1 db."
    (interactive)
    (my-sql-connect  'postgres 'allangray.test1))
+
+(defun sql-allangray.prod ()
+  "Create a new sql connection to allan gray prod db."
+  (interactive)
+  (my-sql-connect  'postgres 'allangray.prod))
+
+(defun sql-axonic.test ()
+  "Create a new sql connection to axonic test db."
+  (interactive)
+  (my-sql-connect  'postgres 'axonic.test))
+
+(defun sql-axonic.test2 ()
+  "Create a new sql connection to axonic test 2db."
+  (interactive)
+  (my-sql-connect  'postgres 'axonic.test2))
+
+(defun sql-agl.test1 ()
+  "Create a new sql connection to agl test1 db."
+  (interactive)
+  (my-sql-connect  'postgres 'agl.test1))
+
+(defun sql-agl.test2 ()
+  "Create a new sql connection to agl test2 db."
+  (interactive)
+  (my-sql-connect  'postgres 'agl.test2))
+
+(defun sql-agl.test3 ()
+  "Create a new sql connection to agl test3 db."
+  (interactive)
+  (my-sql-connect  'postgres 'agl.test3))
 
  (defun sql-allangray.test2 ()
   "Create a new sql connection to allan gray test2 db."
@@ -336,6 +487,21 @@
    "Create a new sql connection to the next geokn test db"
    (interactive)
    (my-sql-connect  'postgres 'prospero.test))
+
+(defun sql-prospero.prod ()
+  "Create a new sql connection to prospero db."
+  (interactive)
+  (my-sql-connect  'postgres 'prospero.prod))
+
+(defun sql-lic.test ()
+  "Create a new sql connection to lic test1"
+  (interactive)
+  (my-sql-connect  'postgres 'lic.test))
+
+(defun sql-lic.prod ()
+  "Create a new sql connection to lic prod"
+  (interactive)
+  (my-sql-connect  'postgres 'lic.prod))
 
  (defun sql-oic.prod ()
    "Create a new sql connection to the oic prod db."
@@ -402,6 +568,11 @@
     (interactive)
     (my-sql-connect 'postgres 'glacier.test2))
 
+ (defun sql-glacier.test3 ()
+  "Create a new sql connection to the glacier test3 db."
+  (interactive)
+  (my-sql-connect 'postgres 'glacier.test3))
+
  (defun sql-veritas.test ()
    "Create a new sql connection to the veritas test db."
     (interactive)
@@ -451,6 +622,16 @@
    "Create a new sql connection to the omnia test db."
     (interactive)
     (my-sql-connect 'postgres 'omnia.test))
+
+(defun sql-secura.test1 ()
+  "Create a new sql connection to the secura test 1 db."
+  (interactive)
+  (my-sql-connect  'postgres 'secura.test1))
+
+(defun sql-secura.prod ()
+  "Create a new sql connection to the secura prod  db."
+  (interactive)
+  (my-sql-connect  'postgres 'secura.prod))
 
  (defun my-sql-connect (product connection)
    "Create a new sql CONNECTION with a given PRODUCT."
