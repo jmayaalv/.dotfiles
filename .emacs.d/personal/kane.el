@@ -317,10 +317,10 @@
          (sql-user "imsargust2")
          (sql-database "imsargust2db"))
 
-        (providence.prod
-         (sql-name "providence.prod")
+        (plac.prod
+         (sql-name "plac.prod")
          (sql-postgres-program "/usr/local/pgsql/bin/psql")
-         (sql-default-directory "/ssh:devel.jmayaalv@providenceprod:")
+         (sql-default-directory "/ssh:devel.jmayaalv@placprod:")
          (sql-product 'postgres)
          (sql-port 5432)
          (sql-server "localhost")
@@ -357,10 +357,10 @@
         (sql-user "imsagrayprod")
         (sql-database "imsagrayproddb"))
 
-       (providence.test
-         (sql-name "providence.test")
+       (plac.test
+         (sql-name "plac.test")
          (sql-postgres-program "/usr/local/pgsql/bin/psql")
-         (sql-default-directory "/ssh:devel.jmayaalv@providencetest:")
+         (sql-default-directory "/ssh:devel.jmayaalv@plactest:")
          (sql-product 'postgres)
          (sql-port 5432)
          (sql-server "localhost")
@@ -548,15 +548,15 @@
     (interactive)
     (my-sql-connect 'postgres 'argus.test2))
 
- (defun sql-providence.prod ()
-   "Create a new sql connection to the providence prod db."
+ (defun sql-plac.prod ()
+   "Create a new sql connection to the plac prod db."
     (interactive)
-    (my-sql-connect 'postgres 'providence.prod))
+    (my-sql-connect 'postgres 'plac.prod))
 
- (defun sql-providence.test ()
-   "Create a new sql connection to the providence test db."
+ (defun sql-plac.test ()
+   "Create a new sql connection to the plac test db."
     (interactive)
-    (my-sql-connect 'postgres 'providence.test))
+    (my-sql-connect 'postgres 'plac.test))
 
  (defun sql-glacier.test ()
    "Create a new sql connection to the glacier test db."

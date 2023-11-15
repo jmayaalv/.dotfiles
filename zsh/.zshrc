@@ -11,7 +11,9 @@ fi
 # If you come from bash you might have to change your $PATH.
 
 export PATH=$HOME/bin:/usr/local/bin:/Applications/Tools/apache-maven-3.6.3/bin:$PATH
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.8.0_192)
+#export JAVA_HOME=$(/usr/libexec/java_home -v 1.8.0_192)
+export JAVA_HOME=${SDKMAN_CANDIDATES_DIR}/java/${CURRENT}
+
 export BW_SESSION="gtcu0Mt8f2QnEZheSgviX63sdEzh4h6PzFeFsef3NE8OIffXwF79Ua0K6TNGkd0MCMpdfEibeAxiYpgg+jN+fg=="
 
 # aliases
@@ -32,7 +34,7 @@ function clj() {
 
 # Datomic
 
-export DATOMIC_PATH=~/Documents/workspace/datomic
+# export DATOMIC_PATH=~/Documents/workspace/datomic
 
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
@@ -47,7 +49,7 @@ export ZSH=~/.oh-my-zsh
 # cause zsh load theme from this variable instead of
 # looking in ~/.oh-my-zsh/themes/
 # An empty array have no effect
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+ #ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -140,8 +142,11 @@ compdef _bb_tasks bb
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
+source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# Plugin
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
