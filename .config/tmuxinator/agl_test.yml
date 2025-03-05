@@ -47,4 +47,6 @@ root: ~/
 windows:
   - agltest1: ssh -C -o 'ServerAliveInterval 180' devel.jmayaalv@agltest1
   - agltest2: ssh -C -o 'ServerAliveInterval 180' devel.jmayaalv@agltest2
-  - agltest3: ssh -C -o 'ServerAliveInterval 180' devel.jmayaalv@agltest3 
+  - agltest3: ssh -C -o 'ServerAliveInterval 180' devel.jmayaalv@agltest3
+  - agltest4: ssh -C -o 'ServerAliveInterval 180' devel.jmayaalv@agltest4
+  - agltest5: ssh -C -o 'ServerAliveInterval 180' devel.jmayaalv@agltest5

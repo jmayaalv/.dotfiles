@@ -47,3 +47,4 @@ root: ~/
 windows:
   - test1: ssh -C -o 'ServerAliveInterval 180' devel.jmayaalv@allangraytest1
   - test2: ssh -C -o 'ServerAliveInterval 180' devel.jmayaalv@allangraytest2
+  - test3: ssh -C -o 'ServerAliveInterval 180' devel.jmayaalv@allangraytest3

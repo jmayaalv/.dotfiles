@@ -12,7 +12,13 @@ fi
 
 export PATH=$HOME/bin:/usr/local/bin:/Applications/Tools/apache-maven-3.6.3/bin:$PATH
 #export JAVA_HOME=$(/usr/libexec/java_home -v 1.8.0_192)
-export JAVA_HOME=${SDKMAN_CANDIDATES_DIR}/java/${CURRENT}
+export JAVA_HOME=${SDKMAN_CANDIDATES_DIR}/java/${CURRENT}i
+
+
+# Temp workaround to disable punycode deprecation logging to stderr
+# https://github.com/bitwarden/clients/issues/6689
+export NODE_OPTIONS="--no-deprecation"
+
 
 export BW_SESSION="gtcu0Mt8f2QnEZheSgviX63sdEzh4h6PzFeFsef3NE8OIffXwF79Ua0K6TNGkd0MCMpdfEibeAxiYpgg+jN+fg=="
 
@@ -150,3 +156,6 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 # Plugin
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# To customize prompt, run `p10k configure` or edit ~/Developer/.dotfiles/.p10k.zsh.
+[[ ! -f ~/Developer/.dotfiles/.p10k.zsh ]] || source ~/Developer/.dotfiles/.p10k.zsh

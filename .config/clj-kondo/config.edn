@@ -3,6 +3,8 @@
                 :unsorted-required-namespaces  {:level :warning}}
  :config-paths ["./fulcro/" "./kane/" "./pathom/" "./promesa/"]
  :lint-as      {mount.core/defstate                clojure.core/def
+                coeffectual.core/defc              clojure.core/defn
+                coeffectual.core/defcoeffectual    clojure.core/defmethod
                 twarc.core/defjob                  clojure.core/defn
                 kane.database.interface/defquery   clojure.core/defn
                 kane.db/defquery                   clojure.core/defn
@@ -13,4 +15,12 @@
                 promesa.core/->>                   clojure.core/->>
                 promesa.core/as->                  clojure.core/as->
                 promesa.core/let                   clojure.core/let
-                promesa.core/plet                  clojure.core/let}}
+                promesa.core/plet                  clojure.core/let
+                superlifter.api/def-fetcher        clojure.core/defrecord
+                superlifter.api/def-superfetcher   clojure.core/defrecord
+                com.rpl.specter/defcollector       clojure.core/defn
+                com.rpl.specter/defdynamicnav      clojure.core/defn
+                com.rpl.specter/defmacroalias      clojure.core/def
+                com.rpl.specter/defnav             clojure.core/defn
+                com.rpl.specter/defrichnav         clojure.core/defn
+                kanicle.aggregate/defaggregate     clojure.core/def}}
