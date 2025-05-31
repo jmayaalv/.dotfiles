@@ -1,0 +1,52 @@
+The /usr/libexec/java_home seems to be mostly undocumented, it's very hard to find information about how it works. Combining the little information about it found online and some trial and error, I managed to trick /usr/libexec/java_home into returning SDKMAN's current JDK.
+
+There are 2 issues that we need to work around:
+
+SDKMAN-installed JDKs don't look like manually installed JDKs
+SDKMAN-installed JDKs are not in a location /usr/libexec/java_home knows
+On MacOS, manually installed JDKs are installed in /Library/Java/JavaVirtualMachines and look like this (non-exhaustive):
+
+jdk-root-folder/
+  Contents/
+    Info.plist
+    Home/
+      <actual JDK files here>
+But SDKMAN only installs the actual JDK files. The solution is to fake everything SDKMAN does not install:
+
+Create a folder in /Library/Java/JavaVirtualMachines for your JDK, I'll call mine sdkman-current but the name does not matter.
+Create a Contents folder inside sdkman-current
+Create a symlink named Home inside the Contents folder, linking to your actual JDK:
+sudo ln -s /Users/{REPLACE_ME}/.sdkman/candidates/java/current /Library/Java/JavaVirtualMachines/sdkman-current/Contents/Home
+Create a Info.plist file in the Contents folder with the following content:
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleIdentifier</key>
+    <string>sdkman.current</string>
+    <key>CFBundleName</key>
+    <string>SDKMAN Current JDK</string>
+    <key>JavaVM</key>
+    <dict>
+        <key>JVMPlatformVersion</key>
+        <string>9999</string>
+        <key>JVMVendor</key>
+        <string>Homebrew</string>
+        <key>JVMVersion</key>
+        <string>9999</string>
+    </dict>
+</dict>
+</plist>
+You can mostly use whatever <string> values you want in there, but note that removing any of the entries will prevent /usr/libexec/java_home from finding your JDK. I'm setting its version to 9999 so that its always the one returned by /usr/libexec/java_home.
+Check that everything works:
+➜  /usr/libexec/java_home
+/Library/Java/JavaVirtualMachines/sdkman-current/Contents/Home
+➜  /usr/libexec/java_home -V
+Matching Java Virtual Machines (1):
+    9999 (arm64) "Homebrew" - "SDKMAN Current JDK" /Library/Java/JavaVirtualMachines/sdkman-current/Contents/Home
+/Library/Java/JavaVirtualMachines/sdkman-current/Contents/Home
+Now, stuff relying on /usr/libexec/java_home to find a JDK should work, including XCode Script Build Phase using /bin/sh.
+
+Share
+Improve this answer
+

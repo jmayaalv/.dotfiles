@@ -16,6 +16,7 @@
 /.emacs.d/.mc-lists.el
 /.emacs.d/transient/
 /.emacs.d/auto-save-list/
+/aider/.aider.conf.yml
 .emacs.d/var/prescient-save.el
 *.elc
 *.swp
@@ -23,3 +24,5 @@
 /.emacs.d/elpa/doom-themes-*/
 /.emacs.d/.lsp-session-v1
 .emacs.d/elpa/archives/
+*.yml
+/.clj-kondo/.cache/
