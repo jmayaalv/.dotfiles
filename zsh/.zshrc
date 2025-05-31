@@ -12,7 +12,7 @@ fi
 
 export PATH=$HOME/bin:/usr/local/bin:/Applications/Tools/apache-maven-3.6.3/bin:$PATH
 #export JAVA_HOME=$(/usr/libexec/java_home -v 1.8.0_192)
-export JAVA_HOME=${SDKMAN_CANDIDATES_DIR}/java/${CURRENT}i
+export JAVA_HOME=${SDKMAN_CANDIDATES_DIR}/java/${CURRENT}
 
 
 # Temp workaround to disable punycode deprecation logging to stderr
