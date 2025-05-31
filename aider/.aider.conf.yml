@@ -1,8 +1,0 @@
-auto-commits: false
-gitignore: false
-
-auto-lint: true
-read: [CONVENTIONS.md]
-
-anthropic-api-key: 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
-model: anthropic/claude-3-7-sonnet-latest
